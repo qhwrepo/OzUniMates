@@ -150,28 +150,28 @@ under Apache 2.0 by Start Bootstrap
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="/static/img/portfolio-1.jpg">
+                                    <img class="img-portfolio img-responsive" src="/img/portfolio-1.jpg">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="/static/img/portfolio-2.jpg">
+                                    <img class="img-portfolio img-responsive" src="/img/portfolio-2.jpg">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="/static/img/portfolio-3.jpg">
+                                    <img class="img-portfolio img-responsive" src="/img/portfolio-3.jpg">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="/static/img/portfolio-4.jpg">
+                                    <img class="img-portfolio img-responsive" src="/img/portfolio-4.jpg">
                                 </a>
                             </div>
                         </div>
