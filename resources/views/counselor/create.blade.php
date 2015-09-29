@@ -37,6 +37,14 @@
                {!! Form::submit('Submit',['class'=>'btn btn-success form-control']) !!}
             </div>
         {!! Form::close() !!}
+
+        @if($errors->any())        
+        <ul class="alert alert-danger">            
+        @foreach($errors->all() as $error)                
+        <li>{{$error}}</li>
+        @endforeach        
+        </ul>
+        @endif
       
       <!-- notification after submition -->
 <!--         <div class="col-lg-5 col-md-push-1">
