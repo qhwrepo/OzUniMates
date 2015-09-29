@@ -40,8 +40,8 @@ under Apache 2.0 by Start Bootstrap
             <h1>海友</h1>
             <h3>和未来的校友聊聊吧</h3>
             <br>
-            <a href="#register2" class="btn btn-dark btn-lg">我要找校友</a>
-            <a href="#register3" class="btn btn-dark btn-lg">我要帮校友</a>
+            <a href="index" class="btn btn-dark btn-lg">我要找校友</a>
+            <a href="index" class="btn btn-dark btn-lg">我要帮校友</a>
             <br><br>
             <a href="#about" class="fa fa-chevron-circle-down" id="tellMore"></a>
         </div>
