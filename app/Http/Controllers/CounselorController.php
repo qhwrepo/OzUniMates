@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Requests;
+use Request;
 use App\Http\Controllers\Controller;
 use App\Counselor;
 
@@ -20,6 +19,15 @@ class CounselorController extends Controller
     public function create()
     {
         return view('counselor.create');
+    }
+
+    public function store()
+    {
+        
+        $input = Request::all();
+        
+        Counselor::create($input);
+        return redirect('/index');
     }
     
 }
