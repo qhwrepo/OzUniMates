@@ -15,4 +15,6 @@ Route::get('/','WelcomeController@index');
 Route::get('/welcome','WelcomeController@index');
 
 Route::get('/index','MainController@index');
-Route::get('/counselors/{id}','MainController@show');
+Route::get('/counselors/{id}','CounselorController@show');
+
+Route::get('/newcounselor','CounselorController@create');

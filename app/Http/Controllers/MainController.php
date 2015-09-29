@@ -14,12 +14,5 @@ class MainController extends Controller
     	$user = 'Krishan';
     	return view('main.main-page',compact('counselors','user'));	
     }
-
-    public function show($id)
-	{
-	    $counselor = Counselor::findOrFail($id);
-	    $user = 'Krishan';
-	    return view('main.browse-counselor',compact('counselor','user'));
-	}
     
 }
