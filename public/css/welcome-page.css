@@ -172,8 +172,13 @@ hr.small {
 
 #tellMore {
     font-size: 60px;
-    color:rgb(35,35,35);
+    color:rgba(0,0,0,0.4);
     text-shadow:7px 7px 7px rgba(230, 230, 230, 0.6);
+}
+
+#tellMore:hover {
+    color:rgba(0,0,0,0.7);
+    text-decoration: none;
 }
 
 /* Services */

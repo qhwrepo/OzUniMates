@@ -12,7 +12,7 @@ under Apache 2.0 by Start Bootstrap
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
-    <title>海友 - Talk to your future schoolmates</title>
+    <title>澳洲师兄 - 遇见未来的校友</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -34,16 +34,20 @@ under Apache 2.0 by Start Bootstrap
 
 <body>
 
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">登录</a>
+
+
+
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
-            <h1>海友</h1>
-            <h3>Talk to your future schoolmates</h3>
+            <h1>好名字 = $20</h1>
+            <h3>遇见未来的校友</h3>
             <br>
-            <a href="index" class="btn btn-dark btn-lg">Explore</a>
-            <a href="newcounselor" class="btn btn-dark btn-lg">Add new</a>
+            <a href="newstudent" class="btn btn-dark btn-lg">找校友</a>
+            <a href="newcounselor" class="btn btn-dark btn-lg">帮校友</a>
             <br><br>
-            <a href="#about" class="fa fa-chevron-circle-down" id="tellMore"></a>
+            <a href="#about" class="fa fa-angle-double-down" id="tellMore"></a>
         </div>
     </header>
 
