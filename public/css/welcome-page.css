@@ -173,12 +173,11 @@ hr.small {
 #tellMore {
     font-size: 60px;
     color:rgba(0,0,0,0.4);
-    text-shadow:7px 7px 7px rgba(230, 230, 230, 0.6);
+    text-decoration: none;
 }
 
 #tellMore:hover {
     color:rgba(0,0,0,0.7);
-    text-decoration: none;
 }
 
 /* Services */
@@ -189,20 +188,6 @@ hr.small {
 
 .service-item {
     margin-bottom: 30px;
-}
-
-/* Callout */
-
-.callout {
-    display: table;
-    width: 100%;
-    height: 400px;
-    color: #fff;
-    background: url(../img/callout.jpg) no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
 }
 
 /* Portfolio */
@@ -223,18 +208,7 @@ hr.small {
     opacity: 0.8;
 }
 
-/* Call to Action */
-
-.call-to-action {
-    padding: 50px 0;
-}
-
-.call-to-action .btn {
-    margin: 10px;
-}
-
 /* Map */
-
 .map {
     height: 500px;
 }
@@ -243,10 +217,4 @@ hr.small {
     .map {
         height: 75%;
     }
-}
-
-/* Footer */
-
-footer {
-    padding: 100px 0;
-}
+}   
