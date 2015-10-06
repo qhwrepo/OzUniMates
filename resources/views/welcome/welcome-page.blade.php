@@ -41,7 +41,7 @@ under Apache 2.0 by Start Bootstrap
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
-            <h1>澳洲师兄</h1>
+            <h1>垃圾猫</h1>
             <h3>遇见未来的校友</h3>
             <br>
             <a href="newstudent" class="btn btn-dark btn-lg">找校友</a>
