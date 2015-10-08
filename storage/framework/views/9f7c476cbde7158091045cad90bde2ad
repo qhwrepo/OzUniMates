@@ -44,6 +44,7 @@ under Apache 2.0 by Start Bootstrap
             <h1>澳洲师兄</h1>
             <h3>遇见未来的校友</h3>
             <br>
+            <a href="index" class="btn btn-dark btn-lg">See who's here!</a>
             <a href="newstudent" class="btn btn-dark btn-lg">找校友</a>
             <a href="newcounselor" class="btn btn-dark btn-lg">帮校友</a>
             <br><br>
