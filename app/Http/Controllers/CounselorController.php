@@ -26,7 +26,7 @@ class CounselorController extends Controller
         
         $input = $request->all();
         Counselor::create($input);
-        return redirect('/index');
+        return redirect('en/index');
     }
     
 }

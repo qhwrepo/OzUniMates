@@ -12,10 +12,14 @@
 */
 
 Route::get('/','WelcomeController@index');
-Route::get('welcome','WelcomeController@index');
+Route::get('en-welcome','WelcomeController@index');
 
-Route::get('index','MainController@index');
+Route::get('en/index','MainController@index');
 
-Route::get('counselors/{id}','CounselorController@show');
-Route::get('newcounselor','CounselorController@create');
-Route::post('counselor/store','CounselorController@store');
+Route::get('en/newstudent','StudentController@create');
+
+Route::get('en/counselors/{id}','CounselorController@show');
+Route::get('en/newcounselor','CounselorController@create');
+Route::post('en/counselor/store','CounselorController@store');
+
+

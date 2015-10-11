@@ -15,7 +15,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        return view('welcome.welcome-page');
+        return view('welcome.welcome-page-en');
     }
 
 }

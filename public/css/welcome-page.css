@@ -36,7 +36,7 @@ body {
 .btn-dark {
     border-radius: 0;
     color: #fff;
-    background-color: rgba(51,122,183,0.8);
+    background-color: rgba(0,0,0,0.4);
 }
 
 .btn-dark:hover,

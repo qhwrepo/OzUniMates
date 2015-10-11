@@ -12,7 +12,7 @@ under Apache 2.0 by Start Bootstrap
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
-    <title>澳洲师兄 - 遇见未来的校友</title>
+    <title>OzUnimates - meet future unimates</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -34,19 +34,20 @@ under Apache 2.0 by Start Bootstrap
 
 <body>
 
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">登录</a>
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">Sign in</a>
 
 
 
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
-            <h1>澳洲师兄</h1>
-            <h3>遇见未来的校友</h3>
+            <h1>OzUnimates</h1>
+            <h3>Meet future university mates.</h3>
             <br>
-            <a href="index" class="btn btn-dark btn-lg">See who's here!</a>
-            <a href="newstudent" class="btn btn-dark btn-lg">找校友</a>
-            <a href="newcounselor" class="btn btn-dark btn-lg">帮校友</a>
+            <a href="en/newstudent" class="btn btn-dark btn-lg">Find unimates</a>
+            <a href="en/newcounselor" class="btn btn-dark btn-lg">Help unimates</a>
+            <br><br>
+            <a href="en/index" class="btn btn-dark btn-lg">See who's here!</a>
             <br><br>
             <a href="#about" class="fa fa-angle-double-down" id="tellMore"></a>
         </div>
@@ -57,8 +58,8 @@ under Apache 2.0 by Start Bootstrap
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>想来澳洲留学 但是信息有限？</h2>
-                    <p class="lead">直接和未来的校友聊聊吧。</p>
+                    <h2>Wanna study in Australia, but lack of informaion?</h2>
+                    <p class="lead">Talk to your future university mates, directly.</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -72,7 +73,7 @@ under Apache 2.0 by Start Bootstrap
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <h2>在这里，校友们帮你：</h2>
+                    <h2>Here your future unimates help with:</h2>
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-3 col-sm-6">
@@ -82,9 +83,9 @@ under Apache 2.0 by Start Bootstrap
                                 <i class="fa fa-pencil fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>申请材料修改</strong>
+                                    <strong>Essay Editing</strong>
                                 </h4>
-                                <p>自述/简历/推荐信<br/>直接让校友帮你改!</p>
+                                <p>Personal Statement/Resume/...<br/>Ask a unimate to improve them!</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -94,9 +95,9 @@ under Apache 2.0 by Start Bootstrap
                                 <i class="fa fa-university fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>院校信息</strong>
+                                    <strong>University Information</strong>
                                 </h4>
-                                <p>院校/专业的排名和中文信息<br/>也可以专门翻译你需要的部分。</p>
+                                <p>Info for your aim uni/major.<br/>Translated into your language!</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -106,9 +107,9 @@ under Apache 2.0 by Start Bootstrap
                                 <i class="fa fa-plane fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>接机/住宿</strong>
+                                    <strong>Settle down</strong>
                                 </h4>
-                                <p>初来澳洲？<br/>校友帮你安顿下来！</p>
+                                <p>First time in Oz?<br/>Unimate helps you settle!</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -118,9 +119,9 @@ under Apache 2.0 by Start Bootstrap
                                 <i class="fa fa-user-secret fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>私人顾问</strong>
+                                    <strong>Private Consultant</strong>
                                 </h4>
-                                <p>想要一站式申请服务？<br/>聘请校友当你的顾问吧。</p>
+                                <p>Want to be babysitted?<br/>Ask an unimate to be your private consultant.</p>
                             </div>
                         </div>
                     </div>
@@ -144,7 +145,7 @@ under Apache 2.0 by Start Bootstrap
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>澳洲·世界顶级学府</h2>
+                    <h2>World's Top Universities in Australia</h2>
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-6">
@@ -192,7 +193,7 @@ under Apache 2.0 by Start Bootstrap
         <div class="container footer">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>澳洲师兄</strong>
+                    <h4><strong>OzUnimates</strong>
                     </h4>
                     <p>Canberra, Australia</p>
                     <ul class="list-unstyled">
@@ -213,7 +214,7 @@ under Apache 2.0 by Start Bootstrap
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; 澳洲师兄 2015</p>
+                    <p class="text-muted">Copyright &copy; OzUnimates 2015</p>
                 </div>
             </div>
         </div>
