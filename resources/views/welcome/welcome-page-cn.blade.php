@@ -47,8 +47,8 @@ under Apache 2.0 by Start Bootstrap
             <a href="newstudent" class="btn btn-dark btn-lg">找校友</a>
             <a href="newcounselor" class="btn btn-dark btn-lg">帮校友</a>
             <br><br>
-            <a href="index" class="btn btn-dark btn-lg">See who's here!</a>
-            <br><br>
+<!--             <a href="index" class="btn btn-dark btn-lg">随便看看</a>
+            <br><br> -->
             <a href="#about" class="fa fa-angle-double-down" id="tellMore"></a>
         </div>
     </header>
