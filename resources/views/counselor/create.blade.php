@@ -20,7 +20,7 @@
 <!-- New counselor form - START -->
 <div class="container">
     <div class="row">
-        {!! Form::open(['url'=>'counselor/store']) !!}
+        {!! Form::open(['url'=>'en/counselor/store']) !!}
             <div class="form-group">
                {!! Form::label('firstName','Fist Name:') !!}
                {!! Form::text('firstName',null,['class'=>'form-control']) !!}
