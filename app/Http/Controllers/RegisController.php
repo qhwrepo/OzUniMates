@@ -23,6 +23,16 @@ class RegisController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function cnindex()
+    {
+        return view('Registration.register-cn');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function success()
     {
         return view('Registration.success-regis-en');

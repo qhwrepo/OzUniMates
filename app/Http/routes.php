@@ -13,7 +13,7 @@
 
 Route::get('/','WelcomeController@index');
 Route::get('en','WelcomeController@index');
-Route::get('cn','WelcomeController@show');
+Route::get('cn','WelcomeController@cnindex');
 
 Route::get('en/index','MainController@index');
 
@@ -21,6 +21,7 @@ Route::get('en/counselors/{id}','CounselorController@show');
 Route::post('en/counselor/store','CounselorController@store');
 
 Route::get('en/regisnlogin','RegisController@index');
+Route::get('cn/regisnlogin','RegisController@cnindex');
 Route::get('en/success-regis','RegisController@success');
 
 

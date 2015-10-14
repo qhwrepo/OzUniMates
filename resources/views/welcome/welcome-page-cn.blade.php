@@ -34,8 +34,8 @@ under Apache 2.0 by Start Bootstrap
 
 <body>
 
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">登录</a>
-
+    <a id="log-toggle" href="cn/regisnlogin" class="btn btn-dark btn-lg toggle">登录</a>
+    <a id="cn-toggle" href="en" class="btn btn-dark btn-lg toggle">English</a>
 
 
     <!-- Header -->
