@@ -31,8 +31,9 @@
             
 			<div class="login_form">
 				<form action="en/index" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" method="post"><input type="hidden" name="did" value="0"/>
-               <input type="hidden" name="to" value="log"/>
-               <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="hidden" name="to" value="log"/>
+                <input type ="checkbox" id='checkbox1' onclick = 'roleCheck(this)'/>Student
+                <input type ="checkbox" id='checkbox2' onclick = 'roleCheck(this)'/>Counselor
 
 
                 <div class="uinArea" id="uinArea">
@@ -68,9 +69,9 @@
     <form name="form2" id="regUser" accept-charset="utf-8"  action="en/success-regis" method="post">
 	      <input type="hidden" name="to" value="reg"/>
 		      		       <input type="hidden" name="did" value="0"/>
-                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <ul class="reg_form" id="reg-ul">
-        		                  <li>
+        		                
+                                  <li>
                 	
                     <label for="user"  class="input-tips2">Username：</label>
                     <div class="inputOuter2">
@@ -138,6 +139,16 @@
 
     <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/login.js"></script>
+    <script>
+    function roleCheck(obj){
+    if(obj.id == 'checkbox1' && obj.checked == true){
+    document.getElementById('checkbox2').checked = false;
+    }
+    else if(obj.id == 'checkbox2' && obj.checked == true){
+    document.getElementById('checkbox1').checked = false;
+    }
+    }
+    </script>
 
     </body>
 </html>
