@@ -32,6 +32,9 @@
 			<div class="login_form">
 				<form action="en/index" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" method="post"><input type="hidden" name="did" value="0"/>
                <input type="hidden" name="to" value="log"/>
+               <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+
                 <div class="uinArea" id="uinArea">
                 <label class="input-tips" for="u">User：</label>
                 <div class="inputOuter" id="uArea">
@@ -62,11 +65,12 @@
    
     <div class="web_login">
 
-    <form name="form2" id="regUser" accept-charset="utf-8"  action="en/indexen/index" method="post">
+    <form name="form2" id="regUser" accept-charset="utf-8"  action="en/success-regis" method="post">
 	      <input type="hidden" name="to" value="reg"/>
 		      		       <input type="hidden" name="did" value="0"/>
-        <ul class="reg_form" id="reg-ul">
-        		                <li>
+                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <ul class="reg_form" id="reg-ul">
+        		                  <li>
                 	
                     <label for="user"  class="input-tips2">Username：</label>
                     <div class="inputOuter2">
@@ -99,18 +103,18 @@
                 </li>
                 
                 <li>
-                 <label for="qq" class="input-tips2">WeChat*：</label>
+                 <label for="wechat" class="input-tips2">WeChat*：</label>
                     <div class="inputOuter2">
                        
-                        <input type="text" id="qq" name="qq" maxlength="10" class="inputstyle2"/>
+                        <input type="text" id="wechat" name="wechat" maxlength="10" class="inputstyle2"/>
                     </div>
                    
                 </li>
                 <li>
-                    <label for="qq" class="input-tips2">Tele*：</label>
+                    <label for="tele" class="input-tips2">Tele*：</label>
                     <div class="inputOuter2">
                         
-                        <input type="text" id="qq" name="qq" maxlength="10" class="inputstyle2"/>
+                        <input type="text" id="tele" name="tele" maxlength="10" class="inputstyle2"/>
                     </div>
                     
                 </li>
@@ -134,5 +138,6 @@
 
     <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/login.js"></script>
+
     </body>
 </html>

@@ -20,6 +20,7 @@ Route::get('en/index','MainController@index');
 Route::get('en/counselors/{id}','CounselorController@show');
 Route::post('en/counselor/store','CounselorController@store');
 
-Route::Get('en/regisnlogin','RegisController@index');
+Route::get('en/regisnlogin','RegisController@index');
+Route::get('en/success-regis','RegisController@success');
 
 
