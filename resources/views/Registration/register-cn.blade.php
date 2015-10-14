@@ -1,11 +1,13 @@
-<!DOCTYPE html >
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
 <title>Register / Login</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
-<script type="text/javascript" src="images/login.js"></script>
-<link href="css/login2.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/login.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
 
@@ -16,8 +18,7 @@
         <div class="switch" id="switch"><a class="switch_btn_focus" id="switch_qlogin" href="javascript:void(0);" tabindex="7">Login</a>
 			<a class="switch_btn" id="switch_login" href="javascript:void(0);" tabindex="8">Register</a><div class="switch_bottom" id="switch_bottom" style="position: absolute; width: 64px; left: 0px;"></div>
         </div>
-    </div>    
-  
+    </div>
     
     <div class="web_qr_login" id="web_qr_login" style="display: block; height: 235px;">    
 
@@ -46,7 +47,7 @@
                 </div>
                 </div>
                
-                <div style="padding-left:50px;margin-top:20px;"><input type="submit" value="登 录" style="width:150px;" class="button_blue"/></div>
+                <div style="padding-left:50px;margin-top:20px;"><input type="submit" value="Login" style="width:150px;" class="button_blue"/></div>
               </form>
            </div>
            
@@ -59,7 +60,9 @@
   <!--注册-->
     <div class="qlogin" id="qlogin" style="display: none; ">
    
-    <div class="web_login"><form name="form2" id="regUser" accept-charset="utf-8"  action="en/index" method="post">
+    <div class="web_login">
+
+    <form name="form2" id="regUser" accept-charset="utf-8"  action="en/indexen/index" method="post">
 	      <input type="hidden" name="to" value="reg"/>
 		      		       <input type="hidden" name="did" value="0"/>
         <ul class="reg_form" id="reg-ul">
@@ -72,6 +75,14 @@
                     
                 </li>
                 
+                <li>
+                <label for="passwd" class="input-tips2">Email：</label>
+                    <div class="inputOuter2">
+                        <input type="password" id="passwd"  name="passwd" maxlength="16" class="inputstyle2"/>
+                    </div>
+                    
+                </li>
+
                 <li>
                 <label for="passwd" class="input-tips2">Password：</label>
                     <div class="inputOuter2">
@@ -88,7 +99,7 @@
                 </li>
                 
                 <li>
-                 <label for="qq" class="input-tips2">Wechat：</label>
+                 <label for="qq" class="input-tips2">WeChat*：</label>
                     <div class="inputOuter2">
                        
                         <input type="text" id="qq" name="qq" maxlength="10" class="inputstyle2"/>
@@ -96,7 +107,7 @@
                    
                 </li>
                 <li>
-                    <label for="qq" class="input-tips2">Tele：</label>
+                    <label for="qq" class="input-tips2">Tele*：</label>
                     <div class="inputOuter2">
                         
                         <input type="text" id="qq" name="qq" maxlength="10" class="inputstyle2"/>
@@ -104,20 +115,24 @@
                     
                 </li>
 
-                
+                * fields are optional.<br/>
+                I agree to the <a href="#" class="zcxy" target="_blank">Privacy &amp; Conditions</a>.
                 <li>
                     <div class="inputArea">
-                        <input type="button" id="reg"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="Submit"/> <a href="#" class="zcxy" target="_blank">protocol</a>
+                        <input type="button" id="reg"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="Submit"/> 
                     </div>
                     
                 </li><div class="cl"></div>
-            </ul></form>
-           
+            </ul>
+        </form>
     
-    </div>
-   
+            </div>  
     
-    </div>
+            </div>
     <!--注册end-->
-</div>
-</body></html>
+        </div>
+
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/login.js"></script>
+    </body>
+</html>

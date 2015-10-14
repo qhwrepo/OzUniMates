@@ -18,7 +18,7 @@ class CounselorController extends Controller
 
     public function create()
     {
-        return view('counselor.create');
+        
     }
 
     public function store(Requests\StoreCounselorRequest $request)

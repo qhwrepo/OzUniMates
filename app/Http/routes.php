@@ -17,10 +17,7 @@ Route::get('cn','WelcomeController@show');
 
 Route::get('en/index','MainController@index');
 
-Route::get('en/newstudent','StudentController@create');
-
 Route::get('en/counselors/{id}','CounselorController@show');
-Route::get('en/newcounselor','CounselorController@create');
 Route::post('en/counselor/store','CounselorController@store');
 
 Route::Get('en/regisnlogin','RegisController@index');
