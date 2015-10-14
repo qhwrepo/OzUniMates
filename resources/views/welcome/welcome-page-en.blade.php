@@ -34,7 +34,7 @@ under Apache 2.0 by Start Bootstrap
 
 <body>
 
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">Sign in</a>
+    <a id="menu-toggle" href="en/regisnlogin" class="btn btn-dark btn-lg toggle">Sign in</a>
 
 
 
@@ -44,8 +44,8 @@ under Apache 2.0 by Start Bootstrap
             <h1>OzUnimates</h1>
             <h3>Meet future university mates.</h3>
             <br>
-            <a href="en/newstudent" class="btn btn-dark btn-lg">Find unimates</a>
-            <a href="en/newcounselor" class="btn btn-dark btn-lg">Help unimates</a>
+            <a href="en/newstudent" class="btn btn-dark btn-lg">Start As a Student</a>
+            <a href="en/newcounselor" class="btn btn-dark btn-lg">Start As a Counselor</a>
             <br><br>
             <a href="en/index" class="btn btn-dark btn-lg">See who's here!</a>
             <br><br>

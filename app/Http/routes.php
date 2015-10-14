@@ -23,4 +23,6 @@ Route::get('en/counselors/{id}','CounselorController@show');
 Route::get('en/newcounselor','CounselorController@create');
 Route::post('en/counselor/store','CounselorController@store');
 
+Route::Get('en/regisnlogin','RegisController@index');
+
 
