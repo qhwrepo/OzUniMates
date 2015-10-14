@@ -21,6 +21,8 @@ Route::get('en/users/{id}','UserController@show');
 Route::get('en/user/create','UserController@create');
 Route::post('en/user/store','UserController@store');
 
+Route::post('en/user/login','LoginController@index');
+
 Route::get('en/regisnlogin','RegisController@index');
 Route::get('cn/regisnlogin','RegisController@cnindex');
 Route::get('en/success-regis','RegisController@success');
