@@ -17,8 +17,9 @@ Route::get('cn','WelcomeController@cnindex');
 
 Route::get('en/index','MainController@index');
 
-Route::get('en/counselors/{id}','CounselorController@show');
-Route::post('en/counselor/store','CounselorController@store');
+Route::get('en/users/{id}','UserController@show');
+Route::get('en/user/create','UserController@create');
+Route::post('en/user/store','UserController@store');
 
 Route::get('en/regisnlogin','RegisController@index');
 Route::get('cn/regisnlogin','RegisController@cnindex');

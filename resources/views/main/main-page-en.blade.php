@@ -6,9 +6,9 @@
         <div class="col-lg-12">
             <h1>Your future unimates:</h1>
             
-            @foreach($counselors as $counselor)
-            <h4><a href="counselors/{{$counselor->id}}" class="counselorList">{{$counselor->firstName}} {{$counselor->lastName}}</a></h4>
-            <p>{{$counselor->intro}}</p>
+            @foreach($users as $user)
+            <h4><a href="users/{{$user->id}}" class="counselorList">{{$user->name}}</a></h4>
+            <p>{{$user->email}}</p>
             <br>
             @endforeach
 

@@ -20,135 +20,100 @@
         </div>
     </div>
     
-    <div class="web_qr_login" id="web_qr_login" style="display: block; height: 235px;">    
+    <div class="web_qr_login" id="web_qr_login" style="display: block; height: 235px;"> 
 
-            <!--登录-->
-            <div class="web_login" id="web_login">
-               
-               
-               <div class="login-box">
-    
-            
-			<div class="login_form">
-				<form action="en/index" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" method="post"><input type="hidden" name="did" value="0"/>
-                <input type="hidden" name="to" value="log"/>
-                <input type ="checkbox" id='checkbox1' onclick = 'roleCheck(this)'/>Student
-                <input type ="checkbox" id='checkbox2' onclick = 'roleCheck(this)'/>Counselor
+        <!--Login-->
+        <div class="web_login" id="web_login">      
+            <div class="login-box login_form">  
 
+            {!! Form::open(['url'=>'en/user/login']) !!}
 
-                <div class="uinArea" id="uinArea">
-                <label class="input-tips" for="u">User：</label>
-                <div class="inputOuter" id="uArea">
-                    
-                    <input type="text" id="u" name="username" class="inputstyle"/>
+                <div class="uinArea">
+                    {!! Form::label('userLog','User',['class'=>'input-tips']) !!}
+                    <div class="inputOuter">
+                    {!! Form::text('userLog',null,['class'=>'inputstyle'],['id'=>'userLog']) !!}
+                    </div>
                 </div>
+
+                <div class="pwdArea">
+                    {!! Form::label('pwdLog','Pwd',['class'=>'input-tips']) !!}
+                    <div class="inputOuter">
+                    {!! Form::password('pwdLog', array('class' => 'inputstyle','id' => 'pwdLog')) !!}
+                    </div>
                 </div>
-                <div class="pwdArea" id="pwdArea">
-                    <label class="input-tips" for="p">Key:</label>
-               <div class="inputOuter" id="pArea">
-                    
-                    <input type="password" id="p" name="p" class="inputstyle"/>
-                </div>
-                </div>
-               
-                <div style="padding-left:50px;margin-top:20px;"><input type="submit" value="Login" style="width:150px;" class="button_blue"/></div>
-              </form>
-           </div>
-           
-            	</div>
-               
+
+                {!! Form::submit('Submit',['class'=>'button_blue']) !!}
+
+            {!! Form::close() !!} 
+
             </div>
-            <!--登录end-->
+        </div>
+            <!--end of Login-->
   </div>
 
-  <!--注册-->
-    <div class="qlogin" id="qlogin" style="display: none; ">
-   
-    <div class="web_login">
+  <!--register-->
+    <div class="qlogin web_login" id="qlogin" style="display: none; ">
 
-    <form name="form2" id="regUser" accept-charset="utf-8"  action="en/success-regis" method="post">
-	      <input type="hidden" name="to" value="reg"/>
-		      		       <input type="hidden" name="did" value="0"/>
-                            <ul class="reg_form" id="reg-ul">
-        		                
-                                  <li>
-                	
-                    <label for="user"  class="input-tips2">Username：</label>
-                    <div class="inputOuter2">
-                        <input type="text" id="user" name="user" maxlength="16" class="inputstyle2"/>
-                    </div>
-                    
-                </li>
-                
+        {!! Form::open(['url'=>'en/user/store']) !!}
+            <br/>
+            <ul class="reg_form" id="reg-ul">
+
                 <li>
-                <label for="email" class="input-tips2">Email：</label>
+                    {!! Form::label('userReg','Username',['class'=>'input-tips2']) !!}
                     <div class="inputOuter2">
-                        <input type="text" id="email"  name="email" maxlength="16" class="inputstyle2"/>
+                    {!! Form::text('name',null,['class'=>'inputstyle2'],['maxlength'=>'16'],['id'=>'userReg']) !!}
                     </div>
-                    
                 </li>
 
                 <li>
-                <label for="passwd" class="input-tips2">Password：</label>
+                    {!! Form::label('emailReg','Email',['class'=>'input-tips2']) !!}
                     <div class="inputOuter2">
-                        <input type="password" id="passwd"  name="passwd" maxlength="16" class="inputstyle2"/>
+                    {!! Form::text('email',null,['class'=>'inputstyle2'],['maxlength'=>'32'],['id'=>'emailReg']) !!}
                     </div>
-                    
                 </li>
+
                 <li>
-                <label for="passwd2" class="input-tips2">Again：</label>
+                    {!! Form::label('pwdReg','Password',['class'=>'input-tips2']) !!}
                     <div class="inputOuter2">
-                        <input type="password" id="passwd2" name="" maxlength="16" class="inputstyle2" />
-                    </div>
-                    
+                    {!! Form::password('password', array('class' => 'inputstyle2','id' => 'pwdReg')) !!}
                 </li>
-                
+
                 <li>
-                 <label for="wechat" class="input-tips2">WeChat*：</label>
+                    {!! Form::label('pwdReg2','Repeat',['class'=>'input-tips2']) !!}
                     <div class="inputOuter2">
-                       
-                        <input type="text" id="wechat" name="wechat" maxlength="10" class="inputstyle2"/>
-                    </div>
-                   
-                </li>
+                    {!! Form::password('password2', array('class' => 'inputstyle2','id' => 'pwdReg2')) !!}
+                </li>    
+
                 <li>
-                    <label for="tele" class="input-tips2">Tele*：</label>
+                    {!! Form::label('wechatReg','WeChat*',['class'=>'input-tips2']) !!}
                     <div class="inputOuter2">
-                        
-                        <input type="text" id="tele" name="tele" maxlength="10" class="inputstyle2"/>
+                    {!! Form::text('wechat',null,['class'=>'inputstyle2'],['maxlength'=>'16'],['id'=>'wechatReg']) !!}
                     </div>
-                    
                 </li>
+
+                <li>
+                    {!! Form::label('teleReg','Tele*',['class'=>'input-tips2']) !!}
+                    <div class="inputOuter2">
+                    {!! Form::text('tele',null,['class'=>'inputstyle2'],['maxlength'=>'16'],['id'=>'teleReg']) !!}
+                    </div>
+                </li> 
 
                 * fields are optional.<br/>
                 I agree to the <a href="#" class="zcxy" target="_blank">Privacy &amp; Conditions</a>.
+                
                 <li>
-                    <div class="inputArea">
-                        <input type="button" id="reg"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="Submit"/> 
-                    </div>
-                    
-                </li><div class="cl"></div>
+                    {!! Form::submit('Register',['class'=>'button_blue']) !!}
+                </li>
+                <div class="cl"></div>
             </ul>
-        </form>
+        {!! Form::close() !!}
     
-            </div>  
-    
-            </div>
-    <!--注册end-->
         </div>
+    <!--end of register-->
+    </div>
 
     <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/login.js"></script>
-    <script>
-    function roleCheck(obj){
-    if(obj.id == 'checkbox1' && obj.checked == true){
-    document.getElementById('checkbox2').checked = false;
-    }
-    else if(obj.id == 'checkbox2' && obj.checked == true){
-    document.getElementById('checkbox1').checked = false;
-    }
-    }
-    </script>
 
     </body>
 </html>
