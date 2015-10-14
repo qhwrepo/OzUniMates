@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-<title>Register</title>
+<title>Register / Login</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
@@ -29,7 +29,7 @@
     
             
 			<div class="login_form">
-				<form action="http://www.js-css.cn" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" method="post"><input type="hidden" name="did" value="0"/>
+				<form action="en/index" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" method="post"><input type="hidden" name="did" value="0"/>
                <input type="hidden" name="to" value="log"/>
                 <div class="uinArea" id="uinArea">
                 <label class="input-tips" for="u">User：</label>
@@ -59,7 +59,7 @@
   <!--注册-->
     <div class="qlogin" id="qlogin" style="display: none; ">
    
-    <div class="web_login"><form name="form2" id="regUser" accept-charset="utf-8"  action="http://www.js-css.cn" method="post">
+    <div class="web_login"><form name="form2" id="regUser" accept-charset="utf-8"  action="en/index" method="post">
 	      <input type="hidden" name="to" value="reg"/>
 		      		       <input type="hidden" name="did" value="0"/>
         <ul class="reg_form" id="reg-ul">
@@ -107,7 +107,7 @@
                 
                 <li>
                     <div class="inputArea">
-                        <input type="button" id="reg"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="Agree"/> <a href="#" class="zcxy" target="_blank">protocol</a>
+                        <input type="button" id="reg"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="Submit"/> <a href="#" class="zcxy" target="_blank">protocol</a>
                     </div>
                     
                 </li><div class="cl"></div>

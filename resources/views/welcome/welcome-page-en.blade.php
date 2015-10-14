@@ -14,6 +14,9 @@ under Apache 2.0 by Start Bootstrap
 
     <title>OzUnimates - meet future unimates</title>
 
+    <link href="/css/normalize.css" rel="stylesheet"/>
+    <link href="/css/jquery-ui.css" rel="stylesheet"/>
+    <link href="/css/jquery.idealforms.min.css" rel="stylesheet" media="screen"/>
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
@@ -30,13 +33,144 @@ under Apache 2.0 by Start Bootstrap
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+<style type="text/css">
+
+    #my-forma{width:595px;margin:0 auto;border:0px solid #ccc;padding:3em;border-radius:3px;box-shadow:0 0 0px rgba(0,0,0,0);}
+    #my-formb{width:595px;margin:0 auto;border:0px solid #ccc;padding:3em;border-radius:3px;box-shadow:0 0 0px rgba(0,0,0,0);}
+
+    #comments{width:350px;height:100px;}
+</style>
+
 </head>
 
 <body>
 
+    <!-- Modal -->
+    <div class="modal fade" id="myModal1" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </br>
+                                    </div>
+                <div class="modal-body">
+                    
+                    <div class="row">
+                        
+                        <div class="eightcol last">
+                            
+                            <!-- Begin Form -->
+                            
+                            <form id="my-forma">
+                                
+                                <!-- leave for the future -->
+<!--                                 <section name="Destination">  
+                                    <label><input type="checkbox" name="langs[]" value="English"/>America</label>
+                                    <label><input type="checkbox" name="langs[]" value="Chinese"/>Australia</label>
+                                    <label><input type="checkbox" name="langs[]" value="Spanish"/>England</label>
+                                    <label><input type="checkbox" name="langs[]" value="French"/>France</label>
+                                </section> -->
+                                
+                                <section name="Degree">
+                                        <p class="lead">What's your target degree?</p>
+                                        <select id="states" name="states">
+                                            <!-- <option value="default">&ndash; What's your target degree? &ndash;</option> -->
+                                            <option value="hs">High School</option>
+                                            <option value="ba">Bachelor</option>
+                                            <option value="ma">Master</option>
+                                            <option value="phd">PHD</option>
+                                            <option value="otd">Others</option>       
+                                        </select>
+       
+                                </section>
+
+                                <section name="Ranking">
+                                        <p class="lead">Choose a range of world ranking for your target university:</p>
+                                        <label><input type="checkbox" name="langs[]" value="rank1"/>Top 30</label>
+                                        <label><input type="checkbox" name="langs[]" value="rank2"/>30-80</label>
+                                        <label><input type="checkbox" name="langs[]" value="rank3"/>80-200</label>
+                                        <label><input type="checkbox" name="langs[]" value="rank4"/>200</label>
+                                    
+                                </section>
+
+                                <section name="University">
+                                        <p class="lead">Specify target universities if any:</p>
+                                        <label><input type="checkbox" name="langs[]" value="anu"/>Australian National University</label>
+                                        <label><input type="checkbox" name="langs[]" value="usyd"/>University of Sydney</label>
+                                        <label><input type="checkbox" name="langs[]" value="umel"/>University of Melbourne</label>
+                                        <label><input type="checkbox" name="langs[]" value="unsw"/>University of New South Wales</label>
+                                    
+                                </section>                    
+                                
+                            </form>
+                            <!-- End Form -->
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="javascript:window.location.href='en/regisnlogin';" >Find Unimates!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Willing</h4>
+                </div>
+                <div class="modal-body">
+                    
+                    <div class="row">
+                        
+                        <div class="eightcol last">
+                            
+                            <!-- Begin Form -->
+                            
+                            <form id="my-formb">
+                                
+                                <section name="University"> 
+                                    <label><input type="checkbox" name="langs[]" value="English"/>Australia National University</label>
+                                    <label><input type="checkbox" name="langs[]" value="Chinese"/>University of Sydney</label>
+                                    <label><input type="checkbox" name="langs[]" value="Spanish"/>University of Melbourne</label>
+                                </section>
+
+                                <section name="Degree">   
+                                    <option value="default">&ndash; choose degree &ndash;</option>
+                                    <option value="AR">High School</option>
+                                    <option value="AL">Bachelor</option>
+                                    <option value="AK">Master</option>
+                                    <option value="AZ">PHD</option>
+                                    <option value="CA">Others</option>   
+                                </section>
+                                
+                                <section name="Advantage">   
+                                    <textarea NAME="Advantage" COLS=50 ROWS=10 maxlength="1000"></textarea>   
+                                </section>
+   
+                            </form> 
+                            <!-- End Form -->
+                                
+                        </div>   
+                    </div>  
+                </div>
+
+                <div class="modal-footer">    
+                    <button type="button" class="btn btn-primary" onclick="javascript:window.location.href='en/regisnlogin';" >Find Unimates!</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <a id="menu-toggle" href="en/regisnlogin" class="btn btn-dark btn-lg toggle">Sign in</a>
-
-
 
     <!-- Header -->
     <header id="top" class="header">
@@ -44,8 +178,8 @@ under Apache 2.0 by Start Bootstrap
             <h1>OzUnimates</h1>
             <h3>Meet future university mates.</h3>
             <br>
-            <a href="en/newstudent" class="btn btn-dark btn-lg">Start As a Student</a>
-            <a href="en/newcounselor" class="btn btn-dark btn-lg">Start As a Counselor</a>
+            <a class="btn btn-dark btn-lg" data-toggle="modal" data-target="#myModal1">Start As a Student</a>
+            <a class="btn btn-dark btn-lg" data-toggle="modal" data-target="#myModal2">Start As a Counselor</a>
             <br><br>
             <a href="en/index" class="btn btn-dark btn-lg">See who's here!</a>
             <br><br>
@@ -244,6 +378,41 @@ under Apache 2.0 by Start Bootstrap
             }
         });
     });
+    </script>
+
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.idealforms.js"></script>
+    <!-- display modals -->
+    <script type="text/javascript">
+        var options = {
+            
+            onFail: function(){
+                alert( $myform.getInvalid().length +' invalid fields.' )
+            },
+            
+            inputs: {
+                
+                'langs[]': {
+                    filters: 'min max',
+                    data: { min: 2, max: 3 },
+                    errors: {
+                        min: 'Check at least <strong>2</strong> options.',
+                        max: 'No more than <strong>3</strong> options allowed.'
+                    }
+                }
+            }
+            
+        };
+    
+    var $myforma = $('#my-forma').idealforms(options).data('idealforms');
+     var $myformb = $('#my-formb').idealforms(options).data('idealforms');
+    
+    
+    $('#reset').click(function(){
+                      $myform.reset().fresh().focusFirst()
+                      });
+                      
+                      $myform.focusFirst();
     </script>
 
 </body>

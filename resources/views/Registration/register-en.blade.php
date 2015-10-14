@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<title>Register</title>
+<title>Register / Login</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -30,7 +30,7 @@
     
             
 			<div class="login_form">
-				<form action="http://www.js-css.cn" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" method="post"><input type="hidden" name="did" value="0"/>
+				<form action="en/index" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" method="post"><input type="hidden" name="did" value="0"/>
                <input type="hidden" name="to" value="log"/>
                 <div class="uinArea" id="uinArea">
                 <label class="input-tips" for="u">User：</label>
@@ -47,7 +47,7 @@
                 </div>
                 </div>
                
-                <div style="padding-left:50px;margin-top:20px;"><input type="submit" value="登 录" style="width:150px;" class="button_blue"/></div>
+                <div style="padding-left:50px;margin-top:20px;"><input type="submit" value="Login" style="width:150px;" class="button_blue"/></div>
               </form>
            </div>
            
@@ -60,7 +60,9 @@
   <!--注册-->
     <div class="qlogin" id="qlogin" style="display: none; ">
    
-    <div class="web_login"><form name="form2" id="regUser" accept-charset="utf-8"  action="http://www.js-css.cn" method="post">
+    <div class="web_login">
+
+    <form name="form2" id="regUser" accept-charset="utf-8"  action="en/indexen/index" method="post">
 	      <input type="hidden" name="to" value="reg"/>
 		      		       <input type="hidden" name="did" value="0"/>
         <ul class="reg_form" id="reg-ul">
@@ -73,6 +75,14 @@
                     
                 </li>
                 
+                <li>
+                <label for="passwd" class="input-tips2">Email：</label>
+                    <div class="inputOuter2">
+                        <input type="password" id="passwd"  name="passwd" maxlength="16" class="inputstyle2"/>
+                    </div>
+                    
+                </li>
+
                 <li>
                 <label for="passwd" class="input-tips2">Password：</label>
                     <div class="inputOuter2">
@@ -89,7 +99,7 @@
                 </li>
                 
                 <li>
-                 <label for="qq" class="input-tips2">Wechat：</label>
+                 <label for="qq" class="input-tips2">WeChat*：</label>
                     <div class="inputOuter2">
                        
                         <input type="text" id="qq" name="qq" maxlength="10" class="inputstyle2"/>
@@ -97,7 +107,7 @@
                    
                 </li>
                 <li>
-                    <label for="qq" class="input-tips2">Tele：</label>
+                    <label for="qq" class="input-tips2">Tele*：</label>
                     <div class="inputOuter2">
                         
                         <input type="text" id="qq" name="qq" maxlength="10" class="inputstyle2"/>
@@ -105,18 +115,18 @@
                     
                 </li>
 
-                
+                * fields are optional.<br/>
+                I agree to the <a href="#" class="zcxy" target="_blank">Privacy &amp; Conditions</a>.
                 <li>
                     <div class="inputArea">
-                        <input type="button" id="reg"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="Agree"/> <a href="#" class="zcxy" target="_blank">protocol</a>
+                        <input type="button" id="reg"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="Submit"/> 
                     </div>
                     
                 </li><div class="cl"></div>
-            </ul></form>
-           
+            </ul>
+        </form>
     
             </div>  
-   
     
             </div>
     <!--注册end-->
