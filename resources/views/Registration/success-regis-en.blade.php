@@ -35,7 +35,7 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Hi {{$user}}!
+                        Hi!
                     </a>
                 </li>
                 <li>
@@ -65,10 +65,12 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper"> 
-
-        @yield('content')
-        
-        </div>
+            <h1>A big welcome from your future unimates!</h1>
+            <br/>
+            <h3>Feel free to explore.</h3>
+            <br/>
+            <a type="button" class="btn btn-default" href="index">To Index</a>
+        </div>    
         <!-- /#page-content-wrapper -->
 
     </div>
