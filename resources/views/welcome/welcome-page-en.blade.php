@@ -81,7 +81,6 @@ under Apache 2.0 by Start Bootstrap
                                             <option value="phd">PHD</option>
                                             <option value="otd">Others</option>       
                                         </select>
-       
                                 </section>
 
                                 <section name="Ranking">
@@ -142,17 +141,24 @@ under Apache 2.0 by Start Bootstrap
                                     <label><input type="checkbox" name="langs[]" value="Spanish"/>University of Melbourne</label>
                                 </section>
 
-                                <section name="Degree">   
-                                    <option value="default">&ndash; choose degree &ndash;</option>
-                                    <option value="AR">High School</option>
-                                    <option value="AL">Bachelor</option>
-                                    <option value="AK">Master</option>
-                                    <option value="AZ">PHD</option>
-                                    <option value="CA">Others</option>   
+                                <section name="Degree">
+                                        <p class="lead">What's your current degree?</p>
+                                        <select name="states">
+                                            <option value="hs">High School</option>
+                                            <option value="ba">Bachelor</option>
+                                            <option value="ma">Master</option>
+                                            <option value="phd">PHD</option>
+                                            <option value="otd">Others</option>       
+                                        </select>
                                 </section>
-                                
-                                <section name="Advantage">   
-                                    <textarea NAME="Advantage" COLS=50 ROWS=10 maxlength="1000"></textarea>   
+
+                                <section name="Ability">
+                                        <p class="lead">How can you help your future unimates?</p>
+                                        <select name="states">
+                                            <option value="hs">Essay Editing</option>
+                                            <option value="ba">Everyday Life</option>
+                                            <option value="ma">Admission Issues</option>      
+                                        </select>
                                 </section>
    
                             </form> 
