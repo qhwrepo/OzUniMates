@@ -14,7 +14,7 @@ class RegisController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function enindex()
     {
         return view('Registration.register-en');
     }

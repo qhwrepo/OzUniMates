@@ -13,14 +13,14 @@ class WelcomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function cnindex()
     {
-        return view('welcome.welcome-page-en');
+        return view('welcome.welcome-page-cn');
     }
 
-    public function cnindex()
+    public function enindex()
 	{
-	    return view('welcome.welcome-page-cn');
+	    return view('welcome.welcome-page-en');
 	}
 
 }

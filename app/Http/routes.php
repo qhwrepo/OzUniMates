@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/','WelcomeController@index');
-Route::get('en','WelcomeController@index');
+Route::get('/','WelcomeController@cnindex');
 Route::get('cn','WelcomeController@cnindex');
+Route::get('en','WelcomeController@enindex');
 
 Route::get('en/index','MainController@index');
 
@@ -23,7 +23,7 @@ Route::post('en/user/store','UserController@store');
 
 Route::post('en/user/login','LoginController@index');
 
-Route::get('en/regisnlogin','RegisController@index');
+Route::get('en/regisnlogin','RegisController@enindex');
 Route::get('cn/regisnlogin','RegisController@cnindex');
 Route::get('en/success-regis','RegisController@success');
 
