@@ -12,7 +12,7 @@ under Apache 2.0 by Start Bootstrap
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
-    <title>澳洲师兄 - 遇见未来的校友</title>
+    <title>澳联帮 - 遇见未来的校友</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -41,14 +41,15 @@ under Apache 2.0 by Start Bootstrap
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
-            <h1>澳洲师兄</h1>
+            <h1>澳联帮</h1>
             <h3>遇见未来的校友</h3>
+            <div class="or-spacer">
+              <div class="mask"></div>
+            </div>
             <br>
-            <a href="newstudent" class="btn btn-dark btn-lg">找校友</a>
-            <a href="newcounselor" class="btn btn-dark btn-lg">帮校友</a>
+            <a href="newstudent" class="link-home"><i class="fa fa-users fa-2x"></i> 我要找校友</a>
+            <a href="newcounselor" class="link-home"><i class="fa fa-user-secret fa-2x"></i> 我能帮校友</a>
             <br><br>
-<!--             <a href="index" class="btn btn-dark btn-lg">随便看看</a>
-            <br><br> -->
             <a href="#about" class="fa fa-angle-double-down" id="tellMore"></a>
         </div>
     </header>
@@ -244,6 +245,7 @@ under Apache 2.0 by Start Bootstrap
             }
         });
     });
+
     </script>
 
 </body>
