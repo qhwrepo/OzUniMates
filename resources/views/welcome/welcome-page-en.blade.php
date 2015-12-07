@@ -184,11 +184,12 @@ under Apache 2.0 by Start Bootstrap
         <div class="text-vertical-center">
             <h1>OzUnimates</h1>
             <h3>Meet future university mates.</h3>
+            <div class="or-spacer">
+              <div class="mask"></div>
+            </div>
             <br>
-            <a class="btn btn-dark btn-lg" data-toggle="modal" data-target="#myModal1">Start As a Student</a>
-            <a class="btn btn-dark btn-lg" data-toggle="modal" data-target="#myModal2">Start As a Counselor</a>
-            <br><br>
-            <a href="en/index" class="btn btn-dark btn-lg">See who's here!</a>
+            <a href="newstudent" class="link-home"><i class="fa fa-users fa-2x"></i> Find Unimates</a>
+            <a href="newcounselor" class="link-home"><i class="fa fa-user-secret fa-2x"></i> Help Unimates</a>
             <br><br>
             <a href="#about" class="fa fa-angle-double-down" id="tellMore"></a>
         </div>
