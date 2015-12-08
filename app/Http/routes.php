@@ -15,7 +15,8 @@ Route::get('/','WelcomeController@cnindex');
 Route::get('cn','WelcomeController@cnindex');
 Route::get('en','WelcomeController@enindex');
 
-Route::get('en/index','MainController@index');
+Route::get('cn/index','MainController@cnindex');
+Route::get('en/index','MainController@enindex');
 
 Route::get('en/users/{id}','UserController@show');
 Route::get('en/user/create','UserController@create');
