@@ -413,13 +413,7 @@ under Apache 2.0 by Start Bootstrap
     
     var $myforma = $('#my-forma').idealforms(options).data('idealforms');
      var $myformb = $('#my-formb').idealforms(options).data('idealforms');
-    
-    
-    $('#reset').click(function(){
-                      $myform.reset().fresh().focusFirst()
-                      });
-                      
-                      $myform.focusFirst();
+        
     </script>
 
 </body>
