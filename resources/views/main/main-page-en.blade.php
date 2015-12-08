@@ -4,6 +4,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
+            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
             <h1>Your future unimates:</h1>
             
             @foreach($users as $user)
@@ -11,8 +12,7 @@
             <p>{{$user->email}}</p>
             <br>
             @endforeach
-
-            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+            
         </div>
     </div>
 </div>

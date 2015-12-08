@@ -6,6 +6,11 @@
 
 /* Toggle Styles */
 
+body {
+    font-family:"WenQuanYi Micro Hei","Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif,
+    "Hiragino Sans GB", "Microsoft YaHei";
+}
+
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -61,13 +66,14 @@
 
 .sidebar-nav li {
     text-indent: 20px;
-    line-height: 40px;
+    line-height: 80px;
 }
 
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
     color: #fff;
+    font-size: 20px;
 }
 
 .sidebar-nav li a:hover {
