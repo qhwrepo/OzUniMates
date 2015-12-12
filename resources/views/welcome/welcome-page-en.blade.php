@@ -17,10 +17,7 @@ under Apache 2.0 by Start Bootstrap
     <link href="/css/normalize.css" rel="stylesheet"/>
     <link href="/css/jquery-ui.css" rel="stylesheet"/>
     <link href="/css/jquery.idealforms.min.css" rel="stylesheet" media="screen"/>
-    <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link href="/css/welcome-page.css" rel="stylesheet">
 
     <!-- Custom Fonts -->

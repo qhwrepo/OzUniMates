@@ -14,10 +14,11 @@ under Apache 2.0 by Start Bootstrap
 
     <title>澳联帮 - 遇见未来的校友</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
+    <link href="/css/normalize.css" rel="stylesheet"/>
+    <link href="/css/jquery-ui.css" rel="stylesheet"/>
+    <link href="/css/jquery.idealforms.min.css" rel="stylesheet" media="screen"/>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/welcome-page.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -222,7 +223,7 @@ under Apache 2.0 by Start Bootstrap
     </footer>
 
     <!-- jQuery -->
-    <script src="/js/jquery.js"></script>
+    <script src="/js/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
