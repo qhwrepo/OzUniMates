@@ -2,41 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Requests;
+use Request;
 use App\Http\Controllers\Controller;
-use App\User;
 
-class RegisController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function enindex()
+    public function index()
     {
-        return view('Registration.register-en');
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function cnindex()
-    {
-        return view('Registration.register-cn');
-    }
-
-    /**
-     * Display a listing of the resource.
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function success()
-    {
-        return view('Registration.success-regis-en');
+        
     }
 
     /**
@@ -46,7 +24,7 @@ class RegisController extends Controller
      */
     public function create()
     {
-        //
+        return view('student.register-cn');
     }
 
     /**
@@ -57,7 +35,8 @@ class RegisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = Request::all();
+        return $input;
     }
 
     /**

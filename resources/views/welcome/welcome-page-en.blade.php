@@ -173,8 +173,8 @@ under Apache 2.0 by Start Bootstrap
         </div>
     </div>
 
-    <a id="log-toggle" href="en/regisnlogin" class="btn btn-dark btn-lg toggle">Login</a>
-    <a id="cn-toggle" href="cn" class="btn btn-dark btn-lg toggle">中文</a>
+    <a id="log-toggle" href="en/regisnlogin" class="navBtn btn btn-lg">Login</a>
+    <a id="cn-toggle" href="cn" class="navBtn btn btn-lg">中文</a>
 
     <!-- Header -->
     <header id="top" class="header">

@@ -21,14 +21,10 @@ Route::get('/index','MainController@cnindex');
 Route::get('cn/index','MainController@cnindex');
 Route::get('en/index','MainController@enindex');
 
-Route::get('en/users/{id}','UserController@show');
-Route::get('en/user/create','UserController@create');
-Route::post('en/user/store','UserController@store');
-
 Route::post('en/user/login','LoginController@index');
 
-Route::get('en/regisnlogin','RegisController@enindex');
-Route::get('cn/regisnlogin','RegisController@cnindex');
-Route::get('en/success-regis','RegisController@success');
+Route::get('student/new','StudentController@create');
+Route::post('student/store','StudentController@store');
+
 
 

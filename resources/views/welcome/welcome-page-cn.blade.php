@@ -16,8 +16,6 @@ under Apache 2.0 by Start Bootstrap
 
 
     <link href="/css/normalize.css" rel="stylesheet"/>
-    <link href="/css/jquery-ui.css" rel="stylesheet"/>
-    <link href="/css/jquery.idealforms.min.css" rel="stylesheet" media="screen"/>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/welcome-page.css" rel="stylesheet">
 
@@ -35,21 +33,21 @@ under Apache 2.0 by Start Bootstrap
 
 <body>
 
-    <a id="log-toggle" href="cn/regisnlogin" class="btn btn-dark btn-lg toggle">登录</a>
-    <a id="cn-toggle" href="en" class="btn btn-dark btn-lg toggle">English</a>
+    <a id="log-toggle" href="cn/regisnlogin" class="navBtn btn btn-lg">登录</a>
+    <a id="cn-toggle" href="en" class="navBtn btn btn-lg">English</a>
 
 
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
             <h1>澳联帮</h1>
-            <h3>遇见未来的校友</h3>
+            <h3><br/>申请就那么回事<br/><br/>比起中介，为何不直接找师兄师姐呢？</h3>
             <div class="or-spacer">
               <div class="mask"></div>
             </div>
             <br>
-            <a href="newstudent" class="link-home"><i class="fa fa-users fa-2x"></i> 我要找校友</a>
-            <a href="newcounselor" class="link-home"><i class="fa fa-user-secret fa-2x"></i> 我能帮校友</a>
+            <a href="student/new" class="link-home"><i class="fa fa-users fa-2x"></i> 我要找师兄</a>
+            <a href="newcounselor" class="link-home"><i class="fa fa-user-secret fa-2x"></i> 我就是师兄</a>
             <br><br>
             <a href="#about" class="fa fa-angle-double-down" id="tellMore"></a>
         </div>
@@ -70,7 +68,6 @@ under Apache 2.0 by Start Bootstrap
     </section>
 
     <!-- Services -->
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
     <section id="services" class="services bg-primary">
         <div class="container">
             <div class="row text-center">
