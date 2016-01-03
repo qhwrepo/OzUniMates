@@ -15,6 +15,10 @@ h2 {
 	margin-top: 60px;
 }
 
+.hidden {
+	display: none;
+}
+
 /*form styles*/
 #msform {
 	width: 90%;
@@ -85,6 +89,7 @@ a:hover {
   line-height: 70px; 
   position: absolute; 
 }
+
 /*headings*/
 .fs-title {
 	font-size: 21px;

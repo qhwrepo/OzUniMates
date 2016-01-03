@@ -7,6 +7,10 @@ var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
+var degree;
+var countries = [];
+var ranks = [];
+
 $(".next").click(function(){
 	if(animating) return false;
 	animating = true;
@@ -80,3 +84,30 @@ $(".previous").click(function(){
 $(".submit").click(function(){
 	return false;
 })
+
+$(".action-button").click(function() {
+	this.style.boxShadow = "0 0 0 1px white, 0 0 0 5px #6b6b6b";
+})
+
+
+function setDegree(deg) {
+	degree = deg;
+}
+
+function addCountry(country) {
+	countries.push(country);
+}
+
+function addRank(rank) {
+	ranks.push(rank);
+}
+
+function msSubmit() {
+	daForm = document.forms['msform'];
+	daForm.elements['degree'].value = degree;
+	daForm.elements['countries'].value = countries;
+	daForm.elements['ranks'].value = ranks;
+	document.getElementById('msform').submit();
+}
+
+

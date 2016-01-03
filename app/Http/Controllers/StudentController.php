@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Request;
 use App\Http\Controllers\Controller;
+use App\Student;
 
 class StudentController extends Controller
 {
@@ -14,7 +15,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        
+        $students = Student::all();
+        return;
     }
 
     /**
@@ -33,10 +35,11 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         $input = Request::all();
-        return $input;
+        Student::create($input);
+        return redirect('/');
     }
 
     /**
