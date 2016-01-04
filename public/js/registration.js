@@ -7,9 +7,19 @@ var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
+// new student 
 var degree;
 var countries = [];
 var ranks = [];
+
+// new consultant
+var country;
+var university;
+var uniIndex = {
+	'牛津大学' : 'oxford',
+	'剑桥大学' : 'cambridge',
+	'康奈尔大学' : 'cornell'
+}
 
 $(".next").click(function(){
 	if(animating) return false;
@@ -83,15 +93,57 @@ $(".previous").click(function(){
 
 $(".submit").click(function(){
 	return false;
-})
+});
 
 $(".action-button").click(function() {
 	this.style.boxShadow = "0 0 0 1px white, 0 0 0 5px #6b6b6b";
-})
+});
 
+$('.selectpicker').selectpicker({
+  style: 'btn-primary',
+});
+
+$(".con").click(function() {
+	$(".bootstrap-select").hide();
+	switch(this.value) {
+		case '美国': {
+			$(".usauni").show();
+			break;
+		}
+		case '澳大利亚': {
+			$(".ozuni").show();
+			break;
+		}
+		case '英国': {
+			$(".ukuni").show();
+			break;
+		}
+		case '加拿大': {
+			$(".canadauni").show();
+			break;
+		}
+		case '法国': {
+			$(".franceuni").show();
+			break;
+		}
+		case '其他': {
+			$(".otheruni").show();
+			break;
+		}
+		default:;
+	}
+});
 
 function setDegree(deg) {
 	degree = deg;
+}
+
+function setCountry(coun) {
+	country = coun;
+}
+
+function setUniversity(uni) {
+	university = uniIndex[uni];
 }
 
 function addCountry(country) {
@@ -102,12 +154,23 @@ function addRank(rank) {
 	ranks.push(rank);
 }
 
-function msSubmit() {
-	daForm = document.forms['msform'];
-	daForm.elements['degree'].value = degree;
-	daForm.elements['countries'].value = countries;
-	daForm.elements['ranks'].value = ranks;
-	document.getElementById('msform').submit();
+function msSubmit(type) {
+	// student registration
+	if(type == 1) {
+		daForm = document.forms['msform'];
+		daForm.elements['degree'].value = degree;
+		daForm.elements['countries'].value = countries;
+		daForm.elements['ranks'].value = ranks;
+		document.getElementById('msform').submit();
+	}
+	// consultant registration
+	if(type == 2) {
+		daForm = document.forms['msform'];
+		daForm.elements['degree'].value = degree;
+		daForm.elements['country'].value = country;
+		daForm.elements['university'].value = university;
+		document.getElementById('msform').submit();
+	}
 }
 
 

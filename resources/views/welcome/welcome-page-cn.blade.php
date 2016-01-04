@@ -47,7 +47,7 @@ under Apache 2.0 by Start Bootstrap
             </div>
             <br>
             <a href="student/new" class="link-home"><i class="fa fa-users fa-2x"></i> 我要找师兄</a>
-            <a href="newcounselor" class="link-home"><i class="fa fa-user-secret fa-2x"></i> 我就是师兄</a>
+            <a href="consultant/new" class="link-home"><i class="fa fa-user-secret fa-2x"></i> 我就是师兄</a>
             <br><br>
             <a href="#about" class="fa fa-angle-double-down" id="tellMore"></a>
         </div>
