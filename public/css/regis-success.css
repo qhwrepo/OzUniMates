@@ -1,0 +1,92 @@
+html {
+/*    background: linear-gradient(#8b9da9, #fff6e4);
+    box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
+    min-height: 100%;*/
+    background: rgb(105,155,200);
+background: -moz-radial-gradient(top left, ellipse cover, rgba(105,155,200,1) 0%, rgba(181,197,216,1) 57%);
+ background: -webkit-gradient(radial, top left, 0px, top left, 100%, color-stop(0%,rgba(105,155,200,1)), color-stop(57%,rgba(181,197,216,1)));
+ background: -webkit-radial-gradient(top left, ellipse cover, rgba(105,155,200,1) 0%,rgba(181,197,216,1) 57%);
+ background: -o-radial-gradient(top left, ellipse cover, rgba(105,155,200,1) 0%,rgba(181,197,216,1) 57%);
+ background: -ms-radial-gradient(top left, ellipse cover, rgba(105,155,200,1) 0%,rgba(181,197,216,1) 57%);
+ background: radial-gradient(ellipse at top left, rgba(105,155,200,1) 0%,rgba(181,197,216,1) 57%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#699bc8', endColorstr='#b5c5d8',GradientType=1 );
+}
+
+body {
+	text-align: center;
+	font-family:"WenQuanYi Micro Hei","Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif,
+    "Hiragino Sans GB", "Microsoft YaHei";
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height:85vh;
+}
+
+a {
+	color:#000;
+	text-decoration: none;
+	border:2px solid black;
+	padding:10px;
+	cursor: pointer;
+	width:100px;
+	height:50px;
+	margin:auto;
+}
+
+a:hover {
+	border-color:#333;
+	color:#333;
+}
+
+.hint {
+	opacity: 0;
+	padding-right: 10%;
+	font-size: 1.5em;
+	margin-top: 10px;
+}
+
+#hint1 {
+	animation : translate 3s forwards;
+	animation-delay: 1s;
+}
+
+#hint2 {
+	animation : translate 3s forwards;
+	animation-delay: 4s;
+}
+
+#hint3 {
+	margin-bottom: 30px;
+	animation : translate 3s forwards;
+	animation-delay: 7s;
+}
+
+#hint4 {
+	animation : translate 3s forwards;
+	animation-delay: 10s;
+}
+
+#hint5 {
+	animation : translate 3s forwards;
+	animation-delay: 13s;
+}
+
+#hint6 {
+	padding-right: 0;
+	margin-top:30px;
+	animation : translate2 1s forwards;
+	animation-delay: 16s;
+}
+
+@keyframes translate{
+  0% { opacity : 0; padding-left : 0; }
+  80% { opacity : 1; padding-left : 10%; }
+  100% { opacity : 1; padding-left : 10%; }
+}
+
+@keyframes translate2{
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+

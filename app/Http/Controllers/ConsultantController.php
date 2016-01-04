@@ -35,8 +35,10 @@ class ConsultantController extends Controller
      */
     public function store()
     {
-        $input = Request::all();
-        return $input;
+        $consultant = Request::all();
+
+        return view('consultant.regis-success-cn',compact('consultant'));
+
     }
 
     /**
