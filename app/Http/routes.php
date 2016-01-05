@@ -20,13 +20,12 @@ Route::get('/magic','MagicController@index');
 
 Route::get('student/register','Auth\AuthController@getStudentRegister');
 Route::get('consultant/register','Auth\AuthController@getConsultantRegister');
-
 Route::post('login','Auth\AuthController@postLogin');
 Route::post('student/register','Auth\AuthController@postRegister');
 Route::post('consultant/register','Auth\AuthController@postRegister');
-
-
 Route::get('logout', 'Auth\AuthController@getLogout');
 
+
+Route::get('home','StudentController@index');
 
 

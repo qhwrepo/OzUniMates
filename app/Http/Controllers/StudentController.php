@@ -15,8 +15,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
-        return;
+        return view('student.home');
     }
 
     /**
