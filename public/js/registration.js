@@ -58,6 +58,10 @@ $(".next").click(function(){
 });
 
 $(".previous").click(function(){
+	for(var i=0;i<$(".action-button").size();i++) {
+		$(".action-button")[i].style.boxShadow = 'none';
+	}
+
 	if(animating) return false;
 	animating = true;
 	
