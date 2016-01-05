@@ -15,7 +15,7 @@
 
 <!-- multistep form -->
 
-{!! Form::open(['id'=>'msform','url'=>'student/store']) !!}
+{!! Form::open(['id'=>'msform','url'=>'student/register']) !!}
     <!-- progressbar -->
     <ul class="progressbar" id="stupb">
         <li class="active"></li>

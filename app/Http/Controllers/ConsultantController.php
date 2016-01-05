@@ -36,9 +36,9 @@ class ConsultantController extends Controller
      */
     public function store()
     {
-        $consultant = Request::all();
-        Consultant::create($consultant);
-        return view('consultant.regis-success-cn',compact('consultant'));
+        // $consultant = Request::all();
+        // Consultant::create($consultant);
+        // return view('consultant.regis-success-cn',compact('consultant'));
 
     }
 

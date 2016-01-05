@@ -33,8 +33,22 @@ under Apache 2.0 by Start Bootstrap
 
 <body>
 
-    <a id="log-toggle" href="cn/regisnlogin" class="navBtn btn btn-lg">登录</a>
-    <a id="cn-toggle" href="en" class="navBtn btn btn-lg">English</a>
+    <a id="logbtn" class="navBtn btn btn-lg" href="#formModal">登录</a>
+    <a id="languagebtn" href="en" class="navBtn btn btn-lg">English</a>
+
+    {!! Form::open(['url'=>'login','style'=>'display:none;','id'=>'formModal']) !!}
+    <div id="loginForm">   
+        <div class="username">
+          <input type="text" name="username" placeholder="用户名"/>
+        </div>
+        <div class="password">
+          <input type="password" name="password" placeholder="密码"/>
+        </div>
+        <div class="login">
+            {!! Form::submit('登录',[]) !!}
+        </div> 
+    </div>
+    {!! Form::close() !!}
 
 
     <!-- Header -->
@@ -46,8 +60,8 @@ under Apache 2.0 by Start Bootstrap
               <div class="mask"></div>
             </div>
             <br>
-            <a href="student/new" class="link-home"><i class="fa fa-users fa-2x"></i> 我要找师兄</a>
-            <a href="consultant/new" class="link-home"><i class="fa fa-user-secret fa-2x"></i> 我就是师兄</a>
+            <a href="student/register" class="link-home"><i class="fa fa-users fa-2x"></i> 我要找师兄</a>
+            <a href="consultant/register" class="link-home"><i class="fa fa-user-secret fa-2x"></i> 我就是师兄</a>
             <br><br>
             <a href="#about" class="fa fa-angle-double-down" id="tellMore"></a>
         </div>
@@ -220,10 +234,11 @@ under Apache 2.0 by Start Bootstrap
     </footer>
 
     <!-- jQuery -->
-    <script src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.leanModal.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script>
@@ -243,6 +258,8 @@ under Apache 2.0 by Start Bootstrap
             }
         });
     });
+
+    $("#logbtn").leanModal({top : 300, overlay : 0.6, closeButton: ".modal_close"} );
 
     </script>
 

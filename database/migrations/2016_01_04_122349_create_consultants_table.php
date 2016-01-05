@@ -16,13 +16,14 @@ class CreateConsultantsTable extends Migration
             $table->increments('id');
             $table->string('username')->unique();
             $table->string('password');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('wechat');
             $table->string('degree');
             $table->string('country');
             $table->string('university');
             $table->string('skills');
             $table->timestamps();
+            $table->rememberToken();
         });
     }
 

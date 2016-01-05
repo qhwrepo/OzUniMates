@@ -158,7 +158,7 @@ hr.small {
     background: none;
 }
 
-#log-toggle {
+#logbtn {
     z-index: 1;
     position: fixed;
     top: 0;
@@ -166,7 +166,7 @@ hr.small {
     font-size: small;
 }
 
-#cn-toggle {
+#languagebtn {
     z-index: 1;
     position: fixed;
     top: 43px;
@@ -301,4 +301,108 @@ hr.small {
   line-height: 40px;
   font-style: normal;
   color: #999;
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+#loginForm {
+  height: 18.75em;
+  width: 25em;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  margin-left: inherit !important;
+}
+
+#loginForm > div {
+  height: 6.25em;
+  width: 100%;
+}
+
+.username {
+  background-color: #337AB7;
+}
+
+.username::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-style: solid;
+  border-width: 0.5em 0.469em 0 0.469em;
+  border-color: #337AB7 transparent transparent transparent;
+  top: 6.25em;
+  left: 50%;
+  margin-left: -0.496em;
+}
+
+.password {
+  background-color: #404241;
+}
+
+.password::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-style: solid;
+  border-width: 0.5em 0.469em 0 0.469em;
+  border-color: #404241 transparent transparent transparent;
+  top: 12.5em;
+  left: 50%;
+  margin-left: -0.496em;
+}
+
+.login {
+  background-color: #e9c85d;
+  display: table;
+}
+
+.login span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size:3em;
+  cursor: pointer;
+}
+
+input {
+  height: 1.25em;
+  width: 8.125em;
+  font-size: 2em;
+  text-align:center;
+  border: none;
+  outline: 0;
+  color: #fff;
+  background: transparent;
+  margin-left: 2.1875em;
+  margin-top: 1em;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+::-moz-placeholder {
+  color: #fff;
+}
+
+:-ms-input-placeholder {
+  color: #fff;
+}
+
+::-webkit-input-placeholder {
+  color: #fff;
 }

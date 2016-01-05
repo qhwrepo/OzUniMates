@@ -37,9 +37,9 @@ class StudentController extends Controller
      */
     public function store()
     {
-        $input = Request::all();
-        Student::create($input);
-        return redirect('/');
+        // $input = Request::all();
+        // Student::create($input);
+        // return redirect('/');
     }
 
     /**

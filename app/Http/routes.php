@@ -17,19 +17,16 @@ Route::get('en','WelcomeController@enindex');
 
 Route::get('/magic','MagicController@index');
 
-Route::get('/index','MainController@cnindex');
-Route::get('cn/index','MainController@cnindex');
-Route::get('en/index','MainController@enindex');
 
-Route::post('en/user/login','LoginController@index');
+Route::get('student/register','Auth\AuthController@getStudentRegister');
+Route::get('consultant/register','Auth\AuthController@getConsultantRegister');
 
-Route::get('student/new','StudentController@create');
-Route::post('student/store','StudentController@store');
-Route::get('student/index','StudentController@index');
+Route::post('login','Auth\AuthController@postLogin');
+Route::post('student/register','Auth\AuthController@postRegister');
+Route::post('consultant/register','Auth\AuthController@postRegister');
 
-Route::get('consultant/new','ConsultantController@create');
-Route::post('consultant/store','ConsultantController@store');
 
+Route::get('logout', 'Auth\AuthController@getLogout');
 
 
 

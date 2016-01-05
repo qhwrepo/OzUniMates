@@ -16,12 +16,13 @@ class CreateStudentsTable extends Migration
             $table->increments('id');
             $table->string('username')->unique();
             $table->string('password');
-            $table->string('email');
-            $table->string('wechat')->unique();
+            $table->string('email')->unique();
+            $table->string('wechat');
             $table->string('degree');
             $table->string('countries');
             $table->string('ranks');
             $table->timestamps();
+            $table->rememberToken();
         });
     }
 
