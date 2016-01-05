@@ -18,14 +18,9 @@ class StudentController extends Controller
         return view('student.home');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function newbee()
     {
-        return view('student.register-cn');
+        return view('student.regis-success-cn');
     }
 
     /**
@@ -36,9 +31,6 @@ class StudentController extends Controller
      */
     public function store()
     {
-        // $input = Request::all();
-        // Student::create($input);
-        // return redirect('/');
     }
 
     /**
@@ -49,7 +41,6 @@ class StudentController extends Controller
      */
     public function show($username)
     {       
-        return $username;
     }
 
     /**

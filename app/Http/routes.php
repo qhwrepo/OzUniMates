@@ -21,11 +21,15 @@ Route::get('/magic','MagicController@index');
 Route::get('student/register','Auth\AuthController@getStudentRegister');
 Route::get('consultant/register','Auth\AuthController@getConsultantRegister');
 Route::post('login','Auth\AuthController@postLogin');
-Route::post('student/register','Auth\AuthController@postRegister');
-Route::post('consultant/register','Auth\AuthController@postRegister');
+Route::post('student/register','Auth\AuthController@postStudentRegister');
+Route::post('consultant/register','Auth\AuthController@postConsultantRegister');
 Route::get('logout', 'Auth\AuthController@getLogout');
 
 
-Route::get('home','StudentController@index');
+Route::get('student/regis-success','StudentController@newbee');
+Route::get('student/home','StudentController@index');
+
+Route::get('consultant/regis-success','ConsultantController@newbee');
+Route::get('consultant/home','ConsultantController@index');
 
 

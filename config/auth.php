@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => App\Student::class,
+    'model' => App\Student::class, App\Consultant::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'table' => 'students',
+    'table' => 'students', 'consultants',
 
     /*
     |--------------------------------------------------------------------------

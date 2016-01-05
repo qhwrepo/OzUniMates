@@ -15,8 +15,14 @@ class ConsultantController extends Controller
      */
     public function index()
     {
-        //
+        return view('consultant.home');
     }
+
+    public function newbee()
+    {
+        return view('consultant.regis-success-cn');
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -25,7 +31,6 @@ class ConsultantController extends Controller
      */
     public function create()
     {
-        return view('consultant.register-cn');
     }
 
     /**
@@ -36,9 +41,6 @@ class ConsultantController extends Controller
      */
     public function store()
     {
-        // $consultant = Request::all();
-        // Consultant::create($consultant);
-        // return view('consultant.regis-success-cn',compact('consultant'));
 
     }
 

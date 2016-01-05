@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use Validator;
 use App\Student;
+use App\Consultant;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -67,6 +70,20 @@ class AuthController extends Controller
         ]);
     }
 
+    protected function createConsultant(array $data)
+    {
+        return Consultant::create([
+            'username' => $data['username'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+            'wechat' => $data['wechat'],
+            'degree' => $data['degree'],
+            'country' => $data['country'],
+            'university' => $data['university'],
+            'skills' => $data['skills'],
+        ]);
+    }
+
     public function getStudentRegister()
     {
         return view('auth.register-student-cn');
@@ -75,5 +92,35 @@ class AuthController extends Controller
     public function getConsultantRegister()
     {
         return view('auth.register-consultant-cn');
+    }
+
+    // override register/lonin methods
+
+    public function postStudentRegister(Request $request)
+    {
+        $validator = $this->validator($request->all());
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+        Auth::login($this->create($request->all()));
+        
+        return redirect('student/regis-success');
+
+    }
+
+    public function postConsultantRegister(Request $request)
+    {
+        $validator = $this->validator($request->all());
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+        Auth::login($this->createConsultant($request->all()));
+        
+        return redirect('consultant/regis-success');
+
     }
 }
