@@ -25,9 +25,11 @@ Route::post('en/user/login','LoginController@index');
 
 Route::get('student/new','StudentController@create');
 Route::post('student/store','StudentController@store');
+Route::get('student/index','StudentController@index');
 
 Route::get('consultant/new','ConsultantController@create');
 Route::post('consultant/store','ConsultantController@store');
+
 
 
 

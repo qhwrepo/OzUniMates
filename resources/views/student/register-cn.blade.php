@@ -8,7 +8,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="disableSubmit()">
 
   
 <h2>先来点基本信息吧。</h2>
@@ -40,10 +40,10 @@
         <input type="button" class="action-button" value="澳大利亚" onclick="addCountry('oz')"/>
         <input type="button" class="action-button" value="法国" onclick="addCountry('france')"/>
         <input type="button" class="action-button" value="其他" onclick="addCountry('other')"/>
-        <input type="text" name="countries" class="hidden" />
+        <input type="text" name="countries" class="hidden"/>
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
-        <a class="next fa fa-chevron-circle-right fa-3x"></a>
+        <a class="next fa fa-chevron-circle-right fa-3x" id="aCountries"></a>
     </fieldset>
     <fieldset>
         <h2 class="fs-title">目标学校的世界排名（可多选）？</h2>
@@ -55,14 +55,14 @@
         <input type="text" name="ranks" class="hidden" />
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
-        <a class="next fa fa-chevron-circle-right fa-3x"></a>
+        <a class="next fa fa-chevron-circle-right fa-3x" id="aRanks"></a>
     </fieldset>
     <fieldset>
         <h2 class="fs-title">一些注册信息</h2>
-        <input type="text" name="username" placeholder="用户名" class="textInput" />
-        <input type="password" name="password" placeholder="密码" class="textInput" />
-        <input type="password" name="repeatpassword" placeholder="重复密码" class="textInput" />
-        <input type="email" name="email" placeholder="邮箱，可以不填" class="textInput" />
+        <input type="text" name="username" placeholder="用户名,大于6位的字母数字组合" class="textInput" />
+        <input type="password" name="password" placeholder="密码,大于6位" class="textInput" />
+        <input type="password" name="repeatpassword" placeholder="重复密码" class="textInput"/>
+        <input type="email" name="email" placeholder="邮箱" class="textInput" />
         <input type="text" name="wechat" placeholder="微信，可以不填" class="textInput" />
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
         <a class="submit fa fa-check-circle fa-3x" onclick="msSubmit(1);"></a>

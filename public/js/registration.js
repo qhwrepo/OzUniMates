@@ -22,6 +22,9 @@ var uniIndex = {
 	'康奈尔大学' : 'cornell'
 }
 
+var daForm = document.forms['msform'];
+var passwordOk;
+
 $(".next").click(function(){
 	if(animating) return false;
 	animating = true;
@@ -104,10 +107,6 @@ $(".action-button").click(function() {
 	this.style.boxShadow = "0 0 0 1px white, 0 0 0 5px #6b6b6b";
 });
 
-$('.selectpicker').selectpicker({
-  style: 'btn-primary',
-});
-
 $(".con").click(function() {
 	$(".bootstrap-select").hide();
 	switch(this.value) {
@@ -139,6 +138,50 @@ $(".con").click(function() {
 	}
 });
 
+$(".textInput").change(function() {
+	// check password
+	if(daForm.elements['password'].value != daForm.elements['repeatpassword'].value || daForm.elements['password'].value.length<6) {
+		daForm.elements['password'].style.borderColor = 'red';
+		daForm.elements['repeatpassword'].style.borderColor = 'red';
+		passwordOk = false;
+		$(".submit").addClass("not-active");
+		return;
+	}
+	else {
+		daForm.elements['password'].style.borderColor = '#CCC';
+		daForm.elements['repeatpassword'].style.borderColor = '#CCC';
+		passwordOk = true;
+	}
+
+	// check username
+	if(daForm.elements['username'].value.length<6) {
+		alert("用户名应是大于6位的字母数字组合");
+		$(".submit").addClass("not-active");
+		return;
+	}
+
+	// check email
+	if(daForm.elements['email'].value.length<5) {
+		daForm.elements['email'].style.borderColor = 'red';
+		$(".submit").addClass("not-active");
+		return;
+	}
+	else {
+		daForm.elements['email'].style.borderColor = '#CCC';
+	}
+
+	if(passwordOk) {
+		$(".submit").removeClass("not-active");
+		return;
+	}
+});
+
+function disableSubmit() {
+	$(".submit").addClass("not-active");
+	$(".fa-chevron-circle-right").addClass("not-active");
+	passwordOk = false;
+}
+
 function setDegree(deg) {
 	degree = deg;
 }
@@ -149,24 +192,27 @@ function setCountry(coun) {
 
 function setUniversity(uni) {
 	university = uniIndex[uni];
+	$("#aUniversity").removeClass("not-active");
 }
 
 function addCountry(country) {
 	countries.push(country);
+	$("#aCountries").removeClass("not-active");
 }
 
 function addRank(rank) {
 	ranks.push(rank);
+	$("#aRanks").removeClass("not-active");
 }
 
 function addSkill(skill) {
 	skills.push(skill);
+	$("#aSkills").removeClass("not-active");
 }
 
 function msSubmit(type) {
 	// student registration
 	if(type == 1) {
-		daForm = document.forms['msform'];
 		daForm.elements['degree'].value = degree;
 		daForm.elements['countries'].value = countries;
 		daForm.elements['ranks'].value = ranks;
@@ -174,7 +220,6 @@ function msSubmit(type) {
 	}
 	// consultant registration
 	if(type == 2) {
-		daForm = document.forms['msform'];
 		daForm.elements['degree'].value = degree;
 		daForm.elements['country'].value = country;
 		daForm.elements['university'].value = university;

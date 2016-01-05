@@ -12,7 +12,7 @@
     
 </head>
 
-<body>
+<body onload="disableSubmit()">
   
 <h2>先来点基本信息吧。</h2>
 
@@ -112,7 +112,7 @@
         <input type="text" name="university" class="hidden" />
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
-        <a class="next fa fa-chevron-circle-right fa-3x"></a>
+        <a class="next fa fa-chevron-circle-right fa-3x" id="aUniversity"></a>
     </fieldset>
     <fieldset>
         <h2 class="fs-title">你能在哪些方面帮助师弟师妹呢（可多选）？</h2>
@@ -125,13 +125,13 @@
         <input type="text" name="skills" class="hidden" />
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
-        <a class="next fa fa-chevron-circle-right fa-3x"></a>
+        <a class="next fa fa-chevron-circle-right fa-3x" id="aSkills"></a>
     </fieldset>
     <fieldset>
         <h2 class="fs-title">一些注册信息</h2>
-        <input type="text" name="username" placeholder="用户名" class="textInput" />
-        <input type="password" name="password" placeholder="密码" class="textInput" />
-        <input type="password" name="repeatpassword" placeholder="重复密码" class="textInput" />
+        <input type="text" name="username" placeholder="用户名,大于6位的字母数字组合" class="textInput" />
+        <input type="password" name="password" placeholder="密码,大于6位" class="textInput" />
+        <input type="password" name="repeatpassword" placeholder="重复密码" class="textInput"/>
         <input type="email" name="email" placeholder="邮箱" class="textInput" />
         <input type="text" name="wechat" placeholder="微信，可以不填" class="textInput" />
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
