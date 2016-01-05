@@ -15,6 +15,7 @@ var ranks = [];
 // new consultant
 var country;
 var university;
+var skills = [];
 var uniIndex = {
 	'牛津大学' : 'oxford',
 	'剑桥大学' : 'cambridge',
@@ -29,7 +30,7 @@ $(".next").click(function(){
 	next_fs = $(this).parent().next();
 	
 	//activate next step on progressbar using the index of next_fs
-	$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+	$(".progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 	
 	//show the next fieldset
 	next_fs.show(); 
@@ -64,7 +65,7 @@ $(".previous").click(function(){
 	previous_fs = $(this).parent().prev();
 	
 	//de-activate current step on progressbar
-	$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+	$(".progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
 	
 	//show the previous fieldset
 	previous_fs.show(); 
@@ -154,6 +155,10 @@ function addRank(rank) {
 	ranks.push(rank);
 }
 
+function addSkill(skill) {
+	skills.push(skill);
+}
+
 function msSubmit(type) {
 	// student registration
 	if(type == 1) {
@@ -169,6 +174,7 @@ function msSubmit(type) {
 		daForm.elements['degree'].value = degree;
 		daForm.elements['country'].value = country;
 		daForm.elements['university'].value = university;
+		daForm.elements['skills'].value = skills;
 		document.getElementById('msform').submit();
 	}
 }

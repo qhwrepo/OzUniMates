@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Request;
 use App\Http\Controllers\Controller;
+use App\Consultant;
 
 class ConsultantController extends Controller
 {
@@ -36,7 +37,7 @@ class ConsultantController extends Controller
     public function store()
     {
         $consultant = Request::all();
-
+        Consultant::create($consultant);
         return view('consultant.regis-success-cn',compact('consultant'));
 
     }

@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+<div class="main">
     <h1>欢迎，{{ $consultant['username'] }}!</h1>
 
     <h1>接下来：</h1>
@@ -19,6 +19,7 @@
     <div id="hint4" class="hint">在互助的社区里，没有中介费。</div>
     <div id="hint5" class="hint">但是我们鼓励：给帮助你的ta，塞一个红包吧！</div>
     <div id="hint6" class="hint"><a href="/consultant/{{ $consultant['username'] }}/index">开始</a></div>
+</div>
 </body>
 
 </html>

@@ -17,7 +17,7 @@
 
 {!! Form::open(['id'=>'msform','url'=>'student/store']) !!}
     <!-- progressbar -->
-    <ul id="progressbar">
+    <ul class="progressbar" id="stupb">
         <li class="active"></li>
         <li></li>
         <li></li>

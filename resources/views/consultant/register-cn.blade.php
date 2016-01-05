@@ -20,8 +20,9 @@
 
 {!! Form::open(['id'=>'msform','url'=>'consultant/store']) !!}
     <!-- progressbar -->
-    <ul id="progressbar">
+    <ul class="progressbar" id="conpb">
         <li class="active"></li>
+        <li></li>
         <li></li>
         <li></li>
         <li></li>
@@ -109,6 +110,19 @@
         </select>
 
         <input type="text" name="university" class="hidden" />
+        <br/>
+        <a class="previous fa fa-chevron-circle-left fa-3x"></a>
+        <a class="next fa fa-chevron-circle-right fa-3x"></a>
+    </fieldset>
+    <fieldset>
+        <h2 class="fs-title">你能在哪些方面帮助师弟师妹呢（可多选）？</h2>
+        <input type="button" class="action-button" value="评估申请人背景" onclick="addSkill('evaluate')" />
+        <input type="button" class="action-button" value="推荐院校" onclick="addSkill('recommend')" />
+        <input type="button" class="action-button" value="修改CV/PS" onclick="addSkill('cvps')"/>
+        <input type="button" class="action-button" value="专业方向"  onclick="addSkill('major')"/>
+        <input type="button" class="action-button" value="职业规划" onclick="addSkill('career')"/>
+        <input type="button" class="action-button" value="接机/找住宿" onclick="addSkill('life')"/>
+        <input type="text" name="skills" class="hidden" />
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
         <a class="next fa fa-chevron-circle-right fa-3x"></a>
