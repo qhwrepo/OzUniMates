@@ -10,6 +10,8 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Config;
+use Log;
 
 class AuthController extends Controller
 {
@@ -101,6 +103,8 @@ class AuthController extends Controller
 
     public function postStudentRegister(Request $request)
     {
+        Config::set('auth.model','Student');
+        Config::set('auth.table','students');
         $validator = $this->validator($request->all());
         if ($validator->fails()) {
             $this->throwValidationException(
@@ -115,6 +119,8 @@ class AuthController extends Controller
 
     public function postConsultantRegister(Request $request)
     {
+        Config::set('auth.model','Consultant');
+        Config::set('auth.table','consultants');
         $validator = $this->validator($request->all());
         if ($validator->fails()) {
             $this->throwValidationException(
@@ -133,6 +139,26 @@ class AuthController extends Controller
             $this->loginUsername() => 'required', 'password' => 'required', 'usertype' => 'required',
         ]);
 
+        // Change user provider in auth, based on usertype
+
+        if( $request->only('usertype')['usertype'] == 'student' ) {
+            Config::set('auth.model','Student');
+            Config::set('auth.table','students');
+            $auth = Auth::createEloquentDriver();
+            $userprovider = new \Illuminate\Auth\EloquentUserProvider(app('hash'), 'App\Student');
+            Auth::setProvider($userprovider);
+            $this->redirectPath = '/student/home';
+        }
+
+        else if( $request->only('usertype')['usertype'] == 'consultant' ) {
+            Config::set('auth.model','Consultant');
+            Config::set('auth.table','consultants');
+            $auth = Auth::createEloquentDriver();
+            $userprovider = new \Illuminate\Auth\EloquentUserProvider(app('hash'), 'App\Consultant');
+            Auth::setProvider($userprovider);
+            $this->redirectPath = '/consultant/home';
+        }  
+
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
         // the IP address of the client making these requests into this application.
@@ -142,21 +168,7 @@ class AuthController extends Controller
             return $this->sendLockoutResponse($request);
         }
 
-        $credentials = $this->getCredentials($request);
-
-        // Change user provider in auth, based on usertype
-
-        if( $request->only('usertype')['usertype'] == 'student' ) {
-            $userprovider = new \Illuminate\Auth\EloquentUserProvider(app('hash'), 'App\Student');
-            Auth::setProvider($userprovider);
-            $this->redirectTo = '/student/home';
-        }
-
-        else if( $request->only('usertype')['usertype'] == 'consultant' ) {
-            $userprovider = new \Illuminate\Auth\EloquentUserProvider(app('hash'), 'App\Consultant');
-            Auth::setProvider($userprovider);
-            $this->redirectTo = '/consultant/home';
-        }        
+        $credentials = $this->getCredentials($request);      
 
         if (Auth::attempt($credentials, $request->has('remember'))) {
             return $this->handleUserWasAuthenticated($request, $throttles);
