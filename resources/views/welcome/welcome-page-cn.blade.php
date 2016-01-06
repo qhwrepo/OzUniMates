@@ -40,7 +40,7 @@ under Apache 2.0 by Start Bootstrap
         @endforeach        
         </ul>
     @endif
-    
+
     <a id="logbtn" class="navBtn btn btn-lg" href="#formModal">登录</a>
     <a id="languagebtn" href="en" class="navBtn btn btn-lg">English</a>
 
