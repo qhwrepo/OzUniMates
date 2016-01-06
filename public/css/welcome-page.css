@@ -31,6 +31,11 @@ div.text-vertical-center h1{
         text-shadow: 2px 2px 3px rgba(230,230,230,0.6);
 }
 
+ul {
+  position: absolute;
+  z-index: 100;
+}
+
 .link-home {
     display: block;
     font-size: 20px;
@@ -324,6 +329,21 @@ hr.small {
   transform: translate(-50%,-50%);
   color: #fff;
   margin-left: inherit !important;
+}
+
+#loginForm label {
+  color:#333;
+}
+
+#loginForm .usertype {
+  height:auto;
+  text-align: center;
+}
+
+#loginForm .usertype input {
+  margin-left: 5px;
+  width: auto;
+  vertical-align: middle;
 }
 
 #loginForm > div {

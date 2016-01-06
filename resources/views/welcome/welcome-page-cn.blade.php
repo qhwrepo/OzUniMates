@@ -33,11 +33,24 @@ under Apache 2.0 by Start Bootstrap
 
 <body>
 
+    @if($errors->any())        
+        <ul class="alert alert-danger">            
+        @foreach($errors->all() as $error)                
+            <li>{!! $error !!}</li>            
+        @endforeach        
+        </ul>
+    @endif
+    
     <a id="logbtn" class="navBtn btn btn-lg" href="#formModal">登录</a>
     <a id="languagebtn" href="en" class="navBtn btn btn-lg">English</a>
 
     {!! Form::open(['url'=>'login','style'=>'display:none;','id'=>'formModal']) !!}
-    <div id="loginForm">   
+    <div id="loginForm">
+        <div class="usertype">
+            <label>我是</label>
+            {!! Form::radio('usertype','student') !!}<label>师弟/师妹</label>
+            {!! Form::radio('usertype','consultant') !!}<label>师兄/师姐</label>
+        </div>   
         <div class="username">
           <input type="text" name="username" placeholder="用户名"/>
         </div>

@@ -123,4 +123,8 @@ class AuthController extends Controller
         return redirect('consultant/regis-success');
 
     }
+
+    protected $username = 'username';
+    protected $loginPath = '/';
+
 }
