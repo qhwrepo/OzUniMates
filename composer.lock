@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "555624ccbb615b66320a8a1a1f8d3fd4",
-    "content-hash": "46731a74b7ac6fc6544505c661be42c9",
+    "hash": "407bb630e37eafc75d321c4d8bcaeb23",
+    "content-hash": "24be0ca6ba9ba663a27ba33fa26562d1",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -941,6 +941,54 @@
                 "shell"
             ],
             "time": "2015-07-16 15:26:57"
+        },
+        {
+            "name": "sarav/laravel-multiauth",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sarav-S/Laravel-Multiauth.git",
+                "reference": "0c8443352bbe1b17d548df5fc5d83a711274bb0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sarav-S/Laravel-Multiauth/zipball/0c8443352bbe1b17d548df5fc5d83a711274bb0b",
+                "reference": "0c8443352bbe1b17d548df5fc5d83a711274bb0b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sarav\\Multiauth\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sarav",
+                    "email": "me@sarav.co"
+                }
+            ],
+            "description": "A Simple Laravel Package for handling multiple authentication",
+            "keywords": [
+                "Authentication",
+                "auth",
+                "laravel",
+                "laravel 5",
+                "login",
+                "multi",
+                "multiauth",
+                "multiple",
+                "signin",
+                "user"
+            ],
+            "time": "2015-12-28 07:19:09"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2968,7 +3016,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "sarav/laravel-multiauth": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

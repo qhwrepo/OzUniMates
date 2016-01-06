@@ -4,7 +4,7 @@
 
 	<div id="header" class="item" data-width="400">
 		<div class="inner">
-			<h1>Parallelism {{ Auth::user()['username'] }}</h1>
+			<h1>Parallelism {{ \Auth::user("student")['username'] }}</h1>
 			<p>A responsive portfolio site<br />
 			template by HTML5 UP</p>
 		</div>

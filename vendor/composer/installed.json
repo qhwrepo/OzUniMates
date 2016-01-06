@@ -3060,5 +3060,55 @@
                 "email": "taylorotwell@gmail.com"
             }
         ]
+    },
+    {
+        "name": "sarav/laravel-multiauth",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Sarav-S/Laravel-Multiauth.git",
+            "reference": "0c8443352bbe1b17d548df5fc5d83a711274bb0b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Sarav-S/Laravel-Multiauth/zipball/0c8443352bbe1b17d548df5fc5d83a711274bb0b",
+            "reference": "0c8443352bbe1b17d548df5fc5d83a711274bb0b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9"
+        },
+        "time": "2015-12-28 07:19:09",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Sarav\\Multiauth\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Sarav",
+                "email": "me@sarav.co"
+            }
+        ],
+        "description": "A Simple Laravel Package for handling multiple authentication",
+        "keywords": [
+            "Authentication",
+            "auth",
+            "laravel",
+            "laravel 5",
+            "login",
+            "multi",
+            "multiauth",
+            "multiple",
+            "signin",
+            "user"
+        ]
     }
 ]

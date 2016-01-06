@@ -9,7 +9,7 @@
 
 <body>
 <div class="main">
-    <h1>欢迎，{{ Auth::user()['username'] }}!</h1>
+    <h1>欢迎，{{ \Auth::user("consultant")['username'] }}!</h1>
 
     <h1>接下来：</h1>
     <div id="hint1" class="hint">1.根据标签与简介，找到合适的</div>

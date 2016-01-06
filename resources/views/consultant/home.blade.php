@@ -4,8 +4,8 @@
 
 	<div id="header" class="item" data-width="400">
 		<div class="inner">
-			<h1>Parallelism {{ Auth::user()['username'] }}</h1>
-			<p>{{ Auth::check() }} Ass responsive portfolio site<br />
+			<h1>Parallelism {{ \Auth::user("consultant")['username'] }}</h1>
+			<p>A responsive portfolio site<br />
 			template by HTML5 UP</p>
 		</div>
 	</div>

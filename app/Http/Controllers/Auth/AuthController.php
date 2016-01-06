@@ -103,15 +103,13 @@ class AuthController extends Controller
 
     public function postStudentRegister(Request $request)
     {
-        Config::set('auth.model','Student');
-        Config::set('auth.table','students');
         $validator = $this->validator($request->all());
         if ($validator->fails()) {
             $this->throwValidationException(
                 $request, $validator
             );
         }
-        Auth::login($this->create($request->all()));
+        \Auth::login("student",$this->create($request->all()));
         
         return redirect('student/regis-success');
 
@@ -119,15 +117,13 @@ class AuthController extends Controller
 
     public function postConsultantRegister(Request $request)
     {
-        Config::set('auth.model','Consultant');
-        Config::set('auth.table','consultants');
         $validator = $this->validator($request->all());
         if ($validator->fails()) {
             $this->throwValidationException(
                 $request, $validator
             );
         }
-        Auth::login($this->createConsultant($request->all()));
+        \Auth::login("consultant",$this->createConsultant($request->all()));
         
         return redirect('consultant/regis-success');
 
@@ -139,25 +135,7 @@ class AuthController extends Controller
             $this->loginUsername() => 'required', 'password' => 'required', 'usertype' => 'required',
         ]);
 
-        // Change user provider in auth, based on usertype
-
-        if( $request->only('usertype')['usertype'] == 'student' ) {
-            Config::set('auth.model','Student');
-            Config::set('auth.table','students');
-            $auth = Auth::createEloquentDriver();
-            $userprovider = new \Illuminate\Auth\EloquentUserProvider(app('hash'), 'App\Student');
-            Auth::setProvider($userprovider);
-            $this->redirectPath = '/student/home';
-        }
-
-        else if( $request->only('usertype')['usertype'] == 'consultant' ) {
-            Config::set('auth.model','Consultant');
-            Config::set('auth.table','consultants');
-            $auth = Auth::createEloquentDriver();
-            $userprovider = new \Illuminate\Auth\EloquentUserProvider(app('hash'), 'App\Consultant');
-            Auth::setProvider($userprovider);
-            $this->redirectPath = '/consultant/home';
-        }  
+ 
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
@@ -168,11 +146,27 @@ class AuthController extends Controller
             return $this->sendLockoutResponse($request);
         }
 
-        $credentials = $this->getCredentials($request);      
+        // Change user provider in auth, based on usertype
 
-        if (Auth::attempt($credentials, $request->has('remember'))) {
-            return $this->handleUserWasAuthenticated($request, $throttles);
+        if( $request->only('usertype')['usertype'] == 'student' ) {
+            $this->redirectPath = '/student/home';
+            $credentials = $this->getCredentials($request);      
+            if (\Auth::attempt("student",['username'=>$credentials['username'],
+                'password'=>$credentials['password']])) {
+                return $this->handleUserWasAuthenticated($request, $throttles);
+            }
         }
+
+        else if( $request->only('usertype')['usertype'] == 'consultant' ) {
+            $this->redirectPath = '/consultant/home';
+            $credentials = $this->getCredentials($request); 
+            Log::info($credentials);
+
+            if (\Auth::attempt("consultant",['username'=>$credentials['username'],
+                'password'=>$credentials['password']])) {
+                return $this->handleUserWasAuthenticated($request, $throttles);
+            }
+        }         
 
         // If the login attempt was unsuccessful we will increment the number of attempts
         // to login and redirect the user back to the login form. Of course, when this
@@ -186,6 +180,26 @@ class AuthController extends Controller
             ->withErrors([
                 $this->loginUsername() => $this->getFailedLoginMessage(),
             ]);
+    }
+
+    protected function handleUserWasAuthenticated(Request $request, $throttles)
+    {
+        if ($throttles) {
+            $this->clearLoginAttempts($request);
+        }
+
+
+        if (method_exists($this, 'authenticated')) {
+            if( $request->only('usertype')['usertype'] == 'student' ) {
+                return $this->authenticated($request, \Auth::user("student",$this->user()));
+            }
+            else if( $request->only('usertype')['usertype'] == 'consultant' ) {
+                return $this->authenticated($request, \Auth::user("consultant",$this->user()));
+            }
+            
+        }
+
+        return redirect()->intended($this->redirectPath());
     }
 
 
