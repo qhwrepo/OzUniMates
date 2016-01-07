@@ -9,7 +9,6 @@ var parallelism = (function($) { var _ = {
 	/******************************/
 	/* Properties                 */
 	/******************************/
-
 		// Settings
 			settings: {
 
@@ -22,12 +21,12 @@ var parallelism = (function($) { var _ = {
 				// Mobile only.
 
 					// If true, mobile mode will get some automatic styling.
-						autoStyleMobile: true,
+						autoStyleMobile: false,
 
 				// Desktop only.
 
 					// If true, reel will be vertically centered.
-						centerVertically: true,
+						centerVertically: false,
 
 					// Delay (in ms) before showing the reel.
 						introDelay: 600,
@@ -36,10 +35,10 @@ var parallelism = (function($) { var _ = {
 						introSpeed: 750,
 
 					// Height (in px) of items.
-						itemHeight: 230,
+						itemHeight: 300,
 
 					// Default width (in px) of width.
-						itemWidth: 300,
+						itemWidth: 500,
 
 					// Margin (in px) to preserve at the bottom of the viewport.
 						marginBottom: 0,
@@ -48,7 +47,7 @@ var parallelism = (function($) { var _ = {
 						marginTop: 0,
 
 					// Nudge the reel by this value (in px) after it's been vertically centered.
-						verticalNudge: -50,
+						// verticalNudge: -50,
 
 					// Maximum number of rows.
 						maxRows: 3,
@@ -135,7 +134,17 @@ var parallelism = (function($) { var _ = {
 						var i, j, x, y, t;
 
 						// Calculate number of rows we can fit on the screen.
-							rows = Math.min(Math.max(Math.floor(windowHeight / itemHeight) - 1, 1), _.settings.maxRows);
+						rows = Math.min(Math.max(Math.floor(windowHeight / itemHeight), 1), _.settings.maxRows);
+						// if(windowHeight>=900) {
+						// 	rows = 3;
+						// 	_.settings.itemHeight = (windowHeight-20)/3;
+						// 	_.objects.window._parallelism_update();
+						// }
+						// else if(windowHeight<900 && windowHeight>=600) {
+						// 	rows = 2;
+						// 	_.settings.itemHeight = (windowHeight-15)/2;
+						// 	_.objects.window._parallelism_update();
+						// }
 
 						// Reduce row count if we have more than we need.
 							while ( rows > _.settings.minRows && (itemsWidth / rows) < windowWidth )
@@ -288,6 +297,7 @@ var parallelism = (function($) { var _ = {
 							w = _.settings.itemWidth;
 
 						h = _.settings.itemHeight;
+						console.log(_.settings.itemHeight);
 
 						// Add to total width.
 							itemsWidth += w;
