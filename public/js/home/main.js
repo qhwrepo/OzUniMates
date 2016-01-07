@@ -297,7 +297,6 @@ var parallelism = (function($) { var _ = {
 							w = _.settings.itemWidth;
 
 						h = _.settings.itemHeight;
-						console.log(_.settings.itemHeight);
 
 						// Add to total width.
 							itemsWidth += w;

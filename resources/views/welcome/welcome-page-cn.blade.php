@@ -219,12 +219,12 @@ under Apache 2.0 by Start Bootstrap
         <div class="container footer">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>澳洲师兄</strong>
+                    <h4><strong>澳联帮</strong>
                     </h4>
                     <p>Canberra, Australia</p>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-phone fa-fw"></i> (+61) 416-365067</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">xuan9230@gmail.com</a>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:xuan9230@gmail.com">xuan9230@gmail.com</a>
                         </li>
                     </ul>
                     <br>
@@ -240,7 +240,7 @@ under Apache 2.0 by Start Bootstrap
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; 澳洲师兄 2015</p>
+                    <p class="text-muted">Copyright &copy; 澳联帮 2015</p>
                 </div>
             </div>
         </div>
