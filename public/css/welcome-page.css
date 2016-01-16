@@ -31,7 +31,7 @@ div.text-vertical-center h1{
         text-shadow: 2px 2px 3px rgba(230,230,230,0.6);
 }
 
-ul {
+.error {
   position: absolute;
   z-index: 100;
 }

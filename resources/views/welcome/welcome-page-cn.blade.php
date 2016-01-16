@@ -12,7 +12,7 @@ under Apache 2.0 by Start Bootstrap
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
-    <title>澳联帮 - 遇见未来的校友</title>
+    <title>校联帮 - 遇见未来的校友</title>
 
 
     <link href="/css/normalize.css" rel="stylesheet"/>
@@ -34,7 +34,7 @@ under Apache 2.0 by Start Bootstrap
 <body>
 
     @if($errors->any())        
-        <ul class="alert alert-danger">            
+        <ul class="alert alert-danger error">            
         @foreach($errors->all() as $error)                
             <li>{!! $error !!}</li>            
         @endforeach        
@@ -67,7 +67,7 @@ under Apache 2.0 by Start Bootstrap
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
-            <h1>澳联帮</h1>
+            <h1>校联帮</h1>
             <h3><br/>申请就那么回事<br/><br/>比起中介，为何不直接找师兄师姐呢？</h3>
             <div class="or-spacer">
               <div class="mask"></div>
@@ -85,7 +85,7 @@ under Apache 2.0 by Start Bootstrap
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>想来澳洲留学 但是信息有限？</h2>
+                    <h2>想出国留学 但是信息有限？</h2>
                     <p class="lead">直接和未来的校友聊聊吧。</p>
                 </div>
             </div>
@@ -135,7 +135,7 @@ under Apache 2.0 by Start Bootstrap
                                 <h4>
                                     <strong>接机/住宿</strong>
                                 </h4>
-                                <p>初来澳洲？<br/>校友帮你安顿下来！</p>
+                                <p>初来异国？<br/>校友帮你安顿下来！</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -176,30 +176,34 @@ under Apache 2.0 by Start Bootstrap
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="/img/portfolio-1.jpg">
-                                </a>
+                                <img class="img-portfolio img-responsive" src="/img/portfolio-1.jpg">
+                                <h3>澳大利亚国立大学</h3>
+                                <h4>2015 QS Rank: 19 / Times Rank: 45</h4>
+                                <h4>优势学科:</h4>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="/img/portfolio-2.jpg">
-                                </a>
+                                <img class="img-portfolio img-responsive" src="/img/portfolio-2.jpg">
+                                <h3>墨尔本大学</h3>
+                                <h4>2015 QS Rank: 42 / Times Rank: 33</h4>
+                                <h4>优势学科:</h4>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="/img/portfolio-3.jpg">
-                                </a>
+                                <img class="img-portfolio img-responsive" src="/img/portfolio-3.jpg">
+                                <h3>悉尼大学</h3>
+                                <h4>2015 QS Rank: 45 / Times Rank: 60</h4>
+                                <h4>优势学科:</h4>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="/img/portfolio-4.jpg">
-                                </a>
+                                <img class="img-portfolio img-responsive" src="/img/portfolio-4.jpg">
+                                <h3>新南威尔士大学</h3>
+                                <h4>2015 QS Rank: 46 / Times Rank: 109</h4>
+                                <h4>优势学科:</h4>
                             </div>
                         </div>
                     </div>
@@ -219,7 +223,7 @@ under Apache 2.0 by Start Bootstrap
         <div class="container footer">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>澳联帮</strong>
+                    <h4><strong>校联帮</strong>
                     </h4>
                     <p>Canberra, Australia</p>
                     <ul class="list-unstyled">
@@ -227,20 +231,8 @@ under Apache 2.0 by Start Bootstrap
                         <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:xuan9230@gmail.com">xuan9230@gmail.com</a>
                         </li>
                     </ul>
-                    <br>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
-                        </li>
-                    </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; 澳联帮 2015</p>
+                    <p class="text-muted">Copyright &copy; 校联帮 2015</p>
                 </div>
             </div>
         </div>
@@ -253,7 +245,6 @@ under Apache 2.0 by Start Bootstrap
     <!-- Bootstrap Core JavaScript -->
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
     <script>
     // Scrolls to the selected menu item on the page
     $(function() {

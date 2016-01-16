@@ -99,6 +99,16 @@ class AuthController extends Controller
         return view('auth.register-consultant-cn');
     }
 
+    public function getStudentRegisterEn()
+    {
+        return view('auth.register-student-en');
+    }
+
+    public function getConsultantRegisterEn()
+    {
+        return view('auth.register-consultant-en');
+    }
+
     // override register/lonin methods
 
     public function postStudentRegister(Request $request)
@@ -115,6 +125,20 @@ class AuthController extends Controller
 
     }
 
+    public function postStudentRegisterEn(Request $request)
+    {
+        $validator = $this->validator($request->all());
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+        \Auth::login("student",$this->create($request->all()));
+        
+        return redirect('en/student/regis-success');
+
+    }
+
     public function postConsultantRegister(Request $request)
     {
         $validator = $this->validator($request->all());
@@ -126,6 +150,20 @@ class AuthController extends Controller
         \Auth::login("consultant",$this->createConsultant($request->all()));
         
         return redirect('consultant/regis-success');
+
+    }
+
+    public function postConsultantRegisterEn(Request $request)
+    {
+        $validator = $this->validator($request->all());
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+        \Auth::login("consultant",$this->createConsultant($request->all()));
+        
+        return redirect('en/consultant/regis-success');
 
     }
 

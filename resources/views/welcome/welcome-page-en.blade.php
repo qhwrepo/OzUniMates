@@ -14,9 +14,8 @@ under Apache 2.0 by Start Bootstrap
 
     <title>OzUnimates - meet future unimates</title>
 
+
     <link href="/css/normalize.css" rel="stylesheet"/>
-    <link href="/css/jquery-ui.css" rel="stylesheet"/>
-    <link href="/css/jquery.idealforms.min.css" rel="stylesheet" media="screen"/>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/welcome-page.css" rel="stylesheet">
 
@@ -30,163 +29,52 @@ under Apache 2.0 by Start Bootstrap
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<style type="text/css">
-
-    #my-forma{width:595px;margin:0 auto;border:0px solid #ccc;padding:3em;border-radius:3px;box-shadow:0 0 0px rgba(0,0,0,0);}
-    #my-formb{width:595px;margin:0 auto;border:0px solid #ccc;padding:3em;border-radius:3px;box-shadow:0 0 0px rgba(0,0,0,0);}
-
-    #comments{width:350px;height:100px;}
-</style>
-
 </head>
 
 <body>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal1" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    </br>
-                                    </div>
-                <div class="modal-body">
-                    
-                    <div class="row">
-                        
-                        <div class="eightcol last">
-                            
-                            <!-- Begin Form -->
-                            
-                            <form id="my-forma">
-                                
-                                <!-- leave for the future -->
-<!--                                 <section name="Destination">  
-                                    <label><input type="checkbox" name="langs[]" value="English"/>America</label>
-                                    <label><input type="checkbox" name="langs[]" value="Chinese"/>Australia</label>
-                                    <label><input type="checkbox" name="langs[]" value="Spanish"/>England</label>
-                                    <label><input type="checkbox" name="langs[]" value="French"/>France</label>
-                                </section> -->
-                                
-                                <section name="Degree">
-                                        <p class="lead">What's your target degree?</p>
-                                        <select id="states" name="states">
-                                            <!-- <option value="default">&ndash; What's your target degree? &ndash;</option> -->
-                                            <option value="hs">High School</option>
-                                            <option value="ba">Bachelor</option>
-                                            <option value="ma">Master</option>
-                                            <option value="phd">PHD</option>
-                                            <option value="otd">Others</option>       
-                                        </select>
-                                </section>
+    @if($errors->any())        
+        <ul class="alert alert-danger error">            
+        @foreach($errors->all() as $error)                
+            <li>{!! $error !!}</li>            
+        @endforeach        
+        </ul>
+    @endif
 
-                                <section name="Ranking">
-                                        <p class="lead">Choose a range of world ranking for your target university:</p>
-                                        <label><input type="checkbox" name="langs[]" value="rank1"/>Top 30</label>
-                                        <label><input type="checkbox" name="langs[]" value="rank2"/>30-80</label>
-                                        <label><input type="checkbox" name="langs[]" value="rank3"/>80-200</label>
-                                        <label><input type="checkbox" name="langs[]" value="rank4"/>200</label>
-                                    
-                                </section>
+    <a id="logbtn" class="navBtn btn btn-lg" href="#formModal">Login</a>
+    <a id="languagebtn" href="en" class="navBtn btn btn-lg">English</a>
 
-                                <section name="University">
-                                        <p class="lead">Specify target universities if any:</p>
-                                        <label><input type="checkbox" name="langs[]" value="anu"/>Australian National University</label>
-                                        <label><input type="checkbox" name="langs[]" value="usyd"/>University of Sydney</label>
-                                        <label><input type="checkbox" name="langs[]" value="umel"/>University of Melbourne</label>
-                                        <label><input type="checkbox" name="langs[]" value="unsw"/>University of New South Wales</label>
-                                    
-                                </section>                    
-                                
-                            </form>
-                            <!-- End Form -->
-                            
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="javascript:window.location.href='en/regisnlogin';" >Find Unimates!</button>
-                </div>
-            </div>
+    {!! Form::open(['url'=>'login','style'=>'display:none;','id'=>'formModal']) !!}
+    <div id="loginForm">
+        <div class="usertype">
+            <label>I am:</label>
+            {!! Form::radio('usertype','student') !!}<label>Newbee</label>
+            {!! Form::radio('usertype','consultant') !!}<label>Senior</label>
+        </div>   
+        <div class="username">
+          <input type="text" name="username" placeholder="Username"/>
         </div>
-    </div>
-    
-    
-    <!-- Modal -->
-    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Willing</h4>
-                </div>
-                <div class="modal-body">
-                    
-                    <div class="row">
-                        
-                        <div class="eightcol last">
-                            
-                            <!-- Begin Form -->
-                            
-                            <form id="my-formb">
-                                
-                                <section name="University"> 
-                                    <label><input type="checkbox" name="langs[]" value="English"/>Australia National University</label>
-                                    <label><input type="checkbox" name="langs[]" value="Chinese"/>University of Sydney</label>
-                                    <label><input type="checkbox" name="langs[]" value="Spanish"/>University of Melbourne</label>
-                                </section>
-
-                                <section name="Degree">
-                                        <p class="lead">What's your current degree?</p>
-                                        <select name="states">
-                                            <option value="hs">High School</option>
-                                            <option value="ba">Bachelor</option>
-                                            <option value="ma">Master</option>
-                                            <option value="phd">PHD</option>
-                                            <option value="otd">Others</option>       
-                                        </select>
-                                </section>
-
-                                <section name="Ability">
-                                        <p class="lead">How can you help your future unimates?</p>
-                                        <select name="states">
-                                            <option value="hs">Essay Editing</option>
-                                            <option value="ba">Everyday Life</option>
-                                            <option value="ma">Admission Issues</option>      
-                                        </select>
-                                </section>
-   
-                            </form> 
-                            <!-- End Form -->
-                                
-                        </div>   
-                    </div>  
-                </div>
-
-                <div class="modal-footer">    
-                    <button type="button" class="btn btn-primary" onclick="javascript:window.location.href='en/regisnlogin';" >Find Unimates!</button>
-                </div>
-
-            </div>
+        <div class="password">
+          <input type="password" name="password" placeholder="Password"/>
         </div>
+        <div class="login">
+            {!! Form::submit('Login',[]) !!}
+        </div> 
     </div>
+    {!! Form::close() !!}
 
-    <a id="log-toggle" href="en/regisnlogin" class="navBtn btn btn-lg">Login</a>
-    <a id="cn-toggle" href="cn" class="navBtn btn btn-lg">中文</a>
 
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
             <h1>OzUnimates</h1>
-            <h3>Meet future university mates.</h3>
+            <h3><br/>Meet your future schoolmates<br/><br/>Rather than being charged by consultation agencies</h3>
             <div class="or-spacer">
               <div class="mask"></div>
             </div>
             <br>
-            <a href="newstudent" class="link-home"><i class="fa fa-users fa-2x"></i> Find Unimates</a>
-            <a href="newcounselor" class="link-home"><i class="fa fa-user-secret fa-2x"></i> Help Unimates</a>
+            <a href="en/student/register" class="link-home"><i class="fa fa-users fa-2x"></i> I'm a newbee</a>
+            <a href="en/consultant/register" class="link-home"><i class="fa fa-user-secret fa-2x"></i> I'm a senior</a>
             <br><br>
             <a href="#about" class="fa fa-angle-double-down" id="tellMore"></a>
         </div>
@@ -207,7 +95,6 @@ under Apache 2.0 by Start Bootstrap
     </section>
 
     <!-- Services -->
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
     <section id="services" class="services bg-primary">
         <div class="container">
             <div class="row text-center">
@@ -224,7 +111,7 @@ under Apache 2.0 by Start Bootstrap
                                 <h4>
                                     <strong>Essay Editing</strong>
                                 </h4>
-                                <p>Personal Statement/Resume/...<br/>Ask a unimate to improve them!</p>
+                               <p>Personal Statement/Resume/...<br/>Ask a unimate to improve them!</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -246,7 +133,7 @@ under Apache 2.0 by Start Bootstrap
                                 <i class="fa fa-plane fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Settle down</strong>
+                                    <strong>Settling down</strong>
                                 </h4>
                                 <p>First time in Oz?<br/>Unimate helps you settle!</p>
                             </div>
@@ -265,9 +152,9 @@ under Apache 2.0 by Start Bootstrap
                         </div>
                     </div>
                     <div class="row">
-                    	<div class="col-md-12 col-sm-12">
-                    		<a href="#portfolio" class="fa fa-angle-double-down" id="tellMore"></a>
-                    	</div>
+                        <div class="col-md-12 col-sm-12">
+                            <a href="#portfolio" class="fa fa-angle-double-down" id="tellMore"></a>
+                        </div>
                     </div>
                     <!-- /.row (nested) -->
                 </div>
@@ -289,30 +176,34 @@ under Apache 2.0 by Start Bootstrap
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="/img/portfolio-1.jpg">
-                                </a>
+                                <img class="img-portfolio img-responsive" src="/img/portfolio-1.jpg">
+                                <h3>The Australian National University</h3>
+                                <h4>2015 QS Rank: 19 / Times Rank: 45</h4>
+                                <h4>Prestigious Majors:</h4>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="/img/portfolio-2.jpg">
-                                </a>
+                                <img class="img-portfolio img-responsive" src="/img/portfolio-2.jpg">
+                                <h3>University of Melbourne</h3>
+                                <h4>2015 QS Rank: 42 / Times Rank: 33</h4>
+                                <h4>Prestigious Majors:</h4>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="/img/portfolio-3.jpg">
-                                </a>
+                                <img class="img-portfolio img-responsive" src="/img/portfolio-3.jpg">
+                                <h3>University of Sydney</h3>
+                                <h4>2015 QS Rank: 45 / Times Rank: 60</h4>
+                                <h4>Prestigious Majors:</h4>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="/img/portfolio-4.jpg">
-                                </a>
+                                <img class="img-portfolio img-responsive" src="/img/portfolio-4.jpg">
+                                <h3>University of New South Wales</h3>
+                                <h4>2015 QS Rank: 46 / Times Rank: 109</h4>
+                                <h4>Prestigious Majors:</h4>
                             </div>
                         </div>
                     </div>
@@ -337,19 +228,7 @@ under Apache 2.0 by Start Bootstrap
                     <p>Canberra, Australia</p>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-phone fa-fw"></i> (+61) 416-365067</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">xuan9230@gmail.com</a>
-                        </li>
-                    </ul>
-                    <br>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:xuan9230@gmail.com">xuan9230@gmail.com</a>
                         </li>
                     </ul>
                     <hr class="small">
@@ -360,12 +239,12 @@ under Apache 2.0 by Start Bootstrap
     </footer>
 
     <!-- jQuery -->
-    <script src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.leanModal.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
     <script>
     // Scrolls to the selected menu item on the page
     $(function() {
@@ -383,35 +262,9 @@ under Apache 2.0 by Start Bootstrap
             }
         });
     });
-    </script>
 
-    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/jquery.idealforms.js"></script>
-    <!-- display modals -->
-    <script type="text/javascript">
-        var options = {
-            
-            onFail: function(){
-                alert( $myform.getInvalid().length +' invalid fields.' )
-            },
-            
-            inputs: {
-                
-                'langs[]': {
-                    filters: 'min max',
-                    data: { min: 2, max: 3 },
-                    errors: {
-                        min: 'Check at least <strong>2</strong> options.',
-                        max: 'No more than <strong>3</strong> options allowed.'
-                    }
-                }
-            }
-            
-        };
-    
-    var $myforma = $('#my-forma').idealforms(options).data('idealforms');
-     var $myformb = $('#my-formb').idealforms(options).data('idealforms');
-        
+    $("#logbtn").leanModal({top : 300, overlay : 0.6, closeButton: ".modal_close"} );
+
     </script>
 
 </body>

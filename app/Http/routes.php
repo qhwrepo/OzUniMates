@@ -21,9 +21,17 @@ Route::get('/magic','MagicController@index');
 
 Route::get('student/register','Auth\AuthController@getStudentRegister');
 Route::get('consultant/register','Auth\AuthController@getConsultantRegister');
-Route::post('login','Auth\AuthController@postLogin');
+Route::get('en/student/register','Auth\AuthController@getStudentRegisterEn');
+Route::get('en/consultant/register','Auth\AuthController@getConsultantRegisterEn');
+
 Route::post('student/register','Auth\AuthController@postStudentRegister');
 Route::post('consultant/register','Auth\AuthController@postConsultantRegister');
+Route::post('en/student/register','Auth\AuthController@postStudentRegisterEn');
+Route::post('en/consultant/register','Auth\AuthController@postConsultantRegisterEn');
+
+
+Route::post('login','Auth\AuthController@postLogin');
+
 Route::get('logout', 'Auth\AuthController@getLogout');
 
 
