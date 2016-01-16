@@ -4,9 +4,9 @@
 
 	<div id="header" class="item" data-width="400">
 		<div class="inner">
-			<h1>Parallelism {{ \Auth::user("student")['username'] }}</h1>
-			<p>A responsive portfolio site<br />
-			template by HTML5 UP</p>
+			<h1>Hi {{ \Auth::user("student")['username'] }}</h1>
+			<p>Here are your potential unimates:<br />
+			Say Hi and start consulting!</p>
 		</div>
 	</div>
 	<!-- Thumb Items -->

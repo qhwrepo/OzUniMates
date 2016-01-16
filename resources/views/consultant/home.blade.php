@@ -5,8 +5,8 @@
 	<div id="header" class="item" data-width="400">
 		<div class="inner">
 			<h1>Hi {{ \Auth::user("consultant")['username'] }}</h1>
-			<p>A responsive portfolio site<br />
-			template by HTML5 UP</p>
+			<p>Here are your potential unimates:<br />
+			Say Hi and start consulting!</p>
 		</div>
 	</div>
 	<!-- Thumb Items -->

@@ -36,9 +36,11 @@ Route::get('logout', 'Auth\AuthController@getLogout');
 
 
 Route::get('student/regis-success','StudentController@newbee');
+Route::get('en/student/regis-success','StudentController@newbeeEn');
 Route::get('student/home','StudentController@index');
 
 Route::get('consultant/regis-success','ConsultantController@newbee');
+Route::get('en/consultant/regis-success','ConsultantController@newbeeEn');
 Route::get('consultant/home','ConsultantController@index');
 
 

@@ -23,6 +23,11 @@ class StudentController extends Controller
         return view('student.regis-success-cn');
     }
 
+    public function newbeeEn()
+    {
+        return view('student.regis-success-en');
+    }
+
     /**
      * Store a newly created resource in storage.
      *

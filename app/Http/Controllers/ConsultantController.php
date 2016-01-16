@@ -23,7 +23,10 @@ class ConsultantController extends Controller
         return view('consultant.regis-success-cn');
     }
 
-
+    public function newbeeEn()
+    {
+        return view('consultant.regis-success-en');
+    }
     /**
      * Show the form for creating a new resource.
      *
