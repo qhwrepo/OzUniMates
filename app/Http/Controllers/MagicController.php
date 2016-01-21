@@ -18,6 +18,10 @@ class MagicController extends Controller
         return view('magic.maomao');
     }
 
+    public function canvas() {
+        return view('magic.canvas');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

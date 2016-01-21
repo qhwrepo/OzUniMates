@@ -17,6 +17,7 @@ Route::get('cn','WelcomeController@cnindex');
 Route::get('en','WelcomeController@enindex');
 
 Route::get('/magic','MagicController@index');
+Route::get('/canvas','MagicController@canvas');
 
 
 Route::get('student/register','Auth\AuthController@getStudentRegister');
