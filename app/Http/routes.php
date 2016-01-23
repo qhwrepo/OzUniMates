@@ -44,4 +44,7 @@ Route::get('consultant/regis-success','ConsultantController@newbee');
 Route::get('en/consultant/regis-success','ConsultantController@newbeeEn');
 Route::get('consultant/home','ConsultantController@index');
 
+// widgets, not displayed to users
+Route::get('widgets/unimate','WidgetController@unimate');
+
 
