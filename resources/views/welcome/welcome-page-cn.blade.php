@@ -66,7 +66,7 @@ under Apache 2.0 by Start Bootstrap
 
     <!-- Header -->
     <header id="top" class="header">
-        <div class="text-vertical-center">
+        <div class="text-vertical-center" id="header-intro">
             <h1>校联帮</h1>
             <h3><br/>申请就那么回事<br/><br/>比起中介，为何不直接找师兄师姐呢？</h3>
             <div class="or-spacer">

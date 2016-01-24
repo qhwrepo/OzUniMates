@@ -262,13 +262,16 @@ hr.small {
     .map {
         height: 75%;
     }
+    #header-intro {
+      padding-top: 50px;
+    }
 }   
 
 
 .or-spacer {
   margin:0 auto;  
   margin-top: 20px;  
-  width: 600px;
+  width: 100%;
   position: relative;
 }
 .or-spacer .mask {
