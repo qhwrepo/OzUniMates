@@ -12,7 +12,7 @@ under Apache 2.0 by Start Bootstrap
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
-    <title>澳联帮 - 遇见未来的校友</title>
+    <title>校联帮 - 遇见未来的校友</title>
 
 
     <link href="/css/normalize.css" rel="stylesheet"/>
@@ -168,8 +168,10 @@ under Apache 2.0 by Start Bootstrap
 
     <!-- Portfolio -->
     <section id="uni-section" class="portfolio row">
-        <h2>还没确定目标?</h2>
-        <h2>这些是最受师兄师姐欢迎的选择：</h2>
+        <div id="uni-caption">
+          <h2>还没确定目标?</h2>
+          <h2>它们最受师兄师姐欢迎：</h2>
+        </div>
         <div class="or-spacer">
           <div class="mask"></div>
         </div>
@@ -180,7 +182,7 @@ under Apache 2.0 by Start Bootstrap
                 <figure>
                   <img src="/img/portfolio-1.jpg">
                   <figcaption>
-                    <h1>澳大利亚国立大学</h1>
+                    <h1 class="uni-name">澳大利亚国立大学</h1>
                     <p>
                       2015 QS Rank: 19 / Times Rank: 45
                       优势学科:
@@ -193,7 +195,7 @@ under Apache 2.0 by Start Bootstrap
                 <figure>
                   <img src="/img/portfolio-2.jpg">
                   <figcaption>
-                    <h1>墨尔本大学</h1>
+                    <h1 class="uni-name">墨尔本大学</h1>
                     <p>
                       2015 QS Rank: 42 / Times Rank: 33
                       优势学科:
@@ -206,7 +208,7 @@ under Apache 2.0 by Start Bootstrap
                 <figure>
                   <img src="/img/portfolio-3.jpg">
                   <figcaption>
-                    <h1>悉尼大学</h1>
+                    <h1 class="uni-name">悉尼大学</h1>
                     <p>
                       2015 QS Rank: 45 / Times Rank: 60
                       优势学科:
@@ -219,7 +221,7 @@ under Apache 2.0 by Start Bootstrap
                 <figure>
                   <img src="/img/portfolio-4.jpg">
                   <figcaption>
-                    <h1>新南威尔士大学</h1>
+                    <h1 class="uni-name">新南威尔士大学</h1>
                     <p>
                       2015 QS Rank: 46 / Times Rank: 109
                       优势学科:
@@ -237,7 +239,7 @@ under Apache 2.0 by Start Bootstrap
                 <figure>
                   <img src="/img/portfolio-5.jpg">
                   <figcaption>
-                    <h1>耶鲁大学</h1>
+                    <h1 class="uni-name">耶鲁大学</h1>
                     <p>
                       2015 QS Rank: 19 / Times Rank: 45
                       优势学科:
@@ -250,7 +252,7 @@ under Apache 2.0 by Start Bootstrap
                 <figure>
                   <img src="/img/portfolio-6.jpg">
                   <figcaption>
-                    <h1>宾州州立大学</h1>
+                    <h1 class="uni-name">宾州州立大学</h1>
                     <p>
                       2015 QS Rank: 42 / Times Rank: 33
                       优势学科:
@@ -263,7 +265,7 @@ under Apache 2.0 by Start Bootstrap
                 <figure>
                   <img src="/img/portfolio-3.jpg">
                   <figcaption>
-                    <h1>加州州立大学 洛杉矶分校</h1>
+                    <h1 class="uni-name">加州州立大学 洛杉矶分校</h1>
                     <p>
                       2015 QS Rank: 45 / Times Rank: 60
                       优势学科:
@@ -276,7 +278,7 @@ under Apache 2.0 by Start Bootstrap
                 <figure>
                   <img src="/img/portfolio-4.jpg">
                   <figcaption>
-                    <h1>耶鲁大学</h1>
+                    <h1 class="uni-name">耶鲁大学</h1>
                     <p>
                       2015 QS Rank: 46 / Times Rank: 109
                       优势学科:
