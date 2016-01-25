@@ -12,7 +12,7 @@ under Apache 2.0 by Start Bootstrap
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
-    <title>校联帮 - 遇见未来的校友</title>
+    <title>澳联帮 - 遇见未来的校友</title>
 
 
     <link href="/css/normalize.css" rel="stylesheet"/>
@@ -153,7 +153,7 @@ under Apache 2.0 by Start Bootstrap
                     </div>
                     <div class="row">
                     	<div class="col-md-12 col-sm-12">
-                    		<a href="#portfolio" class="fa fa-angle-double-down" id="tellMore"></a>
+                    		<a href="#uni-section" class="fa fa-angle-double-down" id="tellMore"></a>
                     	</div>
                     </div>
                     <!-- /.row (nested) -->
@@ -167,63 +167,133 @@ under Apache 2.0 by Start Bootstrap
     </section>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>澳洲·世界顶级学府</h2>
-                    <hr class="small">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <img class="img-portfolio img-responsive" src="/img/portfolio-1.jpg">
-                                <h3>澳大利亚国立大学</h3>
-                                <h4>2015 QS Rank: 19 / Times Rank: 45</h4>
-                                <h4>优势学科:</h4>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <img class="img-portfolio img-responsive" src="/img/portfolio-2.jpg">
-                                <h3>墨尔本大学</h3>
-                                <h4>2015 QS Rank: 42 / Times Rank: 33</h4>
-                                <h4>优势学科:</h4>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <img class="img-portfolio img-responsive" src="/img/portfolio-3.jpg">
-                                <h3>悉尼大学</h3>
-                                <h4>2015 QS Rank: 45 / Times Rank: 60</h4>
-                                <h4>优势学科:</h4>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <img class="img-portfolio img-responsive" src="/img/portfolio-4.jpg">
-                                <h3>新南威尔士大学</h3>
-                                <h4>2015 QS Rank: 46 / Times Rank: 109</h4>
-                                <h4>优势学科:</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">View More Items</a>
-                </div>
-                <!-- /.col-lg-10 -->
-            </div>
-            <!-- /.row -->
+    <section id="uni-section" class="portfolio row">
+        <h2>还没确定目标?</h2>
+        <h2>这些是最受师兄师姐欢迎的选择：</h2>
+        <div class="or-spacer">
+          <div class="mask"></div>
         </div>
-        <!-- /.container -->
+        <div class="unis col-md-6 col-sm-6">
+            <h3 class="uni-header">澳洲</h3>
+            <ul class="adaptive-slider" id="slider1">    
+              <li>
+                <figure>
+                  <img src="/img/portfolio-1.jpg">
+                  <figcaption>
+                    <h1>澳大利亚国立大学</h1>
+                    <p>
+                      2015 QS Rank: 19 / Times Rank: 45
+                      优势学科:
+                    </p>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <li>
+                <figure>
+                  <img src="/img/portfolio-2.jpg">
+                  <figcaption>
+                    <h1>墨尔本大学</h1>
+                    <p>
+                      2015 QS Rank: 42 / Times Rank: 33
+                      优势学科:
+                    </p>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <!-- <li>
+                <figure>
+                  <img src="/img/portfolio-3.jpg">
+                  <figcaption>
+                    <h1>悉尼大学</h1>
+                    <p>
+                      2015 QS Rank: 45 / Times Rank: 60
+                      优势学科:
+                    </p>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <li>
+                <figure>
+                  <img src="/img/portfolio-4.jpg">
+                  <figcaption>
+                    <h1>新南威尔士大学</h1>
+                    <p>
+                      2015 QS Rank: 46 / Times Rank: 109
+                      优势学科:
+                    </p>
+                  </figcaption>
+                </figure>
+              </li> -->
+            </ul>
+        </div>
+
+        <div class="unis col-md-6 col-sm-6">
+            <h3 class="uni-header">美国</h3>
+            <ul class="adaptive-slider" id="slider2">    
+              <li>
+                <figure>
+                  <img src="/img/portfolio-5.jpg">
+                  <figcaption>
+                    <h1>耶鲁大学</h1>
+                    <p>
+                      2015 QS Rank: 19 / Times Rank: 45
+                      优势学科:
+                    </p>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <li>
+                <figure>
+                  <img src="/img/portfolio-6.jpg">
+                  <figcaption>
+                    <h1>宾州州立大学</h1>
+                    <p>
+                      2015 QS Rank: 42 / Times Rank: 33
+                      优势学科:
+                    </p>
+                  </figcaption>
+                </figure>
+              </li>
+
+<!--               <li>
+                <figure>
+                  <img src="/img/portfolio-3.jpg">
+                  <figcaption>
+                    <h1>加州州立大学 洛杉矶分校</h1>
+                    <p>
+                      2015 QS Rank: 45 / Times Rank: 60
+                      优势学科:
+                    </p>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <li>
+                <figure>
+                  <img src="/img/portfolio-4.jpg">
+                  <figcaption>
+                    <h1>耶鲁大学</h1>
+                    <p>
+                      2015 QS Rank: 46 / Times Rank: 109
+                      优势学科:
+                    </p>
+                  </figcaption>
+                </figure>
+              </li> -->
+            </ul>
+        </div>
     </section>
 
-    <hr/>
     <!-- Footer -->
     <footer>
         <div class="container footer">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>校联帮</strong>
+                    <h4><strong>澳联帮</strong>
                     </h4>
                     <p>Canberra, Australia</p>
                     <ul class="list-unstyled">
@@ -232,7 +302,7 @@ under Apache 2.0 by Start Bootstrap
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; 校联帮 2015</p>
+                    <p class="text-muted">Copyright &copy; 澳联帮 2016</p>
                 </div>
             </div>
         </div>
@@ -241,31 +311,12 @@ under Apache 2.0 by Start Bootstrap
     <!-- jQuery -->
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/jquery.leanModal.min.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-
-    <script>
-    // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
-
-    $("#logbtn").leanModal({top : 300, overlay : 0.6, closeButton: ".modal_close"} );
-
-    </script>
+    <!-- custom -->
+    <script type="text/javascript" src="/js/dist/vendor/rgbaster.min.js"></script>
+    <script type="text/javascript" src="/js/dist/jquery.adaptiveslider.js"></script>
+    <script type="text/javascript" src="/js/welcome-page.js"></script>
 
 </body>
 
