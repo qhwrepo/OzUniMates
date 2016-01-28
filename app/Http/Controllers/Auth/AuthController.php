@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Validator;
 use App\Student;
 use App\Consultant;
+use App\Tag;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -113,12 +114,6 @@ class AuthController extends Controller
 
     public function postStudentRegister(Request $request)
     {
-        $validator = $this->validator($request->all());
-        if ($validator->fails()) {
-            $this->throwValidationException(
-                $request, $validator
-            );
-        }
         \Auth::login("student",$this->create($request->all()));
         
         return redirect('student/regis-success');
@@ -127,12 +122,6 @@ class AuthController extends Controller
 
     public function postStudentRegisterEn(Request $request)
     {
-        // $validator = $this->validator($request->all());
-        // if ($validator->fails()) {
-        //     $this->throwValidationException(
-        //         $request, $validator
-        //     );
-        // }
         \Auth::login("student",$this->create($request->all()));
         
         return redirect('en/student/regis-success');
@@ -141,13 +130,19 @@ class AuthController extends Controller
 
     public function postConsultantRegister(Request $request)
     {
-        $validator = $this->validator($request->all());
-        if ($validator->fails()) {
-            $this->throwValidationException(
-                $request, $validator
-            );
-        }
         \Auth::login("consultant",$this->createConsultant($request->all()));
+        
+        // store tag & consultant pair into table
+        $consultant = Consultant::where('username',$request->username)->first();
+        $idarr = [];
+
+        $arr = explode(',', $request->skills);
+        $arrLen = sizeof($arr);
+        for($i=0;$i<$arrLen;$i++) {
+            array_push($idarr, Tag::where('name',$arr[$i])->first()->id);
+        };
+
+        $consultant->tags()->attach($idarr);
         
         return redirect('consultant/regis-success');
 
@@ -155,13 +150,19 @@ class AuthController extends Controller
 
     public function postConsultantRegisterEn(Request $request)
     {
-        // $validator = $this->validator($request->all());
-        // if ($validator->fails()) {
-        //     $this->throwValidationException(
-        //         $request, $validator
-        //     );
-        // }
         \Auth::login("consultant",$this->createConsultant($request->all()));
+
+        // store tag & consultant pair into table
+        $consultant = Consultant::where('username',$request->username)->first();
+        $idarr = [];
+
+        $arr = explode(',', $request->skills);
+        $arrLen = sizeof($arr);
+        for($i=0;$i<$arrLen;$i++) {
+            array_push($idarr, Tag::where('name',$arr[$i])->first()->id);
+        };
+
+        $consultant->tags()->attach($idarr);
         
         return redirect('en/consultant/regis-success');
 
@@ -172,8 +173,6 @@ class AuthController extends Controller
         $this->validate($request, [
             $this->loginUsername() => 'required', 'password' => 'required', 'usertype' => 'required',
         ]);
-
- 
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and

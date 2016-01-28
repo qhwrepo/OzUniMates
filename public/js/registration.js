@@ -203,13 +203,31 @@ function setUniversity(uni) {
 }
 
 function addCountry(country) {
-	countries.push(country);
-	$("#aCountries").removeClass("not-active");
+	var tindex = jQuery.inArray(country,countries);
+	if(tindex === -1) {
+		countries.push(country);
+		$("#aCountries").removeClass("not-active");	
+	}
+	else {
+		countries.splice(tindex,1);
+		if(countries.length===0) {
+			$("#aCountries").addClass("not-active");
+		}
+	}
 }
 
 function addRank(rank) {
-	ranks.push(rank);
-	$("#aRanks").removeClass("not-active");
+	var tindex = jQuery.inArray(rank,ranks);
+	if(tindex === -1) {
+		ranks.push(rank);
+		$("#aRanks").removeClass("not-active");	
+	}
+	else {
+		ranks.splice(tindex,1);
+		if(ranks.length===0) {
+			$("#aRanks").addClass("not-active");
+		}
+	}
 }
 
 function addSkill(skill) {
@@ -224,8 +242,6 @@ function addSkill(skill) {
 			$("#aSkills").addClass("not-active");
 		}
 	}
-	console.log(skills);
-	
 }
 
 function msSubmit(type) {
