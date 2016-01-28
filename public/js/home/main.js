@@ -122,33 +122,36 @@ var parallelism = (function($) { var _ = {
 
 				var	windowHeight = _.objects.window.height() - _.settings.marginTop - _.settings.marginBottom,
 					windowWidth = _.objects.window.width(),
-					itemHeight = _.settings.itemHeight,
 					itemCount = _.objects.items.length,
 					itemsWidth = 0,
-					rows = 0,
 					rowWidth,
 					SZIntervalId;
+
+					// set rows and itemHeight based on screen size
+					// 2 rows
+					console.log(windowHeight);
+					if(windowHeight<850) {
+						rows = 2;
+					}
+					else if(windowHeight>=850 && windowHeight<1200) {
+						rows = 3;
+					}
+					else if(windowHeight>=1200) {
+						rows = 4;
+					}
+					console.log(rows);
+					itemHeight = (windowHeight-20)/rows;
 
 				// Window.
 					_.objects.window._parallelism_update = function() {
 						var i, j, x, y, t;
 
 						// Calculate number of rows we can fit on the screen.
-						rows = Math.min(Math.max(Math.floor(windowHeight / itemHeight), 1), _.settings.maxRows);
-						// if(windowHeight>=900) {
-						// 	rows = 3;
-						// 	_.settings.itemHeight = (windowHeight-20)/3;
-						// 	_.objects.window._parallelism_update();
-						// }
-						// else if(windowHeight<900 && windowHeight>=600) {
-						// 	rows = 2;
-						// 	_.settings.itemHeight = (windowHeight-15)/2;
-						// 	_.objects.window._parallelism_update();
-						// }
+						// rows = Math.min(Math.max(Math.floor(windowHeight / itemHeight), 1), _.settings.maxRows);						
 
 						// Reduce row count if we have more than we need.
-							while ( rows > _.settings.minRows && (itemsWidth / rows) < windowWidth )
-								rows--;
+							// while ( rows > _.settings.minRows && (itemsWidth / rows) < windowWidth )
+							// 	rows--;
 
 						// Get average row width.
 							rowWidth = Math.ceil( (itemsWidth / rows) * 1.1 );
@@ -236,6 +239,9 @@ var parallelism = (function($) { var _ = {
 
 					};
 
+					console.log(itemHeight);
+
+
 					_.objects.window.resize(function() {
 
 						// Update window dimensions.
@@ -250,6 +256,7 @@ var parallelism = (function($) { var _ = {
 							$SZ._parallelism_update();
 
 					});
+
 
 				// Reel.
 					_.objects.reel
@@ -296,7 +303,8 @@ var parallelism = (function($) { var _ = {
 						if (!w)
 							w = _.settings.itemWidth;
 
-						h = _.settings.itemHeight;
+						h = itemHeight;
+						// console.log(h);
 
 						// Add to total width.
 							itemsWidth += w;

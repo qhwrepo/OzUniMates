@@ -4,9 +4,9 @@
 
 	<div id="header" class="item" data-width="400">
 		<div class="inner">
-			<h1>Hi {{ \Auth::user("consultant")['username'] }}</h1>
-			<p>他们可能是你未来的校友：<br />
-			打个招呼，开始咨询吧！</p>
+			<h1>Hi {{ \Auth::user("consultant")['username'] }}!</h1>
+			<p>这些小鲜肉可能会成为你的校友：<br />
+			有空的话，帮帮他们吧！</p>
 		</div>
 	</div>
 	<!-- Thumb Items -->
@@ -14,15 +14,7 @@
 		<h2>You really got me</h2>
 		<a href="/img/portfolio-1.jpg" class="image"><img src="/img/portfolio-1.jpg" alt=""></a>
 	</article>
-	<article class="item thumb" >
-		<unimate></unimate>
-	</article>
-	<article class="item thumb" >
-		<unimate></unimate>
-	</article>
-	<article class="item thumb" >
-		<unimate></unimate>
-	</article>
+
 	<article class="item thumb" >
 		<unimate></unimate>
 	</article>

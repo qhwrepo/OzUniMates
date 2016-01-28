@@ -10,7 +10,18 @@
 		</div>
 	</div>
 	<!-- Thumb Items -->
-	<article class="item thumb" data-width="282">
+
+	@foreach($consultants as $consultant)
+	<article class="item thumb">
+		<h2>{{$consultant->username}}</h2>
+		<a href="images/fulls/01.jpg" class="image"><img src="/img/portfolio-1.jpg" alt=""></a>
+	</article>
+	@endforeach
+
+
+
+
+	<!-- <article class="item thumb" data-width="282">
 		<h2>You really got me</h2>
 		<a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a>
 	</article>
@@ -42,7 +53,7 @@
 	<article class="item thumb" data-width="348">
 		<h2>The Spectators</h2>
 		<a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt=""></a>
-	</article>
+	</article> -->
 <!-- Filler Thumb Items (just for demonstration purposes) -->
 	<article class="item thumb" data-width="476"><h2>Kingdom of the Wind</h2><a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a></article>
 	<article class="item thumb" data-width="232"><h2>The Pursuit</h2><a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt=""></a></article>

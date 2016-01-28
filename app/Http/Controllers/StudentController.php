@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Request;
 use App\Http\Controllers\Controller;
 use App\Student;
+use App\Consultant;
 
 class StudentController extends Controller
 {
@@ -15,7 +16,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('student.home');
+        $consultants = Consultant::all();
+        return view('student.home',compact('consultants'));
     }
 
     public function newbee()

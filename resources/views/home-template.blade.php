@@ -39,7 +39,7 @@
 			<script src="/js/home/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="/js/home/main.js"></script>
-			<script src="/js/home/main-ng.js"></script>
+			<script src="/js/home/unimate.js"></script>
 
 	</body>
 </html>
