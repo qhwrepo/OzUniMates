@@ -104,7 +104,14 @@ $(".submit").click(function(){
 });
 
 $(".action-button").click(function() {
-	this.style.boxShadow = "0 0 0 1px white, 0 0 0 5px #6b6b6b";
+	if(this.style.boxShadow=="" || this.style.boxShadow=="0px 0px 0px 0px") {
+		this.style.boxShadow = "0 0 0 1px white, 0 0 0 5px #6b6b6b";
+		return;
+	}
+	else {
+		this.style.boxShadow = "0px 0px 0px 0px";
+		return;
+	}
 });
 
 $(".con").click(function() {
@@ -206,8 +213,19 @@ function addRank(rank) {
 }
 
 function addSkill(skill) {
-	skills.push(skill);
-	$("#aSkills").removeClass("not-active");
+	var tindex = jQuery.inArray(skill,skills);
+	if(tindex === -1) {
+		skills.push(skill);
+		$("#aSkills").removeClass("not-active");	
+	}
+	else {
+		skills.splice(tindex,1);
+		if(skills.length===0) {
+			$("#aSkills").addClass("not-active");
+		}
+	}
+	console.log(skills);
+	
 }
 
 function msSubmit(type) {
