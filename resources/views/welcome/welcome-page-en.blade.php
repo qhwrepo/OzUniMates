@@ -42,7 +42,7 @@ under Apache 2.0 by Start Bootstrap
     @endif
 
     <a id="logbtn" class="navBtn btn btn-lg" href="#formModal">Login</a>
-    <a id="languagebtn" href="en" class="navBtn btn btn-lg">English</a>
+    <a id="languagebtn" href="cn" class="navBtn btn btn-lg">English</a>
 
     {!! Form::open(['url'=>'login','style'=>'display:none;','id'=>'formModal']) !!}
     <div id="loginForm">
