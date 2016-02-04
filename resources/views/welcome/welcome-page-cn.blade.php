@@ -43,11 +43,6 @@ under Apache 2.0 by Start Bootstrap
 
     <a id="logbtn" class="navBtn btn btn-lg" href="#formModal">登录</a>
     <a id="languagebtn" href="en" class="navBtn btn btn-lg">English</a>
-    <button>
-  <svg viewBox="0 0 180 60">
-    <path d="M180,60 0,60 0,0 180,0z"></path>
-  </svg><span>Hover me!</span>
-</button>
 
     {!! Form::open(['url'=>'login','style'=>'display:none;','id'=>'formModal']) !!}
     <div id="loginForm">

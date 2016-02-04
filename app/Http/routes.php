@@ -16,10 +16,6 @@ Route::get('/home','WelcomeController@cnindex');
 Route::get('cn','WelcomeController@cnindex');
 Route::get('en','WelcomeController@enindex');
 
-Route::get('/magic','MagicController@index');
-Route::get('/canvas','MagicController@canvas');
-
-
 Route::get('student/register','Auth\AuthController@getStudentRegister');
 Route::get('consultant/register','Auth\AuthController@getConsultantRegister');
 Route::get('en/student/register','Auth\AuthController@getStudentRegisterEn');
@@ -30,6 +26,10 @@ Route::post('consultant/register','Auth\AuthController@postConsultantRegister');
 Route::post('en/student/register','Auth\AuthController@postStudentRegisterEn');
 Route::post('en/consultant/register','Auth\AuthController@postConsultantRegisterEn');
 
+// Route::get('consultant/avatar/upload','ConsultantController@avatar');
+Route::post('consultant/avatar/upload','ConsultantController@avatarUpload');
+// Route::get('student/avatar/upload','StudentController@avatar');
+Route::post('student/avatar/upload','StudentController@avatarUpload');
 
 Route::post('login','Auth\AuthController@postLogin');
 
@@ -38,13 +38,32 @@ Route::get('logout', 'Auth\AuthController@getLogout');
 
 Route::get('student/regis-success','StudentController@newbee');
 Route::get('en/student/regis-success','StudentController@newbeeEn');
-Route::get('student/home','StudentController@index');
+Route::get('student/home','StudentController@home');
 
 Route::get('consultant/regis-success','ConsultantController@newbee');
 Route::get('en/consultant/regis-success','ConsultantController@newbeeEn');
-Route::get('consultant/home','ConsultantController@index');
+Route::get('consultant/home','ConsultantController@home');
 
 // widgets, not displayed to users
 Route::get('widgets/unimate','WidgetController@unimate');
 
 
+// =======================================
+// API Routes
+// =======================================
+Route::group(array('prefix' => 'api'), function() {
+	Route::resource('students','StudentController',
+		array('only' => array('index', 'destroy')));
+	Route::resource('consultants','ConsultantController',
+		array('only' => array('index', 'destroy')));
+});
+
+// ================================
+// my dear kitten
+// ================================
+Route::get('/magic',function(){
+	return view('magic.maomao');
+});
+Route::get('/canvas',function(){
+	return view('magic.canvas');
+});

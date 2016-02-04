@@ -129,7 +129,6 @@ var parallelism = (function($) { var _ = {
 
 					// set rows and itemHeight based on screen size
 					// 2 rows
-					console.log(windowHeight);
 					if(windowHeight<850) {
 						rows = 2;
 					}
@@ -139,7 +138,6 @@ var parallelism = (function($) { var _ = {
 					else if(windowHeight>=1200) {
 						rows = 4;
 					}
-					console.log(rows);
 					itemHeight = (windowHeight-20)/rows;
 
 				// Window.
@@ -239,8 +237,6 @@ var parallelism = (function($) { var _ = {
 
 					};
 
-					console.log(itemHeight);
-
 
 					_.objects.window.resize(function() {
 
@@ -304,7 +300,6 @@ var parallelism = (function($) { var _ = {
 							w = _.settings.itemWidth;
 
 						h = itemHeight;
-						// console.log(h);
 
 						// Add to total width.
 							itemsWidth += w;
@@ -611,6 +606,7 @@ var parallelism = (function($) { var _ = {
 						_.objects.main = $('#main'),
 						_.objects.reel = $('#reel'),
 						_.objects.items = _.objects.main.find('.item');
+
 
 					// Mode.
 						_.objects.window.on('load', function() {

@@ -1,7 +1,7 @@
 @extends('home-template')
 @section('content')
 
-
+<div id="reel" ng-controller="studentReelController">
 	<div id="header" class="item" data-width="400">
 		<div class="inner">
 			<h1>Hi {{ \Auth::user("student")['username'] }}</h1>
@@ -18,6 +18,12 @@
 	</article>
 	@endforeach
 
+<!-- 							$.getJSON("/api/students",function(result) {
+							console.log(result);
+						} 
+
+						);
+ -->
 
 
 
@@ -63,5 +69,6 @@
 	<article class="item thumb" data-width="384"><h2>Ad Infinitum</h2><a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt=""></a></article>
 	<article class="item thumb" data-width="274"><h2>Different.</h2><a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt=""></a></article>
 	<article class="item thumb" data-width="282"><h2>Elysium</h2><a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt=""></a></article>
+</div>
 
 @endsection

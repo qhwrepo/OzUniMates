@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Request;
+use Response;
 use App\Http\Controllers\Controller;
 use App\Student;
 use App\Consultant;
@@ -14,10 +15,16 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function home()
     {
         $consultants = Consultant::all();
         return view('student.home',compact('consultants'));
+    }
+
+    public function index()
+    {
+        return Response::json(Student::get());
     }
 
     public function newbee()
@@ -28,16 +35,6 @@ class StudentController extends Controller
     public function newbeeEn()
     {
         return view('student.regis-success-en');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store()
-    {
     }
 
     /**
@@ -81,6 +78,8 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Student::destroy($id);
+ 
+        return Response::json(array('success' => true));
     }
 }

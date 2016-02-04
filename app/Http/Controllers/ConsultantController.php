@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Request;
+use Response;
 use App\Http\Controllers\Controller;
 use App\Consultant;
+use App\Student;
 
 class ConsultantController extends Controller
 {
@@ -13,9 +15,16 @@ class ConsultantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function home()
+    {
+        $students = Student::all();
+        return view('consultant.home',compact('students'));
+    }
+
     public function index()
     {
-        return view('consultant.home');
+        return Response::json(Consultant::get());
     }
 
     public function newbee()
@@ -34,6 +43,11 @@ class ConsultantController extends Controller
      */
     public function create()
     {
+    }
+
+    public function avatarUpload()
+    {
+
     }
 
     /**

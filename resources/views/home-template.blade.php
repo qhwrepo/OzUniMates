@@ -17,14 +17,12 @@
 	</head>
 	<body>
 
-		<div id="wrapper" ng-controller="reelController">
+		<div id="wrapper">
 
 			<div id="main">
-				<div id="reel">
-
+				
 					@yield('content');
 
-				</div>
 			</div>
 
 		</div>
@@ -36,10 +34,12 @@
 			<script src="/js/angular-route.min.js"></script>
 			<script src="/js/skel.min.js"></script>
 			<script src="/js/skel-viewport.min.js"></script>
+			
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->			
 			<script src="/js/home/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="/js/home/main.js"></script>
 			<script src="/js/home/unimate.js"></script>
+			<script src="/js/home/services/studentService.js"></script>
+			<script src="/js/home/main.js"></script>
 
 	</body>
 </html>
