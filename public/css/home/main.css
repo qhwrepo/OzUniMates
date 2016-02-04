@@ -200,6 +200,7 @@
 		background: #d64760 url("images/overlay.png");
 		color: #fff;
 		cursor: default;
+		display:flex !important;
 	}
 
 		#header p {
@@ -280,7 +281,7 @@
 		/* Header */
 
 			#header {
-				padding: 2em 3em;
+				padding: 3em 3em;
 				xmin-height: 212px;
 				vertical-align: middle;
 			}

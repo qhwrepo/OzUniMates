@@ -1,7 +1,7 @@
 @extends('home-template')
 @section('content')
 
-<div id="reel" ng-controller="consultantReelController">
+<div id="reel">
 	<div id="header" class="item" data-width="400">
 		<div class="inner">
 			<h1>Hi {{ \Auth::user("consultant")['username'] }}!</h1>
@@ -10,18 +10,14 @@
 		</div>
 	</div>
 	<!-- Thumb Items -->
-	<div ng-repeat="student in students">
-		<article class="item thumb">
-			<unimate username="<%student.username%>" countries="<%student.countries%>"></unimate>
-		</article>
-	</div>
+
+	@foreach($students as $student)
+	<article class="item thumb">
+		<h2>{{$student->username}}</h2>
+		<a href="images/fulls/01.jpg" class="image"><img src="/img/portfolio-1.jpg" alt=""></a>
+	</article>
+	@endforeach
 	
-
-		<article class="item thumb">
-			<h2><%students%></h2>
-			<a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a>
-		</article>
-
 <!-- Filler Thumb Items (just for demonstration purposes) -->
 	<article class="item thumb" data-width="476"><h2>Kingdom of the Wind</h2><a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a></article>
 	<article class="item thumb" data-width="232"><h2>The Pursuit</h2><a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt=""></a></article>
