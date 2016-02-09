@@ -1,6 +1,22 @@
 @extends('home-template')
 @section('content')
 
+<!-- have you uploaded an avatar / set a nickname? -->
+@if(! \Auth::user("consultant")['avatar'])
+<div id="modal-mask">
+	{!! Form::open( [ 'url' => ['/consultant/avatar/upload'], 'method' => 'POST', 'id' => 'avatar-form', 'files' => true ] ) !!}
+	<h3>第一次来吗？</h3>
+	<div class="container">
+		<div class="input">
+			<input name="image" id="file" type="file">
+		</div>
+	</div>
+	<a class="modal-submit" id="submit-avatar" onclick="avatarSubmit()">OK</a>
+	<a class="modal-submit" id="dismiss-avatar" onclick="dismissAvatar()">NO</a>
+	{!! Form::close() !!}
+</div>
+@endif
+
 <div id="reel">
 	<div id="header" class="item" data-width="400">
 		<div class="inner">

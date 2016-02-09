@@ -26,9 +26,7 @@ Route::post('consultant/register','Auth\AuthController@postConsultantRegister');
 Route::post('en/student/register','Auth\AuthController@postStudentRegisterEn');
 Route::post('en/consultant/register','Auth\AuthController@postConsultantRegisterEn');
 
-// Route::get('consultant/avatar/upload','ConsultantController@avatar');
 Route::post('consultant/avatar/upload','ConsultantController@avatarUpload');
-// Route::get('student/avatar/upload','StudentController@avatar');
 Route::post('student/avatar/upload','StudentController@avatarUpload');
 
 Route::post('login','Auth\AuthController@postLogin');

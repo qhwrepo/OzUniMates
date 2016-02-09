@@ -21,6 +21,7 @@ class CreateConsultantsTable extends Migration
             $table->string('degree');
             $table->string('country');
             $table->string('university');
+            $table->string('avatar');
             $table->timestamps();
             $table->rememberToken();
         });

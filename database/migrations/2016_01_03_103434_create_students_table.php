@@ -21,6 +21,7 @@ class CreateStudentsTable extends Migration
             $table->string('degree');
             $table->string('countries');
             $table->string('ranks');
+            $table->string('avatar');
             $table->timestamps();
             $table->rememberToken();
         });

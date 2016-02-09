@@ -28,15 +28,15 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="/js/jquery.min.js"></script>
-			<script src="/js/jquery.poptrox.min.js"></script>
-			<script src="/js/skel.min.js"></script>
-			<script src="/js/skel-viewport.min.js"></script>
+			<script type="text/javascript" src="/js/jquery.min.js"></script>
+			<script type="text/javascript" src="/js/jquery.poptrox.min.js"></script>
+			<script type="text/javascript" src="/js/skel.min.js"></script>
+			<script type="text/javascript" src="/js/skel-viewport.min.js"></script>
 			
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->			
-			<script src="/js/home/util.js"></script>
-			<script src="/js/home/services/studentService.js"></script>
-			<script src="/js/home/main.js"></script>
+			<script type="text/javascript" src="/js/home/util.js"></script>
+			<script type="text/javascript" src="/js/home/main.js"></script>
+			<script type="text/javascript" src="/js/home/custom.js"></script>
 
 	</body>
 </html>
