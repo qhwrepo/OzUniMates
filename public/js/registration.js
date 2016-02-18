@@ -7,6 +7,8 @@ var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
+var emailPat = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+
 // new student 
 var degree;
 var universities = [];
@@ -123,20 +125,18 @@ $(".textInput").change(function() {
 		passwordOk = false;
 		emailOk = false;
 		$(".submit").addClass("not-active");
-		return;
 	}
 	else {
 		daForm.elements['password'].style.borderColor = '#CCC';
 		daForm.elements['repeatpassword'].style.borderColor = '#CCC';
 		passwordOk = true;
-	}
+	};
 
 	// check email
-	if(daForm.elements['email'].value = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/) {
+	if(!emailPat.test(daForm.elements['email'].value)) {
 		daForm.elements['email'].style.borderColor = 'red';
 		$(".submit").addClass("not-active");
 		emailOk = false;
-		return;
 	}
 	else {
 		daForm.elements['email'].style.borderColor = '#CCC';
@@ -145,7 +145,9 @@ $(".textInput").change(function() {
 
 	if(passwordOk && emailOk) {
 		$(".submit").removeClass("not-active");
-		return;
+	}
+	else {
+		$(".submit").addClass("not-active");
 	}
 });
 
