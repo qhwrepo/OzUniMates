@@ -130,21 +130,22 @@ class AuthController extends Controller
 
     public function postConsultantRegister(Request $request)
     {
-        \Auth::login("consultant",$this->createConsultant($request->all()));
+        // \Auth::login("consultant",$this->createConsultant($request->all()));
         
-        // store tag & consultant pair into table
-        $consultant = Consultant::where('username',$request->username)->first();
-        $idarr = [];
+        // // store tag & consultant pair into table
+        // $consultant = Consultant::where('username',$request->username)->first();
+        // $idarr = [];
 
-        $arr = explode(',', $request->skills);
-        $arrLen = sizeof($arr);
-        for($i=0;$i<$arrLen;$i++) {
-            array_push($idarr, Tag::where('name',$arr[$i])->first()->id);
-        };
+        // $arr = explode(',', $request->skills);
+        // $arrLen = sizeof($arr);
+        // for($i=0;$i<$arrLen;$i++) {
+        //     array_push($idarr, Tag::where('name',$arr[$i])->first()->id);
+        // };
 
-        $consultant->tags()->attach($idarr);
+        // $consultant->tags()->attach($idarr);
         
-        return redirect('consultant/regis-success');
+        // return redirect('consultant/regis-success');
+        return $request->all();
 
     }
 

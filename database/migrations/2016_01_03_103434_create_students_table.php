@@ -19,8 +19,8 @@ class CreateStudentsTable extends Migration
             $table->string('email')->unique();
             $table->string('wechat');
             $table->string('degree');
-            $table->string('countries');
-            $table->string('ranks');
+            $table->string('universities');
+            $table->string('majors');
             $table->string('avatar');
             $table->timestamps();
             $table->rememberToken();

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<title>这里并没有鲜鱼，但有旺旺</title>
+	<title>这里并没有鲜鱼，但有垃圾旺</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<style type="text/css">
 		@font-face {
@@ -45,11 +45,11 @@
 				<canvas id="garden"></canvas>
 				<div id="words">
 					<div id="messages">
-						冒冒和旺旺已经在澳洲共同浪荡了
+						冒冒和垃圾旺已经在澳洲共同浪荡了
 						<div id="elapseClock"></div>
 					</div>
 					<div id="loveu">
-						以后也一起<br/>走遍世界美景<br/>吃遍天下小鱼干！<br/>
+						以后也一起<br/>走遍世界美景<br/>吃遍天下大小鲜鱼！<br/>
 						<div class="signature">垃圾旺</div>
 					</div>
 				</div>

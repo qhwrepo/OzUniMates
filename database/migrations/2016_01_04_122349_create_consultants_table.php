@@ -19,7 +19,6 @@ class CreateConsultantsTable extends Migration
             $table->string('email')->unique();
             $table->string('wechat');
             $table->string('degree');
-            $table->string('country');
             $table->string('university');
             $table->string('avatar');
             $table->timestamps();

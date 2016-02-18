@@ -9,18 +9,19 @@ var animating; //flag to prevent quick multi-click glitches
 
 // new student 
 var degree;
-var countries = [];
-var ranks = [];
+var universities = [];
+var majors = [];
 
 // new consultant
 var country;
 var university;
+var major;
 var skills = [];
-var uniIndex = {
-	'牛津大学' : 'oxford',
-	'剑桥大学' : 'cambridge',
-	'康奈尔大学' : 'cornell'
-}
+// var uniIndex = {
+// 	'牛津大学' : 'oxford',
+// 	'剑桥大学' : 'cambridge',
+// 	'康奈尔大学' : 'cornell'
+// }
 
 var daForm = document.forms['msform'];
 var passwordOk;
@@ -114,43 +115,13 @@ $(".action-button").click(function() {
 	}
 });
 
-$(".con").click(function() {
-	$(".bootstrap-select").hide();
-	switch(this.value) {
-		case '美国': {
-			$(".usauni").show();
-			break;
-		}
-		case '澳大利亚': {
-			$(".ozuni").show();
-			break;
-		}
-		case '英国': {
-			$(".ukuni").show();
-			break;
-		}
-		case '加拿大': {
-			$(".canadauni").show();
-			break;
-		}
-		case '法国': {
-			$(".franceuni").show();
-			break;
-		}
-		case '其他': {
-			$(".otheruni").show();
-			break;
-		}
-		default:;
-	}
-});
-
 $(".textInput").change(function() {
 	// check password
 	if(daForm.elements['password'].value != daForm.elements['repeatpassword'].value || daForm.elements['password'].value.length<6) {
 		daForm.elements['password'].style.borderColor = 'red';
 		daForm.elements['repeatpassword'].style.borderColor = 'red';
 		passwordOk = false;
+		emailOk = false;
 		$(".submit").addClass("not-active");
 		return;
 	}
@@ -160,24 +131,19 @@ $(".textInput").change(function() {
 		passwordOk = true;
 	}
 
-	// check username
-	if(daForm.elements['username'].value.length<6) {
-		alert("用户名应是大于6位的字母数字组合");
-		$(".submit").addClass("not-active");
-		return;
-	}
-
 	// check email
-	if(daForm.elements['email'].value.length<5) {
+	if(daForm.elements['email'].value = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/) {
 		daForm.elements['email'].style.borderColor = 'red';
 		$(".submit").addClass("not-active");
+		emailOk = false;
 		return;
 	}
 	else {
 		daForm.elements['email'].style.borderColor = '#CCC';
+		emailOk = true;
 	}
 
-	if(passwordOk) {
+	if(passwordOk && emailOk) {
 		$(".submit").removeClass("not-active");
 		return;
 	}
@@ -198,34 +164,39 @@ function setCountry(coun) {
 }
 
 function setUniversity(uni) {
-	university = uniIndex[uni];
+	university = uni;
 	$("#aUniversity").removeClass("not-active");
 }
 
-function addCountry(country) {
-	var tindex = jQuery.inArray(country,countries);
+function setMajor(maj) {
+	major = maj;
+	$("#aMajor").removeClass("not-active");
+}
+
+function addUniversity(uni) {
+	var tindex = jQuery.inArray(uni,universities);
 	if(tindex === -1) {
-		countries.push(country);
-		$("#aCountries").removeClass("not-active");	
+		universities.push(uni);
+		$("#aUniversities").removeClass("not-active");	
 	}
 	else {
-		countries.splice(tindex,1);
-		if(countries.length===0) {
-			$("#aCountries").addClass("not-active");
+		universities.splice(tindex,1);
+		if(universities.length===0) {
+			$("#aUniversities").addClass("not-active");
 		}
 	}
 }
 
-function addRank(rank) {
-	var tindex = jQuery.inArray(rank,ranks);
+function addMajor(major) {
+	var tindex = jQuery.inArray(major,majors);
 	if(tindex === -1) {
-		ranks.push(rank);
-		$("#aRanks").removeClass("not-active");	
+		majors.push(major);
+		$("#aMajors").removeClass("not-active");	
 	}
 	else {
-		ranks.splice(tindex,1);
-		if(ranks.length===0) {
-			$("#aRanks").addClass("not-active");
+		majors.splice(tindex,1);
+		if(majors.length===0) {
+			$("#aMajors").addClass("not-active");
 		}
 	}
 }
@@ -248,14 +219,14 @@ function msSubmit(type) {
 	// student registration
 	if(type == 1) {
 		daForm.elements['degree'].value = degree;
-		daForm.elements['countries'].value = countries;
-		daForm.elements['ranks'].value = ranks;
+		daForm.elements['universities'].value = universities;
+		daForm.elements['majors'].value = majors;
 		document.getElementById('msform').submit();
 	}
 	// consultant registration
 	if(type == 2) {
 		daForm.elements['degree'].value = degree;
-		daForm.elements['country'].value = country;
+		daForm.elements['major'].value = major;
 		daForm.elements['university'].value = university;
 		daForm.elements['skills'].value = skills;
 		document.getElementById('msform').submit();

@@ -188,7 +188,17 @@ a:hover {
 	margin-bottom:30px;
 	background-color: #337ab7;
 	color:#fff;
+}
 
+#selectMajor button {
+	width:250px;
+	font-size:21px;
+	font-weight: 600;
+	border-radius: 1px 1px;
+	margin-top:30px;
+	margin-bottom:30px;
+	background-color: #337ab7;
+	color:#fff;
 }
 
 .not-active {

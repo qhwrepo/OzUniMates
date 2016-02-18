@@ -12,7 +12,7 @@ under Apache 2.0 by Start Bootstrap
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
-    <title>校联帮 - 遇见未来的校友</title>
+    <title>澳联帮 - 遇见未来的校友</title>
 
 
     <link href="/css/normalize.css" rel="stylesheet"/>
@@ -67,7 +67,7 @@ under Apache 2.0 by Start Bootstrap
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center" id="header-intro">
-            <h1>校联帮</h1>
+            <h1>澳联帮</h1>
             <h3><br/>申请就那么回事<br/><br/>比起中介，为何不直接找师兄师姐呢？</h3>
             <div class="or-spacer">
               <div class="mask"></div>
@@ -85,7 +85,7 @@ under Apache 2.0 by Start Bootstrap
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>想出国留学 但是信息有限？</h2>
+                    <h2>想来澳洲留学 但是信息有限？</h2>
                     <p class="lead">直接和未来的校友聊聊吧。</p>
                 </div>
             </div>

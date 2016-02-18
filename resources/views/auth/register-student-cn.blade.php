@@ -26,40 +26,41 @@
     <!-- fieldsets -->
     <fieldset>
         <h2 class="fs-title">准备读什么学位？</h2>
-        <!-- {!! Form::button('本科',['class'=>'next action-button']) !!} -->
         <input type="button" class="next action-button" value="本科" onclick="setDegree('bachelor')"/>
         <input type="button" class="next action-button" value="硕士" onclick="setDegree('master')"/>
         <input type="button" class="next action-button" value="博士" onclick="setDegree('phd')"/> 
         <input type="text" name="degree" class="hidden" />
     </fieldset>
     <fieldset>
-        <h2 class="fs-title">想去的地区（可多选）？</h2>
-        <input type="button" class="action-button" value="美国" onclick="addCountry('usa')" />
-        <input type="button" class="action-button" value="英国" onclick="addCountry('uk')"/>
-        <input type="button" class="action-button" value="加拿大"  onclick="addCountry('canada')"/>
-        <input type="button" class="action-button" value="澳大利亚" onclick="addCountry('oz')"/>
-        <input type="button" class="action-button" value="法国" onclick="addCountry('france')"/>
-        <input type="button" class="action-button" value="其他" onclick="addCountry('other')"/>
-        <input type="text" name="countries" class="hidden"/>
+        <h2 class="fs-title">有目标学校吗（可多选）？</h2>
+        <input type="button" class="action-button" value="澳大利亚国立大学" onclick="addUniversity('anu')" />
+        <input type="button" class="action-button" value="墨尔本大学"  onclick="addUniversity('umel')"/>
+        <input type="button" class="action-button" value="悉尼大学" onclick="addUniversity('usyd')"/>
+        <input type="button" class="action-button" value="新南威尔士大学" onclick="addUniversity('unsw')"/>
+        <input type="button" class="action-button" value="莫纳什大学" onclick="addUniversity('monash')"/>
+        <input type="button" class="action-button" value="昆士兰大学" onclick="addUniversity('queensland')"/>
+        <input type="text" name="universities" class="hidden"/>
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
-        <a class="next fa fa-chevron-circle-right fa-3x" id="aCountries"></a>
+        <a class="next fa fa-chevron-circle-right fa-3x" id="aUniversities"></a>
     </fieldset>
     <fieldset>
-        <h2 class="fs-title">目标学校的世界排名（可多选）？</h2>
-        <input type="button" class="action-button" value="Top 50" onclick="addRank('50')"/>
-        <input type="button" class="action-button" value="50-100" onclick="addRank('100')"/>
-        <input type="button" class="action-button" value="100-300" onclick="addRank('300')"/>
-        <input type="button" class="action-button" value="300以外" onclick="addRank('+')"/>
-        <input type="button" class="action-button" value="随便先" onclick="addRank('all')"/>
-        <input type="text" name="ranks" class="hidden" />
+        <h2 class="fs-title">想读什么专业（可多选）？</h2>
+        <input type="button" class="action-button" value="会计" onclick="addMajor('accounting')" />
+        <input type="button" class="action-button" value="金融"  onclick="addMajor('finance')"/>
+        <input type="button" class="action-button" value="经济" onclick="addMajor('economy')"/>
+        <input type="button" class="action-button" value="管理" onclick="addMajor('management')"/>
+        <input type="button" class="action-button" value="计算机/软件" onclick="addMajor('computer')"/>
+        <input type="button" class="action-button" value="工程" onclick="addMajor('engineering')"/>
+        <input type="button" class="action-button" value="国际关系" onclick="addMajor('ir')"/>
+        <input type="text" name="majors" class="hidden"/>
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
-        <a class="next fa fa-chevron-circle-right fa-3x" id="aRanks"></a>
+        <a class="next fa fa-chevron-circle-right fa-3x" id="aMajors"></a>
     </fieldset>
     <fieldset>
-        <h2 class="fs-title">一些注册信息</h2>
-        <input type="text" name="username" placeholder="用户名,大于6位的字母数字组合" class="textInput" />
+        <h2 class="fs-title">注册信息</h2>
+        <input type="text" name="username" placeholder="昵称" class="textInput" />
         <input type="password" name="password" placeholder="密码,大于6位" class="textInput" />
         <input type="password" name="repeatpassword" placeholder="重复密码" class="textInput"/>
         <input type="email" name="email" placeholder="邮箱" class="textInput" />
