@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-    //
-    public function tags() {
-    	return $this->belongsToMany('App\Consultant')->withTimestamps();
+    protected $table = 'tags';
+    protected $fillable = ['name'];
+    public $timestamps = false;
+
+    public function consultants() {
+    	return $this->belongsToMany('App\Consultant');
     }
 }

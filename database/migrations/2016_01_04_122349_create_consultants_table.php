@@ -20,6 +20,8 @@ class CreateConsultantsTable extends Migration
             $table->string('wechat');
             $table->string('degree');
             $table->string('university');
+            $table->string('major');
+            $table->integer('thanks');
             $table->string('avatar');
             $table->timestamps();
             $table->rememberToken();

@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Request;
+use Auth;
 use Response;
+use Input;
+use Validator;
+use Session;
 use App\Http\Controllers\Controller;
 use App\Student;
 use App\Consultant;
@@ -19,7 +23,8 @@ class StudentController extends Controller
     public function home()
     {
         $consultants = Consultant::all();
-        return view('student.home',compact('consultants'));
+        $user = Auth::user("student");
+        return view('student.home',compact('consultants','user'));
     }
 
     public function index()
@@ -35,6 +40,51 @@ class StudentController extends Controller
     public function newbeeEn()
     {
         return view('student.regis-success-en');
+    }
+
+     public function avatarUpload()
+    {
+        $this->wrongTokenAjax();
+        $file = Input::file('image');
+        $input = array('image' => $file);
+        $rules = array(
+            'image' => 'image'
+        );
+        $validator = Validator::make($input, $rules);
+        if ( $validator->fails() ) {
+            return Response::json([
+                'success' => false,
+                'errors' => $validator->getMessageBag()->toArray()
+            ]);
+
+        }
+
+        $destinationPath = 'uploads/';
+        $filename = $file->getClientOriginalName();
+        $file->move($destinationPath, $filename);
+        // return Response::json(
+        //     [
+        //         'success' => true,
+        //         'avatar' => asset($destinationPath.$filename),
+        //     ]
+        // );
+        $user = Auth::user("student");
+        $user->avatar = asset($destinationPath.$filename);
+        $user->save();
+        return redirect('/student/home');
+    }
+
+    public function wrongTokenAjax()
+    {
+        if ( Session::token() !== Request::get('_token') ) {
+            $response = [
+                'status' => false,
+                'errors' => 'Wrong Token',
+            ];
+
+            return Response::json($response);
+        }
+
     }
 
     /**

@@ -63,7 +63,7 @@ class AuthController extends Controller
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
+    protected function createStudent(array $data)
     {
         return Student::create([
             'username' => $data['username'],
@@ -71,8 +71,9 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
             'wechat' => $data['wechat'],
             'degree' => $data['degree'],
-            'countries' => $data['countries'],
-            'ranks' => $data['ranks'],
+            'universities' => $data['universities'],
+            'majors' => $data['majors'],
+
         ]);
     }
 
@@ -84,9 +85,9 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
             'wechat' => $data['wechat'],
             'degree' => $data['degree'],
-            'country' => $data['country'],
             'university' => $data['university'],
-            'skills' => $data['skills'],
+            'major' => $data['major'],
+            'thanks' => '0',
         ]);
     }
 
@@ -114,7 +115,7 @@ class AuthController extends Controller
 
     public function postStudentRegister(Request $request)
     {
-        \Auth::login("student",$this->create($request->all()));
+        \Auth::login("student",$this->createStudent($request->all()));
         
         return redirect('student/regis-success');
 
@@ -122,7 +123,7 @@ class AuthController extends Controller
 
     public function postStudentRegisterEn(Request $request)
     {
-        \Auth::login("student",$this->create($request->all()));
+        \Auth::login("student",$this->createStudent($request->all()));
         
         return redirect('en/student/regis-success');
 
@@ -130,22 +131,21 @@ class AuthController extends Controller
 
     public function postConsultantRegister(Request $request)
     {
-        // \Auth::login("consultant",$this->createConsultant($request->all()));
+        \Auth::login("consultant",$this->createConsultant($request->all()));
         
-        // // store tag & consultant pair into table
-        // $consultant = Consultant::where('username',$request->username)->first();
-        // $idarr = [];
+        // store tag & consultant pair into table
+        $consultant = Consultant::where('username',$request->username)->first();
+        $idarr = [];
 
-        // $arr = explode(',', $request->skills);
-        // $arrLen = sizeof($arr);
-        // for($i=0;$i<$arrLen;$i++) {
-        //     array_push($idarr, Tag::where('name',$arr[$i])->first()->id);
-        // };
+        $arr = explode(',', $request->skills);
+        $arrLen = sizeof($arr);
+        for($i=0;$i<$arrLen;$i++) {
+            array_push($idarr, Tag::where('name',$arr[$i])->first()->id);
+        };
 
-        // $consultant->tags()->attach($idarr);
+        $consultant->tags()->attach($idarr);
         
-        // return redirect('consultant/regis-success');
-        return $request->all();
+        return redirect('consultant/regis-success');
 
     }
 

@@ -495,19 +495,19 @@ var parallelism = (function($) { var _ = {
 						}
 
 				// Poptrox.
-					_.objects.reel.poptrox({
-						onPopupClose: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.removeClass('overlayed'); }) : null),
-						onPopupOpen: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.addClass('overlayed'); }) : null),
-						overlayColor: _.settings.popupOverlayColor,
-						overlayOpacity: _.settings.popupOverlayOpacity,
-						popupCloserText: '',
-						popupLoaderText: '',
-						selector: '.thumb a.image',
-						usePopupCaption: true,
-						usePopupCloser: false,
-						usePopupDefaultStyling: false,
-						usePopupNav: true
-					});
+					// _.objects.reel.poptrox({
+					// 	onPopupClose: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.removeClass('overlayed'); }) : null),
+					// 	onPopupOpen: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.addClass('overlayed'); }) : null),
+					// 	overlayColor: _.settings.popupOverlayColor,
+					// 	overlayOpacity: _.settings.popupOverlayOpacity,
+					// 	popupCloserText: '',
+					// 	popupLoaderText: '',
+					// 	selector: '.thumb a.image',
+					// 	usePopupCaption: true,
+					// 	usePopupCloser: false,
+					// 	usePopupDefaultStyling: false,
+					// 	usePopupNav: true
+					// });
 
 				// Trigger resize event.
 					_.objects.window.trigger('resize');

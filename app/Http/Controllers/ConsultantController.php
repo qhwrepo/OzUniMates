@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Request;
+use Auth;
 use Response;
 use Input;
 use Validator;
@@ -22,7 +23,8 @@ class ConsultantController extends Controller
     public function home()
     {
         $students = Student::all();
-        return view('consultant.home',compact('students'));
+        $user = Auth::user("consultant");
+        return view('consultant.home',compact('students','user'));
     }
 
     public function index()
@@ -68,12 +70,16 @@ class ConsultantController extends Controller
         $destinationPath = 'uploads/';
         $filename = $file->getClientOriginalName();
         $file->move($destinationPath, $filename);
-        return Response::json(
-            [
-                'success' => true,
-                'avatar' => asset($destinationPath.$filename),
-            ]
-        );
+        // return Response::json(
+        //     [
+        //         'success' => true,
+        //         'avatar' => asset($destinationPath.$filename),
+        //     ]
+        // );
+        $user = Auth::user("consultant");
+        $user->avatar = asset($destinationPath.$filename);
+        $user->save();
+        return redirect('/consultant/home');
     }
 
     public function wrongTokenAjax()
