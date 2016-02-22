@@ -167,127 +167,96 @@ under Apache 2.0 by Start Bootstrap
     </section>
 
     <!-- Portfolio -->
-    <section id="uni-section" class="portfolio row">
-        <div id="uni-caption">
-          <h2>还没确定目标?</h2>
-          <h2>它们最受师兄师姐欢迎：</h2>
-        </div>
-        <div class="or-spacer">
-          <div class="mask"></div>
-        </div>
-        <div class="unis col-md-6 col-sm-6">
-            <h3 class="uni-header">澳洲</h3>
-            <ul class="adaptive-slider" id="slider1">    
-              <li>
-                <figure>
-                  <img src="/img/portfolio-1.jpg">
-                  <figcaption>
-                    <h1 class="uni-name">澳大利亚国立大学</h1>
-                    <p>
-                      2015 QS Rank: 19 / Times Rank: 45
-                      优势学科:
-                    </p>
-                  </figcaption>
-                </figure>
-              </li>
+    <section id="uni-section">
+      <div id="uni-caption">
+        <h2>还没确定目标?</h2>
+        <h2>这些大学最受师兄师姐欢迎：</h2>
+      </div>
+      <div class="or-spacer">
+        <div class="mask"></div>
+      </div>
 
-              <li>
-                <figure>
-                  <img src="/img/portfolio-2.jpg">
-                  <figcaption>
-                    <h1 class="uni-name">墨尔本大学</h1>
-                    <p>
-                      2015 QS Rank: 42 / Times Rank: 33
-                      优势学科:
-                    </p>
-                  </figcaption>
-                </figure>
-              </li>
+      <div class="distribution-map">
+        <!-- This was broken for a while because imgur :( -->
+        <!-- I don't trust this host. Image here if it goes down: http://i.imgur.com/M7aUkuS.png -->
+        <img src="/img/map_australia.png">
 
-              <!-- <li>
-                <figure>
-                  <img src="/img/portfolio-3.jpg">
-                  <figcaption>
-                    <h1 class="uni-name">悉尼大学</h1>
-                    <p>
-                      2015 QS Rank: 45 / Times Rank: 60
-                      优势学科:
-                    </p>
-                  </figcaption>
-                </figure>
-              </li>
+        <button class="map-point" style="top:69.2%;left:84%" id="usyd">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>悉尼大学</h2>
+                    <img src="/img/uni_logo/usyd.png">
+                    <p>2015 QS Rank: 45 / Times Rank: 60
+                      <br/> 优势学科:</p>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:67%;left:84%">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>麦考瑞大学</h2>
+                    <p>2015 QS Rank:  / Times Rank: 
+                      <br/> 优势学科:</p>
+                </div>
+            </div>
+        </button>
 
-              <li>
-                <figure>
-                  <img src="/img/portfolio-4.jpg">
-                  <figcaption>
-                    <h1 class="uni-name">新南威尔士大学</h1>
-                    <p>
-                      2015 QS Rank: 46 / Times Rank: 109
-                      优势学科:
-                    </p>
-                  </figcaption>
-                </figure>
-              </li> -->
-            </ul>
-        </div>
+        <button class="map-point" style="top:67.5%;left:86%">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>新南威尔士大学</h2>
+                    <p>2015 QS Rank: 46 / Times Rank: 109
+                      <br/> 优势学科:</p>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:74%;left:82%">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>澳大利亚国立大学</h2>
+                    <p>2015 QS Rank: 19 / Times Rank: 45
+                      <br/> 优势学科:</p>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:63%;left:14%">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>西澳大学</h2>
+                    <p>2015 QS Rank:  / Times Rank: 
+                      <br/> 优势学科:</p>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:78%;left:73.5%">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>墨尔本大学</h2>
+                    <p>2015 QS Rank: 42 / Times Rank: 33
+                      <br/> 优势学科:</p>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:79.5%;left:75%">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>莫纳什大学</h2>
+                    <p>2015 QS Rank:  / Times Rank: 
+                      <br/> 优势学科:</p>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:50.6%;left:90%">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>昆士兰大学</h2>
+                    <p>2015 QS Rank:  / Times Rank: 
+                      <br/> 优势学科:</p>
+                </div>
+            </div>
+        </button>
+    </div>
 
-        <div class="unis col-md-6 col-sm-6">
-            <h3 class="uni-header">美国</h3>
-            <ul class="adaptive-slider" id="slider2">    
-              <li>
-                <figure>
-                  <img src="/img/portfolio-5.jpg">
-                  <figcaption>
-                    <h1 class="uni-name">耶鲁大学</h1>
-                    <p>
-                      2015 QS Rank: 19 / Times Rank: 45
-                      优势学科:
-                    </p>
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li>
-                <figure>
-                  <img src="/img/portfolio-6.jpg">
-                  <figcaption>
-                    <h1 class="uni-name">宾州州立大学</h1>
-                    <p>
-                      2015 QS Rank: 42 / Times Rank: 33
-                      优势学科:
-                    </p>
-                  </figcaption>
-                </figure>
-              </li>
-
-<!--               <li>
-                <figure>
-                  <img src="/img/portfolio-3.jpg">
-                  <figcaption>
-                    <h1 class="uni-name">加州州立大学 洛杉矶分校</h1>
-                    <p>
-                      2015 QS Rank: 45 / Times Rank: 60
-                      优势学科:
-                    </p>
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li>
-                <figure>
-                  <img src="/img/portfolio-4.jpg">
-                  <figcaption>
-                    <h1 class="uni-name">耶鲁大学</h1>
-                    <p>
-                      2015 QS Rank: 46 / Times Rank: 109
-                      优势学科:
-                    </p>
-                  </figcaption>
-                </figure>
-              </li> -->
-            </ul>
-        </div>
     </section>
 
     <!-- Footer -->
@@ -303,7 +272,6 @@ under Apache 2.0 by Start Bootstrap
                         <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:xuan9230@gmail.com">xuan9230@gmail.com</a>
                         </li>
                     </ul>
-                    <hr class="small">
                     <p class="text-muted">Copyright &copy; 澳联帮 2016</p>
                 </div>
             </div>
