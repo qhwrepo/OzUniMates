@@ -68,15 +68,14 @@ under Apache 2.0 by Start Bootstrap
     <header id="top" class="header">
         <div class="text-vertical-center" id="header-intro">
             <h1>澳联帮</h1>
-            <h3><br/>申请就那么回事<br/><br/>比起中介，为何不直接找师兄师姐呢？</h3>
+            <h3><br/>申请就那么回事</h3>
+            <h3>比起中介，不如直接和师兄师姐聊聊吧</h3>
             <div class="or-spacer">
               <div class="mask"></div>
             </div>
-            <br>
-            <a href="student/register" class="link-home"><i class="fa fa-users fa-2x"></i> 我要找师兄</a>
-            <a href="consultant/register" class="link-home"><i class="fa fa-user-secret fa-2x"></i> 我就是师兄</a>
-            <br><br>
-            <a href="#about" class="fa fa-angle-double-down" id="tellMore"></a>
+            <a href="student/register" class="link-home"><i class="fa fa-user fa-2x"></i> 我要找师兄/师姐</a>
+            <a href="consultant/register" class="link-home"><i class="fa fa-user-secret fa-2x"></i> 我就是师兄/师姐</a>
+            <a href="#about" class="fa fa-angle-double-down" id="tellMore"><span id="showme"></span></a>
         </div>
     </header>
 
@@ -86,7 +85,7 @@ under Apache 2.0 by Start Bootstrap
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>想来澳洲留学 但是信息有限？</h2>
-                    <p class="lead">直接和未来的校友聊聊吧。</p>
+                    <br/>
                 </div>
             </div>
             <!-- /.row -->
@@ -99,19 +98,21 @@ under Apache 2.0 by Start Bootstrap
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <h2>在这里，校友们帮你：</h2>
-                    <hr class="small">
+                    <h2>直接和未来的校友聊聊吧</h2>
+                    <div class="or-spacer">
+                      <div class="mask"></div>
+                    </div>
                     <div class="row">
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-pencil fa-stack-1x text-primary"></i>
+                                <i class="fa fa-users fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>申请材料修改</strong>
+                                    <strong>1. 找到ta</strong>
                                 </h4>
-                                <p>自述/简历/推荐信<br/>直接让校友帮你改!</p>
+                                <p>想去哪里，读什么？<br/>我们帮你找到校友。</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -121,9 +122,21 @@ under Apache 2.0 by Start Bootstrap
                                 <i class="fa fa-university fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>院校信息</strong>
+                                    <strong>2. 我准备好了吗</strong>
                                 </h4>
-                                <p>院校/专业的排名和中文信息<br/>也可以专门翻译你需要的部分。</p>
+                                <p>对学校/专业了解充分吗？<br/>简历还需要修改吗？</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-file-text fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>3. 正式申请</strong>
+                                </h4>
+                                <p>录取/签证并不容易<br/>我们的公益顾问帮你免费搞定！</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -133,21 +146,9 @@ under Apache 2.0 by Start Bootstrap
                                 <i class="fa fa-plane fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>接机/住宿</strong>
+                                    <strong>4. 入学之后</strong>
                                 </h4>
-                                <p>初来异国？<br/>校友帮你安顿下来！</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-user-secret fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>私人顾问</strong>
-                                </h4>
-                                <p>想要一站式申请服务？<br/>聘请校友当你的顾问吧。</p>
+                                <p>找房子/选课/社交圈/职业圈……<br/>快去抱校友大腿吧！</p>
                             </div>
                         </div>
                     </div>
