@@ -17,6 +17,15 @@
 </div>
 @endif
 
+<!-- popup modal -->
+
+<div class="modal_info">
+  <h1>Simple jQuery Modal</h1>
+  <p>It may not look like much, but it still does exactly what it says straight out of the box.</p>
+</div>
+<div class="modal_overlay">
+</div>
+
 <div id="reel">
 	<div id="header" class="item" data-width="400">
 		<div class="inner">
@@ -30,14 +39,14 @@
 	<article class="item thumb">
 		<h2>{{ $user['username'] }} <br/><br/>
 		{{ $user['university'] }} {{ $user['major'] }}</h2>
-		<a href="#" class="image"><img src="{{$user['avatar']}}" alt=""></a>
+		<a href="#" class="image open_button"><img src="{{$user['avatar']}}" alt=""></a>
 	</article>
 
 	@foreach($students as $student)
 	<article class="item thumb">
 		<h2>{{$student->username}} <br/><br/>
 		{{ $student['universities'] }} {{ $student['majors'] }}</h2>
-		<a href="images/fulls/01.jpg" class="image"><img src="/img/no_avatar.jpg" alt=""></a>
+		<a href="#" class="image open_button"><img src="/img/no_avatar.jpg" alt=""></a>
 	</article>
 	@endforeach
 	
