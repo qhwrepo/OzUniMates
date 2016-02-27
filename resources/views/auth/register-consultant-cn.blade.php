@@ -53,7 +53,7 @@
             <option>麦考瑞大学</option>
             <option>弗林德斯大学</option>
             <option>格里菲思大学</option>
-            <option>皇家墨尔本理工学院</option>
+            <option>墨尔本皇家理工学院</option>
             <option>悉尼科技大学</option>
             <option>迪肯大学</option>
             <option>昆士兰科技大学</option>

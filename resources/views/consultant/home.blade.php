@@ -17,12 +17,62 @@
 </div>
 @endif
 
-<!-- popup modal -->
+<!-- popup modal: modal_info1 for the user himself, modal_info2 for other users -->
 
-<div class="modal_info">
-  <h1>Simple jQuery Modal</h1>
-  <p>It may not look like much, but it still does exactly what it says straight out of the box.</p>
+<div class="modal_info modal_info1">
+	<img src="{{$user['avatar']}}">
+	<div class="modal_desc">
+  		<h1>{{ $user['username'] }}</h1>
+  		<div class="or-spacer">
+              <div class="mask"></div>
+            </div>
+  		<div class="modal_record">
+  			<span class="record_title">大学</span>
+  			<span class="record_content">{{$user['university']}}</span>
+  		</div>
+  		<div class="modal_record">
+  			<span class="record_title">专业</span>
+  			<span class="record_content">{{$user['major']}}</span>
+  		</div>
+  		<div class="modal_record">
+  			<span class="record_title">微信</span>
+  			<span class="record_content">@if($user['wechat']) {{$user['wechat']}} 
+  			@else ta想暂时保持神秘 @endif</span>
+  		</div>
+  		<div class="modal_record">
+  			<span class="record_title">简介</span>
+  			<span class="record_content">@if($user['description']) {{$user['description']}} 
+  			@else ta还没决定说些什么 @endif</span>
+  		</div>	
+  	</div>
 </div>
+
+<div class="modal_info modal_info2">
+	<img src="{{$user['avatar']}}">
+	<div class="modal_desc">
+  		<h1>{{ $user['username'] }}</h1>
+  		<div class="or-spacer">
+              <div class="mask"></div>
+            </div>
+  		<div class="modal_record">
+  			<span class="record_title">目标大学</span>
+  			<span class="record_content" id="modal_university"></span>
+  		</div>
+  		<div class="modal_record">
+  			<span class="record_title">目标专业</span>
+  			<span class="record_content" id="modal_major"></span>
+  		</div>
+  		<div class="modal_record">
+  			<span class="record_title">微信</span>
+  			<span class="record_content" id="modal_wechat"></span>
+  		</div>
+  		<div class="modal_record">
+  			<span class="record_title">简介</span>
+  			<span class="record_content" id="modal_description"></span>
+  		</div>	
+  	</div>
+</div>
+
 <div class="modal_overlay">
 </div>
 
@@ -39,14 +89,14 @@
 	<article class="item thumb">
 		<h2>{{ $user['username'] }} <br/><br/>
 		{{ $user['university'] }} {{ $user['major'] }}</h2>
-		<a href="#" class="image open_button"><img src="{{$user['avatar']}}" alt=""></a>
+		<a href="#" class="image open_button open_button1"><img src="{{$user['avatar']}}" alt=""></a>
 	</article>
 
 	@foreach($students as $student)
 	<article class="item thumb">
 		<h2>{{$student->username}} <br/><br/>
 		{{ $student['universities'] }} {{ $student['majors'] }}</h2>
-		<a href="#" class="image open_button"><img src="/img/no_avatar.jpg" alt=""></a>
+		<a href="#" class="image open_button" onclick="open_modal({{$student->id}})"><img src="/img/no_avatar.jpg" alt=""></a>
 	</article>
 	@endforeach
 	
