@@ -51,12 +51,22 @@
           </optgroup>
           <optgroup label="其他">
             <option>麦考瑞大学</option>
-            <option>弗林德斯大学</option>
             <option>格里菲思大学</option>
             <option>墨尔本皇家理工学院</option>
             <option>悉尼科技大学</option>
             <option>迪肯大学</option>
+            <option>卧龙岗大学</option>
+            <option>悉尼科技大学</option>
+            <option>维多利亚大学</option>
+            <option>斯威本科技大学</option>
+            <option>科廷科技大学</option>
+            <option>默多克大学</option>
+            <option>南澳大学</option>
+            <option>纽卡斯尔大学</option>
+            <option>查尔斯斯图亚特大学</option>
+            <option>拉筹伯大学</option>
             <option>昆士兰科技大学</option>
+            <option>詹姆斯库克大学</option>
           </optgroup>
         </select>
         <input type="text" name="university" class="hidden" />
@@ -71,12 +81,26 @@
         title="搜索或选择" onchange="setMajor(this.value)">
           <optgroup label="商科">
             <option>会计</option>
+            <option>精算</option>
             <option>金融</option>
+            <option>管理</option>
+            <option>其他商科</option>
           </optgroup>
-          <optgroup label="其他">
-            <option>吃</option>
-            <option>喝</option>
-            <option>嫖</option>
+          <optgroup label="工程类">
+            <option>电气工程</option>
+            <option>计算机/软件</option>
+            <option>生物医学工程</option>
+            <option>化学工程</option>
+            <option>机械/制造</option>
+            <option>其他工程</option>
+          </optgroup>
+          <optgroup label="人文社会">
+            <option>国际关系</option>
+            <option>政治经济</option>
+            <option>社会工作</option>
+            <option>亚太研究</option>
+            <option>机械/制造</option>
+            <option>其他工程</option>
           </optgroup>
         </select>
         <input type="text" name="major" class="hidden" />

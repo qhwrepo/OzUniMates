@@ -19,11 +19,6 @@ var country;
 var university;
 var major;
 var skills = [];
-// var uniIndex = {
-// 	'牛津大学' : 'oxford',
-// 	'剑桥大学' : 'cambridge',
-// 	'康奈尔大学' : 'cornell'
-// }
 
 var daForm = document.forms['msform'];
 var passwordOk;
@@ -178,7 +173,8 @@ function setMajor(maj) {
 function addUniversity(uni) {
 	var tindex = jQuery.inArray(uni,universities);
 	if(tindex === -1) {
-		universities.push(uni);
+		if(uni=='') ;
+		else universities.push(uni);
 		$("#aUniversities").removeClass("not-active");	
 	}
 	else {
@@ -192,7 +188,8 @@ function addUniversity(uni) {
 function addMajor(major) {
 	var tindex = jQuery.inArray(major,majors);
 	if(tindex === -1) {
-		majors.push(major);
+		if(major=='') ;
+		else majors.push(major);
 		$("#aMajors").removeClass("not-active");	
 	}
 	else {

@@ -5,9 +5,10 @@ var uniIndex = {
 	'unsw' : '新南威尔士大学',
 	'monash' : '莫纳什大学',
 	'queensland' : '昆士兰大学',
-	'umcq' : '麦考瑞大学',
+	'macquarie' : '麦考瑞大学',
 	'ugriffith' : '格里菲思大学',
-	'urealmel' : '墨尔本皇家理工学院'
+	'urealmel' : '墨尔本皇家理工学院',
+  'adelaide' : '阿德莱德大学'
 }
 
 // picture uploader

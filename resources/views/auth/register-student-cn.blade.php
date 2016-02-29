@@ -39,6 +39,9 @@
         <input type="button" class="action-button" value="新南威尔士大学" onclick="addUniversity('unsw')"/>
         <input type="button" class="action-button" value="莫纳什大学" onclick="addUniversity('monash')"/>
         <input type="button" class="action-button" value="昆士兰大学" onclick="addUniversity('queensland')"/>
+        <input type="button" class="action-button" value="麦考瑞大学" onclick="addUniversity('macquarie')"/>
+        <input type="button" class="action-button" value="阿德莱德大学" onclick="addUniversity('adelaide')"/>
+        <input type="button" class="action-button" value="其他" onclick="addUniversity('')"/>
         <input type="text" name="universities" class="hidden"/>
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
@@ -53,6 +56,7 @@
         <input type="button" class="action-button" value="计算机/软件" onclick="addMajor('computer')"/>
         <input type="button" class="action-button" value="工程" onclick="addMajor('engineering')"/>
         <input type="button" class="action-button" value="国际关系" onclick="addMajor('ir')"/>
+        <input type="button" class="action-button" value="其他" onclick="addMajor('')"/>
         <input type="text" name="majors" class="hidden"/>
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
