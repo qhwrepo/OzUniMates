@@ -176,87 +176,205 @@ under Apache 2.0 by Start Bootstrap
       <div class="or-spacer">
         <div class="mask"></div>
       </div>
+      <h4>(大学排名数据为2015年)</h4>
 
       <div class="distribution-map">
-        <!-- This was broken for a while because imgur :( -->
-        <!-- I don't trust this host. Image here if it goes down: http://i.imgur.com/M7aUkuS.png -->
-        <img src="/img/map_australia.png">
 
-        <button class="map-point" style="top:69.2%;left:84%" id="usyd">
+        <img src="/img/map_australia.png">
+        <button class="map-point" style="top:69.2%;left:82.5%" id="usyd">
             <div class="content">
                 <div class="centered-y">
                     <h2>悉尼大学</h2>
                     <img src="/img/uni_logo/usyd.png">
-                    <p>2015 QS Rank: 45 / Times Rank: 60
-                      <br/> 优势学科:</p>
+                    <div class="uni_desc">
+                        <span class="desc_title">世界排名</span>
+                        <span class="desc_content">QS世界大学排名: 45 <br/> Times高等教育排名: 60</span>
+                    </div>
+                    <div class="uni_desc">
+                        <span class="desc_title">优势学科</span>
+                        <span class="desc_content">商科 法学</span>
+                    </div>
                 </div>
             </div>
         </button>
-        <button class="map-point" style="top:67%;left:84%">
+        <button class="map-point" style="top:65.5%;left:82.5%" id="mcq">
             <div class="content">
                 <div class="centered-y">
                     <h2>麦考瑞大学</h2>
-                    <p>2015 QS Rank:  / Times Rank: 
-                      <br/> 优势学科:</p>
+                    <img src="/img/uni_logo/mcq.png">
+                    <div class="uni_desc">
+                        <span class="desc_title">世界排名</span>
+                        <span class="desc_content">QS世界大学排名: 254 <br/> Times高等教育排名: 301-350</span>
+                    </div>
+                    <div class="uni_desc">
+                        <span class="desc_title">优势学科</span>
+                        <span class="desc_content">商科</span>
+                    </div>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:66%;left:86%" id="unsw">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>新南威尔士大学</h2>
+                    <img src="/img/uni_logo/unsw.png">
+                    <div class="uni_desc">
+                        <span class="desc_title">世界排名</span>
+                        <span class="desc_content">QS世界大学排名: 46 <br/> Times高等教育排名: 109</span>
+                    </div>
+                    <div class="uni_desc">
+                        <span class="desc_title">优势学科</span>
+                        <span class="desc_content">商科 工科(计算机)</span>
+                    </div>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:74.5%;left:82%" id="anu">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>澳大利亚国立大学</h2>
+                    <img src="/img/uni_logo/anu.png">
+                    <div class="uni_desc">
+                        <span class="desc_title">世界排名</span>
+                        <span class="desc_content">QS世界大学排名: 19 <br/> Times高等教育排名: 45</span>
+                    </div>
+                    <div class="uni_desc">
+                        <span class="desc_title">优势学科</span>
+                        <span class="desc_content">人文科学 亚太 经济</span>
+                    </div>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:63%;left:14%" id="wa">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>西澳大学</h2>
+                    <img src="/img/uni_logo/wa.png">
+                    <div class="uni_desc">
+                        <span class="desc_title">世界排名</span>
+                        <span class="desc_content">QS世界大学排名: 98 <br/> Times高等教育排名: 157</span>
+                    </div>
+                    <div class="uni_desc">
+                        <span class="desc_title">优势学科</span>
+                        <span class="desc_content">商科</span>
+                    </div>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:76.5%;left:72%" id="umel">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>墨尔本大学</h2>
+                    <img src="/img/uni_logo/umel.png">
+                    <div class="uni_desc">
+                        <span class="desc_title">世界排名</span>
+                        <span class="desc_content">QS世界大学排名: 42 <br/> Times高等教育排名: 33</span>
+                    </div>
+                    <div class="uni_desc">
+                        <span class="desc_title">优势学科</span>
+                        <span class="desc_content">商科 医学</span>
+                    </div>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:80%;left:75%" id="monash">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>莫纳什大学</h2>
+                    <img src="/img/uni_logo/monash.png">
+                    <div class="uni_desc">
+                        <span class="desc_title">世界排名</span>
+                        <span class="desc_content">QS世界大学排名: 67 <br/> Times高等教育排名: 83</span>
+                    </div>
+                    <div class="uni_desc">
+                        <span class="desc_title">优势学科</span>
+                        <span class="desc_content">信息技术 计算机</span>
+                    </div>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:50.6%;left:90%" id="queensland">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>昆士兰大学</h2>
+                    <img src="/img/uni_logo/queensland.png">
+                    <div class="uni_desc">
+                        <span class="desc_title">世界排名</span>
+                        <span class="desc_content">QS世界大学排名: 46 <br/> Times高等教育排名: 65</span>
+                    </div>
+                    <div class="uni_desc">
+                        <span class="desc_title">优势学科</span>
+                        <span class="desc_content">生命科学 化学</span>
+                    </div>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:74.5%;left:85.5%" id="uc">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>堪培拉大学</h2>
+                    <img src="/img/uni_logo/uc.png">
+                    <div class="uni_desc">
+                        <span class="desc_title">世界排名</span>
+                        <span class="desc_content">QS世界大学排名: 551-600 <br/> Times高等教育排名: ...</span>
+                    </div>
+                    <div class="uni_desc">
+                        <span class="desc_title">优势学科</span>
+                        <span class="desc_content">商科</span>
+                    </div>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:69.2%;left:85.7%" id="sydtech">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>悉尼科技大学</h2>
+                    <img src="/img/uni_logo/sydtech.jpg">
+                    <div class="uni_desc">
+                        <span class="desc_title">世界排名</span>
+                        <span class="desc_content">QS世界大学排名: 218 <br/> Times高等教育排名: 226-250</span>
+                    </div>
+                    <div class="uni_desc">
+                        <span class="desc_title">优势学科</span>
+                        <span class="desc_content">电子科技</span>
+                    </div>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:73%;left:65%" id="ade">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>阿德莱德大学</h2>
+                    <img src="/img/uni_logo/ade.png">
+                    <div class="uni_desc">
+                        <span class="desc_title">世界排名</span>
+                        <span class="desc_content">QS世界大学排名: 113 <br/> Times高等教育排名: 164</span>
+                    </div>
+                    <div class="uni_desc">
+                        <span class="desc_title">优势学科</span>
+                        <span class="desc_content">商科 传媒</span>
+                    </div>
+                </div>
+            </div>
+        </button>
+        <button class="map-point" style="top:76.5%;left:75%" id="mr">
+            <div class="content">
+                <div class="centered-y">
+                    <h2>墨尔本皇家理工大学</h2>
+                    <img src="/img/uni_logo/mr.png">
+                    <div class="uni_desc">
+                        <span class="desc_title">世界排名</span>
+                        <span class="desc_content">QS世界大学排名: ... <br/> Times高等教育排名: ...</span>
+                    </div>
+                    <div class="uni_desc">
+                        <span class="desc_title">优势学科</span>
+                        <span class="desc_content">计算机 工程</span>
+                    </div>
                 </div>
             </div>
         </button>
 
-        <button class="map-point" style="top:67.5%;left:86%">
-            <div class="content">
-                <div class="centered-y">
-                    <h2>新南威尔士大学</h2>
-                    <p>2015 QS Rank: 46 / Times Rank: 109
-                      <br/> 优势学科:</p>
-                </div>
-            </div>
-        </button>
-        <button class="map-point" style="top:74%;left:82%">
-            <div class="content">
-                <div class="centered-y">
-                    <h2>澳大利亚国立大学</h2>
-                    <p>2015 QS Rank: 19 / Times Rank: 45
-                      <br/> 优势学科:</p>
-                </div>
-            </div>
-        </button>
-        <button class="map-point" style="top:63%;left:14%">
-            <div class="content">
-                <div class="centered-y">
-                    <h2>西澳大学</h2>
-                    <p>2015 QS Rank:  / Times Rank: 
-                      <br/> 优势学科:</p>
-                </div>
-            </div>
-        </button>
-        <button class="map-point" style="top:78%;left:73.5%">
-            <div class="content">
-                <div class="centered-y">
-                    <h2>墨尔本大学</h2>
-                    <p>2015 QS Rank: 42 / Times Rank: 33
-                      <br/> 优势学科:</p>
-                </div>
-            </div>
-        </button>
-        <button class="map-point" style="top:79.5%;left:75%">
-            <div class="content">
-                <div class="centered-y">
-                    <h2>莫纳什大学</h2>
-                    <p>2015 QS Rank:  / Times Rank: 
-                      <br/> 优势学科:</p>
-                </div>
-            </div>
-        </button>
-        <button class="map-point" style="top:50.6%;left:90%">
-            <div class="content">
-                <div class="centered-y">
-                    <h2>昆士兰大学</h2>
-                    <p>2015 QS Rank:  / Times Rank: 
-                      <br/> 优势学科:</p>
-                </div>
-            </div>
-        </button>
-    </div>
+        </div>
 
     </section>
 

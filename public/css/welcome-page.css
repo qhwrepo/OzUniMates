@@ -406,7 +406,13 @@ input {
   font-size: 24pt;
 }
 
-#uni-section p {
+#uni-section h4 {
+  margin: 0px;
+  margin-bottom: -20px;
+}
+
+#uni-section .uni_desc {
+  margin-top: 12pt;
   margin-bottom: 12pt;
 }
 
@@ -421,7 +427,6 @@ input {
 .distribution-map {
   position: relative;
   width: 100%;
-  padding: 20px;
   box-sizing: border-box;
   margin: 0 auto;
 }
@@ -436,9 +441,9 @@ input {
   outline: none;
   z-index: 0;
   position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 40px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
   -webkit-transform: translate(-50%, -50%);
@@ -469,8 +474,53 @@ input {
   overflow: overlay;
 }
 
+.distribution-map .uni_desc {
+  display: flex;
+}
+
+.distribution-map .uni_desc .desc_title{
+  flex:1;
+}
+
+.distribution-map .uni_desc .desc_content{
+  flex:2;
+}
+
 .distribution-map #usyd {
   background-image: url('/img/uni_logo/usyd.png');
+}
+.distribution-map #mcq {
+  background-image: url('/img/uni_logo/mcq.png');
+}
+.distribution-map #unsw {
+  background-image: url('/img/uni_logo/unsw.png');
+}
+.distribution-map #anu {
+  background-image: url('/img/uni_logo/anu.png');
+}
+.distribution-map #wa {
+  background-image: url('/img/uni_logo/wa.png');
+}
+.distribution-map #umel {
+  background-image: url('/img/uni_logo/umel.png');
+}
+.distribution-map #monash {
+  background-image: url('/img/uni_logo/monash.png');
+}
+.distribution-map #uc {
+  background-image: url('/img/uni_logo/uc.png');
+}
+.distribution-map #queensland {
+  background-image: url('/img/uni_logo/queensland.png');
+}
+.distribution-map #sydtech {
+  background-image: url('/img/uni_logo/sydtech.jpg');
+}
+.distribution-map #ade {
+  background-image: url('/img/uni_logo/ade.png');
+}
+.distribution-map #mr {
+  background-image: url('/img/uni_logo/mr.png');
 }
 
 .distribution-map .map-point:active, .distribution-map .map-point:focus {
