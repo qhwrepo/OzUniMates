@@ -265,6 +265,8 @@ hr.small {
   box-shadow: 0 0 8px black;
 }
 
+/*login form starts*/
+
 #lean_overlay {
     position: fixed;
     z-index:100;
@@ -274,6 +276,7 @@ hr.small {
     width:100%;
     background: #000;
     display: none;
+    
 }
 
 #loginForm {
@@ -286,6 +289,8 @@ hr.small {
   transform: translate(-50%,-50%);
   color: #fff;
   margin-left: inherit !important;
+  z-index: 200;
+  box-sizing: border-box;
 }
 
 #loginForm label {
@@ -302,7 +307,6 @@ hr.small {
   width: auto;
   vertical-align: middle;
 }
-
 #loginForm > div {
   height: 6.25em;
   width: 100%;
@@ -383,6 +387,8 @@ input {
 ::-webkit-input-placeholder {
   color: #fff;
 }
+
+/*login form end*/
 
 
 /*unis section start*/

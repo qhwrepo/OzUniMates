@@ -41,18 +41,19 @@ under Apache 2.0 by Start Bootstrap
         </ul>
     @endif
 
-    <a id="logbtn" class="navBtn btn btn-lg" href="#formModal">登录</a>
+    <a id="logbtn" class="navBtn btn btn-lg" onclick="set_form()">登录</a>
     <a id="languagebtn" href="en" class="navBtn btn btn-lg">English</a>
-
-    {!! Form::open(['url'=>'login','style'=>'display:none;','id'=>'formModal']) !!}
-    <div id="loginForm">
+    
+    <div id='lean_overlay' onclick="hide_form()">
+    </div>
+    {!! Form::open(['url'=>'login','style'=>'display:none;','id'=>'loginForm']) !!}
         <div class="usertype">
             <label>我是</label>
             {!! Form::radio('usertype','student') !!}<label>师弟/师妹</label>
             {!! Form::radio('usertype','consultant') !!}<label>师兄/师姐</label>
         </div>   
         <div class="username">
-          <input type="text" name="username" placeholder="用户名"/>
+          <input type="email" name="email" placeholder="邮箱"/>
         </div>
         <div class="password">
           <input type="password" name="password" placeholder="密码"/>
@@ -60,9 +61,8 @@ under Apache 2.0 by Start Bootstrap
         <div class="login">
             {!! Form::submit('登录',[]) !!}
         </div> 
-    </div>
     {!! Form::close() !!}
-
+    
 
     <!-- Header -->
     <header id="top" class="header">
@@ -404,7 +404,6 @@ under Apache 2.0 by Start Bootstrap
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <!-- custom -->
     <script type="text/javascript" src="/js/dist/vendor/rgbaster.min.js"></script>
-    <script type="text/javascript" src="/js/dist/jquery.adaptiveslider.js"></script>
     <script type="text/javascript" src="/js/welcome-page.js"></script>
 
 </body>

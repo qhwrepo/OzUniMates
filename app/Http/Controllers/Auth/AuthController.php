@@ -30,7 +30,7 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-    protected $username = 'username';
+    protected $username = 'email';
     protected $loginPath = '/';
 
     /**
@@ -198,9 +198,9 @@ class AuthController extends Controller
         else if( $request->only('usertype')['usertype'] == 'consultant' ) {
             $this->redirectPath = '/consultant/home';
             $credentials = $this->getCredentials($request); 
-            Log::info($credentials);
+            // Log::info($credentials);
 
-            if (\Auth::attempt("consultant",['username'=>$credentials['username'],
+            if (\Auth::attempt("consultant",['email'=>$credentials['email'],
                 'password'=>$credentials['password']])) {
                 return $this->handleUserWasAuthenticated($request, $throttles);
             }

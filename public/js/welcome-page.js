@@ -13,21 +13,14 @@ $(function() {
         }
     });
 
-    $('#slider1').adaptiveSlider({
-        opacity: 0.7,
-        normalizedTextColors: {
-          light: '#f1f1f1',
-          dark: '#222'
-        }
-    });
-
-    $('#slider2').adaptiveSlider({
-        opacity: 0.7,
-        normalizedTextColors: {
-          light: '#f1f1f1',
-          dark: '#222'
-        }
-    });
 });
 
-$("#logbtn").leanModal({top : 300, overlay : 0.6, closeButton: ".modal_close"} );
+$("#logbtn").leanModal({top : 300, overlay : 0.7, closeButton: ".modal_close"} );
+
+function set_form() {
+    $("#loginForm").css("display","inherit");
+}
+
+function hide_form() {
+    $("#loginForm").css("display","none");
+}
