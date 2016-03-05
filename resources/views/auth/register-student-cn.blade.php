@@ -33,14 +33,14 @@
     </fieldset>
     <fieldset>
         <h2 class="fs-title">有目标学校吗（可多选）？</h2>
-        <input type="button" class="action-button" value="澳大利亚国立大学" onclick="addUniversity('anu')" />
-        <input type="button" class="action-button" value="墨尔本大学"  onclick="addUniversity('umel')"/>
-        <input type="button" class="action-button" value="悉尼大学" onclick="addUniversity('usyd')"/>
-        <input type="button" class="action-button" value="新南威尔士大学" onclick="addUniversity('unsw')"/>
-        <input type="button" class="action-button" value="莫纳什大学" onclick="addUniversity('monash')"/>
-        <input type="button" class="action-button" value="昆士兰大学" onclick="addUniversity('queensland')"/>
-        <input type="button" class="action-button" value="麦考瑞大学" onclick="addUniversity('macquarie')"/>
-        <input type="button" class="action-button" value="阿德莱德大学" onclick="addUniversity('adelaide')"/>
+        <input type="button" class="action-button" value="澳大利亚国立大学" onclick="addUniversity(this.value)" />
+        <input type="button" class="action-button" value="墨尔本大学"  onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="悉尼大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="新南威尔士大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="莫纳什大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="昆士兰大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="麦考瑞大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="阿德莱德大学" onclick="addUniversity(this.value)"/>
         <input type="button" class="action-button" value="其他" onclick="addUniversity('')"/>
         <input type="text" name="universities" class="hidden"/>
         <br/>
@@ -49,15 +49,17 @@
     </fieldset>
     <fieldset>
         <h2 class="fs-title">想读什么专业（可多选）？</h2>
-        <input type="button" class="action-button" value="会计" onclick="addMajor('accounting')" />
-        <input type="button" class="action-button" value="金融"  onclick="addMajor('finance')"/>
-        <input type="button" class="action-button" value="经济" onclick="addMajor('economy')"/>
-        <input type="button" class="action-button" value="管理" onclick="addMajor('management')"/>
-        <input type="button" class="action-button" value="计算机/软件" onclick="addMajor('computer')"/>
-        <input type="button" class="action-button" value="工程" onclick="addMajor('engineering')"/>
-        <input type="button" class="action-button" value="国际关系" onclick="addMajor('ir')"/>
+        
+        <input type="button" class="action-button" value="商科"  onclick="addMajor(this.value)"/>
+        <input type="button" class="action-button" value="工程/计算机" onclick="addMajor(this.value)"/>
+        <input type="button" class="action-button" value="自然科学" onclick="addMajor(this.value)"/>
+        <input type="button" class="action-button" value="医学" onclick="addMajor(this.value)"/>
+        <input type="button" class="action-button" value="法学" onclick="addMajor(this.value)"/>
+        <input type="button" class="action-button" value="人文/社会" onclick="addMajor(this.value)"/>
+        <input type="button" class="action-button" value="艺术" onclick="addMajor(this.value)"/>
         <input type="button" class="action-button" value="其他" onclick="addMajor('')"/>
         <input type="text" name="majors" class="hidden"/>
+
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
         <a class="next fa fa-chevron-circle-right fa-3x" id="aMajors"></a>
@@ -68,7 +70,6 @@
         <input type="password" name="password" placeholder="密码,大于6位" class="textInput" />
         <input type="password" name="repeatpassword" placeholder="重复密码" class="textInput"/>
         <input type="email" name="email" placeholder="邮箱" class="textInput" />
-        <input type="text" name="wechat" placeholder="微信，可以不填" class="textInput" />
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
         <a class="submit fa fa-check-circle fa-3x" onclick="msSubmit(1);"></a>
     </fieldset>

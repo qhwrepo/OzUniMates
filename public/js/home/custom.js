@@ -159,11 +159,11 @@ function open_modal(id){
     var student = user_id(id);
    	var uni_list = split_translate(student['universities'],uniIndex);
     if(student['avatar']=='') $('#modal_avatar').attr("src","/img/no_avatar_square.jpg");
-    else $('#modal_avatar').attr("src",student['avatar']);
+    else $('#modal_avatar_square').attr("src",student['avatar']);
     $('#modal_username').html(student['username']);
     $('#modal_university').html(uni_list);
     $('#modal_major').html(student['majors']);
-    $('#modal_wechat').html(student['wechat']);
+    $('#modal_email').html(student['email']);
     $('#modal_description').html(student['description']);
 }
 

@@ -50,9 +50,8 @@
   			<span class="record_content">{{$user['major']}}</span>
   		</div>
   		<div class="modal_record">
-  			<span class="record_title">微信</span>
-  			<span class="record_content">@if($user['wechat']) {{$user['wechat']}} 
-  			@else ta想暂时保持神秘 @endif</span>
+  			<span class="record_title">邮箱</span>
+  			<span class="record_content">{{$user['email']}}</span>
   		</div>
   		<div class="modal_record">
   			<span class="record_title">简介</span>
@@ -63,7 +62,7 @@
 </div>
 
 <div class="modal_info modal_info2">
-	<img id="modal_avatar">
+	<img id="modal_avatar_square">
 	<div class="modal_desc">
   		<h1 id="modal_username"></h1>
   		<div class="or-spacer">
@@ -78,8 +77,8 @@
   			<span class="record_content" id="modal_major"></span>
   		</div>
   		<div class="modal_record">
-  			<span class="record_title">微信</span>
-  			<span class="record_content" id="modal_wechat"></span>
+  			<span class="record_title">邮箱</span>
+  			<span class="record_content" id="modal_email"></span>
   		</div>
   		<div class="modal_record">
   			<span class="record_title">简介</span>
@@ -116,7 +115,7 @@
 	<article class="item thumb" data-width="350">
 		<h2>{{$student->username}} <br/><br/>
 		{{ $student['universities'] }} {{ $student['majors'] }}</h2>
-		<a href="#" class="image open_button" onclick="open_modal({{$student->id}})"><img src="/img/no_avatar.jpg" alt=""></a>
+		<a href="#" class="image open_button" onclick="open_modal({{$student->id}})"><img src="{{$student->avatar}}"></a>
 	</article>
 	@endforeach
 	

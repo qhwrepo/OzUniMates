@@ -10,11 +10,13 @@ class CreateConsultantTagTable extends Migration
      *
      * @return void
      */
+
+    public $timestamps = false;
+
     public function up()
     {
         Schema::create('consultant_tag', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
 
             $table->integer('consultant_id')->unsigned()->index();
             $table->foreign('consultant_id')->references('id')->on('consultants')->onDelete('cascade');

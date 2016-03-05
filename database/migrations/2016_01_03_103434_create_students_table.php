@@ -17,11 +17,11 @@ class CreateStudentsTable extends Migration
             $table->string('username')->unique();
             $table->string('password');
             $table->string('email')->unique();
-            $table->string('wechat');
             $table->string('degree');
             $table->string('universities');
             $table->string('majors');
             $table->string('avatar');
+            $table->string('description');
             $table->timestamps();
             $table->rememberToken();
         });
