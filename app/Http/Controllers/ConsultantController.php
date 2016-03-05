@@ -11,6 +11,8 @@ use Session;
 use App\Http\Controllers\Controller;
 use App\Consultant;
 use App\Student;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Log;
 
 class ConsultantController extends Controller
 {
@@ -53,8 +55,17 @@ class ConsultantController extends Controller
     public function avatarUpload()
     {
         $this->wrongTokenAjax();
-        $file = Input::file('image');
-        $input = array('image' => $file);
+
+        $original = Input::file('image');
+
+        // convert base64 to image at the server side
+        $data = explode(',', Input::get('cropped_avatar'));
+        $avatar_data = base64_decode($data[1]);
+
+        file_put_contents('image64.png', $avatar_data);
+        $avatar = new UploadedFile('image64.png',$original->getClientOriginalName(),'image/jpg',null,null,true);
+
+        $input = array('image' => $original);
         $rules = array(
             'image' => 'image'
         );
@@ -68,8 +79,9 @@ class ConsultantController extends Controller
         }
 
         $destinationPath = 'uploads/';
-        $filename = $file->getClientOriginalName();
-        $file->move($destinationPath, $filename);
+        $filename = $original->getClientOriginalName();
+
+        $avatar->move($destinationPath, $filename);
         // return Response::json(
         //     [
         //         'success' => true,
@@ -80,6 +92,18 @@ class ConsultantController extends Controller
         $user->avatar = asset($destinationPath.$filename);
         $user->save();
         return redirect('/consultant/home');
+    }
+
+    public function base64_to_jpeg($base64_string, $output_file) 
+    {
+        $ifp = fopen($output_file, "wb"); 
+
+        $data = explode(',', $base64_string);
+
+        fwrite($ifp, base64_decode($data[1])); 
+        fclose($ifp); 
+
+        return $output_file; 
     }
 
     public function wrongTokenAjax()

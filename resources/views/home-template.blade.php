@@ -12,6 +12,7 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="/css/home/main.css" />
 		<link rel="stylesheet" href="/css/home/modal.css" />
+		<link rel="stylesheet" href="/css/dist/croppie.css" />
 		<noscript><link rel="stylesheet" href="/css/home/noscript.css" /></noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
@@ -38,6 +39,7 @@
 			<script type="text/javascript" src="/js/home/util.js"></script>
 			<script type="text/javascript" src="/js/home/main.js"></script>
 			<script type="text/javascript" src="/js/home/custom.js"></script>
+			<script type="text/javascript" src="/js/dist/croppie.min.js"></script>
 
 	</body>
 </html>

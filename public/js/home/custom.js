@@ -13,47 +13,62 @@ var uniIndex = {
 
 // picture uploader
 
-$(function(){
-	var container = $('.container'), inputFile = $('#file'), img, btn, txt = '上传个头像吧', txtAfter = '颜值好像很高！';
-			
-	if(!container.find('#upload').length){
-		container.find('.input').append('<input type="button" value="'+txt+'" id="upload">');
-		btn = $('#upload');
-		container.prepend('<img src="" class="hidden" alt="Uploaded file" id="uploadImg" width="100">');
-		img = $('#uploadImg');
-	}
-			
-	btn.on('click', function(){
-		img.animate({opacity: 0}, 300);
-		inputFile.click();
-	});
+$(function(){ 
+    var $uploadCrop; 
+ 
+    function readFile(input) { 
+         if (input.files && input.files[0]) { 
+            var reader = new FileReader(); 
+             
+            reader.onload = function (e) { 
+                $uploadCrop.croppie('bind', { 
+                    url: e.target.result 
+                }); 
+            } 
+             
+            reader.readAsDataURL(input.files[0]); 
+        } 
+        else { 
+            alert("你的浏览器暂不支持！"); 
+        } 
+    } 
 
-	inputFile.on('change', function(e){
-		container.find('label').html( inputFile.val() );
-		
-		var i = 0;
-		for(i; i < e.originalEvent.srcElement.files.length; i++) {
-			var file = e.originalEvent.srcElement.files[i], 
-				reader = new FileReader();
+    $uploadCrop = $('#upload-demo').croppie({ 
+        viewport: { 
+            width: 350, 
+            height: 350, 
+            type: 'square' 
+        }, 
+        boundary: { 
+            width: 400, 
+            height: 400 
+        } 
+    }); 
 
-			reader.onloadend = function(){
-				img.attr('src', reader.result).animate({opacity: 1}, 700);
-			}
-			reader.readAsDataURL(file);
-			img.removeClass('hidden');
-		}
-		
-		btn.val( txtAfter );
-	});
-});
+    $('#upload').on('change', function () {  
+        $(".crop").show();
+        $("#greet_upload").html("重新上传");
+        $("#modal_avatar").css("top","0%");
+        $("#greet").hide(); 
+        $(".actions").css("padding-bottom","0px");
+        readFile(this);
+    }); 
 
-function avatarSubmit() {
-	document.getElementById('avatar-form').submit();
-}
+    $('#submit-avatar').on('click', function (ev) {
+        $uploadCrop.croppie('result', {
+          type: 'canvas',
+          size: 'viewport'
+        }).then(function (resp) { 
+            $('#cropped_avatar').val(resp);
+            $('#avatar-form').submit();
+          });
+    });
+    $('#dismiss-avatar').on('click', function() {
+        $('#modal_mask').hide();
+        $('#modal_avatar').hide();
+    });
 
-function dismissAvatar() {
-	document.getElementById('modal-mask').style.display = 'none';
-}
+}); 
 
 
 // popup modal
@@ -132,7 +147,6 @@ $.get("/api/students", function(result){
 });
 
 function open_modal(id){
-	$('article').css({"z-index": "1"});
     modal.open({
       content: $content2,
       width: 840,
@@ -144,6 +158,9 @@ function open_modal(id){
 
     var student = user_id(id);
    	var uni_list = split_translate(student['universities'],uniIndex);
+    if(student['avatar']=='') $('#modal_avatar').attr("src","/img/no_avatar_square.jpg");
+    else $('#modal_avatar').attr("src",student['avatar']);
+    $('#modal_username').html(student['username']);
     $('#modal_university').html(uni_list);
     $('#modal_major').html(student['majors']);
     $('#modal_wechat').html(student['wechat']);
@@ -163,7 +180,8 @@ function split_translate(list,index){
 	var res_arr = [];
 	var ini_arr = list.split(',');
 	for(i in ini_arr) {
-		res_arr.push(index[ini_arr[i]]+'，');
+    if(i == ini_arr.length-1) res_arr.push(index[ini_arr[i]]);
+		else res_arr.push(index[ini_arr[i]]+'，');
 	}
 	return res_arr;
 }

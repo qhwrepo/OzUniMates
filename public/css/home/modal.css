@@ -2,7 +2,7 @@
   opacity: 0;
   padding: 50px;
   position: absolute;
-  z-index: 1100;
+  z-index: 20;
   -webkit-transition: opacity 600ms linear 600ms;
   -moz-transition: opacity 600ms linear 600ms;
   -ms-transition: opacity 600ms linear 600ms;
@@ -62,6 +62,7 @@
 
 .modal_record .record_content {
   flex:4;
+  padding-right: 35px;
 }
 
 .modal_overlay {
@@ -74,7 +75,7 @@
   right: 0;
   top: 0;
   visibility: hidden;
-  z-index: 900;
+  z-index: 10;
   -webkit-transition: opacity 200ms linear;
   -moz-transition: opacity 200ms linear;
   -ms-transition: opacity 200ms linear;
@@ -111,7 +112,6 @@
   position: relative;
   vertical-align: middle;
   whitespace: normal;
-  z-index: 1000;
   -webkit-transition: opacity 100ms linear;
   -moz-transition: opacity 100ms linear;
   -ms-transition: opacity 100ms linear;
