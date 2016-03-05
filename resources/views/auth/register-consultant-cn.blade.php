@@ -79,31 +79,17 @@
         <h2 class="fs-title">读什么专业呢？</h2>
         <select data-live-search="true" class="selectpicker"  
         title="搜索或选择" onchange="setMajor(this.value)">
-          <optgroup label="商科">
-            <option>会计</option>
-            <option>精算</option>
-            <option>金融</option>
-            <option>管理</option>
-            <option>其他商科</option>
-          </optgroup>
-          <optgroup label="工程类">
-            <option>电气工程</option>
-            <option>计算机/软件</option>
-            <option>生物医学工程</option>
-            <option>化学工程</option>
-            <option>机械/制造</option>
-            <option>其他工程</option>
-          </optgroup>
-          <optgroup label="人文社会">
-            <option>国际关系</option>
-            <option>政治经济</option>
-            <option>社会工作</option>
-            <option>亚太研究</option>
-            <option>机械/制造</option>
-            <option>其他工程</option>
-          </optgroup>
+            <option>商科</option>
+            <option>工程/计算机</option>
+            <option>自然科学</option>
+            <option>医学</option>
+            <option>法学</option>
+            <option>人文/社会</option>
+            <option>艺术</option>
+            <option>其他</option>
         </select>
         <input type="text" name="major" class="hidden" />
+        <input type="text" name="specilization" placeholder="具体专业名称" class="textInput" id="specilization"/>
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
         <a class="next fa fa-chevron-circle-right fa-3x" id="aMajor"></a>

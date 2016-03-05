@@ -206,3 +206,13 @@ a:hover {
    cursor: default;
    opacity:0.5;
 }
+
+.bootstrap-select {
+	width: 250px !important;
+}
+
+#specilization {
+	display: block;
+	width: 250px;
+	margin: 0 auto;
+}

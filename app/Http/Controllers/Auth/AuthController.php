@@ -69,11 +69,10 @@ class AuthController extends Controller
             'username' => $data['username'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'wechat' => $data['wechat'],
             'degree' => $data['degree'],
             'universities' => $data['universities'],
             'majors' => $data['majors'],
-
+            'description' => ''
         ]);
     }
 
@@ -83,11 +82,13 @@ class AuthController extends Controller
             'username' => $data['username'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'wechat' => $data['wechat'],
             'degree' => $data['degree'],
             'university' => $data['university'],
             'major' => $data['major'],
+            'specilization' => $data['specilization'],
             'thanks' => '0',
+            'ispro' => false,
+            'description' => ''
         ]);
     }
 

@@ -11,6 +11,7 @@ use Session;
 use App\Http\Controllers\Controller;
 use App\Student;
 use App\Consultant;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class StudentController extends Controller
 {
@@ -45,8 +46,17 @@ class StudentController extends Controller
      public function avatarUpload()
     {
         $this->wrongTokenAjax();
-        $file = Input::file('image');
-        $input = array('image' => $file);
+
+        $original = Input::file('image');
+
+        // convert base64 to image at the server side
+        $data = explode(',', Input::get('cropped_avatar'));
+        $avatar_data = base64_decode($data[1]);
+
+        file_put_contents('image64.png', $avatar_data);
+        $avatar = new UploadedFile('image64.png',$original->getClientOriginalName(),'image/jpg',null,null,true);
+
+        $input = array('image' => $original);
         $rules = array(
             'image' => 'image'
         );
@@ -60,8 +70,8 @@ class StudentController extends Controller
         }
 
         $destinationPath = 'uploads/';
-        $filename = $file->getClientOriginalName();
-        $file->move($destinationPath, $filename);
+        $filename = $original->getClientOriginalName();
+        $avatar->move($destinationPath, $filename);
         // return Response::json(
         //     [
         //         'success' => true,

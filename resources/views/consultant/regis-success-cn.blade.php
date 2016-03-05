@@ -13,7 +13,7 @@
 
     <h1>接下来：</h1>
     <div id="hint1" class="hint">1.想来你们学校的师弟师妹会被列出来</div>
-    <div id="hint2" class="hint">2.填个昵称，上传张照片，让他们也看到你</div>
+    <div id="hint2" class="hint">2.上传个头像，让他们也看到你</div>
     <div id="hint3" class="hint">3.积极地响应师弟师妹们的求助请求吧！</div>
 
     <div id="hint4" class="hint">如果ta在你的帮助下成功入学，你将获得来自学校的返佣，和来自ta的红包喔！</div>

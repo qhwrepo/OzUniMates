@@ -1,7 +1,7 @@
 @extends('home-template')
 @section('content')
 
-<!-- have you uploaded an avatar -->
+<!-- have you uploaded an avatar? -->
 @if(! $user['avatar'])
 <div id="modal_mask">
 </div>

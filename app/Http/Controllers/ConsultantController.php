@@ -12,7 +12,6 @@ use App\Http\Controllers\Controller;
 use App\Consultant;
 use App\Student;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Log;
 
 class ConsultantController extends Controller
 {
@@ -43,14 +42,6 @@ class ConsultantController extends Controller
     {
         return view('consultant.regis-success-en');
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-    }
 
     public function avatarUpload()
     {
@@ -80,7 +71,6 @@ class ConsultantController extends Controller
 
         $destinationPath = 'uploads/';
         $filename = $original->getClientOriginalName();
-
         $avatar->move($destinationPath, $filename);
         // return Response::json(
         //     [
@@ -92,18 +82,6 @@ class ConsultantController extends Controller
         $user->avatar = asset($destinationPath.$filename);
         $user->save();
         return redirect('/consultant/home');
-    }
-
-    public function base64_to_jpeg($base64_string, $output_file) 
-    {
-        $ifp = fopen($output_file, "wb"); 
-
-        $data = explode(',', $base64_string);
-
-        fwrite($ifp, base64_decode($data[1])); 
-        fclose($ifp); 
-
-        return $output_file; 
     }
 
     public function wrongTokenAjax()
