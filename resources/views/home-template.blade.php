@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="/css/home/main.css" />
 		<link rel="stylesheet" href="/css/home/modal.css" />
 		<link rel="stylesheet" href="/css/dist/croppie.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<noscript><link rel="stylesheet" href="/css/home/noscript.css" /></noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->

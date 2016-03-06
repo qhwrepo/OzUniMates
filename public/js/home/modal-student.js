@@ -8,12 +8,14 @@ var $content2 = $('.modal_info2').detach();
     $('article').css({"z-index": "1"});
     modal.open({
       content: $content1,
-      width: 840,
-      height: 570,
+      width: 780,
+      height: 350,
     });
     $content1.addClass('modal_content');
     $('.modal, .modal_overlay').addClass('display');
     $('.open_button1').addClass('load');
+
+    rolldown();
 
   });
 
@@ -40,8 +42,9 @@ var modal = (function(){
 
   return {
     center: function(){
-      var top = Math.max($window.height() - $modal.outerHeight(), 0) / 2;
+      var top = Math.max($window.height() - $modal.outerHeight(), 0) / 2 - 50;
       var left = Math.max($window.width() - $modal.outerWidth(), 0) / 2;
+
       $modal.css({
         top: top + $window.scrollTop(),
         left: left + $window.scrollLeft(),
@@ -75,8 +78,8 @@ function open_modal(id){
     $('article').css({"z-index": "1"});
     modal.open({
       content: $content2,
-      width: 840,
-      height: 570,
+      width: 780,
+      height: 350,
     });
     $content2.addClass('modal_content');
     $('.modal, .modal_overlay').addClass('display');
@@ -89,9 +92,14 @@ function open_modal(id){
     $('#modal_university').html(consultant['university']);
     $('#modal_major').html(consultant['major']);
     $('#modal_major').append(' - '+consultant['specilization']);
+    if(consultant['degree']=='bachelor') $('#modal_major').append(' 本科');
+    else if(consultant['degree']=='master') $('#modal_major').append(' 硕士');
+    else if(consultant['degree']=='phd') $('#modal_major').append(' 博士');
     $('#modal_email').html(consultant['email']);
     if(consultant['description']=='') $('#modal_description').html('ta决定暂时保持神秘');
     else $('#modal_description').html(consultant['description']);
+
+    rolldown();
 }
 
 // fetch specific user data based on id

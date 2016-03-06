@@ -56,3 +56,23 @@ $(function(){
     });
 
 }); 
+
+
+// modal - common use
+function rolldown() {
+  $('.rolldown-list li').each(function () {
+      var delay = ($(this).index()/4+0.8) + 's';
+      $(this).css({
+          webkitAnimationDelay: delay,
+          mozAnimationDelay: delay,
+          animationDelay: delay
+      });
+    });
+}
+
+function weihu() {
+    alert("功能即将上线：）");
+}
+
+
+

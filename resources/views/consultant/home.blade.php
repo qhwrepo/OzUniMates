@@ -32,65 +32,46 @@
 
 <div class="modal_info modal_info1">
 	@if($user['avatar']=='')
-	<img src="/img/no_avatar.jpg">
+	<img src="/img/no_avatar_square.jpg">
 	@else 
 	<img src="{{$user['avatar']}}">
 	@endif
 	<div class="modal_desc">
   		<h1>{{ $user['username'] }}</h1>
-  		<div class="or-spacer">
-              <div class="mask"></div>
-            </div>
-  		<div class="modal_record">
-  			<span class="record_title">大学</span>
-  			<span class="record_content">{{$user['university']}}</span>
-  		</div>
-  		<div class="modal_record">
-  			<span class="record_title">专业</span>
-  			<span class="record_content">{{$user['major']}} - {{$user['specilization']}}</span>
-  		</div>
-  		<div class="modal_record">
-  			<span class="record_title">邮箱</span>
-  			<span class="record_content">{{$user['email']}}</span>
-  		</div>
-  		<div class="modal_record">
-  			<span class="record_title">简介</span>
-  			<span class="record_content">@if($user['description']) {{$user['description']}} 
-  			@else ta还没决定说些什么 @endif</span>
-  		</div>	
+  		<ul class="rolldown-list" id="myList">
+		  <li>{{$user['university']}}</li>
+		  <li>{{$user['major']}} - {{$user['specilization']}}
+		  @if($user['degree']=='bachelor') 本科
+  			@elseif($user['degree']=='master') 硕士
+  			@elseif($user['degree']=='phd') 博士
+  			@endif</li>
+		  <li>邮箱： {{$user['email']}}</li>
+		  <li>@if($user['description']) {{$user['description']}} 
+  			@else ta决定先保持神秘 @endif</li>
+		</ul> 
   	</div>
+  	<a class="button tick" onclick="weihu()"><i class="fa fa-comments fa-3x"></i></a>
 </div>
+
+
 
 <div class="modal_info modal_info2">
 	<img id="modal_avatar_square">
 	<div class="modal_desc">
   		<h1 id="modal_username"></h1>
-  		<div class="or-spacer">
-              <div class="mask"></div>
-            </div>
-  		<div class="modal_record">
-  			<span class="record_title">目标大学</span>
-  			<span class="record_content" id="modal_university"></span>
-  		</div>
-  		<div class="modal_record">
-  			<span class="record_title">目标专业</span>
-  			<span class="record_content" id="modal_major"></span>
-  		</div>
-  		<div class="modal_record">
-  			<span class="record_title">邮箱</span>
-  			<span class="record_content" id="modal_email"></span>
-  		</div>
-  		<div class="modal_record">
-  			<span class="record_title">简介</span>
-  			<span class="record_content" id="modal_description"></span>
-  		</div>	
+  		<ul class="rolldown-list" id="myList">
+		  <li id="modal_university"></li>
+		  <li id="modal_major"></li>
+		  <li id="modal_email"></li>
+		  <li id="modal_description"></li>
+		</ul>
   	</div>
+  	<a class="button tick" onclick="weihu()"><i class="fa fa-comments fa-3x"></i></a>
 </div>
 
 <div id="reel">
 	
 	<!-- Thumb Items -->
-
 	<article class="item thumb" data-width="350">
 		<h2>{{ $user['username'] }} <br/><br/>
 		{{ $user['university'] }} {{ $user['major'] }}</h2>
@@ -106,7 +87,7 @@
 	<div id="header" class="item" data-width="400">
 		<div class="inner">
 			<h1>Hi,{{ $user['username'] }}!</h1>
-			<p>这些小鲜肉可能会成为你的校友：<br />
+			<p>右边这些小鲜肉可能会成为你的校友：<br />
 			有空的话，帮帮他们吧！</p>
 		</div>
 	</div>

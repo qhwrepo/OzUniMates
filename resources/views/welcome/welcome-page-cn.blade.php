@@ -20,7 +20,7 @@ under Apache 2.0 by Start Bootstrap
     <link href="/css/welcome-page.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -69,12 +69,12 @@ under Apache 2.0 by Start Bootstrap
         <div class="text-vertical-center" id="header-intro">
             <h1>澳联帮</h1>
             <h3><br/>申请就那么回事</h3>
-            <h3>比起中介，不如直接和师兄师姐聊聊吧</h3>
+            <h3>比起中介，直接和师兄师姐聊聊吧!</h3>
             <div class="or-spacer">
               <div class="mask"></div>
             </div>
             <a href="student/register" class="link-home"><i class="fa fa-user fa-2x"></i> 我要找师兄/师姐</a>
-            <a href="consultant/register" class="link-home"><i class="fa fa-user-secret fa-2x"></i> 我就是师兄/师姐</a>
+            <a href="consultant/register" class="link-home"><i class="fa fa-graduation-cap fa-2x"></i>我就是师兄/师姐</a>
             <a href="#about" class="fa fa-angle-double-down" id="tellMore"><span id="showme"></span></a>
         </div>
     </header>

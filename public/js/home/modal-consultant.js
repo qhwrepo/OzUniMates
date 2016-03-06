@@ -8,12 +8,14 @@ var $content2 = $('.modal_info2').detach();
     $('article').css({"z-index": "1"});
     modal.open({
       content: $content1,
-      width: 840,
-      height: 570,
+      width: 780,
+      height: 350,
     });
     $content1.addClass('modal_content');
     $('.modal, .modal_overlay').addClass('display');
     $('.open_button1').addClass('load');
+
+    rolldown();
 
   });
 
@@ -40,8 +42,9 @@ var modal = (function(){
 
   return {
     center: function(){
-      var top = Math.max($window.height() - $modal.outerHeight(), 0) / 2;
+      var top = Math.max($window.height() - $modal.outerHeight(), 0) / 2 - 50;
       var left = Math.max($window.width() - $modal.outerWidth(), 0) / 2;
+
       $modal.css({
         top: top + $window.scrollTop(),
         left: left + $window.scrollLeft(),
@@ -75,8 +78,8 @@ function open_modal(id){
     $('article').css({"z-index": "1"});
     modal.open({
       content: $content2,
-      width: 840,
-      height: 570,
+      width: 780,
+      height: 350,
     });
     $content2.addClass('modal_content');
     $('.modal, .modal_overlay').addClass('display');
@@ -86,12 +89,16 @@ function open_modal(id){
     if(student['avatar']=='') $('#modal_avatar').attr("src","/img/no_avatar_square.jpg");
     else $('#modal_avatar_square').attr("src",student['avatar']);
     $('#modal_username').html(student['username']);
-    $('#modal_university').html(student['universities']);
-    $('#modal_major').html(student['majors']);
-    $('#modal_email').html(student['email']);
-    console.log(student['description']=='');
+    $('#modal_university').html('目标院校：'+student['universities']);
+    $('#modal_major').html('目标专业：'+student['majors']);
+    if(student['degree']=='bachelor') $('#modal_major').append(' 本科');
+    else if(student['degree']=='master') $('#modal_major').append(' 硕士');
+    else if(student['degree']=='phd') $('#modal_major').append(' 博士');
+    $('#modal_email').html('邮箱： '+student['email']);
     if(student['description']=='') $('#modal_description').html('ta决定暂时保持神秘');
     else $('#modal_description').html(student['description']);
+
+    rolldown();
 }
 
 // fetch specific user data based on id
@@ -102,3 +109,6 @@ function user_id(id) {
     if(student['id'] == id) return student;
   }
 }
+
+
+
