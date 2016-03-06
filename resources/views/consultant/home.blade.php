@@ -47,7 +47,7 @@
   		</div>
   		<div class="modal_record">
   			<span class="record_title">专业</span>
-  			<span class="record_content">{{$user['major']}}</span>
+  			<span class="record_content">{{$user['major']}} - {{$user['specilization']}}</span>
   		</div>
   		<div class="modal_record">
   			<span class="record_title">邮箱</span>
@@ -120,15 +120,17 @@
 	@endforeach
 	
 <!-- Filler Thumb Items (just for demonstration purposes) -->
-	<article class="item thumb" data-width="282"><h2>Elysium</h2><a href="/img/no_avatar.jpg" class="image"><img src="/img/no_avatar.jpg" alt=""></a></article>
-	<article class="item thumb" data-width="476"><h2>Kingdom of the Wind</h2><a href="/img/no_avatar.jpg" class="image"><img src="/img/no_avatar.jpg" alt=""></a></article>
-	<article class="item thumb" data-width="232"><h2>The Pursuit</h2><a href="/img/no_avatar.jpg" class="image"><img src="/img/no_avatar.jpg" alt=""></a></article>
-	<article class="item thumb" data-width="352"><h2>Boundless</h2><a href="/img/no_avatar.jpg" class="image"><img src="/img/no_avatar.jpg" alt=""></a></article>
-	<article class="item thumb" data-width="348"><h2>The Spectators</h2><a href="/img/no_avatar.jpg" class="image"><img src="/img/no_avatar.jpg" alt=""></a></article>
-	<article class="item thumb" data-width="282"><h2>You really got me</h2><a href="/img/no_avatar.jpg" class="image"><img src="/img/no_avatar.jpg" alt=""></a></article>
-	<article class="item thumb" data-width="384"><h2>Ad Infinitum</h2><a href="/img/no_avatar.jpg" class="image"><img src="/img/no_avatar.jpg" alt=""></a></article>
-	<article class="item thumb" data-width="274"><h2>Different.</h2><a href="/img/no_avatar.jpg" class="image"><img src="/img/no_avatar.jpg" alt=""></a></article>
-	<article class="item thumb" data-width="282"><h2>Elysium</h2><a href="/img/no_avatar.jpg" class="image"><img src="/img/no_avatar.jpg" alt=""></a></article>
+	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
+	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
+	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
+	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
+	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
+	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
+	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
+	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
+
 </div>
+		
+	<script type="text/javascript" src="/js/home/modal-consultant.js"></script>
 
 @endsection

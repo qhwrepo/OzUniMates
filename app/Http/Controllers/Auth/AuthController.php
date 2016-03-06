@@ -190,7 +190,7 @@ class AuthController extends Controller
         if( $request->only('usertype')['usertype'] == 'student' ) {
             $this->redirectPath = '/student/home';
             $credentials = $this->getCredentials($request);      
-            if (\Auth::attempt("student",['username'=>$credentials['username'],
+            if (\Auth::attempt("student",['email'=>$credentials['email'],
                 'password'=>$credentials['password']])) {
                 return $this->handleUserWasAuthenticated($request, $throttles);
             }
@@ -199,8 +199,6 @@ class AuthController extends Controller
         else if( $request->only('usertype')['usertype'] == 'consultant' ) {
             $this->redirectPath = '/consultant/home';
             $credentials = $this->getCredentials($request); 
-            // Log::info($credentials);
-
             if (\Auth::attempt("consultant",['email'=>$credentials['email'],
                 'password'=>$credentials['password']])) {
                 return $this->handleUserWasAuthenticated($request, $throttles);
