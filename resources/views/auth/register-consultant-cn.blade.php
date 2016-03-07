@@ -56,7 +56,6 @@
             <option>悉尼科技大学</option>
             <option>迪肯大学</option>
             <option>卧龙岗大学</option>
-            <option>悉尼科技大学</option>
             <option>维多利亚大学</option>
             <option>斯威本科技大学</option>
             <option>科廷科技大学</option>

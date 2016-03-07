@@ -33,15 +33,34 @@
     </fieldset>
     <fieldset>
         <h2 class="fs-title">有目标学校吗（可多选）？</h2>
+        <input type="button" class="action-button" value="还没有目标" onclick="addUniversity(this.value)" />
+        <div class="fs-subtitle">澳洲八大</div>
         <input type="button" class="action-button" value="澳大利亚国立大学" onclick="addUniversity(this.value)" />
         <input type="button" class="action-button" value="墨尔本大学"  onclick="addUniversity(this.value)"/>
         <input type="button" class="action-button" value="悉尼大学" onclick="addUniversity(this.value)"/>
         <input type="button" class="action-button" value="新南威尔士大学" onclick="addUniversity(this.value)"/>
         <input type="button" class="action-button" value="莫纳什大学" onclick="addUniversity(this.value)"/>
         <input type="button" class="action-button" value="昆士兰大学" onclick="addUniversity(this.value)"/>
-        <input type="button" class="action-button" value="麦考瑞大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="西澳大学" onclick="addUniversity(this.value)"/>
         <input type="button" class="action-button" value="阿德莱德大学" onclick="addUniversity(this.value)"/>
-        <input type="button" class="action-button" value="其他" onclick="addUniversity('')"/>
+        <div class="fs-subtitle">其他热门院校</div>
+        <input type="button" class="action-button" value="麦考瑞大学" onclick="addUniversity(this.value)" />
+        <input type="button" class="action-button" value="格里菲思大学"  onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="墨尔本皇家理工学院" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="悉尼科技大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="迪肯大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="卧龙岗大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="维多利亚大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="斯威本科技大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="科廷科技大学" onclick="addUniversity(this.value)" />
+        <input type="button" class="action-button" value="默多克大学"  onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="南澳大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="纽卡斯尔大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="查尔斯斯图亚特大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="拉筹伯大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="昆士兰科技大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="詹姆斯库克大学" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="其他" onclick="addUniversity(this.value)"/>
         <input type="text" name="universities" class="hidden"/>
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>

@@ -6,6 +6,7 @@ use Validator;
 use App\Student;
 use App\Consultant;
 use App\Tag;
+use App\University;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -70,7 +71,6 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'degree' => $data['degree'],
-            'universities' => $data['universities'],
             'majors' => $data['majors'],
             'description' => ''
         ]);
@@ -117,6 +117,18 @@ class AuthController extends Controller
     public function postStudentRegister(Request $request)
     {
         \Auth::login("student",$this->createStudent($request->all()));
+
+        // store tag & consultant pair into table
+        $student = Student::where('username',$request->username)->first();
+        $idarr = [];
+
+        $arr = explode(',', $request->universities);
+        $arrLen = sizeof($arr);
+        for($i=0;$i<$arrLen;$i++) {
+            array_push($idarr, University::where('name',$arr[$i])->first()->id);
+        };
+
+        $student->universities()->attach($idarr);
         
         return redirect('student/regis-success');
 

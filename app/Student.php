@@ -12,5 +12,10 @@ class Student extends Model implements AuthenticatableContract, CanResetPassword
 {
     use Authenticatable, CanResetPassword;
     protected $table = 'students';
-    protected $fillable = ['username','password','email','degree','universities','majors','avatar','description'];
+    protected $fillable = ['username','password','email','degree','majors','avatar','description'];
+
+    public function universities()
+    {
+        return $this->belongsToMany('App\University');
+    }
 }

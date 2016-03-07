@@ -18,7 +18,6 @@ class CreateStudentsTable extends Migration
             $table->string('password');
             $table->string('email')->unique();
             $table->string('degree');
-            $table->string('universities');
             $table->string('majors');
             $table->string('avatar');
             $table->string('description');
