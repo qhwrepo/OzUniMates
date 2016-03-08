@@ -51,11 +51,11 @@ Route::get('widgets/unimate','WidgetController@unimate');
 // =======================================
 Route::group(array('prefix' => 'api'), function() {
 	Route::resource('students','StudentController',
-		array('only' => array('index', 'destroy')));
+		array('only' => array('index')));
 	Route::resource('consultants','ConsultantController',
-		array('only' => array('index', 'destroy')));
-	Route::resource('student/universities','StudentController',
-		array('only' => array('universities', 'destroy')));
+		array('only' => array('index')));
+	Route::get('student/{studid}/universities','StudentController@universities');
+	Route::get('student/{studid}/majors','StudentController@majors');
 });
 
 // ================================

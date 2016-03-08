@@ -73,9 +73,7 @@ var $students;
 $.get("/api/students", function(result){
   $students = result;
 });
-$.get("/api/student/universities/1", function(result){
-  console.log("1");
-});
+
 
 function open_modal(id){
     $('article').css({"z-index": "1"});
@@ -89,15 +87,36 @@ function open_modal(id){
     $('.open_button2').addClass('load');
 
     var student = user_id(id);
-    console.log(student);
+    var unistr = "";
+    var majorstr = "";
+
+    // json api to get a student's university and major lists
+
+    $.get("/api/student/1/universities", function(result){
+        $.each(result, function(index, value) {
+          unistr += value;
+          if(index == result.length-1) ;
+          else unistr += ", "
+        });
+        $('#modal_university').html('目标院校：'+unistr);
+    });
+
+    $.get("/api/student/1/majors", function(result){
+        $.each(result, function(index, value) {
+          majorstr += value;
+          if(index == result.length-1) ;
+          else majorstr += ", "
+        });
+        $('#modal_major').html('目标专业：'+majorstr);
+        if(student['degree']=='bachelor') $('#modal_major').append(' 本科');
+        else if(student['degree']=='master') $('#modal_major').append(' 硕士');
+        else if(student['degree']=='phd') $('#modal_major').append(' 博士');
+    });
+
     if(student['avatar']=='') $('#modal_avatar').attr("src","/img/no_avatar_square.jpg");
     else $('#modal_avatar_square').attr("src",student['avatar']);
     $('#modal_username').html(student['username']);
-    $('#modal_university').html('目标院校：'+student['universities']);
-    $('#modal_major').html('目标专业：'+student['majors']);
-    if(student['degree']=='bachelor') $('#modal_major').append(' 本科');
-    else if(student['degree']=='master') $('#modal_major').append(' 硕士');
-    else if(student['degree']=='phd') $('#modal_major').append(' 博士');
+    
     $('#modal_email').html('邮箱： '+student['email']);
     if(student['description']=='') $('#modal_description').html('ta决定暂时保持神秘');
     else $('#modal_description').html(student['description']);

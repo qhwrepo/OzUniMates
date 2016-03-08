@@ -143,13 +143,25 @@ class StudentController extends Controller
         return Response::json(array('success' => true));
     }
 
-    // public function universities($id)
-    // {
-    //     return Response::json(Student::find($id));
-    // }
-
-    public function universities()
+    public function universities($studid)
     {
-        return "as";
+        $uni_arr = Student::find($studid)->universities;
+        $arrlen = sizeof($uni_arr);
+        $uni_list = [];
+        for($i=0;$i<$arrlen;$i++){
+            array_push($uni_list, $uni_arr[$i]['name']);
+        }
+        return Response::json($uni_list);
+    }
+
+    public function majors($studid)
+    {
+        $major_arr = Student::find($studid)->majors;
+        $arrlen = sizeof($major_arr);
+        $major_list = [];
+        for($i=0;$i<$arrlen;$i++){
+            array_push($major_list, $major_arr[$i]['name']);
+        }
+        return Response::json($major_list);
     }
 }
