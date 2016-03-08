@@ -96,14 +96,14 @@
 
     <fieldset>
         <h2 class="fs-title">你能在哪些方面帮助师弟师妹呢（可多选）？</h2>
-        <input type="button" class="action-button" value="评估申请人背景" onclick="addSkill('evaluate')" />
-        <input type="button" class="action-button" value="推荐院校" onclick="addSkill('recommend')" />
-        <input type="button" class="action-button" value="修改CV/PS" onclick="addSkill('cvps')"/>
-        <input type="button" class="action-button" value="专业方向"  onclick="addSkill('major')"/>
-        <input type="button" class="action-button" value="选课指导" onclick="addSkill('course')" />
-        <input type="button" class="action-button" value="接机/找住宿" onclick="addSkill('settle')"/>
-        <input type="button" class="action-button" value="社交圈" onclick="addSkill('social')"/>
-        <input type="button" class="action-button" value="职业圈" onclick="addSkill('linkedin')"/>
+        <input type="button" class="action-button" value="评估申请人背景" onclick="addSkill(this.value)" />
+        <input type="button" class="action-button" value="推荐院校" onclick="addSkill(this.value)" />
+        <input type="button" class="action-button" value="修改CV/PS" onclick="addSkill(this.value)"/>
+        <input type="button" class="action-button" value="专业方向"  onclick="addSkill(this.value)"/>
+        <input type="button" class="action-button" value="选课指导" onclick="addSkill(this.value)" />
+        <input type="button" class="action-button" value="接机/找住宿" onclick="addSkill(this.value)"/>
+        <input type="button" class="action-button" value="社交圈" onclick="addSkill(this.value)"/>
+        <input type="button" class="action-button" value="职业圈" onclick="addSkill(this.value)"/>
         <input type="text" name="skills" class="hidden" />
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>

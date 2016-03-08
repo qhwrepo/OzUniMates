@@ -73,6 +73,9 @@ var $students;
 $.get("/api/students", function(result){
   $students = result;
 });
+$.get("/api/student/universities/1", function(result){
+  console.log("1");
+});
 
 function open_modal(id){
     $('article').css({"z-index": "1"});
@@ -86,6 +89,7 @@ function open_modal(id){
     $('.open_button2').addClass('load');
 
     var student = user_id(id);
+    console.log(student);
     if(student['avatar']=='') $('#modal_avatar').attr("src","/img/no_avatar_square.jpg");
     else $('#modal_avatar_square').attr("src",student['avatar']);
     $('#modal_username').html(student['username']);

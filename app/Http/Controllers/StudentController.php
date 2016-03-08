@@ -142,4 +142,14 @@ class StudentController extends Controller
  
         return Response::json(array('success' => true));
     }
+
+    // public function universities($id)
+    // {
+    //     return Response::json(Student::find($id));
+    // }
+
+    public function universities()
+    {
+        return "as";
+    }
 }

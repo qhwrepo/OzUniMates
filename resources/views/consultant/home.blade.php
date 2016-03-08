@@ -95,7 +95,13 @@
 	@foreach($students as $student)
 	<article class="item thumb" data-width="350">
 		<h2>{{$student->username}} <br/><br/>
-		{{ $student['universities'] }} {{ $student['majors'] }}</h2>
+		@foreach($student->universities as $university)
+		{{$university->name}}
+		@endforeach
+		<br/>
+		@foreach($student->majors as $major)
+		{{$major->name}}
+		@endforeach</h2>
 		<a href="#" class="image open_button" onclick="open_modal({{$student->id}})"><img src="{{$student->avatar}}"></a>
 	</article>
 	@endforeach

@@ -7,6 +7,7 @@ use App\Student;
 use App\Consultant;
 use App\Tag;
 use App\University;
+use App\Major;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -118,17 +119,29 @@ class AuthController extends Controller
     {
         \Auth::login("student",$this->createStudent($request->all()));
 
-        // store tag & consultant pair into table
+        // store student_university and student_major pairs into intermediate table
         $student = Student::where('username',$request->username)->first();
-        $idarr = [];
+        $uniarr = [];
+        $majorarr = [];
 
         $arr = explode(',', $request->universities);
         $arrLen = sizeof($arr);
         for($i=0;$i<$arrLen;$i++) {
-            array_push($idarr, University::where('name',$arr[$i])->first()->id);
+            array_push($uniarr, $arr[$i]);
         };
 
-        $student->universities()->attach($idarr);
+        // This will get all the ids of the universities with names in the $uniarr thereby preventing several calls to the database;
+        $uniIdList = University::whereIn('name',$uniarr)->lists('id')->all();
+        $student->universities()->attach($uniIdList);
+
+        $arr = explode(',', $request->majors);
+        $arrLen = sizeof($arr);
+        for($i=0;$i<$arrLen;$i++) {
+            array_push($majorarr, $arr[$i]);
+        };
+
+        $majorIdList = Major::whereIn('name',$arr)->lists('id')->all();
+        $student->majors()->attach($majorIdList);
         
         return redirect('student/regis-success');
 
@@ -137,6 +150,30 @@ class AuthController extends Controller
     public function postStudentRegisterEn(Request $request)
     {
         \Auth::login("student",$this->createStudent($request->all()));
+
+        // store student_university and student_major pairs into intermediate table
+        $student = Student::where('username',$request->username)->first();
+        $uniarr = [];
+        $majorarr = [];
+
+        $arr = explode(',', $request->universities);
+        $arrLen = sizeof($arr);
+        for($i=0;$i<$arrLen;$i++) {
+            array_push($uniarr, $arr[$i]);
+        };
+
+        // This will get all the ids of the universities with names in the $uniarr thereby preventing several calls to the database;
+        $uniIdList = University::whereIn('name',$uniarr)->lists('id')->all();
+        $student->universities()->attach($uniIdList);
+
+        $arr = explode(',', $request->majors);
+        $arrLen = sizeof($arr);
+        for($i=0;$i<$arrLen;$i++) {
+            array_push($majorarr, $arr[$i]);
+        };
+
+        $majorIdList = Major::whereIn('name',$arr)->lists('id')->all();
+        $student->majors()->attach($majorIdList);
         
         return redirect('en/student/regis-success');
 

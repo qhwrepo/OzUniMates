@@ -8,6 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'CreateConsultantTagTable' => $baseDir . '/database/migrations/2016_01_28_065336_create_consultant_tag_table.php',
     'CreateConsultantsTable' => $baseDir . '/database/migrations/2016_01_04_122349_create_consultants_table.php',
+    'CreateMajorsTable' => $baseDir . '/database/migrations/2016_03_07_062403_create_majors_table.php',
+    'CreateStudentMajorTable' => $baseDir . '/database/migrations/2016_03_07_062846_create_student_major_table.php',
     'CreateStudentUniversityTable' => $baseDir . '/database/migrations/2016_03_07_052803_create_student_university_table.php',
     'CreateStudentsTable' => $baseDir . '/database/migrations/2016_01_03_103434_create_students_table.php',
     'CreateTagsTable' => $baseDir . '/database/migrations/2016_01_28_063027_create_tags_table.php',

@@ -23,21 +23,21 @@ class CreateTagsTable extends Migration
 
         //skills list, preadded
         Tag::create([
-            'name' => 'evaluate']);
+            'name' => '评估申请人背景']);
         Tag::create([
-            'name' => 'recommend']);
+            'name' => '推荐院校']);
         Tag::create([
-            'name' => 'cvps']);
+            'name' => '修改CV/PS']);
         Tag::create([
-            'name' => 'major']);
+            'name' => '专业方向']);
         Tag::create([
-            'name' => 'course']);
+            'name' => '选课指导']);
         Tag::create([
-            'name' => 'settle']);
+            'name' => '接机/找住宿']);
         Tag::create([
-            'name' => 'social']);
+            'name' => '社交圈']);
         Tag::create([
-            'name' => 'linkedin']);
+            'name' => '职业圈']);
     }
 
     /**

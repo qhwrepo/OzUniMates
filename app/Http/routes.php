@@ -54,6 +54,8 @@ Route::group(array('prefix' => 'api'), function() {
 		array('only' => array('index', 'destroy')));
 	Route::resource('consultants','ConsultantController',
 		array('only' => array('index', 'destroy')));
+	Route::resource('student/universities','StudentController',
+		array('only' => array('universities', 'destroy')));
 });
 
 // ================================

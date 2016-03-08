@@ -76,7 +76,7 @@
         <input type="button" class="action-button" value="法学" onclick="addMajor(this.value)"/>
         <input type="button" class="action-button" value="人文/社会" onclick="addMajor(this.value)"/>
         <input type="button" class="action-button" value="艺术" onclick="addMajor(this.value)"/>
-        <input type="button" class="action-button" value="其他" onclick="addMajor('')"/>
+        <input type="button" class="action-button" value="其他" onclick="addMajor(this.value)"/>
         <input type="text" name="majors" class="hidden"/>
 
         <br/>

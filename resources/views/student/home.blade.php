@@ -39,8 +39,15 @@
 	<div class="modal_desc">
 	  	<h1>{{ $user['username'] }}</h1>
   		<ul class="rolldown-list" id="myList">
-		  <li>{{$user['universities']}}</li>
-		  <li>{{$user['majors']}}
+		  <li>
+		  	@foreach($user->universities as $university)
+		 	{{$university->name}}
+		  	@endforeach
+		  </li>
+		  <li>
+		  @foreach($user->majors as $major)
+			{{$major->name}}
+			@endforeach
 		  @if($user['degree']=='bachelor') 本科
   			@elseif($user['degree']=='master') 硕士
   			@elseif($user['degree']=='phd') 博士
@@ -74,7 +81,14 @@
 
 	<article class="item thumb" data-width="350">
 		<h2>{{ $user['username'] }} <br/><br/>
-		{{ $user['universities'] }} {{ $user['majors'] }}</h2>
+			@foreach($user->universities as $university)
+			{{$university->name}}
+			@endforeach
+			<br/>
+			@foreach($user->majors as $major)
+			{{$major->name}}
+			@endforeach
+		</h2>
 		<a href="#" class="image open_button open_button1">
 			@if($user['avatar']=='')
 			<img src="/img/no_avatar.jpg">
