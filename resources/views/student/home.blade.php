@@ -81,13 +81,18 @@
 
 	<article class="item thumb" data-width="350">
 		<h2>{{ $user['username'] }} <br/><br/>
+			目标院校：
 			@foreach($user->universities as $university)
 			{{$university->name}}
 			@endforeach
 			<br/>
+			目标专业：
 			@foreach($user->majors as $major)
 			{{$major->name}}
 			@endforeach
+			@if($user['degree']=='bachelor') 本科
+			@elseif($user['degree']=='master') 硕士
+			@elseif($user['degree']=='phd') 博士 @endif
 		</h2>
 		<a href="#" class="image open_button open_button1">
 			@if($user['avatar']=='')
@@ -109,7 +114,10 @@
 	@foreach($consultants as $consultant)
 	<article class="item thumb" data-width="350">
 		<h2>{{$consultant->username}} <br/><br/>
-		{{ $consultant['university'] }} {{ $consultant['major'] }} {{ $consultant['specilization'] }}</h2>
+		{{ $consultant['university'] }} {{ $consultant['major'] }} {{ $consultant['specilization'] }}
+		@if($consultant['degree']=='bachelor') 本科
+		@elseif($consultant['degree']=='master') 硕士
+		@elseif($consultant['degree']=='phd') 博士 @endif</h2>
 		<a href="#" class="image open_button" onclick="open_modal({{$consultant->id}})"><img src="{{$consultant->avatar}}"></a>
 	</article>
 	@endforeach

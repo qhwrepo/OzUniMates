@@ -74,7 +74,10 @@
 	<!-- Thumb Items -->
 	<article class="item thumb" data-width="350">
 		<h2>{{ $user['username'] }} <br/><br/>
-		{{ $user['university'] }} {{ $user['major'] }}</h2>
+		{{ $user['university'] }} {{ $user['major'] }}
+		@if($user['degree']=='bachelor') 本科
+		@elseif($user['degree']=='master') 硕士
+		@elseif($user['degree']=='phd') 博士 @endif</h2>
 		<a href="#" class="image open_button open_button1">
 			@if($user['avatar']=='')
 			<img src="/img/no_avatar.jpg">
@@ -95,13 +98,18 @@
 	@foreach($students as $student)
 	<article class="item thumb" data-width="350">
 		<h2>{{$student->username}} <br/><br/>
+		目标院校：
 		@foreach($student->universities as $university)
 		{{$university->name}}
 		@endforeach
 		<br/>
+		目标专业：
 		@foreach($student->majors as $major)
 		{{$major->name}}
-		@endforeach</h2>
+		@endforeach
+		@if($student['degree']=='bachelor') 本科
+		@elseif($student['degree']=='master') 硕士
+		@elseif($student['degree']=='phd') 博士 @endif</h2>
 		<a href="#" class="image open_button" onclick="open_modal({{$student->id}})"><img src="{{$student->avatar}}"></a>
 	</article>
 	@endforeach

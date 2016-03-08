@@ -228,6 +228,8 @@ function msSubmit(type) {
 		daForm.elements['major'].value = major;
 		daForm.elements['university'].value = university;
 		daForm.elements['skills'].value = skills;
+		if(daForm.elements['invite'].value=="zhimakaimen") daForm.elements['invite'].value=1;
+		else daForm.elements['invite'].value=0;
 		document.getElementById('msform').submit();
 	}
 }

@@ -115,6 +115,7 @@
         <input type="password" name="password" placeholder="密码,大于6位" class="textInput" />
         <input type="password" name="repeatpassword" placeholder="重复密码" class="textInput"/>
         <input type="email" name="email" placeholder="邮箱" class="textInput" />
+        <input type="text" name="invite" placeholder="邀请码，选填" class="textInput" />
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
         <a class="submit fa fa-check-circle fa-3x" onclick="msSubmit(2);"></a>
     </fieldset>

@@ -88,7 +88,7 @@ class AuthController extends Controller
             'major' => $data['major'],
             'specilization' => $data['specilization'],
             'thanks' => '0',
-            'ispro' => false,
+            'ispro' => $data['invite'],
             'description' => ''
         ]);
     }
@@ -140,7 +140,7 @@ class AuthController extends Controller
             array_push($majorarr, $arr[$i]);
         };
 
-        $majorIdList = Major::whereIn('name',$arr)->lists('id')->all();
+        $majorIdList = Major::whereIn('name',$majorarr)->lists('id')->all();
         $student->majors()->attach($majorIdList);
         
         return redirect('student/regis-success');
@@ -172,7 +172,7 @@ class AuthController extends Controller
             array_push($majorarr, $arr[$i]);
         };
 
-        $majorIdList = Major::whereIn('name',$arr)->lists('id')->all();
+        $majorIdList = Major::whereIn('name',$majorarr)->lists('id')->all();
         $student->majors()->attach($majorIdList);
         
         return redirect('en/student/regis-success');
@@ -185,15 +185,16 @@ class AuthController extends Controller
         
         // store tag & consultant pair into table
         $consultant = Consultant::where('username',$request->username)->first();
-        $idarr = [];
+        $tagarr = [];
 
         $arr = explode(',', $request->skills);
         $arrLen = sizeof($arr);
         for($i=0;$i<$arrLen;$i++) {
-            array_push($idarr, Tag::where('name',$arr[$i])->first()->id);
+            array_push($tagarr, $arr[$i]);
         };
 
-        $consultant->tags()->attach($idarr);
+        $tagIdList = Tag::whereIn('name',$tagarr)->lists('id')->all();
+        $consultant->tags()->attach($tagIdList);
         
         return redirect('consultant/regis-success');
 
@@ -205,15 +206,16 @@ class AuthController extends Controller
 
         // store tag & consultant pair into table
         $consultant = Consultant::where('username',$request->username)->first();
-        $idarr = [];
+        $tagarr = [];
 
         $arr = explode(',', $request->skills);
         $arrLen = sizeof($arr);
         for($i=0;$i<$arrLen;$i++) {
-            array_push($idarr, Tag::where('name',$arr[$i])->first()->id);
+            array_push($tagarr, $arr[$i]);
         };
 
-        $consultant->tags()->attach($idarr);
+        $tagIdList = Tag::whereIn('name',$tagarr)->lists('id')->all();
+        $consultant->tags()->attach($tagIdList);
         
         return redirect('en/consultant/regis-success');
 
