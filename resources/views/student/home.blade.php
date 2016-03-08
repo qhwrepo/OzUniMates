@@ -108,6 +108,11 @@
 			<h1>Hi,{{ $user['username'] }}!</h1>
 			<p>右边的他们可能是你未来的师兄师姐喔,<br />
 			打个招呼，开始咨询吧！</p>
+			<div class="board">
+				<a href="#" class="board-link" onclick="weihu()">个人信息</a>
+				<a href="http://bbs.ozunimates.com" class="board-link">论坛</a>
+				<a href="/logout" class="board-link">登出</a>
+			</div>
 		</div>
 	</div>	
 
@@ -118,7 +123,10 @@
 		@if($consultant['degree']=='bachelor') 本科
 		@elseif($consultant['degree']=='master') 硕士
 		@elseif($consultant['degree']=='phd') 博士 @endif</h2>
-		<a href="#" class="image open_button" onclick="open_modal({{$consultant->id}})"><img src="{{$consultant->avatar}}"></a>
+		<a href="#" class="image open_button" onclick="open_modal({{$consultant->id}})">
+		@if($student->avatar) <img src="{{$student->avatar}}">
+		@else <img src="/img/no_avatar_square.jpg">
+		@endif</a>
 	</article>
 	@endforeach
 	

@@ -92,6 +92,11 @@
 			<h1>Hi,{{ $user['username'] }}!</h1>
 			<p>右边这些小鲜肉可能会成为你的校友：<br />
 			有空的话，帮帮他们吧！</p>
+			<div class="board">
+				<a href="#" class="board-link" onclick="weihu()">个人信息</a>
+				<a href="http://bbs.ozunimates.com" class="board-link">论坛</a>
+				<a href="/logout" class="board-link">登出</a>
+			</div>
 		</div>
 	</div>
 
@@ -110,7 +115,10 @@
 		@if($student['degree']=='bachelor') 本科
 		@elseif($student['degree']=='master') 硕士
 		@elseif($student['degree']=='phd') 博士 @endif</h2>
-		<a href="#" class="image open_button" onclick="open_modal({{$student->id}})"><img src="{{$student->avatar}}"></a>
+		<a href="#" class="image open_button" onclick="open_modal({{$student->id}})">
+		@if($student->avatar) <img src="{{$student->avatar}}">
+		@else <img src="/img/no_avatar_square.jpg">
+		@endif</a>
 	</article>
 	@endforeach
 	

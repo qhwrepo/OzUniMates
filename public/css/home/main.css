@@ -576,3 +576,13 @@ ul.contact {
 	cursor:pointer;
 }
 
+.board {
+	display: flex;
+	margin-top: 50px;
+}
+
+.board-link {
+	font-size: 25px;
+	margin-right: 30px;
+}
+
