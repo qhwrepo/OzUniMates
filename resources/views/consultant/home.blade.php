@@ -121,16 +121,6 @@
 		@endif</a>
 	</article>
 	@endforeach
-	
-<!-- Filler Thumb Items (just for demonstration purposes) -->
-	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
-	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
-	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
-	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
-	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
-	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
-	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
-	<article class="item thumb" data-width="350"><h2>Fake User!!</h2><a class="image"><img src="/img/no_avatar_square.jpg"></a></article>
 
 </div>
 		
