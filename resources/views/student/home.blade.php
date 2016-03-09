@@ -124,7 +124,7 @@
 		@elseif($consultant['degree']=='master') 硕士
 		@elseif($consultant['degree']=='phd') 博士 @endif</h2>
 		<a href="#" class="image open_button" onclick="open_modal({{$consultant->id}})">
-		@if($student->avatar) <img src="{{$student->avatar}}">
+		@if($consultant->avatar) <img src="{{$consultant->avatar}}">
 		@else <img src="/img/no_avatar_square.jpg">
 		@endif</a>
 	</article>
