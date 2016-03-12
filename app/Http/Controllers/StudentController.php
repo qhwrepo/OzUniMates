@@ -69,16 +69,10 @@ class StudentController extends Controller
 
         }
 
-        $destinationPath = 'uploads/';
-        $filename = $original->getClientOriginalName();
-        $avatar->move($destinationPath, $filename);
-        // return Response::json(
-        //     [
-        //         'success' => true,
-        //         'avatar' => asset($destinationPath.$filename),
-        //     ]
-        // );
         $user = Auth::user("student");
+        $destinationPath = 'uploads/';
+        $filename = "s_" . $user->id . ".jpg";
+        $avatar->move($destinationPath, $filename);
         $user->avatar = asset($destinationPath.$filename);
         $user->save();
         return redirect('/student/home');

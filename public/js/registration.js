@@ -21,7 +21,7 @@ var major;
 var skills = [];
 
 var daForm = document.forms['msform'];
-var passwordOk = false;
+var passwordOK = false;
 var emailOK = false;
 var usernameOK = false;
 
@@ -136,13 +136,13 @@ $(".passwordInput").change(function() {
 	if(daForm.elements['password'].value != daForm.elements['repeatpassword'].value || daForm.elements['password'].value.length<6) {
 		daForm.elements['password'].style.borderColor = 'red';
 		daForm.elements['repeatpassword'].style.borderColor = 'red';
-		passwordOk = false;
+		passwordOK = false;
 		$(".submit").addClass("not-active");
 	}
 	else {
 		daForm.elements['password'].style.borderColor = '#CCC';
 		daForm.elements['repeatpassword'].style.borderColor = '#CCC';
-		passwordOk = true;
+		passwordOK = true;
 	};
 });
 
@@ -151,16 +151,16 @@ $("#emailInput").change(function() {
 	if(!emailPat.test(daForm.elements['email'].value)) {
 		daForm.elements['email'].style.borderColor = 'red';
 		$(".submit").addClass("not-active");
-		emailOk = false;
+		emailOK = false;
 	}
 	else {
 		daForm.elements['email'].style.borderColor = '#CCC';
-		emailOk = true;
+		emailOK = true;
 	}
 });
 
 $(".textInput").change(function() {
-	if(usernameOK && passwordOk && emailOk) {
+	if(usernameOK && passwordOK && emailOK) {
 		$(".submit").removeClass("not-active");
 	}
 	else {
@@ -173,7 +173,7 @@ $(".textInput").change(function() {
 function disableSubmit() {
 	$(".submit").addClass("not-active");
 	$(".fa-chevron-circle-right").addClass("not-active");
-	passwordOk = false;
+	passwordOK = false;
 }
 
 function setDegree(deg) {
