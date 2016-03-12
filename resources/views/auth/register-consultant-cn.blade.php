@@ -111,7 +111,7 @@
     </fieldset>
     <fieldset>
         <h2 class="fs-title">一些注册信息</h2>
-        <input type="text" name="username" placeholder="昵称" class="textInput" />
+        <input type="text" name="username" placeholder="昵称,小于十位" class="textInput" />
         <input type="password" name="password" placeholder="密码,大于6位" class="textInput" />
         <input type="password" name="repeatpassword" placeholder="重复密码" class="textInput"/>
         <input type="email" name="email" placeholder="邮箱" class="textInput" />

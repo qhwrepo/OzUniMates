@@ -21,7 +21,9 @@ var major;
 var skills = [];
 
 var daForm = document.forms['msform'];
-var passwordOk;
+var passwordOk = false;
+var emailOK = false;
+var usernameOK = false;
 
 $(".next").click(function(){
 	if(animating) return false;
@@ -112,13 +114,29 @@ $(".action-button").click(function() {
 	}
 });
 
-$(".textInput").change(function() {
+
+// check for input invaditation
+
+$("#usernameInput").change(function() {
+	// check username
+	if(daForm.elements['username'].value.length <1 || daForm.elements['username'].value.length>9)	
+	{
+		daForm.elements['username'].style.borderColor = 'red';
+		usernameOK = false;
+		$(".submit").addClass("not-active");
+	}
+	else {
+		daForm.elements['username'].style.borderColor = '#CCC';
+		usernameOK = true;
+	}
+});
+
+$(".passwordInput").change(function() {
 	// check password
 	if(daForm.elements['password'].value != daForm.elements['repeatpassword'].value || daForm.elements['password'].value.length<6) {
 		daForm.elements['password'].style.borderColor = 'red';
 		daForm.elements['repeatpassword'].style.borderColor = 'red';
 		passwordOk = false;
-		emailOk = false;
 		$(".submit").addClass("not-active");
 	}
 	else {
@@ -126,7 +144,9 @@ $(".textInput").change(function() {
 		daForm.elements['repeatpassword'].style.borderColor = '#CCC';
 		passwordOk = true;
 	};
+});
 
+$("#emailInput").change(function() {
 	// check email
 	if(!emailPat.test(daForm.elements['email'].value)) {
 		daForm.elements['email'].style.borderColor = 'red';
@@ -137,14 +157,18 @@ $(".textInput").change(function() {
 		daForm.elements['email'].style.borderColor = '#CCC';
 		emailOk = true;
 	}
+});
 
-	if(passwordOk && emailOk) {
+$(".textInput").change(function() {
+	if(usernameOK && passwordOk && emailOk) {
 		$(".submit").removeClass("not-active");
 	}
 	else {
 		$(".submit").addClass("not-active");
 	}
 });
+
+// end of input validation check
 
 function disableSubmit() {
 	$(".submit").addClass("not-active");

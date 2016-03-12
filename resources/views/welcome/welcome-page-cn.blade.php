@@ -42,7 +42,7 @@ under Apache 2.0 by Start Bootstrap
     @endif
 
     <a id="logbtn" class="navBtn btn btn-lg" onclick="set_form()">登录</a>
-    <!-- <a id="languagebtn" href="en" class="navBtn btn btn-lg">English</a> -->
+    <a id="languagebtn" href="en" class="navBtn btn btn-lg">English</a>
     
     <div id='lean_overlay' onclick="hide_form()">
     </div>
