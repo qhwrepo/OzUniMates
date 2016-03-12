@@ -14,7 +14,7 @@ class CreateConsultantsTable extends Migration
     {
         Schema::create('consultants', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username')->unique();
+            $table->string('username');
             $table->string('password');
             $table->string('email')->unique();
             $table->string('degree');
