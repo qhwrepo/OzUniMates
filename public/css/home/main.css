@@ -11,8 +11,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font-family: "PingHei", 'PingFang SC', "Helvetica Neue", Helvetica, Arial,
- "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+	font-family: Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "STXihei", "华文细黑";
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -62,7 +61,6 @@ body {
 	background-color: #12151D;
 	color: #999;
 	color: rgba(255, 255, 255, 0.6);
-	font-family: 'Source Sans Pro';
 	font-weight: 400;
 }
 
@@ -170,7 +168,6 @@ ul.contact {
 	.icon:before {
 		-moz-osx-font-smoothing: grayscale;
 		-webkit-font-smoothing: antialiased;
-		font-family: FontAwesome;
 		font-style: normal;
 		font-weight: normal;
 		text-transform: none !important;
@@ -359,7 +356,6 @@ ul.contact {
 			.poptrox-popup .nav-next, .poptrox-popup .nav-previous {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
 				font-style: normal;
 				font-weight: normal;
 				text-transform: none !important;
