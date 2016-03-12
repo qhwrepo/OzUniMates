@@ -19,7 +19,7 @@
 	    <div id="result"></div> 
 	</div>
 	<input id="cropped_avatar" type="hidden" name="cropped_avatar"> 
-	<a class="modal-submit" id="submit-avatar">好的</a>
+	<a class="modal-submit not-active" id="submit-avatar">好的</a>
 	<a class="modal-submit" id="dismiss-avatar">暂不上传</a>
 	{!! Form::close() !!}
 </div>

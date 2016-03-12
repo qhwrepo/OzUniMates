@@ -4,7 +4,8 @@ $(function(){
     var $uploadCrop; 
  
     function readFile(input) { 
-         if (input.files && input.files[0]) { 
+         if (input.files && input.files[0]) {
+            $(".not-active").removeClass("not-active");
             var reader = new FileReader(); 
              
             reader.onload = function (e) { 
