@@ -74,6 +74,8 @@ class CreateUniversitiesTable extends Migration
             'name' => '昆士兰科技大学']);
         University::create([
             'name' => '詹姆斯库克大学']);
+        University::create([
+            'name' => '其他']);
     }
 
     /**

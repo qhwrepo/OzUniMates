@@ -66,6 +66,7 @@
             <option>拉筹伯大学</option>
             <option>昆士兰科技大学</option>
             <option>詹姆斯库克大学</option>
+            <option>其他</option>
           </optgroup>
         </select>
         <input type="text" name="university" class="hidden" />
