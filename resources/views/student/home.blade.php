@@ -78,9 +78,14 @@
 <div id="reel">
 
 	<!-- Thumb Items -->
+	<ul>
 
-	<article class="item thumb" data-width="350">
-		<h2>{{ $user['username'] }} <br/><br/>
+	<li class="item thumb" data-width="350">
+	      <div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+<!-- 		<h2>{{ $user['username'] }} <br/><br/>
 			目标院校：
 			@foreach($user->universities as $university)
 			{{$university->name}}
@@ -93,7 +98,7 @@
 			@if($user['degree']=='bachelor') 本科
 			@elseif($user['degree']=='master') 硕士
 			@elseif($user['degree']=='phd') 博士 @endif
-		</h2>
+		</h2> -->
 		<a href="#" class="image open_button open_button1">
 			@if($user['avatar']=='')
 			<img src="/img/no_avatar.jpg">
@@ -101,7 +106,170 @@
 			<img src="{{$user['avatar']}}">
 			@endif
 		</a>
-	</article>
+	</li>
+
+	<li class="item thumb" data-width="350">
+	      <div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+<!-- 		<h2>{{ $user['username'] }} <br/><br/>
+			目标院校：
+			@foreach($user->universities as $university)
+			{{$university->name}}
+			@endforeach
+			<br/>
+			目标专业：
+			@foreach($user->majors as $major)
+			{{$major->name}}
+			@endforeach
+			@if($user['degree']=='bachelor') 本科
+			@elseif($user['degree']=='master') 硕士
+			@elseif($user['degree']=='phd') 博士 @endif
+		</h2> -->
+		<a href="#" class="image open_button open_button1">
+			@if($user['avatar']=='')
+			<img src="/img/no_avatar.jpg">
+			@else 
+			<img src="{{$user['avatar']}}">
+			@endif
+		</a>
+	</li>
+	<li class="item thumb" data-width="350">
+	      <div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+<!-- 		<h2>{{ $user['username'] }} <br/><br/>
+			目标院校：
+			@foreach($user->universities as $university)
+			{{$university->name}}
+			@endforeach
+			<br/>
+			目标专业：
+			@foreach($user->majors as $major)
+			{{$major->name}}
+			@endforeach
+			@if($user['degree']=='bachelor') 本科
+			@elseif($user['degree']=='master') 硕士
+			@elseif($user['degree']=='phd') 博士 @endif
+		</h2> -->
+		<a href="#" class="image open_button open_button1">
+			@if($user['avatar']=='')
+			<img src="/img/no_avatar.jpg">
+			@else 
+			<img src="{{$user['avatar']}}">
+			@endif
+		</a>
+	</li>
+	<li class="item thumb" data-width="350">
+	      <div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+<!-- 		<h2>{{ $user['username'] }} <br/><br/>
+			目标院校：
+			@foreach($user->universities as $university)
+			{{$university->name}}
+			@endforeach
+			<br/>
+			目标专业：
+			@foreach($user->majors as $major)
+			{{$major->name}}
+			@endforeach
+			@if($user['degree']=='bachelor') 本科
+			@elseif($user['degree']=='master') 硕士
+			@elseif($user['degree']=='phd') 博士 @endif
+		</h2> -->
+		<a href="#" class="image open_button open_button1">
+			@if($user['avatar']=='')
+			<img src="/img/no_avatar.jpg">
+			@else 
+			<img src="{{$user['avatar']}}">
+			@endif
+		</a>
+	</li>
+	<li class="item thumb" data-width="350">
+	      <div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+<!-- 		<h2>{{ $user['username'] }} <br/><br/>
+			目标院校：
+			@foreach($user->universities as $university)
+			{{$university->name}}
+			@endforeach
+			<br/>
+			目标专业：
+			@foreach($user->majors as $major)
+			{{$major->name}}
+			@endforeach
+			@if($user['degree']=='bachelor') 本科
+			@elseif($user['degree']=='master') 硕士
+			@elseif($user['degree']=='phd') 博士 @endif
+		</h2> -->
+		<a href="#" class="image open_button open_button1">
+			@if($user['avatar']=='')
+			<img src="/img/no_avatar.jpg">
+			@else 
+			<img src="{{$user['avatar']}}">
+			@endif
+		</a>
+	</li>
+	<li class="item thumb" data-width="350">
+	      <div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+<!-- 		<h2>{{ $user['username'] }} <br/><br/>
+			目标院校：
+			@foreach($user->universities as $university)
+			{{$university->name}}
+			@endforeach
+			<br/>
+			目标专业：
+			@foreach($user->majors as $major)
+			{{$major->name}}
+			@endforeach
+			@if($user['degree']=='bachelor') 本科
+			@elseif($user['degree']=='master') 硕士
+			@elseif($user['degree']=='phd') 博士 @endif
+		</h2> -->
+		<a href="#" class="image open_button open_button1">
+			@if($user['avatar']=='')
+			<img src="/img/no_avatar.jpg">
+			@else 
+			<img src="{{$user['avatar']}}">
+			@endif
+		</a>
+	</li>
+	<li class="item thumb" data-width="350">
+	      <div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+<!-- 		<h2>{{ $user['username'] }} <br/><br/>
+			目标院校：
+			@foreach($user->universities as $university)
+			{{$university->name}}
+			@endforeach
+			<br/>
+			目标专业：
+			@foreach($user->majors as $major)
+			{{$major->name}}
+			@endforeach
+			@if($user['degree']=='bachelor') 本科
+			@elseif($user['degree']=='master') 硕士
+			@elseif($user['degree']=='phd') 博士 @endif
+		</h2> -->
+		<a href="#" class="image open_button open_button1">
+			@if($user['avatar']=='')
+			<img src="/img/no_avatar.jpg">
+			@else 
+			<img src="{{$user['avatar']}}">
+			@endif
+		</a>
+	</li>
 
 	<div id="header" class="item" data-width="400">
 		<div class="inner">
@@ -117,7 +285,7 @@
 	</div>	
 
 	@foreach($consultants as $consultant)
-	<article class="item thumb" data-width="350">
+	<li class="item thumb" data-width="350">
 		<h2>{{$consultant->username}} <br/><br/>
 		{{ $consultant['university'] }} {{ $consultant['major'] }} {{ $consultant['specilization'] }}
 		@if($consultant['degree']=='bachelor') 本科
@@ -127,11 +295,64 @@
 		@if($consultant->avatar) <img src="{{$consultant->avatar}}">
 		@else <img src="/img/no_avatar_square.jpg">
 		@endif</a>
-	</article>
+	</li>
 	@endforeach
+	</ul>
 
 </div>
 		
 	<script type="text/javascript" src="/js/home/modal-student.js"></script>
+	<script type="text/javascript">
+
+
+// - Noel Delgado | @pixelia_me
+
+
+
+
+// - Noel Delgado | @pixelia_me
+
+
+var nodes  = document.querySelectorAll('li'),
+    _nodes = [].slice.call(nodes, 0);
+
+var getDirection = function (ev, obj) {
+    var w = obj.offsetWidth,
+        h = obj.offsetHeight,
+        x = (ev.pageX - obj.offsetLeft - (w / 2) * (w > h ? (h / w) : 1)),
+        y = (ev.pageY - obj.offsetTop - (h / 2) * (h > w ? (w / h) : 1)),
+        d = Math.round( Math.atan2(y, x) / 1.57079633 + 5 ) % 4;
+    console.log(d);
+  
+    return d;
+};
+
+var addClass = function ( ev, obj, state ) {
+    var direction = getDirection( ev, obj ),
+        class_suffix = "";
+    
+    obj.className = "";
+    
+    switch ( direction ) {
+        case 0 : class_suffix = '-top';    break;
+        case 1 : class_suffix = '-right';  break;
+        case 2 : class_suffix = '-bottom'; break;
+        case 3 : class_suffix = '-left';   break;
+    }
+    
+    obj.classList.add( state + class_suffix );
+};
+
+// bind events
+_nodes.forEach(function (el) {
+    el.addEventListener('mouseover', function (ev) {
+        addClass( ev, this, 'in' );
+    }, false);
+
+    el.addEventListener('mouseout', function (ev) {
+        addClass( ev, this, 'out' );
+    }, false);
+});
+	</script>
 
 @endsection
