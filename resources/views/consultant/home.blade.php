@@ -53,8 +53,6 @@
   	<a class="button tick" onclick="weihu()"><i class="fa fa-comments fa-3x"></i></a>
 </div>
 
-
-
 <div class="modal_info modal_info2">
 	<img id="modal_avatar_square">
 	<div class="modal_desc">
@@ -72,55 +70,105 @@
 <div id="reel">
 	
 	<!-- Thumb Items -->
-	<article class="item thumb" data-width="350">
-		<h2>{{ $user['username'] }} <br/><br/>
-		{{ $user['university'] }} {{ $user['major'] }}
+	<ul>
+
+	<li class="item thumb">
+		<div class='info'>
+			<br/>
+	    	<h1>{{ $user['username'] }}</h1>
+        	<h3>在{{ $user['university'] }}</h3>
+        	<h3>就读{{ $user['major'] }} - {{ $user['specilization'] }}
 		@if($user['degree']=='bachelor') 本科
 		@elseif($user['degree']=='master') 硕士
-		@elseif($user['degree']=='phd') 博士 @endif</h2>
+		@elseif($user['degree']=='phd') 博士 @endif</h3>
+      	</div>
 		<a href="#" class="image open_button open_button1">
-			@if($user['avatar']=='')
-			<img src="/img/no_avatar.jpg">
-			@else 
-			<img src="{{$user['avatar']}}">
-			@endif
-		</a>
-	</article>
+		@if($user->avatar) <img src="{{$user->avatar}}">
+		@else <img src="/img/no_avatar_square.jpg">
+		@endif</a>
+	</li>
 
-	<div id="header" class="item" data-width="400">
+	<li id="header" class="item" data-width="400">
 		<div class="inner">
 			<h1>Hi,{{ $user['username'] }}!</h1>
 			<p>右边这些小鲜肉可能会成为你的校友：<br />
 			有空的话，帮帮他们吧！</p>
 			<div class="board">
 				<a href="#" class="board-link" onclick="weihu()">个人信息</a>
-				<a href="http://bbs.ozunimates.com" class="board-link">论坛</a>
+				<!-- <a href="http://bbs.ozunimates.com" class="board-link">论坛</a> -->
 				<a href="/logout" class="board-link">登出</a>
 			</div>
 		</div>
-	</div>
+	</li>
 
 	@foreach($students as $student)
-	<article class="item thumb" data-width="350">
-		<h2>{{$student->username}} <br/><br/>
-		目标院校：
-		@foreach($student->universities as $university)
-		{{$university->name}}
-		@endforeach
-		<br/>
-		目标专业：
-		@foreach($student->majors as $major)
-		{{$major->name}}
-		@endforeach
-		@if($student['degree']=='bachelor') 本科
-		@elseif($student['degree']=='master') 硕士
-		@elseif($student['degree']=='phd') 博士 @endif</h2>
+	<li class="item thumb">		
+	    <div class='info'>
+	    	<h1>{{$student->username}}</h1>
+        	<h3>目标院校：</h3>
+        	<p>@foreach($student->universities as $university)
+			{{$university->name}}
+			@endforeach</p>
+			<h3>目标专业：</h3>
+        	<p>@foreach($student->majors as $major)
+			{{$major->name}}
+			@endforeach
+			@if($student['degree']=='bachelor') 本科
+			@elseif($student['degree']=='master') 硕士
+			@elseif($student['degree']=='phd') 博士 @endif</p>
+      	</div>
 		<a href="#" class="image open_button" onclick="open_modal({{$student->id}})">
-		@if($student->avatar) <img src="{{$student->avatar}}">
-		@else <img src="/img/no_avatar_square.jpg">
-		@endif</a>
-	</article>
+			@if($student['avatar']=='')
+			<img src="/img/no_avatar.jpg">
+			@else 
+			<img src="{{$student['avatar']}}">
+			@endif
+		</a>
+	</li>
 	@endforeach
+
+		<li class="item thumb">
+	<div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
+    </li>
+    <li class="item thumb">
+	<div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
+    </li>
+    <li class="item thumb">
+	<div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
+    </li>
+    <li class="item thumb">
+	<div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
+    </li>
+    <li class="item thumb">
+	<div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
+    </li>
+    <li class="item thumb">
+	<div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
+    </li>
 
 </div>
 		

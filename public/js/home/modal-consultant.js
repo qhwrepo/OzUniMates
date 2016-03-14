@@ -5,7 +5,6 @@ var $content2 = $('.modal_info2').detach();
 
 (function(){
   $('.open_button1').on('click', function(e){
-    $('article').css({"z-index": "1"});
     modal.open({
       content: $content1,
       width: 780,
@@ -13,6 +12,7 @@ var $content2 = $('.modal_info2').detach();
     });
     $content1.addClass('modal_content');
     $('.modal, .modal_overlay').addClass('display');
+    $('.modal, .modal_overlay').removeClass('conceal');
     $('.open_button1').addClass('load');
 
     rolldown();
@@ -31,7 +31,6 @@ var modal = (function(){
   $modal.append($content, $close);
 
   $close.on('click', function(e){
-    $('article').css({"z-index": "15"});
     $('.modal, .modal_overlay').addClass('conceal');
     $('.modal, .modal_overlay').removeClass('display');
     $('.open_button1').removeClass('load');
@@ -76,7 +75,6 @@ $.get("/api/students", function(result){
 
 
 function open_modal(id){
-    $('article').css({"z-index": "1"});
     modal.open({
       content: $content2,
       width: 780,
@@ -84,6 +82,7 @@ function open_modal(id){
     });
     $content2.addClass('modal_content');
     $('.modal, .modal_overlay').addClass('display');
+    $('.modal, .modal_overlay').removeClass('conceal');
     $('.open_button2').addClass('load');
 
     var student = user_id(id);

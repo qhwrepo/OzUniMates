@@ -128,17 +128,21 @@ var parallelism = (function($) { var _ = {
 					SZIntervalId;
 
 					// set rows and itemHeight based on screen size
-					// 2 rows
-					if(windowHeight<850) {
+					if(windowHeight<920) {
 						rows = 2;
+						
 					}
-					else if(windowHeight>=850 && windowHeight<1200) {
+					else if(windowHeight>=920 && windowHeight<1300) {
 						rows = 3;
+
 					}
-					else if(windowHeight>=1200) {
+					else if(windowHeight>=1300) {
 						rows = 4;
 					}
-					itemHeight = (windowHeight-20)/rows;
+
+					itemHeight = 280;
+					itemWidth = 280;
+					itemMarginTop = (windowHeight - rows*itemHeight)/(rows+2);
 
 				// Window.
 					_.objects.window._parallelism_update = function() {
@@ -214,12 +218,12 @@ var parallelism = (function($) { var _ = {
 
 						// Resize reel.
 							_.objects.reel
-								.css('height', (itemHeight * rows) + (_.settings.padding * 2))
+								.css('height', '100%')
 								.css('width', rowWidth);
 
 						// Reposition main (if applicable).
 							_.objects.main
-								.css('height', (itemHeight * rows) + (_.settings.padding * 2));
+								.css('height', '100%');
 
 							if (_.settings.centerVertically)
 								_.objects.main
@@ -287,7 +291,8 @@ var parallelism = (function($) { var _ = {
 				// Items.
 					_.objects.items
 						.css('box-shadow', '0px 0px 0px ' + _.settings.padding + 'px ' + _.settings.paddingColor)
-						.css('border', 'solid ' + _.settings.padding + 'px ' + _.settings.paddingColor);
+						.css('border', 'solid ' + _.settings.padding + 'px ' + _.settings.paddingColor)
+						.css('margin-top', itemMarginTop);
 
 					_.objects.items.each(function(i) {
 
@@ -296,8 +301,9 @@ var parallelism = (function($) { var _ = {
 
 						w = parseInt($item.data('width'));
 
+						
 						if (!w)
-							w = _.settings.itemWidth;
+							w = itemWidth;
 
 						h = itemHeight;
 
@@ -624,6 +630,50 @@ var parallelism = (function($) { var _ = {
 									}, 50);
 								});
 
+						});
+
+					// direction-aware hover
+						var nodes  = document.querySelectorAll('li'),
+						    _nodes = [].slice.call(nodes, 0);
+
+						var getDirection = function (ev, obj) {
+						    var w = obj.offsetWidth,
+						        h = obj.offsetHeight,
+						        x = (ev.pageX - obj.offsetLeft - (w / 2) * (w > h ? (h / w) : 1)),
+						        y = (ev.pageY - obj.offsetTop - (h / 2) * (h > w ? (w / h) : 1)),
+						        d = Math.round( Math.atan2(y, x) / 1.57079633 + 5 ) % 4;
+						  
+						    return d;
+						};
+
+						var addClass = function ( ev, obj, state ) {
+						    var direction = getDirection( ev, obj ),
+						        class_suffix = "";
+						    
+						    obj.className = "";
+						    
+						    switch ( direction ) {
+						        case 0 : class_suffix = '-top';    break;
+						        case 1 : class_suffix = '-right';  break;
+						        case 2 : class_suffix = '-bottom'; break;
+						        case 3 : class_suffix = '-left';   break;
+						    }
+						    
+						    obj.classList.add( state + class_suffix );
+						};
+
+						// bind events
+						_nodes.forEach(function (el) {
+						    el.addEventListener('mouseover', function (ev) {
+						    	// console.log(this.getElementsByClassName("item-username")[0].style.display);
+						    	// this.getElementsByClassName("item-username")[0].style.display = 'none';
+						        addClass( ev, this, 'in' );
+						    }, false);
+
+						    el.addEventListener('mouseout', function (ev) {
+						        // this.getElementsByClassName("item-username")[0].style.display = 'inherit';
+						        addClass( ev, this, 'out' );
+						    }, false);
 						});
 
 				});

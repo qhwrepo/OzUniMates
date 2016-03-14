@@ -6,7 +6,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 /* Reset */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -16,7 +16,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
@@ -138,6 +138,7 @@ ul.contact {
 	background: #1a1f2c;
 	background: rgba(255, 255, 255, 0.25);
 	cursor: default;
+	text-align: center;
 }
 
 	.item.thumb h2 {
@@ -145,36 +146,16 @@ ul.contact {
 		bottom: 0;
 		left: 0;
 		background: #1a1f2c;
-		background: rgba(18, 21, 29, 0.85);
+		background: rgba(18, 21, 29, 0.5);
 		width: 100%;
 		padding: 1em;
 		font-weight: 400;
 		line-height: 1em;
-		z-index: 2;
 	}
 
 	.item.thumb img {
 		display: block;
 		z-index: 1;
-	}
-
-/* Icons */
-
-.icon {
-	position: relative;
-	text-decoration: none;
-}
-
-	.icon:before {
-		-moz-osx-font-smoothing: grayscale;
-		-webkit-font-smoothing: antialiased;
-		font-style: normal;
-		font-weight: normal;
-		text-transform: none !important;
-	}
-
-	.icon > .label {
-		display: none;
 	}
 
 /* Wrapper */
@@ -190,11 +171,10 @@ ul.contact {
 /* Header */
 
 #header {
-	position: relative;
 	background: #337ab7;
 	color: #fff;
 	cursor: default;
-	display:flex !important;
+	padding-left: 25px !important;
 }
 
 	#header p {
@@ -588,12 +568,10 @@ ul.contact {
     opacity:0.5;
 }
 
-/* the important bits */
-@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
-/* the important bits */
+/* directino-aware hover effect */
 li {
-  -webkit-perspective: 400px;
-          perspective: 400px;
+  -webkit-perspective: 540px;
+          perspective: 540px;	
 }
 
 .info {
@@ -609,6 +587,9 @@ li {
   pointer-events: none;
   background-color: rgba(26, 188, 156, 0.9);
   z-index: 999;
+  /*display:flex;*/
+  /*align-items:center;*/
+  /*justify-content:center;*/
 }
 
 .in-top .info {
@@ -830,29 +811,33 @@ li {
 }
 /* you can ignore this ones */
 
-
-li {
+#reel li {
   position: relative;
   float: left;
   width: 200px;
   height: 200px;
-  margin: 5px;
   padding: 0;
   list-style: none;
 }
-li a {
+#reel li a {
   display: inline-block;
   vertical-align: top;
   text-decoration: none;
   border-radius: 4px;
 }
-li h3 {
-  margin: 0;
-  font-size: 16px;
+#reel li h1 {
+  margin: 10px 0 23px 0;
+  font-size: 35px;
   color: rgba(255, 255, 255, 0.9);
 }
-li p {
-  font-size: 12px;
+#reel li h3 {
+  margin: 0;
+  margin-top: 10px;
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.9);
+}
+#reel li p {
+  font-size: 18px;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.8);
 }
