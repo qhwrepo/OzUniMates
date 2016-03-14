@@ -243,9 +243,9 @@ button.modal_close span:after {
   }
   100% {
     visibility: visible;
-    -moz-transform: rotateX(0deg);
+/*    -moz-transform: rotateX(0deg);
     -ms-transform: rotateX(0deg);
-    -webkit-transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);*/
     transform: rotateX(0deg);
   }
 }
@@ -259,7 +259,7 @@ button.modal_close span:after {
 
 .rolldown-list li {
   padding: 1em;
-  margin-bottom: .125em;
+  margin-bottom: .12em;
   display: block;
   list-style: none;
   visibility: hidden;
@@ -295,6 +295,7 @@ button.modal_close span:after {
   color: #fff;
   letter-spacing: 0;
   line-height: 50px;
+  cursor: pointer;
   -webkit-transition: letter-spacing 230ms ease-in-out;
   transition: letter-spacing 230ms ease-in-out;
 }
