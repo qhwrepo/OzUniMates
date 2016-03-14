@@ -289,25 +289,35 @@ button.modal_close span:after {
 /*modal button*/
 
 .btn-2 {
-  position: absolute;
-  top:375px;
+  position: fixed;
+  top:470px;
   font-size: 30px;
   color: #fff;
   letter-spacing: 0;
   line-height: 50px;
   cursor: pointer;
+  visibility: hidden;
+  z-index: 20;
   -webkit-transition: letter-spacing 230ms ease-in-out;
   transition: letter-spacing 230ms ease-in-out;
 }
-
-.btn-left {
-  right:250px;
-  width: 115px; 
+  
+@media screen and (min-width: 900px) {
+  .btn-left{
+    right:39%;    
+  }
+  .btn-right {
+    right:27%;  
+  } 
 }
 
-.btn-right {
-  right:38px;
-  width: 230px; 
+@media screen and (max-width: 899px) {
+  .btn-left{
+    right:39%;    
+  }
+  .btn-right {
+    right:20%;  
+  } 
 }
 
 .btn-2:hover,

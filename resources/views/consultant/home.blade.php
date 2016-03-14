@@ -50,8 +50,6 @@
   			@else ta决定先保持神秘 @endif</li>
 		</ul> 
   	</div>
-  	<a class="btn-2 btn-left" onclick="weihu()">留言</a> 
-  	<a class="btn-2 btn-right" onclick="weihu()">全权委托</a>
 </div>
 
 <div class="modal_info modal_info2">
@@ -65,9 +63,10 @@
 		  <li id="modal_description"></li>
 		</ul>
   	</div>
-  	<a class="btn-2 btn-left" onclick="weihu()">留言</a> 
-  	<a class="btn-2 btn-right" onclick="weihu()">全权委托</a>
 </div>
+
+<a class="btn-2 btn-left" onclick="weihu()">留言</a> 
+<a class="btn-2 btn-right" onclick="weihu()">全权委托</a>
 
 <div id="reel">
 	
@@ -129,7 +128,7 @@
 	</li>
 	@endforeach
 
-		<li class="item thumb">
+<!-- 		<li class="item thumb">
 	<div class='info'>
         <h3>Single-origin coffee whatever</h3>
         <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
@@ -170,7 +169,7 @@
         <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
       </div>
     <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
-    </li>
+    </li> -->
 
 </div>
 		

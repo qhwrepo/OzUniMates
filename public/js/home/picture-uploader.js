@@ -62,13 +62,13 @@ $(function(){
 // modal - common use
 function rolldown() {
   $('.rolldown-list li').each(function () {
-      // var delay = ($(this).index()/4+0.8) + 's';
-      // $(this).css({
-      //     webkitAnimationDelay: delay,
-      //     mozAnimationDelay: delay,
-      //     animationDelay: delay
-      // });
-      // $(".btn-2").css("visibility","visible");
+      var delay = ($(this).index()/4+0.8) + 's';
+      $(this).css({
+          webkitAnimationDelay: delay,
+          mozAnimationDelay: delay,
+          animationDelay: delay
+      });
+      $(".btn-2").css("visibility","visible");
     });
 }
 
