@@ -57,7 +57,8 @@
   			@else ta决定先保持神秘 @endif</li>
 		</ul> 
   	</div>
-  	<a class="button tick" onclick="weihu()"><i class="fa fa-comments fa-3x"></i></a>
+  	<a class="btn-2 btn-left" onclick="weihu()">留言</a> 
+  	<a class="btn-2 btn-right" onclick="weihu()">全权委托</a>
 </div>
 
 <div class="modal_info modal_info2">
@@ -71,7 +72,8 @@
 		  <li id="modal_description"></li>
 		</ul>
   	</div>
-  	<a class="button tick" onclick="weihu()"><i class="fa fa-comments fa-3x"></i></a>
+  	<a class="btn-2 btn-left" onclick="weihu()">留言</a> 
+  	<a class="btn-2 btn-right" onclick="weihu()">全权委托</a>
 </div>
 
 

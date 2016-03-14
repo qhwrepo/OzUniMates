@@ -7,6 +7,7 @@
   -o-transition: opacity 600ms linear 600ms;
   transition: opacity 600ms linear 600ms;
   z-index: 20;
+  font-family: Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "STXihei", "华文细黑";
 }
 
 .modal_content {
@@ -95,7 +96,7 @@
   transition: opacity 100ms linear;
 }
 
-a.open_button {
+/*a.open_button {
   color: #FFFFFF;
   letter-spacing: 2px;
   line-height: 66px;
@@ -111,9 +112,8 @@ a.open_button:hover {
 }
 
 a.open_button.load {
-  /*opacity: 0;*/
   z-index: 1;
-}
+}*/
 
 button.modal_close {
   background: #363D4E;
@@ -287,68 +287,59 @@ button.modal_close span:after {
 }
 
 /*modal button*/
-.button{
-  background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
-  background-image: linear-gradient(top, #f4f1ee, #fff);
-  border-radius: 50%;
-  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
+
+.btn-2 {
   position: absolute;
-  width: 70px;      
-  height: 70px;
   top:375px;
-  right:177px;
-  -webkit-transition: all .1s linear;
-  transition: all .1s linear;
-}
-
-.button:after{
-  color:#e9e6e4;
-  content: "";
-  display: block;
   font-size: 30px;
-  height: 30px;
-  text-decoration: none;
-  text-shadow: 0px -1px 1px #979090, 1px 1px 1px white;
-  position: absolute;
-  width: 30px;
+  color: #fff;
+  letter-spacing: 0;
+  line-height: 50px;
+  -webkit-transition: letter-spacing 230ms ease-in-out;
+  transition: letter-spacing 230ms ease-in-out;
 }
 
-.fa-comments {
-  margin-top: 10px;
-  color:#337ab7;
+.btn-left {
+  right:250px;
+  width: 115px; 
 }
 
-.fa-comments:hover {
-  color:#77adda;
-  cursor: pointer;
+.btn-right {
+  right:38px;
+  width: 230px; 
 }
 
-/*.tick:after{
-  content: "发信";
-  white-space: nowrap;
-
-  left:23px;
-  top:20px;
-}*/
-
-.button:hover{
-  background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
-  background-image: linear-gradient(top, #fff, #f4f1ee);
-  color:#0088cc;
+.btn-2:hover,
+.btn-2:active {
+  letter-spacing: 5px;
 }
 
-.tick:hover:after{
-  color:#83d244;
-  text-shadow:0px 0px 6px #83d244;
+.btn-2:after,
+.btn-2:before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  -webkit-transition: all 280ms ease-in-out;
+  transition: all 280ms ease-in-out;
+  width: 0;
 }
 
-.button:active{
-  background-image: -webkit-linear-gradient(top, #efedec, #f7f4f4);
-  background-image: linear-gradient(top, #efedec, #f7f4f4);
-  box-shadow: 0 3px 5px 0 rgba(0,0,0,.4), inset 0px -3px 1px 1px rgba(204,198,197,.5);
+.btn-2:hover:after,
+.btn-2:hover:before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-color: #fff;
+  -webkit-transition: width 350ms ease-in-out;
+  transition: width 350ms ease-in-out;
+  width: 70%;
 }
 
-.button:active:after{
-  color:#dbd2d2;
-  text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+.btn-2:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
 }
