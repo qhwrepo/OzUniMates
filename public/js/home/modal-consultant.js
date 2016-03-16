@@ -8,7 +8,7 @@ var $content2 = $('.modal_info2').detach();
     modal.open({
       content: $content1,
       width: 780,
-      height: 350,
+      height: 280,
     });
     $content1.addClass('modal_content');
     $('.modal, .modal_overlay').addClass('display');

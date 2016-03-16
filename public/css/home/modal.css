@@ -28,14 +28,14 @@
 }
 
 .modal_info img {
-  width: 350px;
-  height: 350px;
+  width: 280px;
+  height: 280px;
   margin-bottom: 0;
 }
 
 .modal_info .modal_desc {
   width:100%;
-  height:350px;
+  height:280;
 }
 
 .modal_desc {
@@ -259,11 +259,11 @@ button.modal_close span:after {
 
 .rolldown-list li {
   padding: 1em;
-  margin-bottom: .12em;
+  margin-bottom: .08em;
   display: block;
   list-style: none;
   visibility: hidden;
-  height:69px;
+  height:52px;
 
   font-size: 20px;
   -moz-animation: rolldown 0.7s 1;

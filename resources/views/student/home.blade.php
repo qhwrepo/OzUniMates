@@ -98,7 +98,7 @@
       	</div>
 		<a href="#" class="image open_button open_button1">
 			@if($user['avatar']=='')
-			<img src="/img/no_avatar.jpg">
+			<img src="/img/no_avatar_square.jpg">
 			@else 
 			<img src="{{$user['avatar']}}">
 			@endif
@@ -137,7 +137,7 @@
 	@endforeach
 
 
-	<li class="item thumb">
+<!-- 	<li class="item thumb">
 	      <div class='info'>
         <h3>Single-origin coffee whatever</h3>
         <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
@@ -149,7 +149,7 @@
 			<img src="{{$user['avatar']}}">
 			@endif
 		</a>
-	</li>
+	</li> -->
 
 <!-- 	<li class="item thumb">
 	<div class='info'>

@@ -120,7 +120,7 @@
       	</div>
 		<a href="#" class="image open_button" onclick="open_modal({{$student->id}})">
 			@if($student['avatar']=='')
-			<img src="/img/no_avatar.jpg">
+			<img src="/img/no_avatar_square.jpg">
 			@else 
 			<img src="{{$student['avatar']}}">
 			@endif
