@@ -35,6 +35,7 @@ var modal = (function(){
     $('.modal, .modal_overlay').removeClass('display');
     $('.open_button1').removeClass('load');
     $('.open_button2').removeClass('load');
+    $(".btn-2").css("visibility","hidden");
     e.preventDefault();
     modal.close();
   });

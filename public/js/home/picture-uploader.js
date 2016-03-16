@@ -68,7 +68,10 @@ function rolldown() {
           mozAnimationDelay: delay,
           animationDelay: delay
       });
-      $(".btn-2").css("visibility","visible");
+      setTimeout(function() {
+        $(".btn-2").css("visibility","visible");
+      },2200);
+      
     });
 }
 
