@@ -28,6 +28,13 @@ class ConsultantController extends Controller
         return view('consultant.home',compact('students','user'));
     }
 
+    public function homeEn()
+    {
+        $students = Student::all();
+        $user = Auth::user("consultant");
+        return view('consultant.home-en',compact('students','user'));
+    }
+
     public function index()
     {
         return Response::json(Consultant::get());

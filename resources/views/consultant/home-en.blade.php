@@ -6,7 +6,7 @@
 <div id="modal_mask">
 </div>
 <div id="modal_avatar">
-	{!! Form::open( [ 'url' => ['/student/avatar/upload'], 'method' => 'POST', 'id' => 'avatar-form', 'files' => true ] ) !!}
+	{!! Form::open( [ 'url' => ['/consultant/avatar/upload'], 'method' => 'POST', 'id' => 'avatar-form', 'files' => true ] ) !!}
 	<h3 id="greet">No avatar yet?</h3>
 	<div class="actions"> 
 	    <button class="file-btn"> 
@@ -37,26 +37,15 @@
 	<img src="{{$user['avatar']}}">
 	@endif
 	<div class="modal_desc">
-	  	<h1>{{ $user['username'] }}</h1>
+  		<h1>{{ $user['username'] }}</h1>
   		<ul class="rolldown-list" id="myList">
-		  <li>
-		  	@foreach($user->universities as $university)
-		 	{{$university->name}}
-		  	@endforeach
-		  </li>
-		  <li>
-		  @foreach($user->majors as $major)
-			{{$major->name}}
-			@endforeach
-		  @if($user['degree']=='bachelor') Bachelor
-  			@elseif($user['degree']=='master') Master
-  			@elseif($user['degree']=='phd') Phd
-  			@endif</li>
-		  <li>Email: {{$user['email']}}</li>
+		  <li>{{$user['university']}}</li>
+		  <li>{{$user['major']}} - {{$user['specilization']}} {{$user['degree']}}</li>
+		  <li>Email： {{$user['email']}}</li>
 		  <li>@if($user['description']) {{$user['description']}} 
   			@else I haven't decided what to say! @endif</li>
 		</ul> 
-  	</div>  	
+  	</div>
 </div>
 
 <div class="modal_info modal_info2">
@@ -75,34 +64,22 @@
 <a class="btn-2 btn-left" onclick="weihu()">Message</a> 
 <a class="btn-2 btn-right" onclick="weihu()">Attorney</a>
 
-
 <div id="reel">
-
+	
 	<!-- Thumb Items -->
 	<ul>
 
-	<li class="item thumb">		
-	    <div class='info'>
+	<li class="item thumb">
+		<div class='info'>
+			<br/>
 	    	<h1>{{ $user['username'] }}</h1>
-        	<h3>Target Universities:</h3>
-        	<p>@foreach($user->universities as $university)
-			{{$university->name}}
-			@endforeach</p>
-			<h3>Target Majors:</h3>
-        	<p>@foreach($user->majors as $major)
-			{{$major->name}}
-			@endforeach
-			@if($user['degree']=='bachelor') Bachelor
-			@elseif($user['degree']=='master') Master
-			@elseif($user['degree']=='phd') Phd @endif</p>
+        	<h3>At {{ $user['university'] }}</h3>
+        	<h3>Studying {{ $user['major'] }} - {{ $user['specilization'] }} {{$user['degree']}}</h3>
       	</div>
 		<a href="#" class="image open_button open_button1">
-			@if($user['avatar']=='')
-			<img src="/img/no_avatar_square.jpg">
-			@else 
-			<img src="{{$user['avatar']}}">
-			@endif
-		</a>
+		@if($user->avatar) <img src="{{$user->avatar}}">
+		@else <img src="/img/no_avatar_square.jpg">
+		@endif</a>
 	</li>
 
 	<li id="header" class="item" data-width="400">
@@ -116,42 +93,35 @@
 				<a href="/logout" class="board-link">Logout</a>
 			</div>
 		</div>
-	</li>	
+	</li>
 
-	@foreach($consultants as $consultant)
-	<li class="item thumb">
-		<div class='info'>
-			<br/>
-	    	<h1>{{$consultant->username}}</h1>
-        	<h3>At {{ $consultant['university'] }}</h3>
-        	<h3>Studying {{ $consultant['major'] }} - {{ $consultant['specilization'] }}
-		@if($consultant['degree']=='bachelor') Bachelor
-		@elseif($consultant['degree']=='master') Master
-		@elseif($consultant['degree']=='phd') Phd @endif</h3>
+	@foreach($students as $student)
+	<li class="item thumb">		
+	    <div class='info'>
+	    	<h1>{{$student->username}}</h1>
+        	<h3>Target Universities:</h3>
+        	<p>@foreach($student->universities as $university)
+			{{$university->name}}
+			@endforeach</p>
+			<h3>Target Majors:</h3>
+        	<p>@foreach($student->majors as $major)
+			{{$major->name}}
+			@endforeach
+			@if($student['degree']=='bachelor') Bachelor
+			@elseif($student['degree']=='master') Master
+			@elseif($student['degree']=='phd') Phd @endif</p>
       	</div>
-		<a href="#" class="image open_button" onclick="open_modal({{$consultant->id}})">
-		@if($consultant->avatar) <img src="{{$consultant->avatar}}">
-		@else <img src="/img/no_avatar_square.jpg">
-		@endif</a>
+		<a href="#" class="image open_button" onclick="open_modal({{$student->id}})">
+			@if($student['avatar']=='')
+			<img src="/img/no_avatar_square.jpg">
+			@else 
+			<img src="{{$student['avatar']}}">
+			@endif
+		</a>
 	</li>
 	@endforeach
 
-
-<!-- 	<li class="item thumb">
-	      <div class='info'>
-        <h3>Single-origin coffee whatever</h3>
-        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
-      </div>
-		<a href="#" class="image open_button open_button1">
-			@if($user['avatar']=='')
-			<img src="/img/no_avatar.jpg">
-			@else 
-			<img src="{{$user['avatar']}}">
-			@endif
-		</a>
-	</li> -->
-
-<!-- 	<li class="item thumb">
+<!-- 		<li class="item thumb">
 	<div class='info'>
         <h3>Single-origin coffee whatever</h3>
         <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
@@ -194,10 +164,8 @@
     <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
     </li> -->
 
-	</ul>
-
 </div>
 		
-	<script type="text/javascript" src="/js/home/modal-student.js"></script>
+	<script type="text/javascript" src="/js/home/modal-consultant.js"></script>
 
 @endsection

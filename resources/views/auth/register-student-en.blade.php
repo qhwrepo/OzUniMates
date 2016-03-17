@@ -15,7 +15,7 @@
 
 <!-- multistep form -->
 
-{!! Form::open(['id'=>'msform','url'=>'en/student/register']) !!}
+{!! Form::open(['id'=>'msform','url'=>'/en/student/register']) !!}
     <!-- progressbar -->
     <ul class="progressbar" id="stupb">
         <li class="active"></li>
@@ -85,8 +85,8 @@
     </fieldset>
     <fieldset>
         <h2 class="fs-title">User Information</h2>
-        <input type="text" name="username" placeholder="Username being displayed, less than 10 digits" class="textInput" id="usernameInput"/>
-        <input type="password" name="password" placeholder="Password, more than 6 digits" class="textInput passwordInput"/>
+        <input type="text" name="username" placeholder="Username being displayed, <10 digits" class="textInput" id="usernameInput"/>
+        <input type="password" name="password" placeholder="Password, >=6 digits" class="textInput passwordInput"/>
         <input type="password" name="repeatpassword" placeholder="Repeat your password" class="textInput passwordInput"/>
         <input type="email" name="email" placeholder="Email" class="textInput" id="emailInput"/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
