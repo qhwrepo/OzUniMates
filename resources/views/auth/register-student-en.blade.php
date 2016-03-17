@@ -11,7 +11,7 @@
 <body onload="disableSubmit()">
 
   
-<h2>Hi there. We need some basic information of you first. </h2>
+<h2>Hi there. We need some basic information of you first.</h2>
 
 <!-- multistep form -->
 
@@ -26,44 +26,69 @@
     <!-- fieldsets -->
     <fieldset>
         <h2 class="fs-title">What's your taget degree?</h2>
-        <!-- {!! Form::button('本科',['class'=>'next action-button']) !!} -->
         <input type="button" class="next action-button" value="Bachelor" onclick="setDegree('bachelor')"/>
         <input type="button" class="next action-button" value="Master" onclick="setDegree('master')"/>
-        <input type="button" class="next action-button" value="PhD" onclick="setDegree('phd')"/> 
+        <input type="button" class="next action-button" value="PHD" onclick="setDegree('phd')"/> 
         <input type="text" name="degree" class="hidden" />
     </fieldset>
     <fieldset>
-        <h2 class="fs-title">Where would you like to pursue it（multi-choice）？</h2>
-        <input type="button" class="action-button" value="USA" onclick="addCountry('usa')" />
-        <input type="button" class="action-button" value="UK" onclick="addCountry('uk')"/>
-        <input type="button" class="action-button" value="Canada"  onclick="addCountry('canada')"/>
-        <input type="button" class="action-button" value="Australia" onclick="addCountry('oz')"/>
-        <input type="button" class="action-button" value="France" onclick="addCountry('france')"/>
-        <input type="button" class="action-button" value="Other region" onclick="addCountry('other')"/>
-        <input type="text" name="countries" class="hidden"/>
+        <h2 class="fs-title">Do you have target university(s)?</h2>
+        <input type="button" class="action-button" value="no target" onclick="addUniversity(this.value)" />
+        <div class="fs-subtitle">G8 Universities</div>
+        <input type="button" class="action-button" value="Australian National University" onclick="addUniversity(this.value)" />
+        <input type="button" class="action-button" value="University of Melbourne"  onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="University of Sydney" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="University of New South Wales" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="University of Monash" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="University of Queensland" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="University of Western Australia" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="University of Adelaide" onclick="addUniversity(this.value)"/>
+        <div class="fs-subtitle">Others</div>
+        <input type="button" class="action-button" value="University of Macquarie" onclick="addUniversity(this.value)" />
+        <input type="button" class="action-button" value="Griffith University"  onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="Royal Melbourne Institute of Technology" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="University of Technology Sydney" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="Deakin University" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="University of Wollongong" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="Victoria University" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="Swinburne University of Technology" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="Curtin University of Technology" onclick="addUniversity(this.value)" />
+        <input type="button" class="action-button" value="Murdoch University"  onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="University of South Australia" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="Newcastle University" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="Charles Stuart University" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="La Trobe University" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="Queensland University of Technology" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="James Cook University" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button" value="Others" onclick="addUniversity(this.value)"/>
+        <input type="text" name="universities" class="hidden"/>
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
-        <a class="next fa fa-chevron-circle-right fa-3x" id="aCountries"></a>
+        <a class="next fa fa-chevron-circle-right fa-3x" id="aUniversities"></a>
     </fieldset>
     <fieldset>
-        <h2 class="fs-title">Do you have a requirement about the university's world rank（multi-choice）？</h2>
-        <input type="button" class="action-button" value="Top 50" onclick="addRank('50')"/>
-        <input type="button" class="action-button" value="50-100" onclick="addRank('100')"/>
-        <input type="button" class="action-button" value="100-300" onclick="addRank('300')"/>
-        <input type="button" class="action-button" value="300+" onclick="addRank('+')"/>
-        <input type="button" class="action-button" value="I don't mind" onclick="addRank('all')"/>
-        <input type="text" name="ranks" class="hidden" />
+        <h2 class="fs-title">What's your target subject(s)?</h2>
+        
+        <input type="button" class="action-button" value="Business"  onclick="addMajor(this.value)"/>
+        <input type="button" class="action-button" value="Engineering/Computer" onclick="addMajor(this.value)"/>
+        <input type="button" class="action-button" value="Science" onclick="addMajor(this.value)"/>
+        <input type="button" class="action-button" value="Medicine" onclick="addMajor(this.value)"/>
+        <input type="button" class="action-button" value="Law" onclick="addMajor(this.value)"/>
+        <input type="button" class="action-button" value="Humanities/Social" onclick="addMajor(this.value)"/>
+        <input type="button" class="action-button" value="Arts" onclick="addMajor(this.value)"/>
+        <input type="button" class="action-button" value="Others" onclick="addMajor(this.value)"/>
+        <input type="text" name="majors" class="hidden"/>
+
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
-        <a class="next fa fa-chevron-circle-right fa-3x" id="aRanks"></a>
+        <a class="next fa fa-chevron-circle-right fa-3x" id="aMajors"></a>
     </fieldset>
     <fieldset>
-        <h2 class="fs-title">Some basic information:</h2>
-        <input type="text" name="username" placeholder="Username,longer than 6 digits" class="textInput" />
-        <input type="password" name="password" placeholder="Password, longer than 6 digits" class="textInput" />
-        <input type="password" name="repeatpassword" placeholder="Repeat password" class="textInput"/>
-        <input type="email" name="email" placeholder="Email" class="textInput" />
-        <input type="text" name="wechat" placeholder="WeChat, optional" class="textInput" />
+        <h2 class="fs-title">User Information</h2>
+        <input type="text" name="username" placeholder="Username being displayed, less than 10 digits" class="textInput" id="usernameInput"/>
+        <input type="password" name="password" placeholder="Password, more than 6 digits" class="textInput passwordInput"/>
+        <input type="password" name="repeatpassword" placeholder="Repeat your password" class="textInput passwordInput"/>
+        <input type="email" name="email" placeholder="Email" class="textInput" id="emailInput"/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
         <a class="submit fa fa-check-circle fa-3x" onclick="msSubmit(1);"></a>
     </fieldset>
