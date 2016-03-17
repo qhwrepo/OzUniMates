@@ -32,7 +32,7 @@ class StudentController extends Controller
     {
         $consultants = Consultant::all();
         $user = Auth::user("student");
-        return view('student.home',compact('consultants','user'));
+        return view('student.home-en',compact('consultants','user'));
     }
 
     public function index()

@@ -85,6 +85,7 @@ function open_modal(id){
     $('.modal, .modal_overlay').addClass('display');
     $('.modal, .modal_overlay').removeClass('conceal');
     $('.open_button2').addClass('load');
+    
 
     var consultant = user_id(id);
     if(consultant['avatar']=='') $('#modal_avatar').attr("src","/img/no_avatar_square.jpg");

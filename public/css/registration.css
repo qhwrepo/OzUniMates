@@ -82,6 +82,11 @@ h2 {
     }
 } 
 
+#msform .uni-button {
+	width:350px;
+	font-size: 19px;
+}
+
 #msform .action-button:hover, #msform .action-button:focus {
 	box-shadow: 0 0 0 1px white, 0 0 0 5px #6b6b6b;
 }
