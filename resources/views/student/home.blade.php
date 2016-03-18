@@ -111,7 +111,7 @@
 			<p>右边的他们可能是你未来的师兄师姐喔,<br />
 			打个招呼，开始咨询吧！</p>
 			<div class="board">
-				<a href="#" class="board-link" onclick="weihu()">个人信息</a>
+				<a href="/student/dashboard" class="board-link">个人信息</a>
 				<!-- <a href="http://bbs.ozunimates.com" class="board-link">论坛</a> -->
 				<a href="/logout" class="board-link">登出</a>
 			</div>

@@ -111,7 +111,7 @@
 			<p>Your future unimates are listed at the right side,<br />
 			Say hi and talk to them!</p>
 			<div class="board">
-				<a href="#" class="board-link" onclick="weihu()">Dashboard</a>
+				<a href="/student/dashboard" class="board-link">Dashboard</a>
 				<!-- <a href="http://bbs.ozunimates.com" class="board-link">论坛</a> -->
 				<a href="/logout" class="board-link">Logout</a>
 			</div>

@@ -35,6 +35,12 @@ class StudentController extends Controller
         return view('student.home-en',compact('consultants','user'));
     }
 
+    public function dashboard()
+    {
+        $user = Auth::user("student");
+        return view('student.dashboard',compact('user'));
+    }
+
     public function index()
     {
         return Response::json(Student::get());
@@ -48,6 +54,15 @@ class StudentController extends Controller
     public function newbeeEn()
     {
         return view('student.regis-success-en');
+    }
+
+    public function descriptionUpdate()
+    {
+        $description = Input::get('description');
+        $user = Auth::user("student");
+        $user->description = $description;
+        $user->save();
+        return redirect('/student/dashboard');
     }
 
      public function avatarUpload()

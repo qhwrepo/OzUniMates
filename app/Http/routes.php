@@ -20,6 +20,8 @@ Route::get('consultant/register','Auth\AuthController@getConsultantRegister');
 Route::post('student/register','Auth\AuthController@postStudentRegister');
 Route::post('consultant/register','Auth\AuthController@postConsultantRegister');
 
+Route::post('consultant/description/update','ConsultantController@descriptionUpdate');
+Route::post('student/description/update','StudentController@descriptionUpdate');
 Route::post('consultant/avatar/upload','ConsultantController@avatarUpload');
 Route::post('student/avatar/upload','StudentController@avatarUpload');
 
@@ -30,9 +32,11 @@ Route::get('logout', 'Auth\AuthController@getLogout');
 
 Route::get('student/regis-success','StudentController@newbee');
 Route::get('student/home','StudentController@home');
+Route::get('student/dashboard','StudentController@dashboard');
 
 Route::get('consultant/regis-success','ConsultantController@newbee');
 Route::get('consultant/home','ConsultantController@home');
+Route::get('consultant/dashboard','ConsultantController@dashboard');
 
 
 // =======================================
