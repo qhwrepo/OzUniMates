@@ -31,43 +31,74 @@
 </div>
 
 <div class="modal_info modal_info1">
-	@if($user['avatar']=='')
-	<img src="/img/no_avatar_square.jpg">
-	@else 
-	<img src="{{$user['avatar']}}">
-	@endif
+	<div class="modal_userinfo">
+		@if($user['avatar']=='')
+		<img src="/img/no_avatar_square.jpg">
+		@else 
+		<img src="{{$user['avatar']}}">
+		@endif
+		<!-- <img src="/img/no_avatar_square.jpg"> -->
+		<div class="modal-username">{{ $user['username'] }}</div>
+	</div>
 	<div class="modal_desc">
-	  	<h1>{{ $user['username'] }}</h1>
   		<ul class="rolldown-list" id="myList">
-		  <li>
-		  	@foreach($user->universities as $university)
+		  <li class="long-list">
+		  	<div class="roll-left">想去</div>
+		  	<div class="roll-right">@foreach($user->universities as $university)
 		 	{{$university->name}}
-		  	@endforeach
+		  	@endforeach</div>
 		  </li>
 		  <li>
-		  @foreach($user->majors as $major)
-			{{$major->name}}
-			@endforeach
-		  @if($user['degree']=='bachelor') 本科
+		  	<div class="roll-left">想读</div>
+		  	<div class="roll-right">@foreach($user->majors as $major)
+		 	{{$major->name}}
+		  	@endforeach
+		  	@if($user['degree']=='bachelor') 本科
   			@elseif($user['degree']=='master') 硕士
   			@elseif($user['degree']=='phd') 博士
-  			@endif</li>
-		  <li>邮箱： {{$user['email']}}</li>
-		  <li>@if($user['description']) {{$user['description']}} 
-  			@else ta决定先保持神秘 @endif</li>
+  			@endif</div>
+		  </li>
+		  <li>
+		  	<div class="roll-left">邮箱</div>
+		  	<div class="roll-right">{{$user['email']}}</div>
+		  </li>
+		  <li>
+		  	<div class="roll-left">简介</div>
+		  	<div class="roll-right">@if($user['description']) {{$user['description']}} 
+  			@else ta决定先保持神秘 @endif</div>
+  		  </li>
 		</ul> 
   	</div>  	
 </div>
 
 <div class="modal_info modal_info2">
-	<img id="modal_avatar_square">
+	<div class="modal_userinfo">
+		<img id="modal_avatar_square">	
+		<div class="modal-username" id="modal_username"></div>
+	</div>
 	<div class="modal_desc">
-  		<h1 id="modal_username"></h1>
+  		<h1 ></h1>
   		<ul class="rolldown-list" id="myList">
-		  <li id="modal_university"></li>
-		  <li id="modal_major"></li>
-		  <li id="modal_email"></li>
-		  <li id="modal_description"></li>
+		  <li>
+		  	<div class="roll-left">就读院校</div>
+		  	<div class="roll-right" id="modal_university"></div>
+		  </li>
+		  <li>
+		  	<div class="roll-left">就读专业</div>
+		  	<div class="roll-right" id="modal_major"></div>
+		  </li>
+		  <li>
+		  	<div class="roll-left">邮箱</div>
+		  	<div class="roll-right" id="modal_email"></div>
+		  </li>
+		  <li>
+		  	<div class="roll-left">擅长</div>
+		  	<div class="roll-right" id="modal_tag"></div>
+		  </li>
+		  <li>
+		  	<div class="roll-left">简介</div>
+		  	<div class="roll-right" id="modal_description"></div>
+		  </li>
 		</ul>
   	</div>
 </div>
@@ -151,48 +182,6 @@
 		</a>
 	</li> -->
 
-<!-- 	<li class="item thumb">
-	<div class='info'>
-        <h3>Single-origin coffee whatever</h3>
-        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
-      </div>
-    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
-    </li>
-    <li class="item thumb">
-	<div class='info'>
-        <h3>Single-origin coffee whatever</h3>
-        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
-      </div>
-    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
-    </li>
-    <li class="item thumb">
-	<div class='info'>
-        <h3>Single-origin coffee whatever</h3>
-        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
-      </div>
-    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
-    </li>
-    <li class="item thumb">
-	<div class='info'>
-        <h3>Single-origin coffee whatever</h3>
-        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
-      </div>
-    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
-    </li>
-    <li class="item thumb">
-	<div class='info'>
-        <h3>Single-origin coffee whatever</h3>
-        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
-      </div>
-    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
-    </li>
-    <li class="item thumb">
-	<div class='info'>
-        <h3>Single-origin coffee whatever</h3>
-        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
-      </div>
-    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
-    </li> -->
 
 	</ul>
 

@@ -16,31 +16,40 @@
 
 .modal_info {
   background: #FCF9F2;
-  text-align: center;
   display: flex;
   display: -webkit-flex;
 }
 
-.modal_info h1 {
+.modal_userinfo {
+  float: left;
+  text-align: center;
+}
+
+.modal_userinfo img {
+  display: block;
+}
+
+.modal_userinfo .modal-username {
+  padding-top: 30px;
   color:#333;
-  padding:20px;
   font-size: 35px;
-}
-
-.modal_info img {
-  width: 280px;
-  height: 280px;
-  margin-bottom: 0;
-}
-
-.modal_info .modal_desc {
-  width:100%;
-  height:280;
+  height:93px;
 }
 
 .modal_desc {
-  text-align: center;
+  width:100%;
 }
+
+.modal_desc .roll-left {
+  text-align: left;
+  flex:2;
+}
+.modal_desc .roll-right {
+  flex:7;
+  line-height: 24px;
+  text-align: left;
+}
+
 
 .modal_overlay {
   background: rgba(0, 0, 0, 0.7);
@@ -95,25 +104,6 @@
   -o-transition: opacity 100ms linear;
   transition: opacity 100ms linear;
 }
-
-/*a.open_button {
-  color: #FFFFFF;
-  letter-spacing: 2px;
-  line-height: 66px;
-  font-family: 'Helvetica', Arial, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  text-transform: uppercase;
-}
- 
-a.open_button:hover {
-  background: #3E465A;
-}
-
-a.open_button.load {
-  z-index: 1;
-}*/
 
 button.modal_close {
   background: #363D4E;
@@ -259,11 +249,11 @@ button.modal_close span:after {
 
 .rolldown-list li {
   padding: 1em;
-  margin-bottom: .08em;
-  display: block;
+  margin-bottom: 0;
+  display: flex;
   list-style: none;
   visibility: hidden;
-  height:52px;
+  height:74.7px;
 
   font-size: 20px;
   -moz-animation: rolldown 0.7s 1;
@@ -278,6 +268,10 @@ button.modal_close span:after {
   animation-fill-mode: forwards;
 }
 
+.rolldown-list .long-list {
+  height: 149.4px;
+}
+
 .rolldown-list li:nth-child(2n) {
   background-color: #77adda;
 }
@@ -290,7 +284,7 @@ button.modal_close span:after {
 
 .btn-2 {
   position: fixed;
-  top:470px;
+  top:510px;
   font-size: 30px;
   color: #fff;
   letter-spacing: 0;
@@ -304,10 +298,10 @@ button.modal_close span:after {
   
 @media screen and (min-width: 900px) {
   .btn-left{
-    right:41%;    
+    right:47%;    
   }
   .btn-right {
-    right:27%;  
+    right:30%;  
   } 
 }
 

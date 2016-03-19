@@ -113,7 +113,7 @@ function open_modal(id){
         else if(student['degree']=='phd') $('#modal_major').append(' 博士');
     });
 
-    if(student['avatar']=='') $('#modal_avatar').attr("src","/img/no_avatar_square.jpg");
+    if(student['avatar']=='') $('#modal_avatar_square').attr("src","/img/no_avatar_square.jpg");
     else $('#modal_avatar_square').attr("src",student['avatar']);
     $('#modal_username').html(student['username']);
     

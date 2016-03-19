@@ -8,7 +8,7 @@ var $content2 = $('.modal_info2').detach();
     modal.open({
       content: $content1,
       width: 780,
-      height: 280,
+      height: 380,
     });
     $content1.addClass('modal_content');
     $('.modal, .modal_overlay').addClass('display');
@@ -43,7 +43,7 @@ var modal = (function(){
 
   return {
     center: function(){
-      var top = Math.max($window.height() - $modal.outerHeight(), 0) / 2 - 50;
+      var top = Math.max($window.height() - $modal.outerHeight(), 0) / 2 - 20;
       var left = Math.max($window.width() - $modal.outerWidth(), 0) / 2;
 
       $modal.css({
@@ -79,7 +79,7 @@ function open_modal(id){
     modal.open({
       content: $content2,
       width: 780,
-      height: 350,
+      height: 380,
     });
     $content2.addClass('modal_content');
     $('.modal, .modal_overlay').addClass('display');
@@ -88,7 +88,7 @@ function open_modal(id){
     
 
     var consultant = user_id(id);
-    if(consultant['avatar']=='') $('#modal_avatar').attr("src","/img/no_avatar_square.jpg");
+    if(consultant['avatar']=='') $('#modal_avatar_square').attr("src","/img/no_avatar_square.jpg");
     else $('#modal_avatar_square').attr("src",consultant['avatar']);
     $('#modal_username').html(consultant['username']);
     $('#modal_university').html(consultant['university']);
