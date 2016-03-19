@@ -35,10 +35,28 @@ class ConsultantController extends Controller
         return view('consultant.home-en',compact('students','user'));
     }
 
-    public function dashboard()
+    public function dashboardOverall()
     {
         $user = Auth::user("consultant");
-        return view('consultant.dashboard',compact('user'));
+        return view('consultant.dashboard-overall',compact('user'));
+    }
+
+    public function dashboardAvatar()
+    {
+        $user = Auth::user("consultant");
+        return view('consultant.dashboard-avatar',compact('user'));
+    }
+
+    public function dashboardChat()
+    {
+        $user = Auth::user("consultant");
+        return view('consultant.dashboard-chat',compact('user'));
+    }
+
+    public function dashboardCase()
+    {
+        $user = Auth::user("consultant");
+        return view('consultant.dashboard-case',compact('user'));
     }
 
     public function index()
@@ -62,7 +80,7 @@ class ConsultantController extends Controller
         $user = Auth::user("consultant");
         $user->description = $description;
         $user->save();
-        return redirect('/consultant/dashboard');
+        return redirect('/consultant/dashboard/overall');
     }
 
     public function avatarUpload()

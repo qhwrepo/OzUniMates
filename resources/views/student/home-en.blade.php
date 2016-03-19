@@ -72,8 +72,8 @@
   	</div>
 </div>
 
-<a class="btn-2 btn-left" onclick="weihu()">Message</a> 
-<a class="btn-2 btn-right" onclick="weihu()">Attorney</a>
+<a class="btn-2 btn-left" href="dashboard/chat">Message</a> 
+<a class="btn-2 btn-right" href="dashboard/case">Attorney</a>
 
 
 <div id="reel">
@@ -111,7 +111,7 @@
 			<p>Your future unimates are listed at the right side,<br />
 			Say hi and talk to them!</p>
 			<div class="board">
-				<a href="/student/dashboard" class="board-link">Dashboard</a>
+				<a href="/student/dashboard/overall" class="board-link">Dashboard</a>
 				<!-- <a href="http://bbs.ozunimates.com" class="board-link">论坛</a> -->
 				<a href="/logout" class="board-link">Logout</a>
 			</div>

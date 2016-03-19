@@ -33,7 +33,7 @@
 		<div id="wrapper">
 			<div id="main">
 				
-					@yield('content');
+					@yield('content')
 
 			</div>
 		</div>

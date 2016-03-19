@@ -35,10 +35,28 @@ class StudentController extends Controller
         return view('student.home-en',compact('consultants','user'));
     }
 
-    public function dashboard()
+    public function dashboardOverall()
     {
         $user = Auth::user("student");
-        return view('student.dashboard',compact('user'));
+        return view('student.dashboard-overall',compact('user'));
+    }
+
+    public function dashboardAvatar()
+    {
+        $user = Auth::user("student");
+        return view('student.dashboard-avatar',compact('user'));
+    }
+
+    public function dashboardChat()
+    {
+        $user = Auth::user("student");
+        return view('student.dashboard-chat',compact('user'));
+    }
+
+    public function dashboardCase()
+    {
+        $user = Auth::user("student");
+        return view('student.dashboard-case',compact('user'));
     }
 
     public function index()
@@ -62,10 +80,10 @@ class StudentController extends Controller
         $user = Auth::user("student");
         $user->description = $description;
         $user->save();
-        return redirect('/student/dashboard');
+        return redirect('/student/dashboard/overall');
     }
 
-     public function avatarUpload()
+    public function avatarUpload()
     {
         $this->wrongTokenAjax();
 

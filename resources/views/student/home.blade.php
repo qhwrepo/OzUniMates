@@ -72,8 +72,8 @@
   	</div>
 </div>
 
-<a class="btn-2 btn-left" onclick="weihu()">留言</a> 
-<a class="btn-2 btn-right" onclick="weihu()">全权委托</a>
+<a class="btn-2 btn-left" href="dashboard/chat">留言</a> 
+<a class="btn-2 btn-right" href="dashboard/case">全权委托</a>
 
 
 <div id="reel">
@@ -111,7 +111,7 @@
 			<p>右边的他们可能是你未来的师兄师姐喔,<br />
 			打个招呼，开始咨询吧！</p>
 			<div class="board">
-				<a href="/student/dashboard" class="board-link">个人信息</a>
+				<a href="/student/dashboard/overall" class="board-link">个人信息</a>
 				<!-- <a href="http://bbs.ozunimates.com" class="board-link">论坛</a> -->
 				<a href="/logout" class="board-link">登出</a>
 			</div>
