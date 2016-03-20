@@ -72,6 +72,7 @@ Route::group(array('prefix' => 'api'), function() {
 		array('only' => array('index')));
 	Route::get('student/{studid}/universities','StudentController@universities');
 	Route::get('student/{studid}/majors','StudentController@majors');
+	Route::get('consultant/{conid}/tags','ConsultantController@tags');
 });
 
 // ================================

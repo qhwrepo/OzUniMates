@@ -17,7 +17,6 @@ var $content2 = $('.modal_info2').detach();
 
     rolldown();
 
-
   });
 
 }());
@@ -36,7 +35,7 @@ var modal = (function(){
     $('.modal, .modal_overlay').removeClass('display');
     $('.open_button1').removeClass('load');
     $('.open_button2').removeClass('load');
-    $(".btn-2").css("visibility","hidden");
+    $("#modal-button").css("visibility","hidden");
     e.preventDefault();
     modal.close();
   });
@@ -49,6 +48,10 @@ var modal = (function(){
       $modal.css({
         top: top + $window.scrollTop(),
         left: left + $window.scrollLeft(),
+      });
+      $("#modal-button").css({
+        top: top + $window.scrollTop() + 400,
+        left: left + $window.scrollLeft() + 370,
       });
     },
     open: function(settings){
@@ -86,8 +89,18 @@ function open_modal(id){
     $('.modal, .modal_overlay').removeClass('conceal');
     $('.open_button2').addClass('load');
     
-
     var consultant = user_id(id);
+    var tagstr = "";
+
+    $.get("/api/consultant/"+id+"/tags", function(result){
+        $.each(result, function(index, value) {
+          tagstr += value;
+          if(index == result.length-1) ;
+          else tagstr += ", "
+        });
+        $('#modal_tag').html(tagstr);
+    });
+
     if(consultant['avatar']=='') $('#modal_avatar_square').attr("src","/img/no_avatar_square.jpg");
     else $('#modal_avatar_square').attr("src",consultant['avatar']);
     $('#modal_username').html(consultant['username']);
@@ -98,7 +111,7 @@ function open_modal(id){
     else if(consultant['degree']=='master') $('#modal_major').append(' 硕士');
     else if(consultant['degree']=='phd') $('#modal_major').append(' 博士');
     $('#modal_email').html(consultant['email']);
-    if(consultant['description']=='') $('#modal_description').html('ta决定暂时保持神秘');
+    if(consultant['description']=='') $('#modal_description').html('ta还没有填写简介');
     else $('#modal_description').html(consultant['description']);
 
     rolldown();

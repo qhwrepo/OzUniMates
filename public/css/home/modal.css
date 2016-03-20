@@ -34,6 +34,7 @@
   color:#333;
   font-size: 35px;
   height:93px;
+  background-color: white;
 }
 
 .modal_desc {
@@ -50,6 +51,11 @@
   text-align: left;
 }
 
+.modal_desc .modify-desc {
+  padding: 5px;
+  box-shadow: 1px 1px 1px 1px #333;
+  margin-left: 25px;
+}
 
 .modal_overlay {
   background: rgba(0, 0, 0, 0.7);
@@ -282,36 +288,26 @@ button.modal_close span:after {
 
 /*modal button*/
 
-.btn-2 {
+#modal-button {
   position: fixed;
-  top:510px;
+  z-index: 20;
+  visibility: hidden;
+  display: flex;
+  display: -webkit-flex;
+}
+
+.btn-2 {
   font-size: 30px;
   color: #fff;
   letter-spacing: 0;
-  line-height: 50px;
   cursor: pointer;
-  visibility: hidden;
-  z-index: 20;
+  line-height: 45px;
   -webkit-transition: letter-spacing 230ms ease-in-out;
   transition: letter-spacing 230ms ease-in-out;
 }
-  
-@media screen and (min-width: 900px) {
-  .btn-left{
-    right:47%;    
-  }
-  .btn-right {
-    right:30%;  
-  } 
-}
 
-@media screen and (max-width: 899px) {
-  .btn-left{
-    right:39%;    
-  }
-  .btn-right {
-    right:20%;  
-  } 
+.btn-right {
+  margin-left: 110px;
 }
 
 .btn-2:hover,

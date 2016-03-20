@@ -8,7 +8,7 @@ var $content2 = $('.modal_info2').detach();
     modal.open({
       content: $content1,
       width: 780,
-      height: 280,
+      height: 380,
     });
     $content1.addClass('modal_content');
     $('.modal, .modal_overlay').addClass('display');
@@ -35,7 +35,7 @@ var modal = (function(){
     $('.modal, .modal_overlay').removeClass('display');
     $('.open_button1').removeClass('load');
     $('.open_button2').removeClass('load');
-    $(".btn-2").css("visibility","hidden");
+    $("#modal-button").css("visibility","hidden");
     e.preventDefault();
     modal.close();
   });
@@ -48,6 +48,10 @@ var modal = (function(){
       $modal.css({
         top: top + $window.scrollTop(),
         left: left + $window.scrollLeft(),
+      });
+      $("#modal-button").css({
+        top: top + $window.scrollTop() + 400,
+        left: left + $window.scrollLeft() + 370,
       });
     },
     open: function(settings){
@@ -74,12 +78,11 @@ $.get("/api/students", function(result){
   $students = result;
 });
 
-
 function open_modal(id){
     modal.open({
       content: $content2,
       width: 780,
-      height: 350,
+      height: 380,
     });
     $content2.addClass('modal_content');
     $('.modal, .modal_overlay').addClass('display');
@@ -92,22 +95,22 @@ function open_modal(id){
 
     // json api to get a student's university and major lists
 
-    $.get("/api/student/1/universities", function(result){
+    $.get("/api/student/"+id+"/universities", function(result){
         $.each(result, function(index, value) {
           unistr += value;
           if(index == result.length-1) ;
           else unistr += ", "
         });
-        $('#modal_university').html('目标院校：'+unistr);
+        $('#modal_university').html(unistr);
     });
 
-    $.get("/api/student/1/majors", function(result){
+    $.get("/api/student/"+id+"/majors", function(result){
         $.each(result, function(index, value) {
           majorstr += value;
           if(index == result.length-1) ;
           else majorstr += ", "
         });
-        $('#modal_major').html('目标专业：'+majorstr);
+        $('#modal_major').html(majorstr);
         if(student['degree']=='bachelor') $('#modal_major').append(' 本科');
         else if(student['degree']=='master') $('#modal_major').append(' 硕士');
         else if(student['degree']=='phd') $('#modal_major').append(' 博士');
@@ -118,7 +121,7 @@ function open_modal(id){
     $('#modal_username').html(student['username']);
     
     $('#modal_email').html('邮箱： '+student['email']);
-    if(student['description']=='') $('#modal_description').html('ta决定暂时保持神秘');
+    if(student['description']=='') $('#modal_description').html('ta还没有填写简介');
     else $('#modal_description').html(student['description']);
 
     rolldown();

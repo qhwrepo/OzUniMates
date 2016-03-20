@@ -69,7 +69,7 @@ function rolldown() {
           animationDelay: delay
       });
       setTimeout(function() {
-        $(".btn-2").css("visibility","visible");
+        $("#modal-button").css("visibility","visible");
       },2200);
       
     });

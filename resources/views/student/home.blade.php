@@ -37,7 +37,6 @@
 		@else 
 		<img src="{{$user['avatar']}}">
 		@endif
-		<!-- <img src="/img/no_avatar_square.jpg"> -->
 		<div class="modal-username">{{ $user['username'] }}</div>
 	</div>
 	<div class="modal_desc">
@@ -45,7 +44,7 @@
 		  <li class="long-list">
 		  	<div class="roll-left">想去</div>
 		  	<div class="roll-right">@foreach($user->universities as $university)
-		 	{{$university->name}}
+		 	{{$university->name}}&nbsp;&nbsp;
 		  	@endforeach</div>
 		  </li>
 		  <li>
@@ -65,7 +64,8 @@
 		  <li>
 		  	<div class="roll-left">简介</div>
 		  	<div class="roll-right">@if($user['description']) {{$user['description']}} 
-  			@else ta决定先保持神秘 @endif</div>
+  			@else ta决定先保持神秘 @endif
+  			<a href="/student/dashboard/overall" class="modify-desc">修改</a></div>
   		  </li>
 		</ul> 
   	</div>  	
@@ -77,7 +77,6 @@
 		<div class="modal-username" id="modal_username"></div>
 	</div>
 	<div class="modal_desc">
-  		<h1 ></h1>
   		<ul class="rolldown-list" id="myList">
 		  <li>
 		  	<div class="roll-left">就读院校</div>
@@ -103,9 +102,10 @@
   	</div>
 </div>
 
-<a class="btn-2 btn-left" href="dashboard/chat">留言</a> 
-<a class="btn-2 btn-right" href="dashboard/case">全权委托</a>
-
+<div id="modal-button">
+	<a class="btn-2 btn-left" href="dashboard/chat">留言</a> 
+	<a class="btn-2 btn-right" href="dashboard/case">全权委托</a>
+</div>
 
 <div id="reel">
 
@@ -168,7 +168,72 @@
 	@endforeach
 
 
-<!-- 	<li class="item thumb">
+	<!-- <li class="item thumb">
+	      <div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+		<a href="#" class="image open_button open_button1">
+			@if($user['avatar']=='')
+			<img src="/img/no_avatar.jpg">
+			@else 
+			<img src="{{$user['avatar']}}">
+			@endif
+		</a>
+	</li>
+	<li class="item thumb">
+	      <div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+		<a href="#" class="image open_button open_button1">
+			@if($user['avatar']=='')
+			<img src="/img/no_avatar.jpg">
+			@else 
+			<img src="{{$user['avatar']}}">
+			@endif
+		</a>
+	</li>
+	<li class="item thumb">
+	      <div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+		<a href="#" class="image open_button open_button1">
+			@if($user['avatar']=='')
+			<img src="/img/no_avatar.jpg">
+			@else 
+			<img src="{{$user['avatar']}}">
+			@endif
+		</a>
+	</li>
+	<li class="item thumb">
+	      <div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+		<a href="#" class="image open_button open_button1">
+			@if($user['avatar']=='')
+			<img src="/img/no_avatar.jpg">
+			@else 
+			<img src="{{$user['avatar']}}">
+			@endif
+		</a>
+	</li>
+	<li class="item thumb">
+	      <div class='info'>
+        <h3>Single-origin coffee whatever</h3>
+        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
+      </div>
+		<a href="#" class="image open_button open_button1">
+			@if($user['avatar']=='')
+			<img src="/img/no_avatar.jpg">
+			@else 
+			<img src="{{$user['avatar']}}">
+			@endif
+		</a>
+	</li>
+	<li class="item thumb">
 	      <div class='info'>
         <h3>Single-origin coffee whatever</h3>
         <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
