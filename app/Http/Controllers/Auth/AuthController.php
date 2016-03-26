@@ -73,7 +73,8 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
             'degree' => $data['degree'],
             'majors' => $data['majors'],
-            'description' => ''
+            'description' => '',
+            'activated' => false
         ]);
     }
 
@@ -89,7 +90,8 @@ class AuthController extends Controller
             'specilization' => $data['specilization'],
             'thanks' => '0',
             'ispro' => $data['invite'],
-            'description' => ''
+            'description' => '',
+            'activated' => false
         ]);
     }
 

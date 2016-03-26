@@ -24,6 +24,7 @@ class CreateConsultantsTable extends Migration
             $table->integer('thanks');
             $table->string('avatar');
             $table->boolean('ispro');
+            $table->boolean('activated');
             $table->string('description');
             $table->timestamps();
             $table->rememberToken();

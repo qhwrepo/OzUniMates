@@ -20,6 +20,7 @@ class CreateStudentsTable extends Migration
             $table->string('degree');
             $table->string('avatar');
             $table->string('description');
+            $table->boolean('activated');
             $table->timestamps();
             $table->rememberToken();
         });
