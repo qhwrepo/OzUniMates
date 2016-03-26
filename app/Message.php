@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Message extends Model
 {
     protected $table = 'messages';
-    protected $fillable = ['content'];
+    protected $fillable = ['content','thread_id','sentByStu'];
 }

@@ -177,6 +177,8 @@ class StudentController extends Controller
         return Response::json(array('success' => true));
     }
 
+    // Json api - unis and majors
+    
     public function universities($studid)
     {
         $uni_arr = Student::find($studid)->universities;

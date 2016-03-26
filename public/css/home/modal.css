@@ -344,3 +344,7 @@ button.modal_close span:after {
   top: 0;
   width: 70%;
 }
+
+#msgform {
+  visibility: hidden;
+}

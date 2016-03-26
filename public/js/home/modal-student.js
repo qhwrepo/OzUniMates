@@ -2,6 +2,7 @@
 
 var $content1 = $('.modal_info1').detach();
 var $content2 = $('.modal_info2').detach();
+var con_id_msg;
 
 (function(){
   $('.open_button1').on('click', function(e){
@@ -79,6 +80,7 @@ $.get("/api/consultants", function(result){
 });
 
 function open_modal(id){
+    con_id_msg = id;
     modal.open({
       content: $content2,
       width: 780,
@@ -124,4 +126,10 @@ function user_id(id) {
     var consultant = $consultants[i];
     if(consultant['id'] == id) return consultant;
   }
+}
+
+// pass consultant id and start a new thread
+function start_message() {
+  document.forms['msgform'].elements['conid'].value = con_id_msg;
+  $('#msgform').submit();
 }

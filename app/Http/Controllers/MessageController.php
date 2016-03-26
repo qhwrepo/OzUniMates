@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Thread;
 
 class MessageController extends Controller
 {
@@ -17,6 +19,19 @@ class MessageController extends Controller
     public function stuIndex()
     {
         return view('messenger-template');  
+    }
+
+    public function stuNew(Request $request)
+    {
+        $stuid = Auth::user("student")->id;
+        $conid = $request->conid;
+
+        // if it's a new thread then create it
+        Thread::firstOrCreate(['student_id' => $stuid,'consultant_id' => $conid]);
+
+        $threads = Thread::where('student_id','=',$stuid)->get(); 
+
+        return view('messenger.index',compact('threads'));
     }
 
     /**

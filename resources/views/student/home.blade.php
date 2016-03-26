@@ -103,8 +103,11 @@
 </div>
 
 <div id="modal-button">
-	<a class="btn-2 btn-left" href="dashboard/chat">留言</a> 
+	<a class="btn-2 btn-left" onclick="start_message()">留言</a> 
 	<a class="btn-2 btn-right" href="dashboard/case">全权委托</a>
+	{!! Form::open(['id'=>'msgform','url'=>'student/messages/new']) !!}
+		<input type="text" name="conid"/>
+	{!! Form::close() !!}
 </div>
 
 <div id="reel">

@@ -37,6 +37,7 @@ Route::get('student/dashboard/avatar','StudentController@dashboardAvatar');
 Route::get('student/dashboard/chat','StudentController@dashboardChat');
 Route::get('student/dashboard/case','StudentController@dashboardCase');
 Route::get('student/messages','MessageController@stuIndex');
+Route::post('student/messages/new','MessageController@stuNew');
 
 Route::get('consultant/regis-success','ConsultantController@newbee');
 Route::get('consultant/home','ConsultantController@home');
@@ -75,6 +76,7 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::get('student/{studid}/universities','StudentController@universities');
 	Route::get('student/{studid}/majors','StudentController@majors');
 	Route::get('consultant/{conid}/tags','ConsultantController@tags');
+	Route::get('consultant/{conid}/username','ConsultantController@username');
 });
 
 // ================================

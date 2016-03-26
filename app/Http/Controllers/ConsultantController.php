@@ -64,6 +64,11 @@ class ConsultantController extends Controller
         return Response::json(Consultant::get());
     }
 
+    public function username($id)
+    {
+        return Response::json(Consultant::find($id)->username);
+    }
+
     public function newbee()
     {
         return view('consultant.regis-success-cn');
