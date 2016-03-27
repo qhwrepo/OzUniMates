@@ -138,6 +138,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
 
+        Intervention\Image\ImageServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -178,6 +180,7 @@ return [
         'Gate'      => Illuminate\Support\Facades\Gate::class,
         'Hash'      => Illuminate\Support\Facades\Hash::class,
         'Input'     => Illuminate\Support\Facades\Input::class,
+        'Image'     => Intervention\Image\Facades\Image::class,
         'Inspiring' => Illuminate\Foundation\Inspiring::class,
         'Lang'      => Illuminate\Support\Facades\Lang::class,
         'Log'       => Illuminate\Support\Facades\Log::class,

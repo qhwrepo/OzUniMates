@@ -28,7 +28,7 @@ class MessageController extends Controller
         {
             $tempCon = Consultant::find($thread->consultant_id);
             array_push($usernameList, $tempCon->username);
-            array_push($avatarList, $tempCon->avatar);
+            array_push($avatarList, $tempCon->avatar_small);
             $listLen++;
         }
     }

@@ -23,6 +23,7 @@ class CreateConsultantsTable extends Migration
             $table->string('specilization');
             $table->integer('thanks');
             $table->string('avatar');
+            $table->string('avatar_small');
             $table->boolean('ispro');
             $table->boolean('activated');
             $table->string('description');

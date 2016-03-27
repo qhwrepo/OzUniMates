@@ -6,6 +6,7 @@ use Request;
 use Auth;
 use Response;
 use Input;
+use Image;
 use Validator;
 use Session;
 use App\Http\Controllers\Controller;
@@ -111,7 +112,6 @@ class ConsultantController extends Controller
                 'success' => false,
                 'errors' => $validator->getMessageBag()->toArray()
             ]);
-
         }
 
         $user = Auth::user("consultant");
@@ -119,6 +119,13 @@ class ConsultantController extends Controller
         $filename = "c_" . $user->id . ".jpg";
         $avatar->move($destinationPath, $filename);
         $user->avatar = asset($destinationPath.$filename);
+
+        // smaller avatar, for messenger use
+        $smallava = Image::make($destinationPath.$filename)->resize(55, 55);
+        $smallfilename = "c_" . $user->id . "_x" . ".jpg";
+        $smallava->save($destinationPath.$smallfilename);
+        $user->avatar_small = asset($destinationPath.$smallfilename);
+
         $user->save();
         return redirect('/consultant/home');
     }

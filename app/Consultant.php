@@ -12,7 +12,7 @@ class Consultant extends Model implements AuthenticatableContract, CanResetPassw
 {
     use Authenticatable, CanResetPassword;
     protected $table = 'consultants';
-    protected $fillable = ['username','password','email','degree','university','major','specilization','thanks','avatar','ispro','description','activated'];
+    protected $fillable = ['username','password','email','degree','university','major','specilization','thanks','avatar','avatar_small','ispro','description','activated'];
 
     public function tags() {
     	return $this->belongsToMany('App\Tag');
