@@ -126,6 +126,11 @@ class StudentController extends Controller
         return redirect('/student/home');
     }
 
+    public function avatar_small($id)
+    {
+        return Response::json(Student::find($id)->avatar_small);
+    }
+
     public function wrongTokenAjax()
     {
         if ( Session::token() !== Request::get('_token') ) {

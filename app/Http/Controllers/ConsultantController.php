@@ -130,6 +130,11 @@ class ConsultantController extends Controller
         return redirect('/consultant/home');
     }
 
+    public function avatar_small($id)
+    {
+        return Response::json(Consultant::find($id)->avatar_small);
+    }
+
     public function wrongTokenAjax()
     {
         if ( Session::token() !== Request::get('_token') ) {

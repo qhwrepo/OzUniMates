@@ -19,7 +19,7 @@ class MessageController extends Controller
      */
     public function stuIndex()
     {
-        return view('messenger-template');  
+        return view('messenger.index');  
     }
 
     protected function threadsToStu($threads, &$usernameList, &$avatarList, &$listLen)
@@ -47,6 +47,9 @@ class MessageController extends Controller
         $usernameList = [];
         $avatarList = [];
         $this->threadsToStu($threads,$usernameList,$avatarList,$listLen);
+
+        // retrieve a list of messages belonged to a thread
+        $messageList = [];
 
         return view('messenger.index',compact('threads','usernameList','avatarList','listLen'));
     }

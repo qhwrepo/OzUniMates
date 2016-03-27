@@ -1,12 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
 body {
   background: #C5DDEB;
-  font: 14px/20px "Lato", Arial, sans-serif;
-  padding: 40px 0;
+  font: 14px/20px Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "STXihei", "华文细黑";
   color: white;
 }
 
@@ -42,7 +40,7 @@ body {
   height: 770px;
 }
 .people-list ul li {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 .people-list img {
   float: left;
@@ -85,12 +83,7 @@ body {
 .chat .chat-header .chat-num-messages {
   color: #92959E;
 }
-.chat .chat-header .fa-star {
-  float: right;
-  color: #D8DADF;
-  font-size: 20px;
-  margin-top: 12px;
-}
+
 .chat .chat-history {
   padding: 30px 30px 20px;
   border-bottom: 2px solid white;
@@ -204,4 +197,9 @@ body {
   content: " ";
   clear: both;
   height: 0;
+}
+
+.list li:hover {
+  cursor: pointer;
+  box-shadow:5px 5px 16px rgba(0, 0, 0, 0.6);
 }

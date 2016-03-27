@@ -19,3 +19,16 @@
   searchFilter.init();
   
 })();
+
+function chat(thread_id,consultant_id) {
+  
+  // display the avatar if not empty
+  var avatar_small;
+  $.get("/api/consultant/"+consultant_id+"/avatar_small", function(result){
+    avatar_small = result;
+    if(avatar_small=='') $('#chat-avatar').attr("src","/img/no_avatar_small.jpg");
+    else $('#chat-avatar').attr("src",avatar_small);
+  });
+  
+
+} 
