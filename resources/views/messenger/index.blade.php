@@ -20,17 +20,17 @@
       </div>
       <ul class="list">
 
-        @foreach($threads as $thread)
+        @for($i=0; $i<$listLen; $i++)
         <li class="clearfix">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg" alt="avatar" />
+          <img src="{{$avatarList[$i]}}" alt="avatar" />
           <div class="about">
-            <div class="name">{{$thread->consultant_id}}</div>
+            <div class="name">{{$usernameList[$i]}}</div>
             <div class="status">
               <i class="fa fa-circle online"></i> online
             </div>
           </div>
         </li>
-        @endforeach
+        @endfor
 
         <li class="clearfix">
           <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg" alt="avatar" />

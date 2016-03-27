@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Thread;
+use App\Consultant;
 
 class MessageController extends Controller
 {
@@ -21,6 +22,17 @@ class MessageController extends Controller
         return view('messenger-template');  
     }
 
+    protected function threadsToStu($threads, &$usernameList, &$avatarList, &$listLen)
+    {
+        foreach($threads as $thread)
+        {
+            $tempCon = Consultant::find($thread->consultant_id);
+            array_push($usernameList, $tempCon->username);
+            array_push($avatarList, $tempCon->avatar);
+            $listLen++;
+        }
+    }
+
     public function stuNew(Request $request)
     {
         $stuid = Auth::user("student")->id;
@@ -29,10 +41,17 @@ class MessageController extends Controller
         // if it's a new thread then create it
         Thread::firstOrCreate(['student_id' => $stuid,'consultant_id' => $conid]);
 
+        // retrieve lists of usernames and avatars based on threads
         $threads = Thread::where('student_id','=',$stuid)->get(); 
+        $listLen = 0;
+        $usernameList = [];
+        $avatarList = [];
+        $this->threadsToStu($threads,$usernameList,$avatarList,$listLen);
 
-        return view('messenger.index',compact('threads'));
+        return view('messenger.index',compact('threads','usernameList','avatarList','listLen'));
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
