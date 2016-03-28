@@ -27,9 +27,10 @@ class MessageController extends Controller
         $listLen = 0;
         $usernameList = [];
         $avatarList = [];
-        $this->threadsToStu($threads,$usernameList,$avatarList,$listLen);    
+        $this->threadsToStu($threads,$usernameList,$avatarList,$listLen);
+        $messages = Message::where('thread_id','=',$threads[0]->id)->get();  
 
-        return view('messenger.index',compact('threads','usernameList','avatarList','listLen'));  
+        return view('messenger.index_student',compact('threads','usernameList','avatarList','listLen','messages'));  
     }
 
     // retrieve lists of usernames and avatar(small)s
@@ -63,10 +64,10 @@ class MessageController extends Controller
         $avatarList = [];
         $this->threadsToStu($threads,$usernameList,$avatarList,$listLen);
 
-        // retrieve a list of messages belonged to a thread
-        $messageList = [];
+        // retrieve a list of messages belonged to the first thread
+        $messages = Message::where('thread_id','=',$threads[0]->id)->get();
 
-        return view('messenger.index',compact('threads','usernameList','avatarList','listLen'));
+        return view('messenger.index_student',compact('threads','usernameList','avatarList','listLen','messages'));
     }
 
     // retrieve messages based on thread id

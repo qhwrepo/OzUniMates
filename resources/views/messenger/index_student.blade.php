@@ -46,6 +46,23 @@
         
         <div class="chat-history">
           <ul id="chat-list">
+            <!-- messages are inserted by jquery here -->
+            @foreach($messages as $message)
+            @if($message->sentByStu)
+            <li class="clearfix">
+              <div class="message-data align-right">
+                <span class="message-data-time" >{{$message->created_at}}</span> &nbsp; &nbsp;
+                <span class="message-data-name" >{{$usernameList[0]}}</span> <i class="fa fa-circle me"></i>
+                
+              </div>
+              <div class="message other-message float-right">
+                {{$message->content}}
+              </div>
+            </li>
+            @endif
+            @endforeach
+
+
             <!-- <li class="clearfix">
               <div class="message-data align-right">
                 <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
@@ -109,9 +126,10 @@
           {!! Form::close() !!}
           <textarea name="content" id="message-to-send" form="chatform"
           placeholder ="Type your message" rows="3"></textarea>
-                  
+          
+<!--           attachments, to be implemented        
           <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
-          <i class="fa fa-file-image-o"></i>
+          <i class="fa fa-file-image-o"></i> -->
           <button onclick="send_message()">Send</button>
 
         </div> <!-- end chat-message -->
@@ -122,7 +140,7 @@
 
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/dist/list.min.js"></script>
-    <script type="text/javascript" src="/js/messenger.js"></script>
+    <script type="text/javascript" src="/js/messenger/messenger_student.js"></script>
 </body>
 
 </html>

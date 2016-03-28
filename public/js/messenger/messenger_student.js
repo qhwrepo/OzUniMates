@@ -29,8 +29,10 @@ function appendChat() {
   $("#chat-list").empty();
   $.each(current_messages, function(index, value) {
     if(value["sentByStu"]==1) {
-      $("#chat-list").append('<li class="clearfix"><div class="message-data align-right"><span class="message-data-time" >10:14 AM, Today</span> &nbsp; &nbsp;<span class="message-data-name">'
-        + 'kengdie' +
+      $("#chat-list").append('<li class="clearfix"><div class="message-data align-right"><span class="message-data-time" >'
+        + value["created_at"] +
+        '</span> &nbsp; &nbsp;<span class="message-data-name">'
+        + '我' +
         '</span> <i class="fa fa-circle me"></i></div><div class="message other-message float-right">'
         + value["content"] +
         '</div></li>');
@@ -38,7 +40,9 @@ function appendChat() {
     else {
       $("#chat-list").append('<li><div class="message-data"><span class="message-data-name"><i class="fa fa-circle online"></i>'
         + current_mate +
-        '</span><span class="message-data-time">10:12 AM, Today</span></div><div class="message my-message">'
+        '</span><span class="message-data-time">'
+        + value["created_at"] +
+        '</span></div><div class="message my-message">'
         + value["content"] + 
         '</div></li>');
     }
