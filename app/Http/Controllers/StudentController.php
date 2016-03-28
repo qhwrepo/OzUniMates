@@ -65,11 +65,6 @@ class StudentController extends Controller
         return Response::json(Student::get());
     }
 
-    public function studentActivation()
-    {
-        return view('student.activation');
-    }
-
     public function newbee()
     {
         return view('student.regis-success-cn');

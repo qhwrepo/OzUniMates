@@ -32,7 +32,8 @@ class MessageController extends Controller
         $usernameList = [];
         $avatarList = [];
         $this->threadsToStu($threads,$usernameList,$avatarList,$listLen);
-        $messages = Message::where('thread_id','=',$threads[0]->id)->get();  
+        if(sizeof($threads)>0) $messages = Message::where('thread_id','=',$threads[0]->id)->get();
+        else $messages=[];  
 
         return view('messenger.index_student',compact('threads','usernameList','avatarList','listLen','messages'));  
     }
@@ -69,7 +70,8 @@ class MessageController extends Controller
         $this->threadsToStu($threads,$usernameList,$avatarList,$listLen);
 
         // retrieve a list of messages belonged to the first thread
-        $messages = Message::where('thread_id','=',$threads[0]->id)->get();
+        if(sizeof($threads)>0) $messages = Message::where('thread_id','=',$threads[0]->id)->get();
+        else $messages=[];
 
         return view('messenger.index_student',compact('threads','usernameList','avatarList','listLen','messages'));
     }
@@ -87,7 +89,8 @@ class MessageController extends Controller
         $usernameList = [];
         $avatarList = [];
         $this->threadsToCon($threads,$usernameList,$avatarList,$listLen);
-        $messages = Message::where('thread_id','=',$threads[0]->id)->get();  
+        if(sizeof($threads)>0) $messages = Message::where('thread_id','=',$threads[0]->id)->get();
+        else $messages=[];
 
         return view('messenger.index_consultant',compact('threads','usernameList','avatarList','listLen','messages'));  
     }
@@ -124,7 +127,8 @@ class MessageController extends Controller
         $this->threadsToCon($threads,$usernameList,$avatarList,$listLen);
 
         // retrieve a list of messages belonged to the first thread
-        $messages = Message::where('thread_id','=',$threads[0]->id)->get();
+        if(sizeof($threads)>0) $messages = Message::where('thread_id','=',$threads[0]->id)->get();
+        else $messages=[];
 
         return view('messenger.index_consultant',compact('threads','usernameList','avatarList','listLen','messages'));
     }

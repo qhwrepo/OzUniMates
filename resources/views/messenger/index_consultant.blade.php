@@ -35,10 +35,14 @@
     
       <div class="chat">
         <div class="chat-header clearfix">
+          @if(sizeof($avatarList)>0)
           <img alt="avatar" id="chat-avatar" src="{{$avatarList[0]}}" />
+          @endif
           
           <div class="chat-about">
+            @if(sizeof($usernameList)>0)
             <div class="chat-with">{{$usernameList[0]}}</div>
+            @endif
             <!-- <div class="chat-num-messages">already 1 902 messages</div> -->
           </div>
         </div> <!-- end chat-header -->
@@ -76,13 +80,17 @@
         
         <div class="chat-message clearfix">
           {!! Form::open(['id'=>'chatform','url'=>'consultant/messages/new']) !!}
+            @if(sizeof($threads)>0)
             <input type="text" name="thread_id" class="hidden" value="{{$threads[0]->id}}"/>
+            @else
+            <input type="text" name="thread_id" class="hidden" value=""/>
+            @endif
             <input type="text" name="sentByStu" class="hidden" />
           {!! Form::close() !!}
           <textarea name="content" id="message-to-send" form="chatform"
           placeholder ="Type your message" rows="3"></textarea>
           
-          <button onclick="send_message()">Send</button>
+          <button onclick="send_message()">发送</button>
 
         </div> <!-- end chat-message -->
         

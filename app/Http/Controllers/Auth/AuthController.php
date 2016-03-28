@@ -147,7 +147,7 @@ class AuthController extends Controller
 
         // activation email
         $id = Auth::user('student')->id;
-        Mail::send('studentVerificationUrlCN',['id'=>$id],function($message){
+        Mail::send('mail.studentVerificationUrlCN',['id'=>$id],function($message){
             $to = Auth::user('student')->email;
             $message ->to($to)->subject('澳联帮 - 请完成激活');
         });
@@ -186,7 +186,7 @@ class AuthController extends Controller
         
         // activation email
         $id = Auth::user('student')->id;
-        Mail::send('studentVerificationUrlEN',['id'=>$id],function($message){
+        Mail::send('mail.studentVerificationUrlEN',['id'=>$id],function($message){
             $to = Auth::user('student')->email;
             $message ->to($to)->subject('OzUniMates - Please complete activation');
         });
