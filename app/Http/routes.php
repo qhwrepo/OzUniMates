@@ -31,19 +31,21 @@ Route::get('logout', 'Auth\AuthController@getLogout');
 
 Route::get('student/regis-success','StudentController@newbee');
 Route::get('student/home','StudentController@home');
-Route::get('student/dashboard/overall','StudentController@dashboardOverall');
-Route::get('student/dashboard/avatar','StudentController@dashboardAvatar');
-Route::get('student/dashboard/chat','StudentController@dashboardChat');
-Route::get('student/dashboard/case','StudentController@dashboardCase');
-
 
 Route::get('consultant/regis-success','ConsultantController@newbee');
 Route::get('consultant/home','ConsultantController@home');
+
+
+// =======================================
+// Dashboard
+// =======================================
+Route::get('student/dashboard/overall','StudentController@dashboardOverall');
+Route::get('student/dashboard/avatar','StudentController@dashboardAvatar');
+Route::get('student/dashboard/case','StudentController@dashboardCase');
+
 Route::get('consultant/dashboard/overall','ConsultantController@dashboardOverall');
 Route::get('consultant/dashboard/avatar','ConsultantController@dashboardAvatar');
-Route::get('consultant/dashboard/chat','ConsultantController@dashboardChat');
 Route::get('consultant/dashboard/case','ConsultantController@dashboardCase');
-
 
 // =======================================
 // Email Activation

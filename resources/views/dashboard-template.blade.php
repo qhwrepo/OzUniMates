@@ -14,7 +14,6 @@
       <ul class="site-nav--list">
         <li><a href="overall"><i class="entypo-user"></i>概览</a></li>
         <li><a href="avatar"><i class="entypo-picture"></i>头像</a></li>
-        <li><a href="chat"><i class="entypo-chat"></i>站内信</a></li>
         <li><a href="case"><i class="entypo-users"></i>历史</a></li>
         <li><a href="../home"><i class="entypo-logout"></i>回主页</a></li>
       </ul>
