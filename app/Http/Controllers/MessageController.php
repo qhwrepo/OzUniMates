@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Thread;
 use App\Message;
 use App\Consultant;
+use App\Student;
 
 use URL;
 use Response;
@@ -17,9 +18,12 @@ use Log;
 
 class MessageController extends Controller
 {
-    /**
-     * Messenger home page
-     */
+
+    /***
+    *     Student
+    ***/
+
+    // home page
     public function stuIndex()
     {
         $stuid = Auth::user("student")->id;
@@ -69,6 +73,66 @@ class MessageController extends Controller
 
         return view('messenger.index_student',compact('threads','usernameList','avatarList','listLen','messages'));
     }
+
+
+    /***
+    *     Consultant
+    ***/
+    // home page
+    public function conIndex()
+    {
+        $conid = Auth::user("consultant")->id;
+        $threads = Thread::where('consultant_id','=',$conid)->get();
+        $listLen = 0;
+        $usernameList = [];
+        $avatarList = [];
+        $this->threadsToCon($threads,$usernameList,$avatarList,$listLen);
+        $messages = Message::where('thread_id','=',$threads[0]->id)->get();  
+
+        return view('messenger.index_consultant',compact('threads','usernameList','avatarList','listLen','messages'));  
+    }
+
+    // retrieve lists of usernames and avatar(small)s
+
+    protected function threadsToCon($threads, &$usernameList, &$avatarList, &$listLen)
+    {
+        foreach($threads as $thread)
+        {
+            $tempStu = Student::find($thread->student_id);
+            array_push($usernameList, $tempStu->username);
+            array_push($avatarList, $tempStu->avatar_small);
+            $listLen++;
+        }
+    }
+
+    // when clicking "message" button - redirect to messenger page
+    // and create a new thread if necessary
+
+    public function ConNew(Request $request)
+    {
+        $conid = Auth::user("consultant")->id;
+        $stuid = $request->stuid;
+
+        // if it's a new thread then create it
+        Thread::firstOrCreate(['consultant_id' => $conid,'student_id' => $stuid]);
+
+        // retrieve lists of usernames and avatars based on threads
+        $threads = Thread::where('consultant_id','=',$conid)->get(); 
+        $listLen = 0;
+        $usernameList = [];
+        $avatarList = [];
+        $this->threadsToCon($threads,$usernameList,$avatarList,$listLen);
+
+        // retrieve a list of messages belonged to the first thread
+        $messages = Message::where('thread_id','=',$threads[0]->id)->get();
+
+        return view('messenger.index_consultant',compact('threads','usernameList','avatarList','listLen','messages'));
+    }
+
+
+    /***
+    *     Common
+    ***/
 
     // retrieve messages based on thread id
 

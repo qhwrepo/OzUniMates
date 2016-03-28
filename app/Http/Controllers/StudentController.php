@@ -131,11 +131,6 @@ class StudentController extends Controller
         return redirect('/student/home');
     }
 
-    public function avatar_small($id)
-    {
-        return Response::json(Student::find($id)->avatar_small);
-    }
-
     public function wrongTokenAjax()
     {
         if ( Session::token() !== Request::get('_token') ) {
@@ -185,7 +180,7 @@ class StudentController extends Controller
         return Response::json(array('success' => true));
     }
 
-    // Json api - unis and majors
+    // Json api
     
     public function universities($studid)
     {
@@ -207,5 +202,15 @@ class StudentController extends Controller
             array_push($major_list, $major_arr[$i]['name']);
         }
         return Response::json($major_list);
+    }
+
+    public function username($id)
+    {
+        return Response::json(Student::find($id)->username);
+    }
+
+    public function avatar_small($id)
+    {
+        return Response::json(Student::find($id)->avatar_small);
     }
 }

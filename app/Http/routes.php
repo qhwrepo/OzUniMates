@@ -54,6 +54,8 @@ Route::post('student/messages','MessageController@stuNew');
 Route::post('student/messages/new','MessageController@newMessage');
 
 Route::get('consultant/messages','MessageController@conIndex');
+Route::post('consultant/messages','MessageController@conNew');
+Route::post('consultant/messages/new','MessageController@newMessage');
 
 // =======================================
 // English version
@@ -76,12 +78,15 @@ Route::group(array('prefix' => 'en'), function() {
 // API Routes
 // =======================================
 Route::group(array('prefix' => 'api'), function() {
+
 	Route::resource('students','StudentController',
 		array('only' => array('index')));
 	Route::resource('consultants','ConsultantController',
 		array('only' => array('index')));
+
 	Route::get('student/{studid}/universities','StudentController@universities');
 	Route::get('student/{studid}/majors','StudentController@majors');
+	Route::get('student/{stuid}/username','StudentController@username');
 	Route::get('student/{stuid}/avatar_small','StudentController@avatar_small');
 
 	Route::get('consultant/{conid}/tags','ConsultantController@tags');

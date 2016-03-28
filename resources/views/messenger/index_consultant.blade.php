@@ -19,7 +19,7 @@
         <ul class="list">
 
           @for($i=0; $i<$listLen; $i++)
-          <li class="clearfix" onclick="chat({{$threads[$i]->id}},{{$threads[$i]->consultant_id}})">
+          <li class="clearfix" onclick="chat({{$threads[$i]->id}},{{$threads[$i]->student_id}})">
             <img src="{{$avatarList[$i]}}" alt="avatar" />
             <div class="about">
               <div class="name">{{$usernameList[$i]}}</div>
@@ -47,7 +47,7 @@
           <ul id="chat-list">
             <!-- messages are inserted by jquery here -->
             @foreach($messages as $message)
-            @if($message->sentByStu)
+            @if(!$message->sentByStu)
             <li class="clearfix">
               <div class="message-data align-right">
                 <span class="message-data-time" >{{$message->created_at}}</span> &nbsp; &nbsp;
@@ -57,7 +57,7 @@
                 {{$message->content}}
               </div>
             </li>
-            @elseif(!$message->sentByStu)
+            @elseif($message->sentByStu)
             <li>
               <div class="message-data">
                 <span class="message-data-name">{{$usernameList[0]}}</span>
@@ -75,7 +75,7 @@
         </div> <!-- end chat-history -->
         
         <div class="chat-message clearfix">
-          {!! Form::open(['id'=>'chatform','url'=>'student/messages/new']) !!}
+          {!! Form::open(['id'=>'chatform','url'=>'consultant/messages/new']) !!}
             <input type="text" name="thread_id" class="hidden" value="{{$threads[0]->id}}"/>
             <input type="text" name="sentByStu" class="hidden" />
           {!! Form::close() !!}
@@ -92,7 +92,7 @@
 
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/dist/list.min.js"></script>
-    <script type="text/javascript" src="/js/messenger/messenger_student.js"></script>
+    <script type="text/javascript" src="/js/messenger/messenger_consultant.js"></script>
 </body>
 
 </html>

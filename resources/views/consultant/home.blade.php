@@ -101,7 +101,10 @@
 </div>
 
 <div id="modal-button">
-	<a class="btn-2 btn-left" href="dashboard/chat">留言</a> 
+	<a class="btn-2 btn-left" onclick="start_message()">留言</a>
+	{!! Form::open(['id'=>'msgform','url'=>'consultant/messages']) !!}
+		<input type="text" name="stuid"/>
+	{!! Form::close() !!} 
 </div>
 
 <div id="reel">
@@ -131,8 +134,8 @@
 			<p>右边这些小鲜肉可能会成为你的校友：<br />
 			有空的话，帮帮他们吧！</p>
 			<div class="board">
-				<a href="/student/messages" class="board-link">站内信</a>
-				<a href="/student/dashboard/overall" class="board-link">个人资料</a>
+				<a href="/consultant/messages" class="board-link">站内信</a>
+				<a href="/consultant/dashboard/overall" class="board-link">个人资料</a>
 				<a href="/logout" class="board-link">登出</a>
 			</div>
 		</div>
@@ -164,47 +167,12 @@
 	</li>
 	@endforeach
 
-<!-- 		<li class="item thumb">
-	<div class='info'>
+<!-- 	<li class="item thumb">
+		<div class='info'>
         <h3>Single-origin coffee whatever</h3>
         <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
-      </div>
-    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
-    </li>
-    <li class="item thumb">
-	<div class='info'>
-        <h3>Single-origin coffee whatever</h3>
-        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
-      </div>
-    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
-    </li>
-    <li class="item thumb">
-	<div class='info'>
-        <h3>Single-origin coffee whatever</h3>
-        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
-      </div>
-    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
-    </li>
-    <li class="item thumb">
-	<div class='info'>
-        <h3>Single-origin coffee whatever</h3>
-        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
-      </div>
-    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
-    </li>
-    <li class="item thumb">
-	<div class='info'>
-        <h3>Single-origin coffee whatever</h3>
-        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
-      </div>
-    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
-    </li>
-    <li class="item thumb">
-	<div class='info'>
-        <h3>Single-origin coffee whatever</h3>
-        <p>Williamsburg tofu polaroid, 90's Bushwick irony locavore ethnic meh messenger bag Truffaut jean shorts.</p>
-      </div>
-    <a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
+      	</div>
+    	<a href="#" class="image open_button open_button1"><img src="/img/no_avatar.jpg"></a>
     </li> -->
 
 </div>

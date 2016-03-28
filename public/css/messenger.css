@@ -207,3 +207,9 @@ body {
   cursor: pointer;
   box-shadow:5px 5px 16px rgba(0, 0, 0, 0.6);
 }
+
+#back {
+  color: white;
+  text-decoration: none;
+  padding-left: 20px;
+}
