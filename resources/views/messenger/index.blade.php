@@ -45,8 +45,8 @@
         </div> <!-- end chat-header -->
         
         <div class="chat-history">
-          <ul>
-            <li class="clearfix">
+          <ul id="chat-list">
+            <!-- <li class="clearfix">
               <div class="message-data align-right">
                 <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
                 <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
@@ -96,7 +96,7 @@
               <i class="fa fa-circle online"></i>
               <i class="fa fa-circle online" style="color:#AED2A6"></i>
               <i class="fa fa-circle online" style="color:#DAE9DA"></i>
-            </li>
+            </li> -->
             
           </ul>
           

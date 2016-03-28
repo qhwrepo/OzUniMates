@@ -12,6 +12,7 @@ use App\Message;
 use App\Consultant;
 
 use URL;
+use Response;
 use Log;
 
 class MessageController extends Controller
@@ -73,10 +74,6 @@ class MessageController extends Controller
     public function getMessages($thread_id)
     {
         $messageModels = Message::where('thread_id','=',$thread_id)->get();
-        // $messageList = [];
-        // foreach ($messageModels as $messageModel) {
-        //     array_push($messageList, $messageModel->content)
-        // }
         return Response::json($messageModels);
     }
 

@@ -88,7 +88,7 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::get('consultant/{conid}/username','ConsultantController@username');
 	Route::get('consultant/{conid}/avatar_small','ConsultantController@avatar_small');
 
-	Route::get('student/messages/{threadid}','MessageController@getMessages');
+	Route::get('thread/{threadid}/messages','MessageController@getMessages');
 });
 
 // ================================

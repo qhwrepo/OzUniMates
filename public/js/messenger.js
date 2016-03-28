@@ -1,6 +1,7 @@
 var current_thread;
 var current_avatar;
 var current_mate;
+var current_messages;
 
  (function(){
   
@@ -24,6 +25,26 @@ var current_mate;
   
 })();
 
+function appendChat() {
+  $("#chat-list").empty();
+  $.each(current_messages, function(index, value) {
+    if(value["sentByStu"]==1) {
+      $("#chat-list").append('<li class="clearfix"><div class="message-data align-right"><span class="message-data-time" >10:14 AM, Today</span> &nbsp; &nbsp;<span class="message-data-name">'
+        + 'kengdie' +
+        '</span> <i class="fa fa-circle me"></i></div><div class="message other-message float-right">'
+        + value["content"] +
+        '</div></li>');
+    }
+    else {
+      $("#chat-list").append('<li><div class="message-data"><span class="message-data-name"><i class="fa fa-circle online"></i>'
+        + current_mate +
+        '</span><span class="message-data-time">10:12 AM, Today</span></div><div class="message my-message">'
+        + value["content"] + 
+        '</div></li>');
+    }
+  });
+}
+
 function chat(thread_id,consultant_id) {
   
   current_thread = thread_id;
@@ -40,6 +61,12 @@ function chat(thread_id,consultant_id) {
     current_mate = result;
     $('.chat-with').html(current_mate);
   });  
+
+  // display messages under this thread
+  $.get("/api/thread/"+thread_id+"/messages", function(result){
+    current_messages = result;
+    appendChat();
+  });
 
 }
 
