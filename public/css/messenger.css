@@ -8,6 +8,10 @@ body {
   color: white;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .container {
   margin: 0 auto;
   width: 750px;

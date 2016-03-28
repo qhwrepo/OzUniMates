@@ -36,10 +36,10 @@
     
       <div class="chat">
         <div class="chat-header clearfix">
-          <img alt="avatar" id="chat-avatar" src="/img/no_avatar_small.jpg" />
+          <img alt="avatar" id="chat-avatar" src="{{$avatarList[0]}}" />
           
           <div class="chat-about">
-            <div class="chat-with"></div>
+            <div class="chat-with">{{$usernameList[0]}}</div>
             <!-- <div class="chat-num-messages">already 1 902 messages</div> -->
           </div>
         </div> <!-- end chat-header -->
@@ -94,7 +94,7 @@
                 <span class="message-data-time">10:31 AM, Today</span>
               </div>
               <i class="fa fa-circle online"></i>
-              <i class="fa fa-circle online" style="color: #AED2A6"></i>
+              <i class="fa fa-circle online" style="color:#AED2A6"></i>
               <i class="fa fa-circle online" style="color:#DAE9DA"></i>
             </li>
             
@@ -103,44 +103,22 @@
         </div> <!-- end chat-history -->
         
         <div class="chat-message clearfix">
-          <textarea name="message-to-send" id="message-to-send" placeholder ="Type your message" rows="3"></textarea>
+          {!! Form::open(['id'=>'chatform','url'=>'student/messages/new']) !!}
+            <input type="text" name="thread_id" class="hidden" value="{{$threads[0]->id}}"/>
+            <input type="text" name="sentByStu" class="hidden" />
+          {!! Form::close() !!}
+          <textarea name="content" id="message-to-send" form="chatform"
+          placeholder ="Type your message" rows="3"></textarea>
                   
           <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
           <i class="fa fa-file-image-o"></i>
-          
-          <button>Send</button>
+          <button onclick="send_message()">Send</button>
 
         </div> <!-- end chat-message -->
         
       </div> <!-- end chat -->
     
   </div> <!-- end container -->
-
-<script id="message-template" type="text/x-handlebars-template">
-  <li class="clearfix">
-    <div class="message-data align-right">
-      <span class="message-data-time" >3333, Today</span> &nbsp; &nbsp;
-      <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
-    </div>
-    <div class="message other-message float-right">
-      haha
-    </div>
-  </li>
-</script>
-
-<script id="message-response-template" type="text/x-handlebars-template">
-  <li>
-    <div class="message-data">
-      <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
-      <span class="message-data-time">3333, Today</span>
-    </div>
-    <div class="message my-message">
-      haha
-    </div>
-  </li>
-</script>
-
-
 
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/dist/list.min.js"></script>

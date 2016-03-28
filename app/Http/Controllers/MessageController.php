@@ -8,19 +8,30 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Thread;
+use App\Message;
 use App\Consultant;
+
+use URL;
+use Log;
 
 class MessageController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Messenger home page
      */
     public function stuIndex()
     {
-        return view('messenger.index');  
+        $stuid = Auth::user("student")->id;
+        $threads = Thread::where('student_id','=',$stuid)->get();
+        $listLen = 0;
+        $usernameList = [];
+        $avatarList = [];
+        $this->threadsToStu($threads,$usernameList,$avatarList,$listLen);    
+
+        return view('messenger.index',compact('threads','usernameList','avatarList','listLen'));  
     }
+
+    // retrieve lists of usernames and avatar(small)s
 
     protected function threadsToStu($threads, &$usernameList, &$avatarList, &$listLen)
     {
@@ -32,6 +43,9 @@ class MessageController extends Controller
             $listLen++;
         }
     }
+
+    // when clicking "message" button - redirect to messenger page
+    // and create a new thread if necessary
 
     public function stuNew(Request $request)
     {
@@ -54,71 +68,26 @@ class MessageController extends Controller
         return view('messenger.index',compact('threads','usernameList','avatarList','listLen'));
     }
 
+    // retrieve messages based on thread id
+
+    public function getMessages($thread_id)
+    {
+        $messageModels = Message::where('thread_id','=',$thread_id)->get();
+        // $messageList = [];
+        // foreach ($messageModels as $messageModel) {
+        //     array_push($messageList, $messageModel->content)
+        // }
+        return Response::json($messageModels);
+    }
+
+    // create a new message
+
+    public function newMessage(Request $request)
+    {
+        Message::create($request->all());
+        return redirect(URL::previous());
+    }
     
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+   
 }

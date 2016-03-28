@@ -1,4 +1,8 @@
-(function(){
+var current_thread;
+var current_avatar;
+var current_mate;
+
+ (function(){
   
   var searchFilter = {
     options: { valueNames: ['name'] },
@@ -22,13 +26,26 @@
 
 function chat(thread_id,consultant_id) {
   
-  // display the avatar if not empty
-  var avatar_small;
-  $.get("/api/consultant/"+consultant_id+"/avatar_small", function(result){
-    avatar_small = result;
-    if(avatar_small=='') $('#chat-avatar').attr("src","/img/no_avatar_small.jpg");
-    else $('#chat-avatar').attr("src",avatar_small);
-  });
-  
+  current_thread = thread_id;
 
+  // display the avatar if not empty
+  $.get("/api/consultant/"+consultant_id+"/avatar_small", function(result){
+    current_avatar = result;
+    if(current_avatar=='') $('#chat-avatar').attr("src","/img/no_avatar_small.jpg");
+    else $('#chat-avatar').attr("src",current_avatar);
+  });
+
+  // display curernt uunimate who you are talking with
+  $.get("/api/consultant/"+consultant_id+"/username", function(result){
+    current_mate = result;
+    $('.chat-with').html(current_mate);
+  });  
+
+}
+
+function send_message() {
+  var daForm = document.forms['chatform'];
+  if(current_thread!=null) daForm.elements['thread_id'].value = current_thread;
+  daForm.elements['sentByStu'].value = 1;
+  document.getElementById('chatform').submit();
 } 

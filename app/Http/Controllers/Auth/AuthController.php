@@ -14,7 +14,6 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Config;
-use Log;
 
 class AuthController extends Controller
 {
@@ -145,6 +144,7 @@ class AuthController extends Controller
         $majorIdList = Major::whereIn('name',$majorarr)->lists('id')->all();
         $student->majors()->attach($majorIdList);
         
+        return redirect('student/activation');
         return redirect('student/regis-success');
 
     }

@@ -29,15 +29,14 @@ Route::post('login','Auth\AuthController@postLogin');
 
 Route::get('logout', 'Auth\AuthController@getLogout');
 
-
+Route::get('student/activation','StudentController@studentActivation');
 Route::get('student/regis-success','StudentController@newbee');
 Route::get('student/home','StudentController@home');
 Route::get('student/dashboard/overall','StudentController@dashboardOverall');
 Route::get('student/dashboard/avatar','StudentController@dashboardAvatar');
 Route::get('student/dashboard/chat','StudentController@dashboardChat');
 Route::get('student/dashboard/case','StudentController@dashboardCase');
-Route::get('student/messages','MessageController@stuIndex');
-Route::post('student/messages/new','MessageController@stuNew');
+
 
 Route::get('consultant/regis-success','ConsultantController@newbee');
 Route::get('consultant/home','ConsultantController@home');
@@ -45,8 +44,16 @@ Route::get('consultant/dashboard/overall','ConsultantController@dashboardOverall
 Route::get('consultant/dashboard/avatar','ConsultantController@dashboardAvatar');
 Route::get('consultant/dashboard/chat','ConsultantController@dashboardChat');
 Route::get('consultant/dashboard/case','ConsultantController@dashboardCase');
-Route::get('consultant/messages','MessageController@conIndex');
 
+
+// =======================================
+// Messenger
+// =======================================
+Route::get('student/messages','MessageController@stuIndex');
+Route::post('student/messages','MessageController@stuNew');
+Route::post('student/messages/new','MessageController@newMessage');
+
+Route::get('consultant/messages','MessageController@conIndex');
 
 // =======================================
 // English version
@@ -76,9 +83,12 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::get('student/{studid}/universities','StudentController@universities');
 	Route::get('student/{studid}/majors','StudentController@majors');
 	Route::get('student/{stuid}/avatar_small','StudentController@avatar_small');
+
 	Route::get('consultant/{conid}/tags','ConsultantController@tags');
 	Route::get('consultant/{conid}/username','ConsultantController@username');
 	Route::get('consultant/{conid}/avatar_small','ConsultantController@avatar_small');
+
+	Route::get('student/messages/{threadid}','MessageController@getMessages');
 });
 
 // ================================

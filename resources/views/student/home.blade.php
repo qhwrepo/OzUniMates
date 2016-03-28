@@ -105,7 +105,7 @@
 <div id="modal-button">
 	<a class="btn-2 btn-left" onclick="start_message()">留言</a> 
 	<a class="btn-2 btn-right" href="dashboard/case">全权委托</a>
-	{!! Form::open(['id'=>'msgform','url'=>'student/messages/new']) !!}
+	{!! Form::open(['id'=>'msgform','url'=>'student/messages']) !!}
 		<input type="text" name="conid"/>
 	{!! Form::close() !!}
 </div>
@@ -145,8 +145,8 @@
 			<p>右边的他们可能是你未来的师兄师姐喔,<br />
 			打个招呼，开始咨询吧！</p>
 			<div class="board">
-				<a href="/student/dashboard/overall" class="board-link">个人信息</a>
-				<!-- <a href="http://bbs.ozunimates.com" class="board-link">论坛</a> -->
+				<a href="/student/messages" class="board-link">站内信</a>
+				<a href="/student/dashboard/overall" class="board-link">个人资料</a>
 				<a href="/logout" class="board-link">登出</a>
 			</div>
 		</div>
