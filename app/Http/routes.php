@@ -29,7 +29,6 @@ Route::post('login','Auth\AuthController@postLogin');
 
 Route::get('logout', 'Auth\AuthController@getLogout');
 
-Route::get('student/activation','StudentController@studentActivation');
 Route::get('student/regis-success','StudentController@newbee');
 Route::get('student/home','StudentController@home');
 Route::get('student/dashboard/overall','StudentController@dashboardOverall');
@@ -44,6 +43,16 @@ Route::get('consultant/dashboard/overall','ConsultantController@dashboardOverall
 Route::get('consultant/dashboard/avatar','ConsultantController@dashboardAvatar');
 Route::get('consultant/dashboard/chat','ConsultantController@dashboardChat');
 Route::get('consultant/dashboard/case','ConsultantController@dashboardCase');
+
+
+// =======================================
+// Email Activation
+// =======================================
+Route::get('student/activation','StudentController@studentActivation');
+Route::get('student/{studid}/activate','StudentController@activate');
+
+Route::get('consultant/activation','ConsultantController@consultantActivation');
+Route::get('consultant/{consid}/activate','ConsultantController@activate');
 
 
 // =======================================

@@ -14,6 +14,7 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Config;
+use Mail;
 
 class AuthController extends Controller
 {
@@ -143,9 +144,15 @@ class AuthController extends Controller
 
         $majorIdList = Major::whereIn('name',$majorarr)->lists('id')->all();
         $student->majors()->attach($majorIdList);
-        
+
+        // activation email
+        $id = Auth::user('student')->id;
+        Mail::send('studentVerificationUrlCN',['id'=>$id],function($message){
+            $to = Auth::user('student')->email;
+            $message ->to($to)->subject('澳联帮 - 请完成激活');
+        });
+
         return redirect('student/activation');
-        return redirect('student/regis-success');
 
     }
 
@@ -177,7 +184,14 @@ class AuthController extends Controller
         $majorIdList = Major::whereIn('name',$majorarr)->lists('id')->all();
         $student->majors()->attach($majorIdList);
         
-        return redirect('en/student/regis-success');
+        // activation email
+        $id = Auth::user('student')->id;
+        Mail::send('studentVerificationUrlEN',['id'=>$id],function($message){
+            $to = Auth::user('student')->email;
+            $message ->to($to)->subject('OzUniMates - Please complete activation');
+        });
+
+        return redirect('student/activation');
 
     }
 
@@ -198,8 +212,13 @@ class AuthController extends Controller
         $tagIdList = Tag::whereIn('name',$tagarr)->lists('id')->all();
         $consultant->tags()->attach($tagIdList);
         
-        return redirect('consultant/regis-success');
-
+        // activation email
+        $id = Auth::user('consultant')->id;
+        Mail::send('mail.consultantVerificationUrlCN',['id'=>$id],function($message){
+            $to = Auth::user('consultant')->email;
+            $message ->to($to)->subject('澳联帮 - 请完成激活');
+        });
+        return redirect('consultant/activation');
     }
 
     public function postConsultantRegisterEn(Request $request)
@@ -219,7 +238,13 @@ class AuthController extends Controller
         $tagIdList = Tag::whereIn('name',$tagarr)->lists('id')->all();
         $consultant->tags()->attach($tagIdList);
         
-        return redirect('en/consultant/regis-success');
+        // activation email
+        $id = Auth::user('consultant')->id;
+        Mail::send('mail.consultantVerificationUrlEN',['id'=>$id],function($message){
+            $to = Auth::user('consultant')->email;
+            $message ->to($to)->subject('OzUniMates - Please complete activation');
+        });
+        return redirect('consultant/activation');
 
     }
 

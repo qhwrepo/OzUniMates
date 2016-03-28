@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>OzUnimates - Successfully Registered!</title>
+    <title>OzUnimates - Activated Successfully!</title>
     <link href="/css/regis-success.css" rel="stylesheet" media="screen" type="text/css" />
 </head>
 

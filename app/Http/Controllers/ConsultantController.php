@@ -159,4 +159,22 @@ class ConsultantController extends Controller
         return Response::json($tag_list);
     }
 
+    public function activate(Request $request)
+    {
+        // retrieve user id by url
+        $url = Request::url();
+        $url = rtrim($url,'/');
+        $url = explode('/',$url);
+
+        $user = Consultant::findOrFail($url[4]);
+        $user->activated = true;
+        $user->save();
+        return redirect('consultant/regis-success');
+    }
+
+    public function consultantActivation()
+    {
+        return view('auth.activation-pending-cn');
+    }
+
 }

@@ -180,6 +180,24 @@ class StudentController extends Controller
         return Response::json(array('success' => true));
     }
 
+    public function activate(Request $request)
+    {
+        // retrieve user id by url
+        $url = Request::url();
+        $url = rtrim($url,'/');
+        $url = explode('/',$url);
+
+        $user = Student::findOrFail($url[4]);
+        $user->activated = true;
+        $user->save();
+        return redirect('student/regis-success');
+    }
+
+    public function studentActivation()
+    {
+        return view('auth.activation-pending-cn');
+    }
+
     // Json api
     
     public function universities($studid)
