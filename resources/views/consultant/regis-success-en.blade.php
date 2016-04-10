@@ -17,7 +17,7 @@
     <div id="hint3" class="hint">3.Contact via email or private message. Done!</div>
     <div id="hint4" class="hint">If you helped him/her successfully enrolled, you will get %commission back!</div>
     <br/>
-    <div id="hint5" class="hint"><a href="/en/consultant/home">Start</a></div>
+    <div id="hint5" class="hint"><a href="/logout">Go Back to Login</a></div>
 </div>
 </body>
 
