@@ -161,7 +161,12 @@ ul.contact {
 #wrapper {
 	position: relative;
 	z-index: 1;
-	background-color: #FFF;
+
+	background: transparent;
+	background-image: -webkit-radial-gradient(top, circle cover, #337ab7, #b3d0ea 80%);
+	background-image: -moz-radial-gradient(top, circle cover, #337ab7, #b3d0ea 80%);
+	background-image: -o-radial-gradient(top, circle cover, #337ab7, #b3d0ea 80%);
+	background-image: radial-gradient(top, circle cover, #337ab7, #b3d0ea 80%);
 }
 
 /* Main */
@@ -241,6 +246,8 @@ ul.contact {
 		#reel {
 			position: relative;
 			opacity: 0;
+
+		
 		}
 
 			#reel .item {
@@ -816,7 +823,14 @@ li {
   height: 200px;
   padding: 0;
   list-style: none;
+
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset !important;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset !important;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset !important;
 }
+
+
+
 #reel li a {
   display: inline-block;
   vertical-align: top;

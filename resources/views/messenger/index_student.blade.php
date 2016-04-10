@@ -15,7 +15,7 @@
         <div class="search">
           <input type="text" placeholder="search" />
         </div>
-        <a id="back" href="/consultant/home">返回</a>
+        <a id="back" href="/student/home">返回</a>
         <ul class="list">
 
           @for($i=0; $i<$listLen; $i++)
