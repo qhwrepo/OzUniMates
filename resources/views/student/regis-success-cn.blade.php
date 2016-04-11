@@ -9,7 +9,7 @@
 
 <body>
 <div class="main">
-    <h1>欢迎!</h1>
+    <h1>欢迎，{{$username}}!</h1>
 
     <h1>接下来：</h1>
     <div id="hint1" class="hint">1. 找到已在dream university的师兄/师姐</div>

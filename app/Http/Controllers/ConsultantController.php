@@ -70,16 +70,6 @@ class ConsultantController extends Controller
         return Response::json(Consultant::find($id)->username);
     }
 
-    public function newbee()
-    {
-        return view('consultant.regis-success-cn');
-    }
-
-    public function newbeeEn()
-    {
-        return view('consultant.regis-success-en');
-    }
-
     public function descriptionUpdate()
     {
         $description = Input::get('description');
@@ -169,7 +159,12 @@ class ConsultantController extends Controller
         $user = Consultant::findOrFail($url[4]);
         $user->activated = true;
         $user->save();
-        return redirect('consultant/regis-success');
+
+        $username = $user->username;
+
+        // login this user
+        \Auth::login("consultant",$user);
+        return view('consultant.regis-success-cn',compact('username'));
     }
 
     public function consultantActivation()

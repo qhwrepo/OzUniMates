@@ -65,16 +65,6 @@ class StudentController extends Controller
         return Response::json(Student::get());
     }
 
-    public function newbee()
-    {
-        return view('student.regis-success-cn');
-    }
-
-    public function newbeeEn()
-    {
-        return view('student.regis-success-en');
-    }
-
     public function descriptionUpdate()
     {
         $description = Input::get('description');
@@ -185,7 +175,12 @@ class StudentController extends Controller
         $user = Student::findOrFail($url[4]);
         $user->activated = true;
         $user->save();
-        return redirect('student/regis-success');
+
+        $username = $user->username;
+
+        // login this user
+        \Auth::login("student",$user);
+        return view('student.regis-success-cn',compact('username'));
     }
 
     public function studentActivation()

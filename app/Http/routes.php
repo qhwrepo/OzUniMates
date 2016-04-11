@@ -29,10 +29,8 @@ Route::post('login','Auth\AuthController@postLogin');
 
 Route::get('logout', 'Auth\AuthController@getLogout');
 
-Route::get('student/regis-success','StudentController@newbee');
 Route::get('student/home','StudentController@home');
 
-Route::get('consultant/regis-success','ConsultantController@newbee');
 Route::get('consultant/home','ConsultantController@home');
 
 
