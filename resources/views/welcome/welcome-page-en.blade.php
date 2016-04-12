@@ -83,7 +83,7 @@ under Apache 2.0 by Start Bootstrap
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Wanna study in Australia, but lack of inforamtion?</h2>
+                    <h2>Wanna study in Australia, but lack information?</h2>
                     <br/>
                 </div>
             </div>
@@ -111,7 +111,7 @@ under Apache 2.0 by Start Bootstrap
                                 <h4>
                                     <strong>1. Find him/her</strong>
                                 </h4>
-                                <p>Where are you going? what are you going to study? <br/>Let us help you to find your future unimates</p>
+                                <p>Where are you going? What are you going to study? <br/>Let us help you find your future unimates!</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -123,7 +123,7 @@ under Apache 2.0 by Start Bootstrap
                                 <h4>
                                     <strong>2. Am I ready?</strong>
                                 </h4>
-                                <p>Am I familiar with universities and programs?<br/>Do I need some editing on my CV？</p>
+                                <p>Am I familiar with universities and programs?<br/>Does my CV need some editing?</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -135,7 +135,7 @@ under Apache 2.0 by Start Bootstrap
                                 <h4>
                                     <strong>3. Application</strong>
                                 </h4>
-                                <p>Offer/Visa is not easy to get <br/>Our non-profit agency will help you! </p>
+                                <p>Offers and visas are not easy to get <br/>Our non-profit agency will help you! </p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -145,9 +145,9 @@ under Apache 2.0 by Start Bootstrap
                                 <i class="fa fa-plane fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>4. Enrollment </strong>
+                                    <strong>4. Enrolment </strong>
                                 </h4>
-                                <p>Housing/courses/social circle<br/>Let your senior unimates help you!</p>
+                                <p>Housing, courses and social circle<br/>Let your senior unimates help you!</p>
                             </div>
                         </div>
                     </div>
@@ -287,7 +287,7 @@ under Apache 2.0 by Start Bootstrap
                     </div>
                     <div class="uni_desc">
                         <span class="desc_title">Featured Subjects</span>
-                        <span class="desc_content">Inforamtion technology, Computer Science</span>
+                        <span class="desc_content">Information technology, Computer Science</span>
                     </div>
                 </div>
             </div>
@@ -363,7 +363,7 @@ under Apache 2.0 by Start Bootstrap
                     <img src="/img/uni_logo/mr.png">
                     <div class="uni_desc">
                         <span class="desc_title">World Ranking</span>
-                        <span class="desc_content">QS世界大学排名: ... <br/> Times高等教育排名: ...</span>
+                        <span class="desc_content">QS ranking: ... <br/> Times ranking: ...</span>
                     </div>
                     <div class="uni_desc">
                         <span class="desc_title">Featured Subjects</span>
