@@ -14,7 +14,7 @@
 
 <body onload="disableSubmit()">
   
-<h2>Hi there. We need some basic information of you first.</h2>
+<h2>Hi there! We need some basic information from you first.</h2>
 
 <!-- multistep form -->
 
@@ -29,7 +29,7 @@
     </ul>
     <!-- fieldsets -->
     <fieldset>
-        <h2 class="fs-title">What's the degree you are pursuing?</h2>
+        <h2 class="fs-title">What degree are you pursuing?</h2>
         <input type="button" class="next action-button" value="Bachelor" onclick="setDegree('Bachelor')"/>
         <input type="button" class="next action-button" value="Master" onclick="setDegree('Master')"/>
         <input type="button" class="next action-button" value="PHD" onclick="setDegree('Phd')"/> 
@@ -96,7 +96,7 @@
     </fieldset>
 
     <fieldset>
-        <h2 class="fs-title">How can you help your potential schoolmates(multi-choice)?</h2>
+        <h2 class="fs-title">How are you able to help your potential unimates (multiple-choice)?</h2>
         <input type="button" class="action-button uni-button" value="Background Evaluation" onclick="addSkill(this.value)" />
         <input type="button" class="action-button uni-button" value="University Recommendation" onclick="addSkill(this.value)" />
         <input type="button" class="action-button uni-button" value="Improve CV/PS" onclick="addSkill(this.value)"/>

@@ -11,7 +11,7 @@
 <body onload="disableSubmit()">
 
   
-<h2>Hi there. We need some basic information of you first.</h2>
+<h2>Hi there! We need some basic information from you first.</h2>
 
 <!-- multistep form -->
 
@@ -25,14 +25,14 @@
     </ul>
     <!-- fieldsets -->
     <fieldset>
-        <h2 class="fs-title">What's your taget degree?</h2>
+        <h2 class="fs-title">What is your target degree?</h2>
         <input type="button" class="next action-button" value="Bachelor" onclick="setDegree('bachelor')"/>
         <input type="button" class="next action-button" value="Master" onclick="setDegree('master')"/>
         <input type="button" class="next action-button" value="PHD" onclick="setDegree('phd')"/> 
         <input type="text" name="degree" class="hidden" />
     </fieldset>
     <fieldset>
-        <h2 class="fs-title">Do you have target university(s)?</h2>
+        <h2 class="fs-title">Do you have target universities?</h2>
         <input type="button" class="action-button" value="no target" onclick="addUniversity(this.value)" />
         <div class="fs-subtitle">G8 Universities</div>
         <input type="button" class="action-button uni-button" value="Australian National University" onclick="addUniversity(this.value)" />
@@ -60,14 +60,14 @@
         <input type="button" class="action-button uni-button" value="La Trobe University" onclick="addUniversity(this.value)"/>
         <input type="button" class="action-button uni-button" value="Queensland University of Technology" onclick="addUniversity(this.value)"/>
         <input type="button" class="action-button uni-button" value="James Cook University" onclick="addUniversity(this.value)"/>
-        <input type="button" class="action-button uni-button" value="Others" onclick="addUniversity(this.value)"/>
+        <input type="button" class="action-button uni-button" value="Other" onclick="addUniversity(this.value)"/>
         <input type="text" name="universities" class="hidden"/>
         <br/>
         <a class="previous fa fa-chevron-circle-left fa-3x"></a>
         <a class="next fa fa-chevron-circle-right fa-3x" id="aUniversities"></a>
     </fieldset>
     <fieldset>
-        <h2 class="fs-title">What's your target subject(s)?</h2>
+        <h2 class="fs-title">What are your target subjects?</h2>
         
         <input type="button" class="action-button" value="Business"  onclick="addMajor(this.value)"/>
         <input type="button" class="action-button" value="Engineering" onclick="addMajor(this.value)"/>
