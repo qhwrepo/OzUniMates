@@ -6,10 +6,18 @@
     <title>OzUnimates - Registration</title>
     <link href="/css/registration.css" rel="stylesheet" media="screen" type="text/css" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/loading.css" rel="stylesheet" media="screen" type="text/css" />
 </head>
 
 <body onload="disableSubmit()">
 
+<div class="loading">
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+</div>
+
+<div class="loading-wrap">
   
 <h2>Hi there! We need some basic information from you first.</h2>
 
@@ -93,6 +101,7 @@
         <a class="submit fa fa-check-circle fa-3x" onclick="msSubmit(1);"></a>
     </fieldset>
 {!! Form::close() !!}
+</div>
 
     <script src="/js/jquery.min.js" type="text/javascript"></script>
     <script src="/js/jquery.easing.min.js" type="text/javascript"></script>

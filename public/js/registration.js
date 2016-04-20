@@ -25,6 +25,8 @@ var passwordOK = false;
 var emailOK = false;
 var usernameOK = false;
 
+var submitted = false;
+
 $(".next").click(function(){
 	if(animating) return false;
 	animating = true;
@@ -239,23 +241,30 @@ function addSkill(skill) {
 }
 
 function msSubmit(type) {
-	// student registration
-	if(type == 1) {
-		daForm.elements['degree'].value = degree;
-		daForm.elements['universities'].value = universities;
-		daForm.elements['majors'].value = majors;
-		document.getElementById('msform').submit();
+	if(submitted==false) {
+		submitted = true;
+		$(".loading").css('visibility','visible');
+		$(".loading-wrap").css('opacity','0.3');
+
+		// student registration
+		if(type == 1) {
+			daForm.elements['degree'].value = degree;
+			daForm.elements['universities'].value = universities;
+			daForm.elements['majors'].value = majors;
+			document.getElementById('msform').submit();
+		}
+		// consultant registration
+		if(type == 2) {
+			daForm.elements['degree'].value = degree;
+			daForm.elements['major'].value = major;
+			daForm.elements['university'].value = university;
+			daForm.elements['skills'].value = skills;
+			if(daForm.elements['invite'].value=="zhimakaimen") daForm.elements['invite'].value=1;
+			else daForm.elements['invite'].value=0;
+			document.getElementById('msform').submit();
+		}
 	}
-	// consultant registration
-	if(type == 2) {
-		daForm.elements['degree'].value = degree;
-		daForm.elements['major'].value = major;
-		daForm.elements['university'].value = university;
-		daForm.elements['skills'].value = skills;
-		if(daForm.elements['invite'].value=="zhimakaimen") daForm.elements['invite'].value=1;
-		else daForm.elements['invite'].value=0;
-		document.getElementById('msform').submit();
-	}
+	
 }
 
 
