@@ -29,6 +29,8 @@ under Apache 2.0 by Start Bootstrap
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+
 </head>
 
 <body>
@@ -67,7 +69,7 @@ under Apache 2.0 by Start Bootstrap
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center" id="header-intro">
-            <h1>澳联帮</h1>
+            <h1><img src="/img/favicon.png">澳联帮</h1>
             <h3><br/>申请就那么回事</h3>
             <h3>比起中介，直接和师兄师姐聊聊吧!</h3>
             <div class="or-spacer">

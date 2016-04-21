@@ -67,13 +67,13 @@ under Apache 2.0 by Start Bootstrap
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center" id="header-intro">
-            <h1>Ozunimates</h1>
+            <h1><img src="/img/favicon.png">Ozunimates</h1>
             <h3><br/>Talk to your future unimates, not consultation agencies</h3>
             <div class="or-spacer">
               <div class="mask"></div>
             </div>
-            <a href="en/student/register" class="link-home"><i class="fa fa-user fa-2x"></i> I am a Newcomer</a>
-            <a href="en/consultant/register" class="link-home"><i class="fa fa-graduation-cap fa-2x"></i>I am a Consultant</a>
+            <a href="student/register" class="link-home"><i class="fa fa-user fa-2x"></i> I am a Newcomer</a>
+            <a href="consultant/register" class="link-home"><i class="fa fa-graduation-cap fa-2x"></i>I am a Consultant</a>
             <a href="#about" class="fa fa-angle-double-down" id="tellMore"><span id="showme"></span></a>
         </div>
     </header>
