@@ -1,5 +1,5 @@
-<!-- Edited from Stylish-portfolio bootstrap template:http://startbootstrap.com/template-overviews/stylish-portfolio/ 
-under Apache 2.0 by Start Bootstrap 
+<!-- Edited from Stylish-portfolio bootstrap template:http://startbootstrap.com/template-overviews/stylish-portfolio/
+under Apache 2.0 by Start Bootstrap
  -->
 
 <!DOCTYPE html>
@@ -33,17 +33,17 @@ under Apache 2.0 by Start Bootstrap
 
 <body>
 
-    @if($errors->any())        
-        <ul class="alert alert-danger error">            
-        @foreach($errors->all() as $error)                
-            <li>{!! $error !!}</li>            
-        @endforeach        
+    @if($errors->any())
+        <ul class="alert alert-danger error">
+        @foreach($errors->all() as $error)
+            <li>{!! $error !!}</li>
+        @endforeach
         </ul>
     @endif
 
     <a id="logbtn" class="navBtn btn btn-lg" onclick="set_form()">Log in</a>
     <a id="languagebtn" href="cn" class="navBtn btn btn-lg">中文</a>
-    
+
     <div id='lean_overlay' onclick="hide_form()">
     </div>
     {!! Form::open(['url'=>'login','style'=>'display:none;','id'=>'loginForm']) !!}
@@ -51,7 +51,7 @@ under Apache 2.0 by Start Bootstrap
             <label>I'm</label>
             {!! Form::radio('usertype','student') !!}<label>Newcomer</label>
             {!! Form::radio('usertype','consultant') !!}<label>Consultant</label>
-        </div>   
+        </div>
         <div class="username">
           <input type="email" name="email" placeholder="email"/>
         </div>
@@ -60,9 +60,9 @@ under Apache 2.0 by Start Bootstrap
         </div>
         <div class="login">
             {!! Form::submit('login',[]) !!}
-        </div> 
+        </div>
     {!! Form::close() !!}
-    
+
 
     <!-- Header -->
     <header id="top" class="header">
@@ -160,7 +160,7 @@ under Apache 2.0 by Start Bootstrap
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
-            
+
             <!-- /.row -->
         </div>
         <!-- /.container -->
@@ -387,7 +387,7 @@ under Apache 2.0 by Start Bootstrap
                     <p>Canberra, Australia</p>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-phone fa-fw"></i> (+61) 416-365067</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:xuan9230@gmail.com">xuan9230@gmail.com</a>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:luoxuan@aolianbang.com">luoxuan@aolianbang.com</a>
                         </li>
                     </ul>
                     <p class="text-muted">Copyright &copy; Ozunimates 2016</p>

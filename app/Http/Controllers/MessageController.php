@@ -33,9 +33,9 @@ class MessageController extends Controller
         $avatarList = [];
         $this->threadsToStu($threads,$usernameList,$avatarList,$listLen);
         if(sizeof($threads)>0) $messages = Message::where('thread_id','=',$threads[0]->id)->get();
-        else $messages=[];  
+        else $messages=[];
 
-        return view('messenger.index_student',compact('threads','usernameList','avatarList','listLen','messages'));  
+        return view('messenger.index_student',compact('threads','usernameList','avatarList','listLen','messages'));
     }
 
     // retrieve lists of usernames and avatar(small)s
@@ -59,11 +59,12 @@ class MessageController extends Controller
         $stuid = Auth::user("student")->id;
         $conid = $request->conid;
 
+        Log::info($conid);
         // if it's a new thread then create it
         Thread::firstOrCreate(['student_id' => $stuid,'consultant_id' => $conid]);
 
         // retrieve lists of usernames and avatars based on threads
-        $threads = Thread::where('student_id','=',$stuid)->get(); 
+        $threads = Thread::where('student_id','=',$stuid)->get();
         $listLen = 0;
         $usernameList = [];
         $avatarList = [];
@@ -92,7 +93,7 @@ class MessageController extends Controller
         if(sizeof($threads)>0) $messages = Message::where('thread_id','=',$threads[0]->id)->get();
         else $messages=[];
 
-        return view('messenger.index_consultant',compact('threads','usernameList','avatarList','listLen','messages'));  
+        return view('messenger.index_consultant',compact('threads','usernameList','avatarList','listLen','messages'));
     }
 
     // retrieve lists of usernames and avatar(small)s
@@ -120,7 +121,7 @@ class MessageController extends Controller
         Thread::firstOrCreate(['consultant_id' => $conid,'student_id' => $stuid]);
 
         // retrieve lists of usernames and avatars based on threads
-        $threads = Thread::where('consultant_id','=',$conid)->get(); 
+        $threads = Thread::where('consultant_id','=',$conid)->get();
         $listLen = 0;
         $usernameList = [];
         $avatarList = [];
@@ -153,7 +154,7 @@ class MessageController extends Controller
         Message::create($request->all());
         return redirect(URL::previous());
     }
-    
 
-   
+
+
 }

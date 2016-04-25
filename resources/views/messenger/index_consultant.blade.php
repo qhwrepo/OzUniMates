@@ -9,7 +9,7 @@
 
 <body>
 
-      
+
     <div class="container clearfix">
       <div class="people-list" id="people-list">
         <div class="search">
@@ -20,7 +20,11 @@
 
           @for($i=0; $i<$listLen; $i++)
           <li class="clearfix" onclick="chat({{$threads[$i]->id}},{{$threads[$i]->student_id}})">
+            @if($avatarList[$i])
             <img src="{{$avatarList[$i]}}" alt="avatar" />
+            @else
+            <img src="/img/no_avatar_small.jpg" alt="avatar" />
+            @endif
             <div class="about">
               <div class="name">{{$usernameList[$i]}}</div>
               <div class="status">
@@ -32,13 +36,17 @@
 
         </ul>
       </div>
-    
+
       <div class="chat">
         <div class="chat-header clearfix">
           @if(sizeof($avatarList)>0)
-          <img alt="avatar" id="chat-avatar" src="{{$avatarList[0]}}" />
+            @if($avatarList[0])
+            <img alt="avatar" id="chat-avatar" src="{{$avatarList[0]}}"/>
+            @else
+            <img alt="avatar" id="chat-avatar" src="/img/no_avatar_small.jpg"/>
+            @endif
           @endif
-          
+
           <div class="chat-about">
             @if(sizeof($usernameList)>0)
             <div class="chat-with">{{$usernameList[0]}}</div>
@@ -46,7 +54,7 @@
             <!-- <div class="chat-num-messages">already 1 902 messages</div> -->
           </div>
         </div> <!-- end chat-header -->
-        
+
         <div class="chat-history">
           <ul id="chat-list">
             <!-- messages are inserted by jquery here -->
@@ -73,11 +81,11 @@
             </li>
             @endif
             @endforeach
-            
+
           </ul>
-          
+
         </div> <!-- end chat-history -->
-        
+
         <div class="chat-message clearfix">
           {!! Form::open(['id'=>'chatform','url'=>'consultant/messages/new']) !!}
             @if(sizeof($threads)>0)
@@ -89,13 +97,13 @@
           {!! Form::close() !!}
           <textarea name="content" id="message-to-send" form="chatform"
           placeholder ="Type your message" rows="3"></textarea>
-          
+
           <button onclick="send_message()">发送</button>
 
         </div> <!-- end chat-message -->
-        
+
       </div> <!-- end chat -->
-    
+
   </div> <!-- end container -->
 
     <script type="text/javascript" src="/js/jquery.min.js"></script>
