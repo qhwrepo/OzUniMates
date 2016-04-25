@@ -96,7 +96,7 @@
             <input type="text" name="sentByStu" class="hidden" />
           {!! Form::close() !!}
           <textarea name="content" id="message-to-send" form="chatform"
-          placeholder ="Type your message" rows="3"></textarea>
+          placeholder ="开始聊聊吧" rows="3"></textarea>
 
           <button onclick="send_message()">发送</button>
 

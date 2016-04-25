@@ -3,7 +3,11 @@
 }
 
 body {
-  background: #C5DDEB;
+  background: transparent;
+	background-image: -webkit-radial-gradient(top, circle cover, #337ab7, #b3d0ea 80%);
+	background-image: -moz-radial-gradient(top, circle cover, #337ab7, #b3d0ea 80%);
+	background-image: -o-radial-gradient(top, circle cover, #337ab7, #b3d0ea 80%);
+	background-image: radial-gradient(top, circle cover, #337ab7, #b3d0ea 80%);
   font: 14px/20px Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "STXihei", "华文细黑";
   color: white;
 }
@@ -41,7 +45,6 @@ body {
 }
 .people-list ul {
   padding: 20px;
-  height: 770px;
 }
 .people-list ul li {
   margin-bottom: 20px;
@@ -92,7 +95,7 @@ body {
   padding: 30px 30px 20px;
   border-bottom: 2px solid white;
   overflow-y: scroll;
-  height: 575px;
+  height: 400px;
 }
 .chat .chat-history .message-data {
   margin-bottom: 15px;
@@ -120,22 +123,22 @@ body {
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-bottom-color: #86BB71;
+  border-bottom-color: #337ab7;
   border-width: 10px;
   margin-left: -10px;
 }
 .chat .chat-history .my-message {
-  background: #86BB71;
+  background: #337ab7;
 }
 .chat .chat-history .other-message {
-  background: #94C2ED;
+  background: #337ab7;
 }
 .chat .chat-history .other-message:after {
-  border-bottom-color: #94C2ED;
+  border-bottom-color: #337ab7;
   left: 93%;
 }
 .chat .chat-message {
-  padding: 30px;
+  padding:0 30px 0 30px;
 }
 .chat .chat-message textarea {
   width: 100%;
@@ -153,13 +156,14 @@ body {
 }
 .chat .chat-message button {
   float: right;
-  color: #94C2ED;
+  color: #337ab7;
   font-size: 16px;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
   font-weight: bold;
   background: #F2F5F8;
+  margin-bottom: 10px;
 }
 .chat .chat-message button:hover {
   color: #75b1e8;
