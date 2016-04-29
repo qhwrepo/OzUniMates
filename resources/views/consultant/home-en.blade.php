@@ -8,17 +8,17 @@
 <div id="modal_avatar">
 	{!! Form::open( [ 'url' => ['/consultant/avatar/upload'], 'method' => 'POST', 'id' => 'avatar-form', 'files' => true ] ) !!}
 	<h3 id="greet">No avatar yet?</h3>
-	<div class="actions"> 
-	    <button class="file-btn"> 
+	<div class="actions">
+	    <button class="file-btn">
 	        <div id="greet_upload">Upload one!</div>
-	        <input name="image" type="file" id="upload" value="选择图片文件" /> 
-	    </button> 
-	    <div class="crop"> 
-	        <div id="upload-demo"></div> 
-	    </div> 
-	    <div id="result"></div> 
+	        <input type="file" id="upload" value="选择图片文件" /> 
+	    </button>
+	    <div class="crop">
+	        <div id="upload-demo"></div>
+	    </div>
+	    <div id="result"></div>
 	</div>
-	<input id="cropped_avatar" type="hidden" name="cropped_avatar"> 
+	<input id="cropped_avatar" type="hidden" name="cropped_avatar">
 	<a class="modal-submit not-active" id="submit-avatar">Done</a>
 	<a class="modal-submit" id="dismiss-avatar">Not now</a>
 	{!! Form::close() !!}
@@ -33,7 +33,7 @@
 <div class="modal_info modal_info1">
 	@if($user['avatar']=='')
 	<img src="/img/no_avatar_square.jpg">
-	@else 
+	@else
 	<img src="{{$user['avatar']}}">
 	@endif
 	<div class="modal_desc">
@@ -42,9 +42,9 @@
 		  <li>{{$user['university']}}</li>
 		  <li>{{$user['major']}} - {{$user['specilization']}} {{$user['degree']}}</li>
 		  <li>Email： {{$user['email']}}</li>
-		  <li>@if($user['description']) {{$user['description']}} 
+		  <li>@if($user['description']) {{$user['description']}}
   			@else I haven't decided what to say! @endif</li>
-		</ul> 
+		</ul>
   	</div>
 </div>
 
@@ -61,11 +61,11 @@
   	</div>
 </div>
 
-<a class="btn-2 btn-left" href="dashboard/chat">Message</a> 
+<a class="btn-2 btn-left" href="dashboard/chat">Message</a>
 <a class="btn-2 btn-right" href="dashboard/case">Attorney</a>
 
 <div id="reel">
-	
+
 	<!-- Thumb Items -->
 	<ul>
 
@@ -96,7 +96,7 @@
 	</li>
 
 	@foreach($students as $student)
-	<li class="item thumb">		
+	<li class="item thumb">
 	    <div class='info'>
 	    	<h1>{{$student->username}}</h1>
         	<h3>Target Universities:</h3>
@@ -114,7 +114,7 @@
 		<a href="#" class="image open_button" onclick="open_modal({{$student->id}})">
 			@if($student['avatar']=='')
 			<img src="/img/no_avatar_square.jpg">
-			@else 
+			@else
 			<img src="{{$student['avatar']}}">
 			@endif
 		</a>
@@ -165,7 +165,7 @@
     </li> -->
 
 </div>
-		
+
 	<script type="text/javascript" src="/js/home/modal-consultant.js"></script>
 
 @endsection

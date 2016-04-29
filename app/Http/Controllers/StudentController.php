@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\Student;
 use App\Consultant;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Log;
 
 class StudentController extends Controller
 {
@@ -78,30 +79,17 @@ class StudentController extends Controller
     {
         $this->wrongTokenAjax();
 
-        $original = Input::file('image');
-
         // convert base64 to image at the server side
         $data = explode(',', Input::get('cropped_avatar'));
         $avatar_data = base64_decode($data[1]);
 
         file_put_contents('image64.png', $avatar_data);
-        $avatar = new UploadedFile('image64.png',$original->getClientOriginalName(),'image/jpg',null,null,true);
-
-        $input = array('image' => $original);
-        $rules = array(
-            'image' => 'image'
-        );
-        $validator = Validator::make($input, $rules);
-        if ( $validator->fails() ) {
-            return Response::json([
-                'success' => false,
-                'errors' => $validator->getMessageBag()->toArray()
-            ]);
-
-        }
+        $avatar = new UploadedFile('image64.png','new','image/jpg',null,null,true);
 
         $user = Auth::user("student");
         $destinationPath = 'uploads/';
+
+        // regular avatar
         $filename = "s_" . $user->id . ".jpg";
         $avatar->move($destinationPath, $filename);
         $user->avatar = asset($destinationPath.$filename);
@@ -161,7 +149,7 @@ class StudentController extends Controller
     public function destroy($id)
     {
         Student::destroy($id);
- 
+
         return Response::json(array('success' => true));
     }
 
@@ -189,7 +177,7 @@ class StudentController extends Controller
     }
 
     // Json api
-    
+
     public function universities($studid)
     {
         $uni_arr = Student::find($studid)->universities;

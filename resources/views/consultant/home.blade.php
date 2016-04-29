@@ -8,17 +8,17 @@
 <div id="modal_avatar">
 	{!! Form::open( [ 'url' => ['/consultant/avatar/upload'], 'method' => 'POST', 'id' => 'avatar-form', 'files' => true ] ) !!}
 	<h3 id="greet">第一次来吗？</h3>
-	<div class="actions"> 
-	    <button class="file-btn"> 
+	<div class="actions">
+	    <button class="file-btn">
 	        <div id="greet_upload">上传个头像吧</div>
-	        <input name="image" type="file" id="upload" value="选择图片文件" /> 
-	    </button> 
-	    <div class="crop"> 
-	        <div id="upload-demo"></div> 
-	    </div> 
-	    <div id="result"></div> 
+	        <input type="file" id="upload" value="选择图片文件" /> 
+	    </button>
+	    <div class="crop">
+	        <div id="upload-demo"></div>
+	    </div>
+	    <div id="result"></div>
 	</div>
-	<input id="cropped_avatar" type="hidden" name="cropped_avatar"> 
+	<input id="cropped_avatar" type="hidden" name="cropped_avatar">
 	<a class="modal-submit not-active" id="submit-avatar">好的</a>
 	<a class="modal-submit" id="dismiss-avatar">暂不上传</a>
 	{!! Form::close() !!}
@@ -34,7 +34,7 @@
 	<div class="modal_userinfo">
 		@if($user['avatar']=='')
 		<img src="/img/no_avatar_square.jpg">
-		@else 
+		@else
 		<img src="{{$user['avatar']}}">
 		@endif
 		<div class="modal-username">{{ $user['username'] }}</div>
@@ -60,12 +60,12 @@
 		  <li>
 		  	<div class="roll-left">擅长</div>
 		  	<div class="roll-right">@foreach($user->tags as $tag)
-			{{$tag->name}}  
+			{{$tag->name}}
 			@endforeach</div>
 		  </li>
 		  <li>
 		  	<div class="roll-left">简介</div>
-		  	<div class="roll-right">@if($user['description']) {{$user['description']}} 
+		  	<div class="roll-right">@if($user['description']) {{$user['description']}}
   			@else ta决定先保持神秘 @endif
   			<a href="/consultant/dashboard/overall" class="modify-desc">修改</a></div>
 		  </li>
@@ -75,7 +75,7 @@
 
 <div class="modal_info modal_info2">
 	<div class="modal_userinfo">
-		<img id="modal_avatar_square">	
+		<img id="modal_avatar_square">
 		<div class="modal-username" id="modal_username"></div>
 	</div>
 	<div class="modal_desc">
@@ -96,7 +96,7 @@
 		  	<div class="roll-left">简介</div>
 		  	<div class="roll-right" id="modal_description"></div>
   		  </li>
-		</ul> 
+		</ul>
   	</div>
 </div>
 
@@ -104,11 +104,11 @@
 	<a class="btn-2 btn-left" onclick="start_message()">留言</a>
 	{!! Form::open(['id'=>'msgform','url'=>'consultant/messages']) !!}
 		<input type="text" name="stuid"/>
-	{!! Form::close() !!} 
+	{!! Form::close() !!}
 </div>
 
 <div id="reel">
-	
+
 	<!-- Thumb Items -->
 	<ul>
 
@@ -142,7 +142,7 @@
 	</li>
 
 	@foreach($students as $student)
-	<li class="item thumb">		
+	<li class="item thumb">
 	    <div class='info'>
 	    	<h1>{{$student->username}}</h1>
         	<h3>目标院校：</h3>
@@ -160,7 +160,7 @@
 		<a href="#" class="image open_button" onclick="open_modal({{$student->id}})">
 			@if($student['avatar']=='')
 			<img src="/img/no_avatar_square.jpg">
-			@else 
+			@else
 			<img src="{{$student['avatar']}}">
 			@endif
 		</a>
@@ -176,7 +176,7 @@
     </li> -->
 
 </div>
-		
+
 	<script type="text/javascript" src="/js/home/modal-consultant.js"></script>
 
 @endsection

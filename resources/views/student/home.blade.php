@@ -8,17 +8,17 @@
 <div id="modal_avatar">
 	{!! Form::open( [ 'url' => ['/student/avatar/upload'], 'method' => 'POST', 'id' => 'avatar-form', 'files' => true ] ) !!}
 	<h3 id="greet">第一次来吗？</h3>
-	<div class="actions"> 
-	    <button class="file-btn"> 
+	<div class="actions">
+	    <button class="file-btn">
 	        <div id="greet_upload">上传个头像吧</div>
-	        <input name="image" type="file" id="upload" value="选择图片文件" /> 
-	    </button> 
-	    <div class="crop"> 
-	        <div id="upload-demo"></div> 
-	    </div> 
-	    <div id="result"></div> 
+	        <input type="file" id="upload" value="选择图片文件" />
+	    </button>
+	    <div class="crop">
+	        <div id="upload-demo"></div>
+	    </div>
+	    <div id="result"></div>
 	</div>
-	<input id="cropped_avatar" type="hidden" name="cropped_avatar"> 
+	<input id="cropped_avatar" type="hidden" name="cropped_avatar">
 	<a class="modal-submit not-active" id="submit-avatar">好的</a>
 	<a class="modal-submit" id="dismiss-avatar">暂不上传</a>
 	{!! Form::close() !!}
@@ -34,7 +34,7 @@
 	<div class="modal_userinfo">
 		@if($user['avatar']=='')
 		<img src="/img/no_avatar_square.jpg">
-		@else 
+		@else
 		<img src="{{$user['avatar']}}">
 		@endif
 		<div class="modal-username">{{ $user['username'] }}</div>
@@ -63,17 +63,17 @@
 		  </li>
 		  <li>
 		  	<div class="roll-left">简介</div>
-		  	<div class="roll-right">@if($user['description']) {{$user['description']}} 
+		  	<div class="roll-right">@if($user['description']) {{$user['description']}}
   			@else ta决定先保持神秘 @endif
   			<a href="/student/dashboard/overall" class="modify-desc">修改</a></div>
   		  </li>
-		</ul> 
-  	</div>  	
+		</ul>
+  	</div>
 </div>
 
 <div class="modal_info modal_info2">
 	<div class="modal_userinfo">
-		<img id="modal_avatar_square">	
+		<img id="modal_avatar_square">
 		<div class="modal-username" id="modal_username"></div>
 	</div>
 	<div class="modal_desc">
@@ -103,7 +103,7 @@
 </div>
 
 <div id="modal-button">
-	<a class="btn-2 btn-left" onclick="start_message()">留言</a> 
+	<a class="btn-2 btn-left" onclick="start_message()">留言</a>
 	<a class="btn-2 btn-right" href="dashboard/case">全权委托</a>
 	{!! Form::open(['id'=>'msgform','url'=>'student/messages']) !!}
 		<input type="text" name="conid"/>
@@ -115,7 +115,7 @@
 	<!-- Thumb Items -->
 	<ul>
 
-	<li class="item thumb">		
+	<li class="item thumb">
 	    <div class='info'>
 	    	<h1>{{ $user['username'] }}</h1>
         	<h3>目标院校：</h3>
@@ -133,7 +133,7 @@
 		<a href="#" class="image open_button open_button1">
 			@if($user['avatar']=='')
 			<img src="/img/no_avatar_square.jpg">
-			@else 
+			@else
 			<img src="{{$user['avatar']}}">
 			@endif
 		</a>
@@ -150,7 +150,7 @@
 				<a href="/logout" class="board-link">登出</a>
 			</div>
 		</div>
-	</li>	
+	</li>
 
 	@foreach($consultants as $consultant)
 	<li class="item thumb">
@@ -173,7 +173,7 @@
 	</ul>
 
 </div>
-		
+
 	<script type="text/javascript" src="/js/home/modal-student.js"></script>
 
 @endsection

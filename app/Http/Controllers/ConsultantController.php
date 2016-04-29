@@ -81,43 +81,31 @@ class ConsultantController extends Controller
 
     public function avatarUpload()
     {
-        $this->wrongTokenAjax();
+      $this->wrongTokenAjax();
 
-        $original = Input::file('image');
+      // convert base64 to image at the server side
+      $data = explode(',', Input::get('cropped_avatar'));
+      $avatar_data = base64_decode($data[1]);
 
-        // convert base64 to image at the server side
-        $data = explode(',', Input::get('cropped_avatar'));
-        $avatar_data = base64_decode($data[1]);
+      file_put_contents('image64.png', $avatar_data);
+      $avatar = new UploadedFile('image64.png','new','image/jpg',null,null,true);
 
-        file_put_contents('image64.png', $avatar_data);
-        $avatar = new UploadedFile('image64.png',$original->getClientOriginalName(),'image/jpg',null,null,true);
+      $user = Auth::user("consultant");
+      $destinationPath = 'uploads/';
 
-        $input = array('image' => $original);
-        $rules = array(
-            'image' => 'image'
-        );
-        $validator = Validator::make($input, $rules);
-        if ( $validator->fails() ) {
-            return Response::json([
-                'success' => false,
-                'errors' => $validator->getMessageBag()->toArray()
-            ]);
-        }
+      // regular avatar
+      $filename = "c_" . $user->id . ".jpg";
+      $avatar->move($destinationPath, $filename);
+      $user->avatar = asset($destinationPath.$filename);
 
-        $user = Auth::user("consultant");
-        $destinationPath = 'uploads/';
-        $filename = "c_" . $user->id . ".jpg";
-        $avatar->move($destinationPath, $filename);
-        $user->avatar = asset($destinationPath.$filename);
+      // smaller avatar, for messenger use
+      $smallava = Image::make($destinationPath.$filename)->resize(55, 55);
+      $smallfilename = "c_" . $user->id . "_x" . ".jpg";
+      $smallava->save($destinationPath.$smallfilename);
+      $user->avatar_small = asset($destinationPath.$smallfilename);
 
-        // smaller avatar, for messenger use
-        $smallava = Image::make($destinationPath.$filename)->resize(55, 55);
-        $smallfilename = "c_" . $user->id . "_x" . ".jpg";
-        $smallava->save($destinationPath.$smallfilename);
-        $user->avatar_small = asset($destinationPath.$smallfilename);
-
-        $user->save();
-        return redirect('/consultant/home');
+      $user->save();
+      return redirect('/consultant/home');
     }
 
     public function avatar_small($id)
