@@ -105,7 +105,9 @@ class ConsultantController extends Controller
       $user->avatar_small = asset($destinationPath.$smallfilename);
 
       $user->save();
-      return redirect('/consultant/home');
+
+      if (Input::get('redirect')=='dashboard') return redirect('/consultant/dashboard/avatar');
+      else return redirect('/consultant/home');
     }
 
     public function avatar_small($id)

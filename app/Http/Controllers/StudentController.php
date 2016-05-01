@@ -13,7 +13,6 @@ use App\Http\Controllers\Controller;
 use App\Student;
 use App\Consultant;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Log;
 
 class StudentController extends Controller
 {
@@ -101,7 +100,9 @@ class StudentController extends Controller
         $user->avatar_small = asset($destinationPath.$smallfilename);
 
         $user->save();
-        return redirect('/student/home');
+
+        if (Input::get('redirect')=='dashboard') return redirect('/student/dashboard/avatar');
+        else return redirect('/student/home');
     }
 
     public function wrongTokenAjax()

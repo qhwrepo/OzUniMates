@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <title>澳联帮 - 个人信息</title>
     <link href="/css/dashboard.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/dist/croppie.css" />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/dashboard.js"></script>
 </head>
 
 <body>
@@ -19,13 +22,11 @@
       </ul>
     </nav>
     <div class="wrapper">
-      
+
     @yield('workspace')
 
     </div>
 
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/dashboard.js"></script>
 </body>
 
 </html>

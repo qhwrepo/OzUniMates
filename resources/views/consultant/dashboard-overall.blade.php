@@ -4,7 +4,8 @@
 <header class="site-header">
         <h1>个人信息 | <span class="site-header--current">概览</span></h1>
 <!--         <aside class="account">GabeN <i class="entypo-user"></i></aside> -->
-      </header>
+</header>
+
       <section class="workspace">
 
         <div id="integration-list">
@@ -42,7 +43,7 @@
             <a>
                 <div>
                     <h2>专业/学位</h2>
-                    <span>{{$user->major}} {{$user->specilization}} 
+                    <span>{{$user->major}} {{$user->specilization}}
                      @if($user['degree']=='bachelor') 本科
                     @elseif($user['degree']=='master') 硕士
                     @elseif($user['degree']=='phd') 博士
@@ -55,7 +56,7 @@
                 <div>
                     <h2>我能帮助学弟学妹的方面</h2>
                     <span>@foreach($user->tags as $tag)
-                    {{$tag->name}} 
+                    {{$tag->name}}
                     @endforeach</span>
                 </div>
             </a>
