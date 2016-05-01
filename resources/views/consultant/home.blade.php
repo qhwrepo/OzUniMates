@@ -11,7 +11,7 @@
 	<div class="actions">
 	    <button class="file-btn">
 	        <div id="greet_upload">上传个头像吧</div>
-	        <input type="file" id="upload" value="选择图片文件" /> 
+	        <input type="file" id="upload" value="选择图片文件" />
 	    </button>
 	    <div class="crop">
 	        <div id="upload-demo"></div>
@@ -51,6 +51,7 @@
 		  @if($user['degree']=='bachelor') 本科
   			@elseif($user['degree']=='master') 硕士
   			@elseif($user['degree']=='phd') 博士
+				@elseif($user['degree']=='pre') 预科
   			@endif</div>
 		  </li>
 		  <li>
@@ -118,9 +119,11 @@
 	    	<h1>{{ $user['username'] }}</h1>
         	<h3>在{{ $user['university'] }}</h3>
         	<h3>就读{{ $user['major'] }} - {{ $user['specilization'] }}
-		@if($user['degree']=='bachelor') 本科
-		@elseif($user['degree']=='master') 硕士
-		@elseif($user['degree']=='phd') 博士 @endif</h3>
+				@if($user['degree']=='bachelor') 本科
+				@elseif($user['degree']=='master') 硕士
+				@elseif($user['degree']=='phd') 博士
+				@elseif($user['degree']=='pre') 预科
+				@endif</h3>
       	</div>
 		<a href="#" class="image open_button open_button1">
 		@if($user->avatar) <img src="{{$user->avatar}}">
@@ -155,7 +158,9 @@
 			@endforeach
 			@if($student['degree']=='bachelor') 本科
 			@elseif($student['degree']=='master') 硕士
-			@elseif($student['degree']=='phd') 博士 @endif</p>
+			@elseif($student['degree']=='phd') 博士
+			@elseif($user['degree']=='pre') 预科
+			 @endif</p>
       	</div>
 		<a href="#" class="image open_button" onclick="open_modal({{$student->id}})">
 			@if($student['avatar']=='')

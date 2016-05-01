@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>澳联帮 - 注册</title>
-    
+
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/css/bootstrap-select.min.css">
     <link href="/css/registration.css" rel="stylesheet" media="screen" type="text/css" />
     <link href="/css/loading.css" rel="stylesheet" media="screen" type="text/css" />
-    
+
 </head>
 
 <body onload="disableSubmit()">
@@ -22,7 +22,7 @@
 </div>
 
 <div class="loading-wrap">
-  
+
 <h2>先来点基本信息吧。</h2>
 
 <!-- multistep form -->
@@ -39,14 +39,15 @@
     <!-- fieldsets -->
     <fieldset>
         <h2 class="fs-title">你在读什么学位？</h2>
+        <input type="button" class="next action-button" value="预科" onclick="setDegree('pre')"/>
         <input type="button" class="next action-button" value="本科" onclick="setDegree('bachelor')"/>
         <input type="button" class="next action-button" value="硕士" onclick="setDegree('master')"/>
-        <input type="button" class="next action-button" value="博士" onclick="setDegree('phd')"/> 
+        <input type="button" class="next action-button" value="博士" onclick="setDegree('phd')"/>
         <input type="text" name="degree" class="hidden" />
     </fieldset>
     <fieldset id="selectUniversity">
         <h2 class="fs-title">就读哪一所大学？</h2>
-        <select data-live-search="true" class="selectpicker" 
+        <select data-live-search="true" class="selectpicker"
         title="搜索或选择" onchange="setUniversity(this.value)">
           <optgroup label="澳洲八大">
             <option>澳大利亚国立大学</option>
@@ -86,7 +87,7 @@
 
     <fieldset id="selectMajor">
         <h2 class="fs-title">读什么专业呢？</h2>
-        <select data-live-search="true" class="selectpicker"  
+        <select data-live-search="true" class="selectpicker"
         title="搜索或选择" onchange="setMajor(this.value)">
             <option>商科</option>
             <option>工程/计算机</option>
@@ -134,7 +135,7 @@
 
     <script src="/js/jquery.min.js" type="text/javascript"></script>
     <script src="/js/jquery.easing.min.js" type="text/javascript"></script>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/js/bootstrap-select.min.js"></script>
     <script src="/js/registration.js" type="text/javascript"></script>
     <script src="/js/bootstrap.min.js" type="text/javascript"></script>

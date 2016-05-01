@@ -116,12 +116,13 @@ function open_modal(id){
         if(student['degree']=='bachelor') $('#modal_major').append(' 本科');
         else if(student['degree']=='master') $('#modal_major').append(' 硕士');
         else if(student['degree']=='phd') $('#modal_major').append(' 博士');
+        else if(student['degree']=='pre') $('#modal_major').append(' 预科');
     });
 
     if(student['avatar']=='') $('#modal_avatar_square').attr("src","/img/no_avatar_square.jpg");
     else $('#modal_avatar_square').attr("src",student['avatar']);
     $('#modal_username').html(student['username']);
-    
+
     $('#modal_email').html('邮箱： '+student['email']);
     if(student['description']=='') $('#modal_description').html('ta还没有填写简介');
     else $('#modal_description').html(student['description']);
@@ -143,4 +144,3 @@ function start_message() {
   document.forms['msgform'].elements['stuid'].value = stu_id_msg;
   $('#msgform').submit();
 }
-

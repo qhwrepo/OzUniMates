@@ -55,6 +55,7 @@
 		  	@if($user['degree']=='bachelor') 本科
   			@elseif($user['degree']=='master') 硕士
   			@elseif($user['degree']=='phd') 博士
+				@elseif($user['degree']=='pre') 预科
   			@endif</div>
 		  </li>
 		  <li>
@@ -128,7 +129,8 @@
 			@endforeach
 			@if($user['degree']=='bachelor') 本科
 			@elseif($user['degree']=='master') 硕士
-			@elseif($user['degree']=='phd') 博士 @endif</p>
+			@elseif($user['degree']=='phd') 博士
+			@elseif($user['degree']=='pre') 预科 @endif</p>
       	</div>
 		<a href="#" class="image open_button open_button1">
 			@if($user['avatar']=='')
@@ -161,7 +163,8 @@
         	<h3>就读{{ $consultant['major'] }} - {{ $consultant['specilization'] }}
 		@if($consultant['degree']=='bachelor') 本科
 		@elseif($consultant['degree']=='master') 硕士
-		@elseif($consultant['degree']=='phd') 博士 @endif</h3>
+		@elseif($consultant['degree']=='phd') 博士
+		@elseif($user['degree']=='pre') 预科 @endif</h3>
       	</div>
 		<a href="#" class="image open_button" onclick="open_modal({{$consultant->id}})">
 		@if($consultant->avatar) <img src="{{$consultant->avatar}}">

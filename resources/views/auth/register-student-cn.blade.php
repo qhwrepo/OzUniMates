@@ -34,9 +34,10 @@
     <!-- fieldsets -->
     <fieldset>
         <h2 class="fs-title">准备读什么学位？</h2>
+        <input type="button" class="next action-button" value="预科" onclick="setDegree('pre')"/>
         <input type="button" class="next action-button" value="本科" onclick="setDegree('bachelor')"/>
         <input type="button" class="next action-button" value="硕士" onclick="setDegree('master')"/>
-        <input type="button" class="next action-button" value="博士" onclick="setDegree('phd')"/> 
+        <input type="button" class="next action-button" value="博士" onclick="setDegree('phd')"/>
         <input type="text" name="degree" class="hidden" />
     </fieldset>
     <fieldset>
@@ -76,7 +77,7 @@
     </fieldset>
     <fieldset>
         <h2 class="fs-title">想读什么专业（可多选）？</h2>
-        
+
         <input type="button" class="action-button" value="商科"  onclick="addMajor(this.value)"/>
         <input type="button" class="action-button" value="工程/计算机" onclick="addMajor(this.value)"/>
         <input type="button" class="action-button" value="自然科学" onclick="addMajor(this.value)"/>

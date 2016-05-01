@@ -90,7 +90,7 @@ function open_modal(id){
     $('.modal, .modal_overlay').addClass('display');
     $('.modal, .modal_overlay').removeClass('conceal');
     $('.open_button2').addClass('load');
-    
+
     var consultant = user_id(id);
     var tagstr = "";
 
@@ -112,6 +112,7 @@ function open_modal(id){
     if(consultant['degree']=='bachelor') $('#modal_major').append(' 本科');
     else if(consultant['degree']=='master') $('#modal_major').append(' 硕士');
     else if(consultant['degree']=='phd') $('#modal_major').append(' 博士');
+    else if(consultant['degree']=='pre') $('#modal_major').append(' 预科');
     $('#modal_email').html(consultant['email']);
     if(consultant['description']=='') $('#modal_description').html('ta还没有填写简介');
     else $('#modal_description').html(consultant['description']);
