@@ -35,7 +35,7 @@
                 <div>
                     <h2>目标院校</h2>
                     <span>@foreach($user->universities as $university)
-                    {{$university->name}} 
+                    {{$university->name}}
                     @endforeach</span>
                 </div>
             </a>
@@ -45,13 +45,32 @@
                 <div>
                     <h2>专业/学位</h2>
                     <span>@foreach($user->majors as $major)
-                    {{$major->name}} 
+                    {{$major->name}}
                     @endforeach
                     <br/>
                      @if($user['degree']=='bachelor') 本科
                     @elseif($user['degree']=='master') 硕士
                     @elseif($user['degree']=='phd') 博士
                     @endif</span>
+                </div>
+            </a>
+        </li>
+
+        <li>
+            <a>
+                <div>
+                    <h2>Email是否接受站内信通知</h2>
+                    <p>现在的设置：
+                      @if($user->notification == 'e') 是
+                      @elseif($user->notification == 'n') 否
+                      @endif</p>
+                    <span>
+                      {!! Form::open( [ 'url' => ['/student/notification/update'], 'method' => 'POST', 'id' => 'notification-form' ] ) !!}
+                      <input type="hidden" name="frequency">
+                      <button onclick="set_notification('e')">是</button>
+                      <button onclick="set_notification('n')">否</button>
+                      {!! Form::close() !!}
+                    </span>
                 </div>
             </a>
         </li>

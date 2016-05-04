@@ -72,9 +72,16 @@ class ConsultantController extends Controller
 
     public function descriptionUpdate()
     {
-        $description = Input::get('description');
         $user = Auth::user("consultant");
-        $user->description = $description;
+        $user->description = Input::get('description');
+        $user->save();
+        return redirect('/consultant/dashboard/overall');
+    }
+
+    public function notificationUpdate()
+    {
+        $user = Auth::user("consultant");
+        $user->notification = Input::get('frequency');
         $user->save();
         return redirect('/consultant/dashboard/overall');
     }

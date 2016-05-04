@@ -61,6 +61,24 @@
                 </div>
             </a>
         </li>
+        <li>
+            <a>
+                <div>
+                    <h2>Email是否接受站内信通知</h2>
+                    <p>现在的设置：
+                      @if($user->notification == 'e') 是
+                      @elseif($user->notification == 'n') 否
+                      @endif</p>
+                    <span>
+                      {!! Form::open( [ 'url' => ['/consultant/notification/update'], 'method' => 'POST', 'id' => 'notification-form' ] ) !!}
+                      <input type="hidden" name="frequency">
+                      <button onclick="set_notification('e')">是</button>
+                      <button onclick="set_notification('n')">否</button>
+                      {!! Form::close() !!}
+                    </span>
+                </div>
+            </a>
+        </li>
 
         <li>
             <a class="expand">

@@ -14,7 +14,7 @@ $(function() {
   $(".expand").on( "click", function() {
     $(this).next().slideToggle(200);
     $expand = $(this).find(">:first-child");
-    
+
     if($expand.text() == "+") {
       $expand.text("-");
     } else {
@@ -22,3 +22,9 @@ $(function() {
     }
   });
 });
+
+function set_notification(para) {
+  var daForm = document.forms['notification-form'];
+  daForm.elements['frequency'].value = para;
+  daForm.submit();
+}

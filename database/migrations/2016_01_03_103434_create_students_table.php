@@ -22,6 +22,7 @@ class CreateStudentsTable extends Migration
             $table->string('avatar_small');
             $table->string('description');
             $table->boolean('activated');
+            $table->char('notification');
             $table->timestamps();
             $table->rememberToken();
         });

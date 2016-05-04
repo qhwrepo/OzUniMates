@@ -27,6 +27,7 @@ class CreateConsultantsTable extends Migration
             $table->boolean('ispro');
             $table->boolean('activated');
             $table->string('description');
+            $table->char('notification');
             $table->timestamps();
             $table->rememberToken();
         });

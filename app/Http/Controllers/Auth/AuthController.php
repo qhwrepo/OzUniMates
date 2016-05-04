@@ -18,7 +18,7 @@ use Mail;
 
 class AuthController extends Controller
 {
-    
+
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -73,6 +73,7 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
             'degree' => $data['degree'],
             'majors' => $data['majors'],
+            'notification' => 'e',
             'description' => '',
             'activated' => false
         ]);
@@ -89,6 +90,7 @@ class AuthController extends Controller
             'major' => $data['major'],
             'specilization' => $data['specilization'],
             'thanks' => '0',
+            'notification' => 'e',
             'ispro' => $data['invite'],
             'description' => '',
             'activated' => false
@@ -183,7 +185,7 @@ class AuthController extends Controller
 
         $majorIdList = Major::whereIn('name',$majorarr)->lists('id')->all();
         $student->majors()->attach($majorIdList);
-        
+
         // activation email
         $id = Auth::user('student')->id;
         Mail::send('mail.studentVerificationUrlEN',['id'=>$id],function($message){
@@ -198,7 +200,7 @@ class AuthController extends Controller
     public function postConsultantRegister(Request $request)
     {
         \Auth::login("consultant",$this->createConsultant($request->all()));
-        
+
         // store tag & consultant pair into table
         $consultant = Consultant::where('username',$request->username)->first();
         $tagarr = [];
@@ -211,7 +213,7 @@ class AuthController extends Controller
 
         $tagIdList = Tag::whereIn('name',$tagarr)->lists('id')->all();
         $consultant->tags()->attach($tagIdList);
-        
+
         // activation email
         $id = Auth::user('consultant')->id;
         Mail::send('mail.consultantVerificationUrlCN',['id'=>$id],function($message){
@@ -237,7 +239,7 @@ class AuthController extends Controller
 
         $tagIdList = Tag::whereIn('name',$tagarr)->lists('id')->all();
         $consultant->tags()->attach($tagIdList);
-        
+
         // activation email
         $id = Auth::user('consultant')->id;
         Mail::send('mail.consultantVerificationUrlEN',['id'=>$id],function($message){
@@ -267,7 +269,7 @@ class AuthController extends Controller
 
         if( $request->only('usertype')['usertype'] == 'student' ) {
             $this->redirectPath = '/student/home';
-            $credentials = $this->getCredentials($request);      
+            $credentials = $this->getCredentials($request);
             if (\Auth::attempt("student",['email'=>$credentials['email'],
                 'password'=>$credentials['password']])) {
                 return $this->handleUserWasAuthenticated($request, $throttles);
@@ -276,12 +278,12 @@ class AuthController extends Controller
 
         else if( $request->only('usertype')['usertype'] == 'consultant' ) {
             $this->redirectPath = '/consultant/home';
-            $credentials = $this->getCredentials($request); 
+            $credentials = $this->getCredentials($request);
             if (\Auth::attempt("consultant",['email'=>$credentials['email'],
                 'password'=>$credentials['password']])) {
                 return $this->handleUserWasAuthenticated($request, $throttles);
             }
-        }         
+        }
 
         // If the login attempt was unsuccessful we will increment the number of attempts
         // to login and redirect the user back to the login form. Of course, when this
@@ -311,7 +313,7 @@ class AuthController extends Controller
             else if( $request->only('usertype')['usertype'] == 'consultant' ) {
                 return $this->authenticated($request, \Auth::user("consultant",$this->user()));
             }
-            
+
         }
 
         return redirect()->intended($this->redirectPath());

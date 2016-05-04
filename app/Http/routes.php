@@ -22,6 +22,8 @@ Route::post('consultant/register','Auth\AuthController@postConsultantRegister');
 
 Route::post('consultant/description/update','ConsultantController@descriptionUpdate');
 Route::post('student/description/update','StudentController@descriptionUpdate');
+Route::post('consultant/notification/update','ConsultantController@notificationUpdate');
+Route::post('student/notification/update','StudentController@notificationUpdate');
 Route::post('consultant/avatar/upload','ConsultantController@avatarUpload');
 Route::post('student/avatar/upload','StudentController@avatarUpload');
 
@@ -70,7 +72,7 @@ Route::post('consultant/messages/new','MessageController@newMessage');
 // English version
 // =======================================
 Route::group(array('prefix' => 'en'), function() {
-	
+
 	Route::get('/','WelcomeController@enindex');
 	Route::get('student/register','Auth\AuthController@getStudentRegisterEn');
     Route::get('consultant/register','Auth\AuthController@getConsultantRegisterEn');
