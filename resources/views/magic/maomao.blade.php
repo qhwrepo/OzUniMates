@@ -12,7 +12,7 @@
 	<link href="/css/magic.css" type="text/css" rel="stylesheet">
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/magic/garden.js"></script>
-    <script type="text/javascript" src="/js/magic/functions.js"></script>
+	<script type="text/javascript" src="/js/magic/functions.js"></script>
 </head>
 
 <body>
@@ -66,11 +66,11 @@
 		together.setMinutes(0);
 		together.setSeconds(0);
 		together.setMilliseconds(0);
-		
+
 		if (!document.createElement('canvas').getContext) {
 			var msg = document.createElement("div");
 			msg.id = "errorMsg";
-			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
 			document.body.appendChild(msg);
 			$("#code").css("display", "none")
 			$("#copyright").css("position", "absolute");

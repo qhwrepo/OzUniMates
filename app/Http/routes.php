@@ -108,11 +108,11 @@ Route::group(array('prefix' => 'api'), function() {
 });
 
 // ================================
-// my dear kitten
+// what's this part all about?
 // ================================
 Route::get('/magic',function(){
 	return view('magic.maomao');
 });
-Route::get('/canvas',function(){
-	return view('magic.canvas');
+Route::get('/timeline',function(){
+	return view('magic.50thbir');
 });
