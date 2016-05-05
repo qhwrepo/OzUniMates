@@ -14,6 +14,7 @@ use App\Student;
 
 use URL;
 use Response;
+use Mail;
 use Log;
 
 class MessageController extends Controller
@@ -59,7 +60,6 @@ class MessageController extends Controller
         $stuid = Auth::user("student")->id;
         $conid = $request->conid;
 
-        Log::info($conid);
         // if it's a new thread then create it
         Thread::firstOrCreate(['student_id' => $stuid,'consultant_id' => $conid]);
 
@@ -149,9 +149,44 @@ class MessageController extends Controller
 
     // create a new message
 
-    public function newMessage(Request $request)
+    public function newStudentMessage(Request $request)
     {
         Message::create($request->all());
+
+        Log::info($request->content);
+        $thread_id = $request->thread_id;
+        $cons_id = Thread::findOrFail($thread_id)->consultant_id;
+        $cons = Consultant::findOrFail($cons_id);
+        $cons_email = $cons->email;
+
+        if($cons->notification == 'n')
+            return redirect(URL::previous());
+
+        $stuName = Auth::user('student')->username;
+        Mail::queue('mail.newMessage',['name1'=>$cons->username, 'name2'=>$stuName, 'content'=>$request->content],function($message) use ($cons_email){
+            $to = $cons_email;
+            $message ->to($to)->subject('澳联帮 - 收到一条新消息');
+        });
+
+        return redirect(URL::previous());
+    }
+
+    public function newConsultantMessage(Request $request)
+    {
+        Message::create($request->all());
+        $thread_id = $request->thread_id;
+        $stu_id = Thread::findOrFail($thread_id)->student_id;
+        $stu = Student::findOrFail($stu_id);
+        $stu_email = $stu->email;
+
+        if($stu->notification == 'n')
+            return redirect(URL::previous());
+
+        $consName = Auth::user('consultant')->username;
+        Mail::queue('mail.newMessage',['name1'=>$stu->username, 'name2'=>$consName],function($message) use ($stu_email){
+            $to = $stu_email;
+            $message ->to($to)->subject('澳联帮 - 收到一条新消息');
+        });
         return redirect(URL::previous());
     }
 

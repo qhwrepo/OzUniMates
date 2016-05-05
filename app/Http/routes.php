@@ -62,11 +62,11 @@ Route::get('consultant/{consid}/activate','ConsultantController@activate');
 // =======================================
 Route::get('student/messages','MessageController@stuIndex');
 Route::post('student/messages','MessageController@stuNew');
-Route::post('student/messages/new','MessageController@newMessage');
+Route::post('student/messages/new','MessageController@newStudentMessage');
 
 Route::get('consultant/messages','MessageController@conIndex');
 Route::post('consultant/messages','MessageController@conNew');
-Route::post('consultant/messages/new','MessageController@newMessage');
+Route::post('consultant/messages/new','MessageController@newConsultantMessage');
 
 // =======================================
 // English version
