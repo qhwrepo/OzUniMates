@@ -4,6 +4,7 @@ html, body
   height: 100%;
   margin: 0;
 }
+
 .img
 {
   position: relative;
@@ -23,6 +24,17 @@ html, body
   text-stroke: 1.5px rgba(0,0,0,0.7);
   cursor: default;
 }
+
+@media only screen and (orientation: portrait) and (device-width: 320px), (device-width: 768px) {
+    .img {
+    /*display:none !important */
+    background-size: 500px 373px !important;
+    -moz-background-size: 500px 373px !important;
+    -webkit-background-size: 500px 373px !important;
+    }
+}
+
+
 .img:last-of-type
 {
   border-bottom: none;
