@@ -9,6 +9,10 @@
 
 <body>
 
+	<audio controls autoplay loop id="audio">
+	  <source src="/hpb.mp3" type="audio/mpeg">
+	</audio>
+
 	<div id="image1" class="img" data-img="img/50thbir/1.jpg"><span class="multiline"><span class="max">老爸，</span></span></div>
 	<div id="image2" class="img" data-img="img/50thbir/2.jpg"><span class="multiline"><span class="max">你教会了我说话</span></span></div>
 	<div id="image3" class="img" data-img="img/50thbir/3.jpg"><span class="multiline"><span class="max">教我认识花花草草</span></span></div>

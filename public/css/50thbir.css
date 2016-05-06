@@ -7,10 +7,8 @@ html, body
 .img
 {
   position: relative;
+  width: 100%;
   height: 100%;
-  /* attr data-type doesn't work anywhere for the moment :( */
-  /* Even in chrome canary */
-  /* So we do it the JS way */
   background-image: attr(data-img url); /* Keep it anyway */
   background-attachment: fixed;
   background-size: cover;
@@ -60,4 +58,8 @@ html, body
 .img .permalink:hover
 {
   opacity: 1;
+}
+
+#audio {
+  display: none;
 }
