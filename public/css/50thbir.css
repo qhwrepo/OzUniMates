@@ -25,16 +25,6 @@ html, body
   cursor: default;
 }
 
-@media only screen and (orientation: portrait) and (device-width: 320px), (device-width: 768px) {
-    .img {
-    /*display:none !important */
-    background-size: 500px 373px !important;
-    -moz-background-size: 500px 373px !important;
-    -webkit-background-size: 500px 373px !important;
-    }
-}
-
-
 .img:last-of-type
 {
   border-bottom: none;
