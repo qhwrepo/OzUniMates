@@ -25,6 +25,6 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
       // Run once a minute
-      $schedule->command('queue:work')->everyMinute();
+      $schedule->command('queue:work')->cron('* * * * * *');
     }
 }
