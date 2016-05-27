@@ -100,7 +100,7 @@
     <div class="row">
       <div>Problems to solve:</div>
       <div class="place" ng-repeat="place in places">
-        <%place.name%><span ng-if="place.house==family.name"> - solved!</span>
+        <%place.name%><span ng-if="place.house==family.name" class="solved"> - solved!</span>
       </div>
       <hr>
     </div>

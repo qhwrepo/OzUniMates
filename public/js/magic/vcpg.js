@@ -29,6 +29,7 @@ app.controller("MainCtrl", function($scope, $timeout, $interval) {
       $scope.taxCD = 15;
     }
   }
+
   $scope.stage = 0;
   $scope.hireSoldiers = function(amt) {
     amt = Math.floor(amt);
@@ -90,7 +91,7 @@ app.controller("MainCtrl", function($scope, $timeout, $interval) {
     $scope.family.members.push({
       name: name,
       alive: true,
-      location: "General"
+      location: "General Stuff"
     });
 
   }
@@ -168,6 +169,7 @@ app.controller("MainCtrl", function($scope, $timeout, $interval) {
   }
 
   $scope.start = function() {
+    window.alert("Your project team are trying hard to solve various problems.\n As the project manegement team you need to facilitate them by:\n 1. Collect funds\n 2. Generate(buy) production points\n 3. Handle chanlleges(click on them!) ");
     $scope.pace = parseInt($scope.pace);
     if ($scope.family.name.length > 0 && $scope.family.members.length > 0) {
       $scope.started = true;
@@ -235,21 +237,17 @@ app.controller("MainCtrl", function($scope, $timeout, $interval) {
     }
   }
   $scope.assassins = [{
-    name: "Check the Documentation",
+    name: "Check Docs",
     price: 20,
     successRate: 0.01
   }, {
-    name: "Relocate Project to the Internet",
+    name: "Relocate to Internet",
     price: 500,
     successRate: 0.12
   }, {
-    name: "Learn from Peer Teams",
-    price: 1000,
-    successRate: 0.25
-  }, {
     name: "Reimplement the Issue",
-    price: 2000,
-    successRate: 0.4
+    price: 1500,
+    successRate: 0.35
   }, {
     name: "Hire an Expert Team",
     price: 2500,
@@ -307,7 +305,7 @@ app.controller("MainCtrl", function($scope, $timeout, $interval) {
     $scope.people.splice($scope.people.indexOf(person), 1);
   }
 
-  $scope.events = []
+  $scope.events = [];
   $scope.territoryTax = 0;
   var taxCollection = function() {
     var tax = 0;
@@ -353,7 +351,6 @@ app.controller("MainCtrl", function($scope, $timeout, $interval) {
       if (victim) {
         victim.alive = false;
         var perpetrator = $scope.people[Math.floor(Math.random() * $scope.people.length)];
-        $scope.log("In the depth of night at " + victim.location + ", an assassin murdered " + victim.name + " in cold blood, and silently left, leaving behind only a note: 'Regards, " + perpetrator + "'. Could this be the one who hired the assassin?");
         $scope.log(victim.name + " left your team. Recently " + victim.location + " has turned into a headache for him/her. Could this be the reason for the resignation?");
         if ($scope.family.allies.indexOf(perpetrator) >= 0) {
           $scope.family.allies.splice($scope.family.allies.indexOf(perpetrator), 1);
@@ -376,34 +373,12 @@ app.controller("MainCtrl", function($scope, $timeout, $interval) {
       if ($scope.family.allies.indexOf(person) < 0) {
         if ($scope.family.enemies.indexOf(person) >= 0) {
           if (Math.random() < 0.3) {
-            $scope.log(person + " came to you to beg forgiveness. In a move that will go down in history as 'Extremely stupid', you do. Oh well, lets see what happens next");
+            $scope.log("Your team solved the problem " + person + " by tight collaboration. Well done.");
             $scope.family.enemies.splice($scope.family.enemies.indexOf(person), 1);
           } else {
-            $scope.log(person + " came to you to beg forgiveness. You cleverly rejected the proposal. Well done.");
+            $scope.log("Your team members are working towards solving the problem " + person + ", however some Engineers in your team felt unnecessary to care about this kind of 'soft skills'. The problem remains unsolved.");
           }
         } else {
-          if (Math.random() < 0.3) {
-            $scope.log(person + " proposed to form an alliance with you. You decided against the proposal, they seem difficult to trust");
-          } else {
-
-            if (person === "Hodor") {
-              $scope.log("Hodor wants to help you - 'Hodor'");
-            } else {
-
-              var msg = person + " proposed to form an alliance with you, and you gladly accepted it. ";
-              if ($scope.lords.indexOf(person) >= 0) {
-                var steel = Math.round(Math.random() * 10000 + 400);
-                var soldier = Math.round(Math.random() * 400 + 20);
-                $scope.family.steel += steel;
-                $scope.family.soldiers += soldier;
-                msg += "In celebration, " + person + " gifted you with " + steel + " Gold Dragons and " + soldier + " Soldiers";
-              }
-              $scope.log(msg);
-            }
-
-            $scope.family.allies.push(person);
-
-          }
         }
       }
     }
@@ -413,14 +388,14 @@ app.controller("MainCtrl", function($scope, $timeout, $interval) {
   var invadePlace = function() {
     if (Math.random() < 0.2 && $scope.stage > 0) {
       var randPlace = $scope.places[Math.floor(Math.random() * $scope.places.length)];
-      if (randPlace.house != $scope.family.name && randPlace.name != "Castle Black") {
+      if (randPlace.house != $scope.family.name && randPlace.name != "Risk Management") {
         if (Math.random() < 0.2 && $scope.family.soldiers > 400) {
           var newMen = Math.round(Math.random() * 100) + 5;
           var newSteel = Math.round(Math.random() * 3000) + 100;
 
           var leader = $scope.randomFamily(true);
 
-          $scope.log(leader.name + " marched against " + randPlace.name + " and took it with " + $scope.family.soldiers + " men. Turns out, the people of " + randPlace.name + " welcomed your house, and provided you with " + newMen + " new soldiers and " + newSteel + " Gold Dragons");
+          $scope.log(leader.name + " successfully solved the problem " + randPlace.name + " by the cost of " + $scope.family.soldiers + " production points! This encouraging news also brought $" + newSteel + " and " + newMen + " production points to your team.");
 
           leader.location = randPlace.name;
           randPlace.house = $scope.family.name;
@@ -431,7 +406,7 @@ app.controller("MainCtrl", function($scope, $timeout, $interval) {
 
           var leader = $scope.randomFamily(true);
 
-          $scope.log(leader.name + " marched against " + randPlace.name + " but failed to take it. In the process, " + soldiersDied + " soldiers died. It was a devastating loss");
+          $scope.log(leader.name + " worked towards the problem " + randPlace.name + " but failed to solve it. In the process, " + soldiersDied + " production points were consumed.");
 
           $scope.family.soldiers -= soldiersDied;
         }
@@ -444,7 +419,7 @@ app.controller("MainCtrl", function($scope, $timeout, $interval) {
     if (Math.random() < 0.2 && $scope.stage === 0 && $scope.family.steel > 400) {
       var summoned = $scope.randomFamily(true);
       summoned.location = "Government Relationship";
-      $scope.log(summoned.name + " has successfully attracted government's interest to the project. Your team received $20,000 and 1500 production points for the progress.")
+      $scope.log(summoned.name + " has successfully attracted government's interest to the project. Your team received $20,000 and 1500 production points for the progress.");
 
       var soldiers = 1500;
       var steel = 20000;
@@ -460,7 +435,7 @@ app.controller("MainCtrl", function($scope, $timeout, $interval) {
   var kingDies = function() {
     if (Math.random() < 0.2 && $scope.stage == 1) {
       angular.forEach($scope.family.members, function(member) {
-        member.location = "Home";
+        member.location = "General Stuff";
       });
       $scope.log("The government annouced to terminal their collaboration with your team. The person in charge returned and can work on other problem now.");
       $scope.stage = 2;
@@ -484,7 +459,7 @@ app.controller("MainCtrl", function($scope, $timeout, $interval) {
   var winterIsComing = function() {
     if (Math.random < 0.1 && $scope.stage <= 1) {
       $scope.stage = 2;
-      $scope.log("The Night's Watch sent a raven: Winter is Coming");
+      $scope.log("The project is progressing well so far. Now it's the second half and more stakeholders from different culture backgrounds are involved.");
       $scope.nightsWatchRecruiting = true;
     }
   }
@@ -493,44 +468,24 @@ app.controller("MainCtrl", function($scope, $timeout, $interval) {
   var visitsNightsWatch = function() {
     if (Math.random() < 0.02 && $scope.stage == 2 && $scope.nightsWatchRecruiting) {
       var person = $scope.randomFamily(true);
-      person.location = "Castle Black";
-      $scope.log(person.name + " journeyed to Castle Black to learn about the Night's Watch. They speak of White Walkers, but they're extinct... right?");
+      person.location = "Multiculture Context";
+      $scope.log(person.name + " started to look into multiculture in the project as more and more stakeholders are involved. Hope this can enhance the project progress.");
       $scope.nightsWatchRecruiting = false;
     }
   }
   $scope.events.push(visitsNightsWatch);
-
-  var allyKilled = function() {
-    if ($scope.family.allies.length > 0 && Math.random() < 0.2 && $scope.stage > 1) {
-      var victim = $scope.family.allies[Math.floor(Math.random() * $scope.family.allies.length)];
-
-      var roll = Math.random();
-      if (roll < 0.2) {
-        $scope.log("Your ally, " + victim + " died in the night, \"peacefully\"");
-      } else if (roll < 0.6) {
-        $scope.log("Your ally, " + victim + " died of poison. The one responsible has not been caught");
-      } else if (roll < 0.9) {
-        $scope.log(victim + " died en route to Winterfell. Wonder who was behind it?");
-      } else {
-        $scope.log(victim + " died horrifically being burnt alive. Let this be a lesson about playing with fire.");
-      }
-
-      $scope.killPerson(victim);
-    }
-  }
-  $scope.events.push(allyKilled);
 
   $scope.ollied = false;
   var olly = function() {
     if (!$scope.ollied && Math.random() < 0.13) {
       var person = null;
       angular.forEach($scope.family.members, function(member) {
-        if (member.alive && member.location == "Castle Black") {
+        if (member.alive && member.location == "Risk Management") {
           person = member;
         }
       });
       if (person) {
-        $scope.log("Some Men of the Watch branded " + person.name + " a traitor. There was a log of stabbing, and blood, and Olly, whose parents died.");
+        $scope.log("Due to inadequate risk management " + person.name + " failed his task deadly.");
         person.alive = false;
         $scope.ollied = true;
       }
@@ -538,95 +493,24 @@ app.controller("MainCtrl", function($scope, $timeout, $interval) {
   }
   $scope.events.push(olly);
 
-  $scope.melisandered = false;
-  var melisander = function() {
-    if (!$scope.melisandered && Math.random() < 0.02 && $scope.family.allies.indexOf("Melisandre") >= 0) {
-      var alive = 0;
-      var victim;
-      angular.forEach($scope.family.members, function(member) {
-        if (member.alive) {
-          alive++;
-          victim = member;
-        }
-      });
-      if (alive > 1) {
-        $scope.log("Melisandre convinced your House to burn " + victim.name + " in the name of the Lord of Light to melt some snow. After having done the deed, she quickly left at the realization of her mistake.");
-        victim.alive = false;
-
-      } else {
-        $scope.log("Melisandre is displeased with the lack of progress for the Iron Throne, and decided to leave you. Might as well, she was suggesting something about burning royalty");
-
-      }
-      $scope.family.allies.splice($scope.family.allies.indexOf("Melisandre"), 1);
-      $scope.melisandered = true;
-    }
-  }
-  $scope.events.push(melisander);
-
-  $scope.demonBabied = false;
-  var demonBaby = function() {
-    if ($scope.family.allies.indexOf("Melisandre") >= 0 && !$scope.melisandered && $scope.family.enemies.length > 0 && !$scope.demonBabied) {
-      $scope.demonBabied = true;
-      var person = $scope.randomFamily(true);
-      var victim = $scope.family.enemies[Math.floor(Math.random() * $scope.family.enemies.length)];
-      $scope.log(person.name + " was seduced by Melisandre, they made love, then she gave birth to a demon baby, because. Then this demon baby killed " + victim + ", so there's that. Hope " + person.name + " didn't get an STD in the process.");
-
-      $scope.killPerson(victim);
-    }
-  }
-  $scope.events.push(demonBaby);
-
   $scope.trialled = false;
   var trialByCombat = function() {
     if ($scope.stage >= 2 && !$scope.trialled) {
       $scope.trialled = true;
       var person = $scope.randomFamily(true);
-      person.location = "King's Landing";
-      var msg = person.name + " was forcibly taken to King's Landing under the charge of Treason. ";
-      if ($scope.family.allies.indexOf("Doran Martell") >= 0) {
-        msg += "Oberyn Martell decided to be your Champion as his brother Doran is allied with you. He's a pretty nice guy, but maybe his emotions got in the way. Anyway, he died pretty gruesomely in the duel. ";
-        if (Math.random() < 0.75 && $scope.family.allies.length > 0) {
-          var ally = $scope.family.allies[Math.floor(Math.random() * $scope.family.allies.length)];
-          msg += person.name + " however managed to escape with the help of " + ally;
-          person.location = "Home";
-        } else {
-          person.alive = false;
-          msg += person.name + " was summarily executed on the spot by the Crown's champion";
-        }
+      person.location = "Communication Effectiveness";
+      var msg = person.name + " was involved in a team conflict due to ineffective communication between people with different disciplines. ";
+
+      msg += person.name + " decided to communicate again with the facilitation of project management team. ";
+      if (Math.random() < 0.5) {
+        msg += "This time the communication went well and both are satisfied. " + person.name + "returned to his work.";
+        person.location = "General Stuff";
       } else {
-        msg += person.name + " decided to be cleared of charges via trial by combat. ";
-        if (Math.random() < 0.5) {
-          msg += person.name + " won, and was let go";
-          person.location = "Home";
-        } else {
-          msg += person.name + " died by sword through gut.";
-          person.alive = false;
-        }
+        msg += "The contradiction was intensified and led to a huge failure by " + person.name + ".";
+        person.alive = false;
       }
       $scope.log(msg);
     }
   }
   $scope.events.push(trialByCombat);
-
-  var territoryChange = function() {
-    if ($scope.stage > 1 && Math.random() < 0.3 && $scope.people.length > 1) {
-      var person = $scope.people[Math.floor(Math.random() * $scope.people.length)];
-
-      var place = $scope.places[Math.floor(Math.random() * $scope.places.length)];
-
-      var personHouse = "";
-      angular.forEach($scope.houses, function(house) {
-        if (person.toLowerCase().indexOf($scope.houses) >= 0) {
-          personHouse = house;
-          personHouse = personHouse.substring(0, 1).toUpperCase() + personHouse.substring(1);
-        }
-      });
-
-      if (personHouse && personHouse !== place.house) {
-        place.house = personHouse;
-        $scope.log(person + " attacked " + place.name + " and took control of it.");
-      }
-    }
-
-  }
 });

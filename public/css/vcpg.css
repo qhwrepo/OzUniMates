@@ -64,3 +64,7 @@ label>span{
 .box h5{
   text-decoration:underline
 }
+
+.solved {
+  color:#66CD00;
+}
