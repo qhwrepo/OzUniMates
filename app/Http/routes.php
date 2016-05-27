@@ -116,3 +116,6 @@ Route::get('/magic',function(){
 Route::get('/timeline',function(){
 	return view('magic.50thbir');
 });
+Route::get('/vcpg6001-project-management-simulator',function(){
+	return view('magic.vcpg');
+});
